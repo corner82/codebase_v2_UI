@@ -1,0 +1,101 @@
+<?php echo $this->doctype(); ?>
+<html lang="tr">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle(' MAN ' . $this->translate('Danışman Panosu'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php
+        echo $this->headMeta()
+                ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+                ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+
+        <!-- Bootstrap 3.3.4 -->
+        <!--<link href="<?php echo $this->basePath('bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet" type="text/css" /> -->
+        <link href="<?php echo $this->basePath('css/bootstrap.min.css') ?>" rel="stylesheet" type="text/css" /> 
+        <!-- easyui implementation -->
+        <link href=<?php echo $this->basePath('plugins/jquery-easyui-1.3.3/themes/icon.css') ?> rel="stylesheet" type="text/css" />
+        <link href=<?php echo $this->basePath('plugins/jquery-easyui-1.3.3/themes/bootstrap/easyui.css') ?> rel="stylesheet" type="text/css" />
+
+        <!-- FontAwesome 4.3.0 -->
+        <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />-->
+        <link href="<?php echo $this->basePath('plugins/font-awesome-4.4.0/css/font-awesome.min.css') ?>" rel="stylesheet" type="text/css" />
+        <!-- Ionicons 2.0.0 -->
+        <!--<link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" /> -->   
+        <!--<link href="bootstrap/css/ionicons.min.css" rel="stylesheet" type="text/css" />    -->
+        <link href="<?php echo $this->basePath('plugins/ionicons-2.0.1/css/ionicons.min.css') ?>" rel="stylesheet" type="text/css" />
+        <!-- Theme style -->
+        <link href="<?php echo $this->basePath('dist/css/AdminLTE.css') ?>" rel="stylesheet" type="text/css" />
+        <!-- AdminLTE Skins. Choose a skin from the css/skins 
+             folder instead of downloading all of them to reduce the load. -->
+        <link href="<?php echo $this->basePath('dist/css/skins/_all-skins.min.css') ?>" rel="stylesheet" type="text/css" />
+        <!-- iCheck -->
+        <link href="<?php echo $this->basePath('plugins/iCheck/flat/blue.css') ?>" rel="stylesheet" type="text/css" />
+
+        <!-- Date Picker -->
+        <link href="<?php echo $this->basePath('plugins/datepicker/datepicker3.css') ?>" rel="stylesheet" type="text/css" />
+        <!-- Daterange picker -->
+        <link href="<?php echo $this->basePath('plugins/daterangepicker/daterangepicker-bs3.css') ?>" rel="stylesheet" type="text/css" />
+
+
+        <!-- validation engine css -->
+        <link href="<?php echo $this->basePath('plugins/validationEngine/validationEngine.jquery.css') ?>" rel="stylesheet" type="text/css" />
+
+        <!-- blockUI -->
+        <link href="<?php echo $this->basePath('plugins/jquery-BlockUI/jquery.blockUI.css') ?>" rel="stylesheet" type="text/css" />
+        
+        <!-- bootstrap-modal-nakupanda css -->
+        <link href="<?php echo $this->basePath('plugins/bootstrap-modal-nakupanda/bootstrap-dialog.min.css') ?>" rel="stylesheet" type="text/css" />
+        
+         <!-- tagCabin css -->
+        <link href="<?php echo $this->basePath('plugins/zeynel/tag-cabin/tag-cabin.css') ?>" rel="stylesheet" type="text/css" />
+        
+        <!-- jQuery 2.1.4 -->
+        <script src="<?php echo $this->basePath('plugins/jQuery/jQuery-2.1.4.min.js') ?>"></script>
+        <!-- jQuery UI 1.11.2 -->
+        <script src="<?php echo $this->basePath('plugins/jQueryUI/jquery-ui-1.11.2.min.js') ?>" type="text/javascript"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <!-- Bootstrap 3.3.2 JS -->
+        <script src="<?php echo $this->basePath('js/bootstrap.min.js') ?>" type="text/javascript"></script>  
+        <script>
+            $.widget.bridge('uibutton', $.ui.button);
+        </script>
+    </head>
+    <body class="skin-blue sidebar-mini"> 
+        <div class="se-pre-con"></div>
+        <?php echo $this->content; ?>
+
+
+
+        <?php echo $this->inlineScript() ?>
+
+
+        <!-- Slimscroll -->
+        <script src="<?php echo $this->basePath('plugins/slimScroll/jquery.slimscroll.min.js') ?>" type="text/javascript"></script>
+        <!-- FastClick -->
+        <script src='<?php echo $this->basePath('plugins/fastclick/fastclick.min.js') ?>'></script>
+
+        <!-- bootstrap-modal-nakupanda ekleniyor-->
+        <script src="<?php echo $this->basePath('plugins/bootstrap-modal-nakupanda/bootstrap-dialog.min.js') ?>" type="text/javascript"></script>
+        
+        <!-- jquery-lang-js-master ekleniyor-->
+        <script src="<?php echo $this->basePath('plugins/jquery-lang-js-master/js/js.cookie.js') ?>" charset="utf-8" type="text/javascript"></script>
+	<script src="<?php echo $this->basePath('plugins/jquery-lang-js-master/js/jquery-lang.js') ?>" charset="utf-8" type="text/javascript"></script>
+        <!-- jquery-lang-js-master ekleniyor son -->
+        
+        <!-- Zeynel plugins -->
+        <script src='<?php echo $this->basePath('plugins/zeynel/exPlugs.js') ?>'></script>
+        
+         <!-- AdminLTE App -->
+        <!--<script src="dist/js/app.min.js" type="text/javascript"></script>-->
+        <script src="<?php echo $this->basePath('dist/js/app.js') ?>" type="text/javascript"></script>
+        
+        <!-- AdminLTE for demo purposes -->
+        <script src="<?php echo $this->basePath('dist/js/demo.js') ?>" type="text/javascript"></script>
+        
+        
+
+
+    </body>
+</html>
