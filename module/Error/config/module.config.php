@@ -14,7 +14,7 @@
                  'type'    => 'segment',
                  'options' => array(
                      //'route'    => '/ostim/sanalfabrika/error/[:lang][/:action]',   
-                     'route'    => '/ostim/sanalfabrika/error/[/:action]',   
+                     'route'    => '/imalat/error/[/:action]',   
                      'constraints' => array(
                          'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                          //'lang' => '((en)|(tr)|(ru)|(zh)|(de)|(ar)|(fa))',     
@@ -27,10 +27,6 @@
              ),
          ),
      ),
-     'view_manager' => array(
-         'template_path_stack' => array(
-            __DIR__ . '/../view',
-        ),
-     ),
+    
  );
 

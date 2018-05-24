@@ -32,7 +32,7 @@ class FactoryServiceACLRolePagesCreator  implements FactoryInterface{
         $modules = $moduleManager->getLoadedModules();
         //print_r($modules);
         $loadedModules = array_keys($modules);
-        //print_r($loadedModules);
+        print_r($loadedModules);
         
         if(!empty($loadedModules)) {
             foreach ($loadedModules as $key) {

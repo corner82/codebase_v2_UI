@@ -65,23 +65,22 @@ namespace Admin;
             $viewModel = $e->getApplication()->getMvcEvent()->getViewModel();
             $viewModel->module = $moduleNamespace;
             $viewModel->controller = $controlerName;
-            /*print_r('--controller->'.$viewModel->controller.'--');
-            print_r('--Modül ismi->'.$viewModel->module.'--');*/
+            //print_r('--controller->'.$viewModel->controller.'--');
+            //print_r('--Modül ismi->'.$viewModel->module.'--');
              
             $config = $e->getApplication()->getServiceManager()->get('config');
             /**
              *  added for layout control due to module action
              *  @author Mustafa Zeynel Dağlı
              *  @since 16/12/2015
+             *  @deprecated since 24/05/2018 modul ve action partial ve layout yapısı zend default 
+             * yapısına göre ayarlandı
+             * 
              */
             if (isset($config['action_layouts'][$moduleNamespace][$controlerName])) {
-                //print_r('--modulenamespace+controllername->'.$moduleNamespace.$controlerName);
                 //$controller->layout($config['action_layouts'][$moduleNamespace][$controlerName]);
-                //print_r('--config layout->'.$config['action_layouts'][$moduleNamespace][$controlerName].'--');
             } else  if (isset($config['module_layouts'][$moduleNamespace])) {
-                //$error = $e->getError(); 
-                //print_r($e->getResponse()->getStatusCode());
-                //print_r($e->getRequest()->getHeaders());
+                
                 /**
                  * error 404 page layout has been overridden when controller is
                  * wrong written, so this control has been put in place,
@@ -91,10 +90,8 @@ namespace Admin;
                  */
                 if(method_exists($controllerClass,
                             $controlerName.'Action')) {
-                    //print_r('-- method found--');
-                    //$controller->layout($config['module_layouts'][$moduleNamespace]);
+                    $controller->layout($config['module_layouts'][$moduleNamespace]);
                 } else {
-                    //print_r('-- method not found--');
                     //throw new \Zend\Mvc\Exception\BadMethodCallException('404 Page not found',404);
                     //throw new \Exception();
                     /**
@@ -118,12 +115,12 @@ namespace Admin;
          * written for test purposes
          * @author Mustafa Zeynel Dağlı
          */
-        $eventManager->getSharedManager()->attach('Zend\Mvc\Controller\AbstractActionController', 
+        /*$eventManager->getSharedManager()->attach('Zend\Mvc\Controller\AbstractActionController', 
                                                     'render.error', 
                                                     function($e) {
             print_r('--render error--');
 
-        }, 200);
+        }, 200);*/
         
         /**
          * written for test purposes
@@ -189,7 +186,7 @@ namespace Admin;
             $controllerClass = get_class($controller);
             $moduleNamespace = substr($controllerClass, 0, strpos($controllerClass, '\\'));
             $moduleNamespace = strtolower(trim($moduleNamespace));
-            //print_r($role);
+            //print_r('--role-->'.$role);
             //print_r($acl);
             //print_r($acl->isAllowed($role, 'SayfaErişim', $moduleNamespace.'-'.$controlerName));
             if ( !$acl->isAllowed($role, 'SayfaErişim', $moduleNamespace.'-'.$controlerName)){

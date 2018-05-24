@@ -12,14 +12,26 @@
  */
 
 return array(
-    'module_layouts' => array(
+    /**
+     * @author Mustafa Zeynel Dağlı
+     * @deprecated since 24/05/2018 
+     *   */
+    /*
+     * 
+     * 'module_layouts' => array(
        'Application' => 'layout/layout.phtml',  
         'Admin' => 'layout/default.phtml',      
        'Login' => 'layout/login.phtml',
        'Sanalfabrika' => 'layout/sanalfabrika.phtml',
        //'Error' => 'layout/error.phtml',
        'Managerdirector' => 'layout/index.phtml', 
-   ),
+       'Backofficeaftersales' => 'layout/index.phtml', 
+   ),*/
+    /**
+     * @author Mustafa Zeynel Dağlı
+     * @deprecated since 24/05/2018
+     */
+    
     /*'action_layouts' => array(
         'Sanalfabrika' => array(
             'registration' => 'layout/registrationLayout.phtml',
@@ -95,6 +107,7 @@ return array(
         'Admin',
         'Sanalfabrika',
         'Managerdirector',
+        'Backofficeaftersales', 
     ),
     'ActionsTobeAuthenticated' => array(
         'Sanalfabrika' => array(

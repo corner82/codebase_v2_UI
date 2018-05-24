@@ -8,6 +8,26 @@
 
  class ErrorController extends AbstractActionController
  {
+     
+     public function error404Action()
+     {
+         
+         $this->layout('layout/error');
+         $langCode = $this->getServiceLocator()
+                            ->get('serviceTranslator');
+        $requestUriRegulated = $this->getServiceLocator()
+                            ->get('serviceTranslatorUrlRegulator');
+        $publicKey = $this->getServiceLocator()
+                            ->get('servicePublicKeyReader'); 
+         
+        $view = new ViewModel(array(
+            'requestUriRegulated' => $requestUriRegulated,
+            'langCode' => $langCode,
+            'publicKey' => $publicKey,
+        ));
+        return $view;
+     }
+     
      public function indexAction()  
      {
          $this->layout('layout/error');

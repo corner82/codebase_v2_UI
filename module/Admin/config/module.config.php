@@ -30,13 +30,16 @@
         'display_not_found_reason' => true,
         'display_exceptions'       => true,
         'doctype'                  => 'HTML5',
-        //'not_found_template'       => 'error/404',
-        //'exception_template'       => 'error/index', 
+        'not_found_template'       => 'error/error404',
+        'exception_template'       => 'error/index', 
          'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/default.phtml',   
-            //'admin/index/index' => __DIR__ . '/../view/admin/admin/index.phtml',
-            'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../view/error/index.phtml',
+            'admin/index/index' => __DIR__ . '/../view/admin/admin/index.phtml',
+            'backofficeaftersales/backofficeaftersales/index' => __DIR__ . '/../view/backofficeaftersales/backofficeaftersales/index.phtml',
+            'sanalfabrika/sanalfabrika/index' => __DIR__ . '/../view/sanalfabrika/sanalfabrika/index.phtml',
+            //'error/error/error404'               => __DIR__ . '/../view/error/error/error404.phtml',
+            //'error/error/index'             => __DIR__ . '/../view/error/error/index.phtml',
+             //'default_zf_error_view' => __DIR__ . '/../module/Application/view/error/index.phtml'
         ),
          'template_path_stack' => array(
             __DIR__ . '/../view',

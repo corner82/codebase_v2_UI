@@ -8,12 +8,14 @@
 return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
-        'Application',
         'Admin',
+        'Application',
+        
         'Login',
         'SanalFabrika',
-        //'Error',
+        'Error',
         'Managerdirector',
+        'Backofficeaftersales',
     ),
     
     // These are various options for the listeners attached to the ModuleManager
@@ -93,6 +95,7 @@ return array(
             'serviceAuthenticatedRedirect' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirect',
             'serviceAuthenticatedRedirectAdmin' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectAdmin',
             'serviceAuthenticatedRedirectUser' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectUser',
+            'serviceAuthenticatedRedirectBackOfficeAfterSales' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectAfterSalesBackOffice',
             'serviceAuthenticatedRedirectManager' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectManager',
             'serviceTranslator' => 'Custom\Services\MultiLanguage\FactoryServiceTranslator', 
             'textBaseFilter' => 'Custom\Services\Services\Filter\TextBaseFilter',

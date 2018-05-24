@@ -16,6 +16,7 @@ class Module
 {
     public function onBootstrap(MvcEvent $e)
     {
+        $eventManager = $e->getApplication()->getEventManager();
         /*$translator = $e->getApplication()->getServiceManager()->get('translator');
         $translator->setLocale('ru_RU');*/
         
@@ -26,11 +27,18 @@ class Module
          * @since 25/12/2015
          *
          */
-        /*$eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function($e) {
+        $eventManager->attach(MvcEvent::EVENT_DISPATCH_ERROR, function($e) {
         $error = $e->getError();
+        /*print_r('--application module-->');
+        print_r($error);*/
+        //exit();
         switch ($error) {
             case \Zend\Mvc\Application::ERROR_CONTROLLER_NOT_FOUND:
+                print_r('ERROR_CONTROLLER_NOT_FOUND');
+                break;
             case \Zend\Mvc\Application::ERROR_CONTROLLER_INVALID:
+                print_r('ERROR_CONTROLLER_INVALID');
+                break;
             case \Zend\Mvc\Application::ERROR_ROUTER_NO_MATCH:
                 print_r('ERROR_ROUTER_NO_MATCH');
                 $response = $e->getResponse();
@@ -39,7 +47,7 @@ class Module
                         //->getParams();*/
                 //$e->getRouter()->getRoute();
                 
-                /*$request = $e->getRequest();
+                $request = $e->getRequest();
                 $requestMeta = $request->getMetadata();
                 $requesturi = $request->getUri();
                 print_r($requesturi);
@@ -51,7 +59,7 @@ class Module
                 return $response;
             break;
         }
-    }, 100);*/
+    }, 100);
         
     }
 

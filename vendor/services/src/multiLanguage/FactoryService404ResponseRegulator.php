@@ -102,6 +102,7 @@ class FactoryService404ResponseRegulator implements FactoryInterface{
         } else {
             $translator->setLocale(SystemLanguages::TR_LOCALE);
         }
+        print_r('--request uri-->'.$requestUri);
         return $requestUri;
     }
 }
