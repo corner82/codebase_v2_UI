@@ -8,9 +8,27 @@
 
  class ErrorController extends AbstractActionController
  {
+     public function errorhandlerAction()
+     {
+         //$this->layout('layout/404layout');
+         $langCode = $this->getServiceLocator()
+                            ->get('serviceTranslator');
+        $requestUriRegulated = $this->getServiceLocator()
+                            ->get('serviceTranslatorUrlRegulator');
+        $publicKey = $this->getServiceLocator()
+                            ->get('servicePublicKeyReader'); 
+         
+        $view = new ViewModel(array(
+            'requestUriRegulated' => $requestUriRegulated,
+            'langCode' => $langCode,
+            'publicKey' => $publicKey,
+        ));
+        return $view;
+     }
+     
      public function error401Action()
      {
-         $this->layout('layout/401layout');
+         //$this->layout('layout/401layout');
          $langCode = $this->getServiceLocator()
                             ->get('serviceTranslator');
         $requestUriRegulated = $this->getServiceLocator()
@@ -28,7 +46,7 @@
      
      public function error404Action()
      {
-         $this->layout('layout/404layout');
+         //$this->layout('layout/404layout');
          $langCode = $this->getServiceLocator()
                             ->get('serviceTranslator');
         $requestUriRegulated = $this->getServiceLocator()
@@ -46,7 +64,7 @@
      
      public function indexAction()  
      {
-         $this->layout('layout/error');
+         //$this->layout('layout/error');
      }
 
      public function addAction()

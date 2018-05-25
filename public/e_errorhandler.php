@@ -7,7 +7,7 @@ define('E_FATAL',  E_ERROR | E_USER_ERROR | E_PARSE | E_CORE_ERROR |
  
 define('DISPLAY_ERRORS', TRUE);
 define('ERROR_REPORTING', E_ALL | E_STRICT);
-ini_set("display_errors", 0);
+ini_set("display_errors", 1);
  
 register_shutdown_function('shut');
 set_error_handler('handler');

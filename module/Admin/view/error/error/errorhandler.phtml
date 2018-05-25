@@ -1,26 +1,3 @@
-<?php
-$reasonMessage= '';
-print_r($this->reason);
-switch ($this->reason) {
-    case 'error-controller-cannot-dispatch':
-        $reasonMessage = $this->translate('The requested controller was unable to dispatch the request.');
-        break;
-    case 'error-controller-not-found':
-        $reasonMessage = $this->translate('The requested controller could not be mapped to an existing controller class.');
-        break;
-    case 'error-controller-invalid':
-        $reasonMessage = $this->translate('The requested controller was not dispatchable.');
-        break;
-    case 'error-router-no-match':
-        $reasonMessage = $this->translate('The requested URL could not be matched by routing.');
-        break;
-    default:
-        $reasonMessage = $this->translate('We cannot determine at this time why a 404 was generated.');
-        break;
-}
-?>
-
-
 <html>
 	<head>
 		<title>0hh Website Template | Home :: W3layouts</title>
@@ -54,7 +31,7 @@ img{max-width:100%;}
 /*end reset*
  */
 body{
-	background: url(/errorpages/404/images/bg1.png);
+	background: url(../errorpages/404/images/bg1.png);
 	font-family: "Century Gothic",Arial, Helvetica, sans-serif;
 	}
 .content p{
@@ -208,7 +185,7 @@ body{
 			<!---End-header---->
 			<!--start-content------>
 			<div class="content">
-				<img src="<?php echo $this->basePath('errorpages/404/images/error-img.png') ?>" title="error" />
+				<img src="<?php echo realpath(__DIR__ . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) ?>/errorpages/exceptions/images/Finding_Bug-512.png" title="error" />
 				<p><span><label>O</label>hh.....</span>You Requested the page that is no longer There.</p>
 				<a href="#">Back To Home</a>
 				<div class="copy-right">

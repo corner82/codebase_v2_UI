@@ -1,0 +1,45 @@
+<?php
+$reasonMessage= '';
+print_r('--reason-->'.$this->reason.'--');
+switch ($this->reason) {
+    case 'error-controller-cannot-dispatch':
+        $reasonMessage = $this->translate('The requested controller was unable to dispatch the request.');
+        break;
+    case 'error-controller-not-found':
+        $reasonMessage = $this->translate('The requested controller could not be mapped to an existing controller class.');
+        break;
+    case 'error-controller-invalid':
+        $reasonMessage = $this->translate('The requested controller was not dispatchable.');
+        break;
+    case 'error-router-no-match':
+        $reasonMessage = $this->translate('The requested URL could not be matched by routing.');
+        break;
+    default:
+        $reasonMessage = $this->translate('We cannot determine at this time why a 404 was generated.');
+        break;
+}
+?>
+	
+		<!--start-wrap--->
+		<div class="wrap">
+			<!---start-header---->
+				<div class="header">
+					<div class="logo">
+						<h1><a href="#">Ohh</a></h1>
+					</div>
+				</div>
+			<!---End-header---->
+			<!--start-content------>
+			<div class="content">
+				<img src="<?php echo $this->basePath('errorpages/404/images/error-img.png') ?>" title="error" />
+				<p><span><label>O</label>hh.....</span>You Requested the page that is no longer There.</p>
+				<a href="#">Back To Home</a>
+				<div class="copy-right">
+					<p>&copy; 2013 Ohh. All Rights Reserved | Design by <a href="http://w3layouts.com/">W3Layouts</a></p>
+				</div>
+   			</div>
+			<!--End-Cotent------>
+		</div>
+		<!--End-wrap--->
+
+

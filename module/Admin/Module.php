@@ -50,7 +50,7 @@ namespace Admin;
          * @since 25/05/2018  
          * @todo will be tested and implemented if necessary
          */
-        //$eventManager->attach('dispatch.error', array($this, 'dispatchErrorControl'));
+        $eventManager->attach('dispatch.error', array($this, 'dispatchErrorControl'));
         
         // translator service attaching to dispatch error event
         //$eventManager->attach('dispatch.error', array($this, 'Error404PageTranslatorControl')); 
@@ -173,7 +173,7 @@ namespace Admin;
      * @todo will be tested and implemented if necessary
      */
     public function dispatchErrorControl(MvcEvent $e) {
- 
+        print_r('--dispatchErrorControl method--');
     }
 
     /**
@@ -197,19 +197,31 @@ namespace Admin;
             $role = $sessionData['__ZY'];
         
             $controlerName = $e->getRouteMatch()->getParam('action');
-            //print_r($controlerName);
+            print_r('--controler name-->'.$controlerName.'--');
             $controller = $e->getTarget();
             $controllerClass = get_class($controller);
             $moduleNamespace = substr($controllerClass, 0, strpos($controllerClass, '\\'));
             $moduleNamespace = strtolower(trim($moduleNamespace));
-            //print_r('--role-->'.$role);
+            $route = $e ->getRouteMatch()
+                                ->getMatchedRouteName();
+            print_r('--route-->'.$route);
+            print_r('--role-->'.$role);
             //print_r($acl);
             //print_r($acl->isAllowed($role, 'SayfaErişim', $moduleNamespace.'-'.$controlerName));
             if ( !$acl->isAllowed($role, 'SayfaErişim', $moduleNamespace.'-'.$controlerName)){
                 //print_r('--acl not allowed--');
-                $route = $e ->getRouteMatch()
-                                ->getMatchedRouteName();
-                if($route !== 'error') {   
+                
+                $error = $e->getError();
+                print_r('--error-->'.$error.'--');
+                //print_r('--status code-->'.$response->getStatusCode().'--');
+                /**
+                 * controler name (not-found) kontrolü koyuldu, bu kontrol olmadan 
+                 * 'ERROR_CONTROLLER_CANNOT_DISPATCH' event teiklendiğinde erişim izin verilmiyor ve
+                 * daha sonra ACL içinde bulunamayan sayfa yanlışlıkla '401' sayfasına yönlendiriliyordu
+                 * @since 25/05/2018
+                 * @author Mustafa Zeynel Dağlı
+                 */
+                if($route !== 'error' && $controlerName != 'not-found') {   
                    $router = $e->getRouter();
                     // $url    = $router->assemble(array(), array('name' => 'Login/auth')); // assemble a login route
                    $url    = $router->assemble(array('action' => 'error401'), 
@@ -219,7 +231,16 @@ namespace Admin;
                    // redirect to login page or other page.
                    $response->getHeaders()->addHeaderLine('Location', $url);
                    $e->stopPropagation(); 
-                } 
+                } else if($controlerName == 'not-found') {
+                    $router = $e->getRouter();
+                    $url    = $router->assemble(array('action' => 'error404'), 
+                                               array('name' => 'error'));
+                   $response = $e->getResponse();
+                   $response->setStatusCode(302);
+                   // redirect to login page or other page.
+                   $response->getHeaders()->addHeaderLine('Location', $url);
+                   $e->stopPropagation(); 
+                }
             }
         }
     }
@@ -340,5 +361,36 @@ namespace Admin;
      {
          return include __DIR__ . '/config/module.config.php';
      }
+     
+     /**
+      * module ait controler çağırılmışmı kontrolü için güzel bir örnek
+     * @param  \Zend\Mvc\MvcEvent $e The MvcEvent instance
+     * @return void
+      * @author Mustafa Zeynel Dağlı
+      * @since 25/05/2018
+      * @todo will be tested 
+     */
+    public function registerJsonStrategy($e)
+    {
+        $matches    = $e->getRouteMatch();
+        $controller = $matches->getParam('controller');
+        if (false === strpos($controller, __NAMESPACE__)) {
+            // not a controller from this module
+            return;
+        }
+
+        // Potentially, you could be even more selective at this point, and test
+        // for specific controller classes, and even specific actions or request
+        // methods.
+
+        // Set the JSON strategy when controllers from this module are selected
+        $app          = $e->getTarget();
+        $locator      = $app->getServiceManager();
+        $view         = $locator->get('Zend\View\View');
+        $jsonStrategy = $locator->get('ViewJsonStrategy');
+
+        // Attach strategy, which is a listener aggregate, at high priority
+        $view->getEventManager()->attach($jsonStrategy, 100);
+    }
  }
 

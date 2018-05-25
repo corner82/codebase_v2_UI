@@ -31,7 +31,7 @@ img{max-width:100%;}
 /*end reset*
  */
 body{
-	background: url(../images/bg1.png);
+	background: url(../errorpages/404/images/bg1.png);
 	font-family: "Century Gothic",Arial, Helvetica, sans-serif;
 	}
 .content p{
@@ -185,7 +185,7 @@ body{
 			<!---End-header---->
 			<!--start-content------>
 			<div class="content">
-				<img src="../errorpages/404/images/error-img.png" title="error" />
+				<img src="<?php echo realpath(__DIR__ . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)) ?>/errorpages/exceptions/images/bug-son.png" title="error" />
 				<p><span><label>O</label>hh.....</span>You Requested the page that is no longer There.</p>
 				<a href="#">Back To Home</a>
 				<div class="copy-right">
