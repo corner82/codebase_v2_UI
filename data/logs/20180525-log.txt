@@ -1,0 +1,144 @@
+2018-05-25T09:17:41+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /admin
+2018-05-25T09:17:41+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\public\e_errorhandler.php at line : 89
+    with type error : E_WARNING : include(C:\xampp\htdocs\miya_performans\public/module/Admin/view/error/error/e_handler.phtml): failed to open stream: No such file or directory in /admin
+2018-05-25T09:20:56+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /admin
+2018-05-25T09:21:40+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /admin
+2018-05-25T09:25:37+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /admin
+2018-05-25T09:25:37+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /images/error-img.png
+2018-05-25T09:25:37+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /images/bg1.png
+2018-05-25T09:27:51+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /admin
+2018-05-25T09:27:51+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /images/bg1.png
+2018-05-25T09:28:34+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /admin
+2018-05-25T09:28:34+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /images/bg1.png
+2018-05-25T09:49:12+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /admin
+2018-05-25T09:49:12+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /images/bg1.png
+2018-05-25T09:55:48+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /admin
+2018-05-25T09:55:49+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /images/bg1.png
+2018-05-25T10:01:33+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /admin
+2018-05-25T10:01:34+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Admin) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Admin')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('loadModules in /images/bg1.png
+2018-05-25T10:42:45+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Application\Module.php at line : 76
+    with type error : E_NOTICE : Undefined variable: event in /imalat/error//favicon.ico
+2018-05-25T10:45:14+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Application\Module.php at line : 76
+    with type error : E_NOTICE : Undefined variable: event in /imalat/error//favicon.ico
+2018-05-25T10:48:07+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Application\Module.php at line : 76
+    with type error : E_NOTICE : Undefined variable: event in /imalat/error//favicon.ico
+2018-05-25T10:49:05+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Admin\Module.php at line : 219
+    with type error : E_ERROR : Call to undefined method Zend\Http\PhpEnvironment\Response::setResponseCode() in /bckoff
+2018-05-25T10:49:07+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Admin\Module.php at line : 219
+    with type error : E_ERROR : Call to undefined method Zend\Http\PhpEnvironment\Response::setResponseCode() in /bckoff
+2018-05-25T10:49:07+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Application\Module.php at line : 76
+    with type error : E_NOTICE : Undefined variable: event in /images/bg1.png
+2018-05-25T10:51:35+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Application\Module.php at line : 76
+    with type error : E_NOTICE : Undefined variable: event in /imalat/error//favicon.ico

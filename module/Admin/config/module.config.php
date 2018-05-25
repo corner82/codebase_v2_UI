@@ -12,7 +12,7 @@
              'admin' => array(
                  'type'    => 'segment',
                  'options' => array(
-                     'route'    => '[/:lang]/admin[/:action][/:id]',
+                     'route'    => '[/:lang]/admin[/][:action][/][:id]',
                      'constraints' => array(
                          'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                          'id'     => '([en]|[tr]|[fa]|[ru]|[ar]|[de]|[zh]){2}+',
@@ -28,8 +28,9 @@
      ),
      'view_manager' => array(
         'display_not_found_reason' => true,
-        'display_exceptions'       => true,
+        'display_exceptions'       => false,
         'doctype'                  => 'HTML5',
+        'display_not_found_reason' => 'error/error404',
         'not_found_template'       => 'error/error404',
         'exception_template'       => 'error/index', 
          'template_map' => array(

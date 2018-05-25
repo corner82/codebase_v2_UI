@@ -35,28 +35,47 @@ class Module
         switch ($error) {
             case \Zend\Mvc\Application::ERROR_CONTROLLER_NOT_FOUND:
                 print_r('ERROR_CONTROLLER_NOT_FOUND');
+                exit();
                 break;
             case \Zend\Mvc\Application::ERROR_CONTROLLER_INVALID:
                 print_r('ERROR_CONTROLLER_INVALID');
+                exit();
+                
+                $url = $e->getRouter()
+                             ->assemble(array('action' => 'error404'), 
+                                                 array('name' => 'error'));
+                $response = $e->getResponse();  
+                $response->setHeaders( $response->getHeaders ()
+                                                ->addHeaderLine ('Location', $url));
+                $response->setStatusCode(302);
+                $response->sendHeaders();
+                $event->stopPropagation();       
+                exit ();
+                //return $response;
+                break;
+            case \Zend\Mvc\Application::ERROR_EXCEPTION:
+                print_r('ERROR_EXCEPTION');
+                exit();
+                break;
+            case \Zend\Mvc\Application::ERROR_CONTROLLER_CANNOT_DISPATCH:
+                print_r('ERROR_CONTROLLER_CANNOT_DISPATCH');
+                exit();
                 break;
             case \Zend\Mvc\Application::ERROR_ROUTER_NO_MATCH:
-                print_r('ERROR_ROUTER_NO_MATCH');
-                $response = $e->getResponse();
-               /* $lang = $e->getRouter()
-                          //->getParam('lang');
-                        //->getParams();*/
-                //$e->getRouter()->getRoute();
-                
-                $request = $e->getRequest();
-                $requestMeta = $request->getMetadata();
-                $requesturi = $request->getUri();
-                print_r($requesturi);
-                $response = $e->getResponse();
-                $response->getHeaders()->addHeaderLine('Location', '/?lang=12');
-                $response->getHeaders()->addHeaderLine('lang', '12');
-                //$response->setStatusCode(302);
-                print_r($response->getHeaders('Location'));
-                return $response;
+                /*print_r('ERROR_ROUTER_NO_MATCH');
+                exit();*/
+
+                $url = $e->getRouter()
+                             ->assemble(array('action' => 'error404'), 
+                                                 array('name' => 'error'));
+                $response = $e->getResponse();  
+                $response->setHeaders( $response->getHeaders ()
+                                                ->addHeaderLine ('Location', $url));
+                $response->setStatusCode(302);
+                $response->sendHeaders();
+                $event->stopPropagation();       
+                exit ();
+                //return $response;
             break;
         }
     }, 100);

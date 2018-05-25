@@ -10,7 +10,6 @@ return array(
     'modules' => array(
         'Admin',
         'Application',
-        
         'Login',
         'SanalFabrika',
         'Error',

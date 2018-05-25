@@ -44,6 +44,14 @@ namespace Admin;
          */
         $eventManager->attach('dispatch', array($this, 'pageLogControl'));
         
+        /**
+         * disptach error handler
+         * @author Mustafa Zeynel Dağlı
+         * @since 25/05/2018  
+         * @todo will be tested and implemented if necessary
+         */
+        //$eventManager->attach('dispatch.error', array($this, 'dispatchErrorControl'));
+        
         // translator service attaching to dispatch error event
         //$eventManager->attach('dispatch.error', array($this, 'Error404PageTranslatorControl')); 
 
@@ -126,14 +134,13 @@ namespace Admin;
          * written for test purposes
          * @author Mustafa Zeynel Dağlı
          */
-        $eventManager->getSharedManager()->attach('Zend\Mvc\Controller\AbstractActionController', 
+        /*$eventManager->getSharedManager()->attach('Zend\Mvc\Controller\AbstractActionController', 
                                                     'finish', 
                                                     function($e) {
             print_r('--finish--');
-        }, 300);
+        }, 300);*/
 
         $moduleRouteListener->attach($eventManager);  
-        
     }
     
     /**
@@ -157,9 +164,18 @@ namespace Admin;
     public function privilegeCreater(MvcEvent $e) {
         //print_r('--dispatch event privilege creater--');
         $privilegesResult = $e->getApplication()->getServiceManager()->get('serviceAclPrivilegeCreator');
-        
     }
     
+     /* 
+     * @param MvcEvent $e
+     * @author Mustafa Zeynel Dağlı
+     * @since 25/05/2018
+     * @todo will be tested and implemented if necessary
+     */
+    public function dispatchErrorControl(MvcEvent $e) {
+ 
+    }
+
     /**
      * 
      * @param MvcEvent $e
@@ -196,7 +212,7 @@ namespace Admin;
                 if($route !== 'error') {   
                    $router = $e->getRouter();
                     // $url    = $router->assemble(array(), array('name' => 'Login/auth')); // assemble a login route
-                   $url    = $router->assemble(array('action' => 'index'), 
+                   $url    = $router->assemble(array('action' => 'error401'), 
                                                array('name' => 'error'));
                    $response = $e->getResponse();
                    $response->setStatusCode(302);
@@ -206,8 +222,6 @@ namespace Admin;
                 } 
             }
         }
-        
-        
     }
 
     /**
