@@ -197,15 +197,15 @@ namespace Admin;
             $role = $sessionData['__ZY'];
         
             $controlerName = $e->getRouteMatch()->getParam('action');
-            print_r('--controler name-->'.$controlerName.'--');
+            //print_r('--controler name-->'.$controlerName.'--');
             $controller = $e->getTarget();
             $controllerClass = get_class($controller);
             $moduleNamespace = substr($controllerClass, 0, strpos($controllerClass, '\\'));
             $moduleNamespace = strtolower(trim($moduleNamespace));
             $route = $e ->getRouteMatch()
                                 ->getMatchedRouteName();
-            print_r('--route-->'.$route);
-            print_r('--role-->'.$role);
+            //print_r('--route-->'.$route);
+            //print_r('--role-->'.$role);
             //print_r($acl);
             //print_r($acl->isAllowed($role, 'SayfaErişim', $moduleNamespace.'-'.$controlerName));
             if ( !$acl->isAllowed($role, 'SayfaErişim', $moduleNamespace.'-'.$controlerName)){

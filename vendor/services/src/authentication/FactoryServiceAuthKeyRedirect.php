@@ -18,7 +18,7 @@ class FactoryServiceAuthKeyRedirect  implements FactoryInterface{
         $route = $event ->getRouteMatch()
                         ->getMatchedRouteName();
         $url = $event->getRouter()
-                     ->assemble(array('action' => 'index'), 
+                     ->assemble(array('action' => 'login'), 
                                 array('name' => 'sanalfabrika'));
         $response = $event->getResponse();  
         $response->setHeaders( $response->getHeaders ()

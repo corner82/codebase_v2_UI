@@ -16,14 +16,14 @@ return array(
                     'route' => '/',
                     'defaults' => array(
                         'controller' => 'Sanalfabrika\Controller\Sanalfabrika',
-                        'action' => 'index',
+                        'action' => 'login',
                     ),
                 ),
             ),
             'sanalfabrika' => array(
                 'type' => 'segment',
                 'options' => array(
-                    'route' => '[/:lang]/imalat/OSB[/:action][/:id][/:selectedCompanyShN][/:selectedCompanyNpk]', 
+                    'route' => '[/:lang]/man/performans[/][:action][/][:id][/:selectedCompanyShN][/][:selectedCompanyNpk]', 
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id' => '[0-9]+',
@@ -35,7 +35,7 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Sanalfabrika\Controller\Sanalfabrika',
-                        'action' => 'index',
+                        'action' => 'login',
                     ),
                 ),
             ),

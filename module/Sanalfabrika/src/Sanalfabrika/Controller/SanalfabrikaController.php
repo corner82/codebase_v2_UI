@@ -168,7 +168,7 @@ class SanalfabrikaController extends AbstractActionController {
                         $event = $this->getEvent();
                         $authManager->getStorage()->clear();
                         $response = $this->getResponse();
-                        $url = $event->getRouter()->assemble(array('action' => 'index'), array('name' => 'sanalfabrika'));
+                        $url = $event->getRouter()->assemble(array('action' => 'login'), array('name' => 'sanalfabrika'));
                         $response->setHeaders($response->getHeaders()->addHeaderLine('Location', $url));
                         $response->setStatusCode(302);
                         $response->sendHeaders();

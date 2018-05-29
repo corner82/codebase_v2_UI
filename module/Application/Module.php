@@ -34,8 +34,8 @@ class Module
         //exit();
         switch ($error) {
             case \Zend\Mvc\Application::ERROR_CONTROLLER_NOT_FOUND:
-                print_r('ERROR_CONTROLLER_NOT_FOUND');
-                exit();
+                //print_r('ERROR_CONTROLLER_NOT_FOUND');
+                //exit();
                 
                 $url = $e->getRouter()
                              ->assemble(array('action' => 'error404'), 
@@ -50,8 +50,8 @@ class Module
                 
                 break;
             case \Zend\Mvc\Application::ERROR_CONTROLLER_INVALID:
-                print_r('ERROR_CONTROLLER_INVALID');
-                exit();
+                //print_r('ERROR_CONTROLLER_INVALID');
+                //exit();
                 
                 $url = $e->getRouter()
                              ->assemble(array('action' => 'error404'), 
@@ -66,8 +66,8 @@ class Module
                 //return $response;
                 break;
             case \Zend\Mvc\Application::ERROR_EXCEPTION:
-                print_r('ERROR_EXCEPTION');
-                exit();
+                //print_r('ERROR_EXCEPTION');
+                //exit();
                 
                 $url = $e->getRouter()
                              ->assemble(array('action' => 'errorhandler'), 
@@ -83,8 +83,8 @@ class Module
                 
                 break;
             case \Zend\Mvc\Application::ERROR_CONTROLLER_CANNOT_DISPATCH:
-                print_r('--ERROR_CONTROLLER_CANNOT_DISPATCH--');
-                exit();
+                //print_r('--ERROR_CONTROLLER_CANNOT_DISPATCH--');
+                //exit();
                 
                 $url = $e->getRouter()
                              ->assemble(array('action' => 'error404'), 
@@ -99,7 +99,7 @@ class Module
                 //return $response;
                 break;
             case \Zend\Mvc\Application::ERROR_ROUTER_NO_MATCH:
-                print_r('--ERROR_ROUTER_NO_MATCH--');
+                //print_r('--ERROR_ROUTER_NO_MATCH--');
                 //exit();
 
                 $url = $e->getRouter()
