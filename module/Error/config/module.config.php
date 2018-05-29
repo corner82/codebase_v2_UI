@@ -14,7 +14,7 @@
                  'type'    => 'segment',
                  'options' => array(
                      //'route'    => '/ostim/sanalfabrika/error/[:lang][/:action]',   
-                     'route'    => '/man/error/[/:action]',   
+                     'route'    => '/man/error/[:action]',   
                      'constraints' => array(
                          'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                          //'lang' => '((en)|(tr)|(ru)|(zh)|(de)|(ar)|(fa))',     

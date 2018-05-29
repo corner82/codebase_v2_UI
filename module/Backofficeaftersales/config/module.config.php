@@ -13,10 +13,11 @@ return array(
             'backofficeaftersales' => array(
                 'type' => 'segment',
                 'options' => array(
-                    'route' => '[/:lang]/bckoff[/:action][/:id][/:selectedCompanyShN][/:selectedCompanyNpk]', 
+                    'route' => '[/:lang]/bckoff[:test][:action][:test][:id][:test][:selectedCompanyShN][:test][:selectedCompanyNpk]', 
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id' => '[0-9]+',
+                        'test' => '/{1}',
 //                        'id' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         //'lang' => '[a-zA-Z]{2}+',
                         //'lang' => '(([en])|(tr)|(fa)|[ru]|[ar]|[de]|[zh]){2}+',

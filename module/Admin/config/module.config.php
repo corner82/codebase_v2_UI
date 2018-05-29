@@ -12,8 +12,9 @@
              'admin' => array(
                  'type'    => 'segment',
                  'options' => array(
-                     'route'    => '[/:lang]/admin[/][:action][/][:id]',
+                     'route'    => '[/:lang]/admin[:test][:action][:test][:id]',
                      'constraints' => array(
+                         'test' => '/{1}',
                          'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                          'id'     => '([en]|[tr]|[fa]|[ru]|[ar]|[de]|[zh]){2}+',
                          'lang' => '((en)|(tr)|(ru)|(zh)|(de)|(ar)|(fa)|(af))',

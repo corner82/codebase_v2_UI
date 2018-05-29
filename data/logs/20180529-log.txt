@@ -1,0 +1,116 @@
+2018-05-29T08:59:23+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[/:lang]/man/pe...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[/:lang]/man/pe...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /man/performans////
+2018-05-29T08:59:25+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[/:lang]/man/pe...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[/:lang]/man/pe...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /man/performans///errorpages/404/images/bg1.png
+2018-05-29T08:59:26+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[/:lang]/man/pe...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[/:lang]/man/pe...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /favicon.ico
+2018-05-29T09:00:14+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[/:lang]/man/pe...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[/:lang]/man/pe...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /man/performans/
+2018-05-29T09:00:15+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[/:lang]/man/pe...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[/:lang]/man/pe...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /man/errorpages/404/images/bg1.png
+2018-05-29T09:00:15+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[/:lang]/man/pe...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[/:lang]/man/pe...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /favicon.ico
+2018-05-29T09:00:21+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[/:lang]/man/pe...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[/:lang]/man/pe...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /man/performans
+2018-05-29T09:00:22+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[/:lang]/man/pe...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[/:lang]/man/pe...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /favicon.ico
+2018-05-29T09:01:56+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[:/][:lang]/man...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[:/][:lang]/man...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /man/performans
+2018-05-29T09:01:56+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[:/][:lang]/man...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[:/][:lang]/man...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /favicon.ico
+2018-05-29T09:02:27+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[:/][:lang]/man...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[:/][:lang]/man...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /man/performans
+2018-05-29T09:02:27+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[:/][:lang]/man...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[:/][:lang]/man...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /favicon.ico
+2018-05-29T09:04:53+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[:/][:lang]/man...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[:/][:lang]/man...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /man/performans
+2018-05-29T09:04:54+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Found empty parameter name' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php:175
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(114): Zend\Mvc\Router\Http\Segment->parseRouteDefinition('[:/][:lang]/man...')
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\Http\Segment.php(146): Zend\Mvc\Router\Http\Segment->__construct('[:/][:lang]/man...', Array, Array)
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-mvc\src\Router\RoutePluginManager.php(111): Zend\Mvc\Router\Http\Segment::factory(Array)
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(642): Zend\Mvc\Router\RoutePluginManager->createFromInvokable('segment', 'segment')
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(598): Zend\ServiceManager\S in /favicon.ico
+2018-05-29T09:35:03+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Sanalfabrika\config\module.config.php at line : 34
+    with type error : E_PARSE : syntax error, unexpected ''lang'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /admin/
+2018-05-29T09:35:03+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Sanalfabrika\config\module.config.php at line : 34
+    with type error : E_PARSE : syntax error, unexpected ''lang'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /favicon.ico
