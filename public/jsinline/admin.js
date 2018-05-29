@@ -79,7 +79,7 @@ Highcharts.wrap(Highcharts.Chart.prototype, 'getContainer', function (proceed) {
 });
 
 Highcharts.theme = {
-   colors: ["#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+   colors: ["#253A49", "#B3B2B2",  "#E50046", "#4A96D2", "#9CA5B3", "#BBC801", "#FDC400", "#CBD0D8", "#707E8E", "#000000",
       "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
    chart: {
       backgroundColor: null,
@@ -3277,8 +3277,73 @@ $('#detay_acilan_bayi_stoklari').click(function()
             console.error(jqXHR);
         }
     });
+  
     
+/**
+ * loading image for roles dropdown
+ * @author Mustafa Zeynel Dağlı
+ * @since 11/08/2016
+ */
+$("#loading-image-roles").loadImager();
+$("#loading-image-roles").loadImager('appendImage');    
     
+
+/**
+ * Roles dropdown prepared
+ * @type @call;$@call;ajaxCallWidget
+ * @since 11/08/2016
+ */
+var ajaxACLResources = $('#loading-image-roles').ajaxCallWidget({
+    proxy : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'pkFillRolesDdlist_sysAclRoles' ,
+                    pk : $("#pk").val() 
+            }
+   })
+ajaxACLResources.ajaxCallWidget ({
+     onError : function (event, textStatus,errorThrown) {
+         dm.dangerMessage({
+            onShown : function() {
+                $('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+         dm.dangerMessage('show', 'Rol Bulunamamıştır...',
+                                  'Rol  bulunamamıştır...');
+     },
+     onSuccess : function (event, data) {
+         var data = $.parseJSON(data);
+         $('#loading-image-roles').loadImager('removeLoadImage');
+         $('#dropdownRoles').ddslick({
+            height : 200,
+            data : data, 
+            width:'98%',
+            selectText: "Select your preferred social network",
+            //showSelectedHTML : false,
+            defaultSelectedIndex: 3,
+            search : true,
+            multiSelect : true,
+            tagBox : 'tag-container',
+            //multiSelectTagID : 'deneme',
+            //imagePosition:"right",
+            onSelected: function(selectedData){
+                if(selectedData.selectedData.value>0) {
+                    /*$('#tt_tree_menu').tree({
+                        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php?url=pkFillForAdminTree_leftnavigation&pk=' + $("#pk").val()+ '&role_id='+selectedData.selectedData.value+'&language_code='+$("#langCode").val(),
+                    });*/
+                }
+            }   
+        });   
+     },
+     onErrorDataNull : function (event, data) {
+         dm.dangerMessage({
+            onShown : function() {
+                $('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+         dm.dangerMessage('show', 'Rol Bulunamamıştır...',
+                                  'Rol  bulunamamıştır...');
+     },
+}) 
+ajaxACLResources.ajaxCallWidget('call');
     
     /*
      * Author: Abdullah A Almsaeed

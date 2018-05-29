@@ -4655,3 +4655,75 @@ if it's not present, don't show loader */
     border-radius: 3px;
 }
 
+/* MAN Kurumsal renkleri*/
+.bg-man-ligth-grey {
+  background-color: #CBD0D8 !important;
+}
+
+.bg-man-ligth2-grey {
+  background-color: #9CA5B3 !important;
+}
+
+.bg-man-medium-grey {
+  background-color: #707E8E !important;
+}
+
+.bg-man-light-black {
+  background-color: #253A49;
+  color:#fff;
+}
+
+.bg-man-black {
+  background-color: #000000;
+  color:#fff;
+}
+
+.bg-man-silver {
+  background-color: #B3B2B2;
+  color:#fff;
+}
+
+.bg-man-blue {
+  background-color: #4A96D2;
+  color:#fff;
+}
+
+.bg-man-yellow {
+  background-color: #FDC400;
+  color:#fff;
+}
+
+.bg-man-green {
+  background-color: #BBC801;
+  color:#fff;
+}
+
+.bg-man-red {
+  background-color: #E50046;
+  color:#fff;
+}
+
+.bg-man-grey-small-box-footer {
+    background-color: #9CA5B3 !important;
+}
+
+.man-header-red {
+    color:#E50046;
+    font-weight: bold;
+}
+
+.bg-man-ligth-grey > div > h3 {
+    color: #E50046 !important;
+}
+
+.bg-man-ligth-grey > div > p {
+    color: #253A49 !important;
+    font-weight: bold;
+}
+
+.bg-man-main-aside {
+    background-color: #000000;
+}
+
+
+
