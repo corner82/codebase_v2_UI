@@ -3,46 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/zendframework/zend-mvc/src/Controller/AbstractActionController.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Sanalfabrika/src/Sanalfabrika/Controller/SanalfabrikaController.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/services/src/acl/FactoryServiceACLRoleFinder.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/backofficeaftersales/backofficeaftersales/index.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/services/src/authentication/FactoryServiceAuthenticatedRedirect.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/zendframework/zend-mvc/src/DispatchListener.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/zendframework/zend-mvc/src/View/Console/ExceptionStrategy.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/partials/adminasideuserpanelpartial.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/services/src/authentication/FactoryServiceAuthenticatedRedirectAfterSalesBackOffice.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/error/error/error401.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/error/error/error404_.phtml</file>
             <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/config/module.config.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/src/Admin/Controller/AdminController.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Error/src/Error/Controller/ErrorController.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Backofficeaftersales/Module.php</file>
             <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/admin/admin/index.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/partials/adminheaderpartial.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Application/Module.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/admin/admin/services.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/error/error/errorhandler.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/error/error/error404.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Application/config/module.config.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/Module.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/zendframework/zend-mvc/src/Application.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/data/logs/20180525-log.txt</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/services/src/authentication/FactoryServiceAuthenticatedRedirectManager.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/layout/401layout.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/zendframework/zend-mvc/src/Service/HttpExceptionStrategyFactory.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/zendframework/zend-mvc/src/Service/HttpRouteNotFoundStrategyFactory.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/public/e_errorhandler.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/error/error/e_handler.phtml</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/zendframework/zend-view/src/Renderer/PhpRenderer.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Backofficeaftersales/src/Backofficeaftersales/Controller/BackofficeaftersalesController.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/services/src/acl/FactoryServiceRoleSessionWriter.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/services/src/acl/FactoryServiceACLRolePagesCreator.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/language/ar_JO.po</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/services/src/multiLanguage/FactoryService404ResponseRegulator.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/vendor/services/src/authentication/FactoryServiceAuthenticatedRedirectCluster.php</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/layout/admin.phtml</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/jsinline/admin.js</file>
             <file>file:/C:/xampp/htdocs/miya_performans/public/index.php</file>
-            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/error/error/index.phtml</file>
         </group>
     </open-files>
 </project-private>

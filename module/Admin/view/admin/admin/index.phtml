@@ -46,22 +46,11 @@
             <div class="row">
                 <!--<section class="col-lg-7 connectedSortable">-->
                 <div class="col-md-12">
-                  <div class="box collapsed-box">
+                  <div class="box ">
                     <div class="box-header with-border">
                       <h3 class="box-title">Servisler</h3>
                       <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        <div class="btn-group">
-                          <button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i></button>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                          </ul>
-                        </div>
-                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        <button id="test-collapse" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                       </div>
                     </div><!-- /.box-header -->
                     <div class="box-body" style="display: block;">
@@ -97,7 +86,7 @@
             <div class="col-md-3 col-sm-6 col-xs-12 flip-container " ontouchstart="this.classList.toggle('hover');">
                     <div class="info-box overlay front">
                   
-                    <span class="info-box-icon bg-aqua bg-man-blue"><i class="ion ion-ios-gear-outline"></i></span>
+                    <span class="info-box-icon  bg-man-red"><i class="ion ion-ios-gear-outline"></i></span>
                     <div class="info-box-content" id="toplam_fatura_1_container">
                         <h3>
                             <div class="overlay" >
@@ -115,7 +104,7 @@
             </div><!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon  bg-aqua  bg-man-blue"><i class="ion ion-ios-information"></i></span>
+                <span class="info-box-icon    bg-man-red"><i class="ion ion-ios-information"></i></span>
                 <div class="info-box-content" id="toplam_fatura_2_container">
                   <h3>
                         <div class="overlay" >
@@ -132,7 +121,7 @@
             </div><!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-aqua  bg-man-blue"><i class="fa fa-gears "></i></span>
+                <span class="info-box-icon   bg-man-red"><i class="fa fa-gears "></i></span>
                 <div class="info-box-content" id="toplam_fatura_3_container">
                   <h3>
                         <div class="overlay" >
@@ -149,7 +138,7 @@
             </div><!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
-                <span class="info-box-icon bg-aqua bg-man-blue"><i class="ion ion ion-android-time"></i></span>
+                <span class="info-box-icon  bg-man-red"><i class="ion ion ion-android-time"></i></span>
                 <div class="info-box-content" id="toplam_fatura_4_container">
                   <h3>
                         <div class="overlay" >
@@ -173,7 +162,7 @@
                 <div class="col-md-12">
                   <div class="box" id="panel_hidden1" style="display: none;">
                     <div class="box-header with-border">
-                      <h3 class="box-title" id="panel_hidden1_title"></h3>
+                      <h3 class="box-title" id="panel_hidden1_title" lang="en"></h3>
                       <div class="box-tools pull-right">
                         <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
                         <div class="btn-group open">
@@ -221,7 +210,7 @@
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="cursor: pointer;" id="detay_acik_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div><!-- ./col -->
                 <div class="col-lg-3 col-xs-6">
@@ -277,7 +266,7 @@
                 </div><!-- ./col -->
 
             </div><!-- /.row -->
-            <!-- aftersales dashboard data ikinici blok son -->
+            <!-- aftersales dashboard data ikinci blok son -->
             
             <!--hidden data block 2 -->
             <div class="row">
@@ -285,7 +274,7 @@
                 <div class="col-md-12">
                   <div class="box" id="panel" style="display: none;">
                     <div class="box-header with-border">
-                      <h3 class="box-title" lang="en">Work order</h3>
+                      <h3 class="box-title" id="panel_title" lang="en">Work order</h3>
                       <div class="box-tools pull-right">
                         <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
                         <div class="btn-group open">
@@ -311,42 +300,74 @@
                       </div><!-- /.row -->
                     </div><!-- ./box-body -->
                     <div class="box-footer" style="display: block;">
-                      <div class="row">
-                        <div class="col-sm-3 col-xs-6">
-                          <div class="description-block border-right">
-                            <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                            <h5 class="description-header">$35,210.43</h5>
-                            <span class="description-text">TOTAL REVENUE</span>
-                          </div><!-- /.description-block -->
-                        </div><!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                          <div class="description-block border-right">
-                            <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                            <h5 class="description-header">$10,390.90</h5>
-                            <span class="description-text">TOTAL COST</span>
-                          </div><!-- /.description-block -->
-                        </div><!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                          <div class="description-block border-right">
-                            <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                            <h5 class="description-header">$24,813.53</h5>
-                            <span class="description-text">TOTAL PROFIT</span>
-                          </div><!-- /.description-block -->
-                        </div><!-- /.col -->
-                        <div class="col-sm-3 col-xs-6">
-                          <div class="description-block">
-                            <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                            <h5 class="description-header">1200</h5>
-                            <span class="description-text">GOAL COMPLETIONS</span>
-                          </div><!-- /.description-block -->
-                        </div>
-                      </div><!-- /.row -->
+                      
                     </div><!-- /.box-footer -->
                   </div><!-- /.box -->
                 </div>
             <!--</section>  -->
             </div>
             <!--hidden data block 2 son-->
+            
+            <!-- aftersales dashboard data üçüncü blok -->
+            <div class="row">
+                <div class="col-lg-12 col-xs-12">
+                    <!-- small box -->
+                    <div id="toplam_header_arac_giris_sayilari_container" class="small-box bg-man-ligth-grey bg-aqua ">
+                        <div class="inner">
+                            <h3 class="man-header-red"><div class="overlay" >
+                                    <i class="fa fa-refresh fa-spin" ></i>
+                                </div>
+                            </h3>
+                            <p lang="en">Vehicle Entries</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-android-alert"></i>
+                        </div>
+                        <a href="cursor: pointer;" id="detay_arac_girisleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div><!-- ./col -->
+            </div><!-- /.row -->
+            <!-- aftersales dashboard data üçüncü blok son -->
+            
+            <!--hidden data block 3 -->
+            <div class="row">
+                <!--<section class="col-lg-7 connectedSortable">-->
+                <div class="col-md-12">
+                  <div class="box" id="panel_hidden3" style="display: none;">
+                    <div class="box-header with-border">
+                      <h3 class="box-title" id="panel_hidden3_title" lang="en">Work order</h3>
+                      <div class="box-tools pull-right">
+                        <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
+                        <div class="btn-group open">
+                            <button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-calendar"></i>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a id='hidden_block3_month' lang="en">Last month</a></li>
+                              <li class="divider"></li>
+                              <li><a id='hidden_block3_year' lang="en">Last 1 year</a></li>
+                            </ul>
+                         </div>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-md-12">
+                          
+                          <div id="container_hidden_block3" style="min-width: 200px;  margin: 0 auto"></div>
+                          
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+            <!--</section>  -->
+            </div>
+            <!--hidden data block 3 son-->
             
             <!-- aftersales dashboard data karsılaştırma blok-->
             <div class="row">
@@ -404,13 +425,13 @@
             </div>
             <!-- aftersales dashboard data karsılaştırma blok son-->
             
-            <!--hidden data block 3 -->
+            <!--hidden data block 4 -->
             <div class="row">
                 <!--<section class="col-lg-7 connectedSortable">-->
                 <div class="col-md-12">
-                  <div class="box" id="panel_hidden3" style="display: none;">
+                  <div class="box" id="panel_hidden4" style="display: none;">
                     <div class="box-header with-border">
-                      <h3 class="box-title" id="panel_hidden3_title">Cirolar</h3>
+                      <h3 class="box-title" id="panel_hidden4_title">Cirolar</h3>
                       <div class="box-tools pull-right">
                         <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
                         <div class="btn-group open">
@@ -418,9 +439,9 @@
                                 <i class="fa fa-calendar"></i>
                             </button>
                             <ul class="dropdown-menu" role="menu">
-                              <li><a id='hidden_block3_month' lang="en">Last month</a></li>
+                              <li><a id='hidden_block4_month' lang="en">Last month</a></li>
                               <li class="divider"></li>
-                              <li><a id='hidden_block3_year' lang="en">Last 1 year</a></li>
+                              <li><a id='hidden_block4_year' lang="en">Last 1 year</a></li>
                             </ul>
                          </div>
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -430,7 +451,7 @@
                       <div class="row">
                         <div class="col-md-12">
                           
-                          <div id="container_hidden_block3" style="min-width: 200px;  margin: 0 auto"></div>
+                          <div id="container_hidden_block4" style="min-width: 200px;  margin: 0 auto"></div>
                           
                         </div><!-- /.col -->
                       </div><!-- /.row -->
@@ -441,7 +462,7 @@
                 </div>
             <!--</section>  -->
             </div>
-            <!--hidden data block 3 son-->
+            <!--hidden data block 4 son-->
             
             <!--Graph data blok-->
             <div class="row">
@@ -615,13 +636,13 @@
           </div>
             <!--Sales dashboard data ilk blok son-->
             
-            <!--hidden data block 4 -->
+            <!--hidden data block 5 -->
             <div class="row">
                 <!--<section class="col-lg-7 connectedSortable">-->
                 <div class="col-md-12">
-                  <div class="box" id="panel_hidden4" style="display: none;">
+                  <div class="box" id="panel_hidden5" style="display: none;">
                     <div class="box-header with-border">
-                      <h3 class="box-title" id="panel_hidden4_title">Bayi Stokları</h3>
+                      <h3 class="box-title" id="panel_hidden5_title">Bayi Stokları</h3>
                       <div class="box-tools pull-right">
                         <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -631,7 +652,7 @@
                       <div class="row">
                         <div class="col-md-12">
                           
-                          <div id="container_hidden_block4" style="min-width: 200px;  margin: 0 auto"></div>
+                          <div id="container_hidden_block5" style="min-width: 200px;  margin: 0 auto"></div>
                           
                         </div><!-- /.col -->
                       </div><!-- /.row -->
@@ -642,7 +663,7 @@
                 </div>
             <!--</section>  -->
             </div>
-            <!--hidden data block 4 son-->
+            <!--hidden data block 5 son-->
             
             <!-- sales dashboard data ikinci blok -->
              <div class="row">
