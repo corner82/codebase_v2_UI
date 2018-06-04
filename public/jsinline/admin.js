@@ -339,26 +339,53 @@ $('#hidden_block1_month').click(function()
        $("#panel_hidden1").loadImager('removeLoadImage');
         $("#panel_hidden1").loadImager('appendImage');
         $("#panel_hidden1_title").html(window.lang.translate('Purchase invoices'));
-        getAlisFaturalariAylikWithoutServices();
-          
+        
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getAlisFaturalariAylikWithoutServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getAlisFaturalariAylikWithoutServices();
+        }  
     }
     else if(hidden_block1_controller == 2) {
         $("#panel_hidden1").loadImager('removeLoadImage');
         $("#panel_hidden1").loadImager('appendImage');
         $("#panel_hidden1_title").html(window.lang.translate('Business order invoices'));
-        getIsEmriFaturalariAylikWithoutServices();
+        
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getIsEmriFaturalariAylikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getIsEmriFaturalariAylikWithoutServices();
+        }
     }
     else if(hidden_block1_controller == 3) {
         $("#panel_hidden1").loadImager('removeLoadImage');
         $("#panel_hidden1").loadImager('appendImage');
         $("#panel_hidden1_title").html(window.lang.translate('Sales invoices'));
-        getSatisFaturalariAylikWithoutServices();
+        
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getSatisFaturalariAylikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getSatisFaturalariAylikWithoutServices();
+        }
     }
     else if(hidden_block1_controller == 4) {
         $("#panel_hidden1").loadImager('removeLoadImage');
         $("#panel_hidden1").loadImager('appendImage');
         $("#panel_hidden1_title").html(window.lang.translate('Brief invoices'));
-        getIcmalFaturalariAylikWithoutServices();
+
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getIcmalFaturalariAylikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getIcmalFaturalariAylikWithoutServices();
+        }
     }
          
 });
@@ -374,26 +401,53 @@ $('#hidden_block1_year').click(function()
        $("#panel_hidden1").loadImager('removeLoadImage');
         $("#panel_hidden1").loadImager('appendImage');
         $("#panel_hidden1_title").html(window.lang.translate('Purchase invoices'));
-        getAlisFaturalariYillikWithoutServices();
-          
+        
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getAlisFaturalariYillikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getAlisFaturalariYillikWithoutServices();
+        }
     }
     else if(hidden_block1_controller == 2) {
         $("#panel_hidden1").loadImager('removeLoadImage');
         $("#panel_hidden1").loadImager('appendImage');
         $("#panel_hidden1_title").html(window.lang.translate('Business order invoices'));
-        getIsEmriFaturalariYillikWithoutServices();
+        
+        if(serviceControler == true) {
+            alert('service controler değer true');
+                getIsEmriFaturalariYillikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getIsEmriFaturalariYillikWithoutServices();
+        }
     }
     else if(hidden_block1_controller == 3) {
         $("#panel_hidden1").loadImager('removeLoadImage');
         $("#panel_hidden1").loadImager('appendImage');
         $("#panel_hidden1_title").html(window.lang.translate('Sales invoices'));
-        getSatisFaturalariYillikWithoutServices();
+        
+        if(serviceControler == true) {
+            alert('service controler değer true');
+                getSatisFaturalariYillikWithServices()
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getSatisFaturalariYillikWithoutServices();
+        }
     }
     else if(hidden_block1_controller == 4) {
         $("#panel_hidden1").loadImager('removeLoadImage');
         $("#panel_hidden1").loadImager('appendImage');
         $("#panel_hidden1_title").html(window.lang.translate('Brief invoices'));
-        getIcmalFaturalariYillikWithoutServices();
+        
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getIcmalFaturalariYillikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getIcmalFaturalariYillikWithoutServices();
+        }
     }
          
 });
@@ -428,6 +482,7 @@ $('#detay_acik_is_emirleri').click(function()
             getAcikIsEmirleriWeeklyWithoutServices();
         } else {
             alert('service controler değer bulunamamıştır');
+            getAcikIsEmirleriWeeklyWithoutServices
         }
         
           
@@ -500,26 +555,46 @@ $('#hidden_block2_month').click(function()
     var multiSelectedRoles = getServiceDropdownSelectedItems();
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
-    
-    //alert('test');
     if(hidden_block2_controller == 1) {
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
         // açılan/kapanan iş emirleri aylık
         //getAcilanKapananIsEmrAylikWithoutServices();
         alert('hidden_block2_controller == 1');
+        
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getAlisFaturalariAylikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getAlisFaturalariAylikWithoutServices();
+        }
+        
     }
     else if(hidden_block2_controller == 2)
     {
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
         // açılan/kapanan iş emirleri aylık
-        getAcilanKapananIsEmrAylikWithoutServices();
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getAcilanKapananIsEmrAylikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getAcilanKapananIsEmrAylikWithoutServices();
+        }
                     
     }else if(hidden_block2_controller == 3) {
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
-        getAcilanKapananIsEmrAylikWithoutServices();
+
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getAcilanKapananIsEmrAylikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getAcilanKapananIsEmrAylikWithoutServices();
+        }
     }
          
 });
@@ -527,193 +602,49 @@ $('#hidden_block2_month').click(function()
 // hidden block2 yıllık button click event
 $('#hidden_block2_year').click(function()
 {
-    //alert('test');
-    if(hidden_block2_controller == 2)
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_block2_controller == 1) {
+        $("#panel").loadImager('removeLoadImage');
+        $("#panel").loadImager('appendImage');
+        // açılan/kapanan iş emirleri aylık
+        //getAcilanKapananIsEmrAylikWithoutServices();
+        alert('hidden_block2_controller == 1');
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getAlisFaturalariYillikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getAlisFaturalariYillikWithoutServices();
+        }
+        
+    }
+    else if(hidden_block2_controller == 2)
     {
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
-        $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapananYillik_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-                    var categ = [];
-                    var acilanIsEmri = [];
-                    var kapananIsEmri = [];
-                    $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.YIL+'/'+value.AY, categ)) == -1)categ.push(value.YIL+'/'+value.AY);
-                        if (value.TARIH != null)categ.push(value.TARIH+'.'+window.lang.translate('week')+'');
-                        if (value.ACILAN_IS_EMRI != 0)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
-                        if (value.KAPANAN_IS_EMRI != 0)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
-                    });
-                    categ.unique();
-                    categ.reverse();
-                    acilanIsEmri.reverse();
-                    kapananIsEmri.reverse();
-                    
-                    var chart1 = Highcharts.chart('container_satis_all', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
-                        },
-                        xAxis: {
-                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-                            categories: categ
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('piece')
-                            },
-                            stackLabels: {
-                                enabled: true,
-                                style: {
-                                    fontWeight: 'bold',
-                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                                }
-                            }
-                        },
-                        legend: {
-                            align: 'right',
-                            x: -30,
-                            verticalAlign: 'top',
-                            y: 25,
-                            floating: true,
-                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-                            borderColor: '#CCC',
-                            borderWidth: 1,
-                            shadow: false
-                        },
-                        tooltip: {
-                            headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
-                        },
-                        plotOptions: {
-                            column: {
-                                stacking: 'normal',
-                                dataLabels: {
-                                    enabled: true,
-                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-                                }
-                            }
-                        },
-                        series: [{
-                            name: window.lang.translate('Closed'),
-                            data: kapananIsEmri
-                        }, {
-                            name: window.lang.translate('Opened'),
-                            data: acilanIsEmri
-                        }, ]
-                    });
-                    
-                    $("#panel").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
-            }
-        });
+
+        if(serviceControler == true) {
+            alert('service controler değer true');
+            getAcilanKapananIsEmriYillikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getAcilanKapananIsEmriYillikWithoutServices();
+        }
           
-    }else if(hidden_block2_controller == 1) {
-        $("#panel").loadImager('removeLoadImage');
-        $("#panel").loadImager('appendImage');
-       $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapananYillik_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-                    var categ = [];
-                    var acilanIsEmri = [];
-                    var kapananIsEmri = [];
-                    $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.YIL+'/'+value.AY, categ)) == -1)categ.push(value.YIL+'/'+value.AY);
-                        if (value.TARIH != null)categ.push(value.TARIH+'.'+window.lang.translate('week')+'');
-                        if (value.ACILAN_IS_EMRI != 0)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
-                        if (value.KAPANAN_IS_EMRI != 0)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
-                    });
-                    categ.unique();
-                    categ.reverse();
-                    acilanIsEmri.reverse();
-                    kapananIsEmri.reverse();
-                    
-                    var chart1 = Highcharts.chart('container_satis_all', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: ''+window.lang.translate('Closed')+' | '+window.lang.translate('Closed')+''
-                        },
-                        xAxis: {
-                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-                            categories: categ
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('piece')
-                            },
-                            stackLabels: {
-                                enabled: true,
-                                style: {
-                                    fontWeight: 'bold',
-                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                                }
-                            }
-                        },
-                        legend: {
-                            align: 'right',
-                            x: -30,
-                            verticalAlign: 'top',
-                            y: 25,
-                            floating: true,
-                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-                            borderColor: '#CCC',
-                            borderWidth: 1,
-                            shadow: false
-                        },
-                        tooltip: {
-                            headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
-                        },
-                        plotOptions: {
-                            column: {
-                                stacking: 'normal',
-                                dataLabels: {
-                                    enabled: true,
-                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-                                }
-                            }
-                        },
-                        series: [{
-                            name: window.lang.translate('Closed'),
-                            data: kapananIsEmri
-                        }, {
-                            name: window.lang.translate('Opened'),
-                            data: acilanIsEmri
-                        }, ]
-                    });
-                    
-                    $("#panel").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
-            }
-        });
+    }else if(hidden_block2_controller == 3) {
+       $("#panel").loadImager('removeLoadImage');
+       $("#panel").loadImager('appendImage');
+
+       if(serviceControler == true) {
+            alert('service controler değer true');
+            getAcilanKapananIsEmriYillikWithServices();
+        } else if(serviceControler == false ){
+            alert('service controler değer false');
+            getAcilanKapananIsEmriYillikWithoutServices();
+        }
     }
          
 });
@@ -959,7 +890,7 @@ $('#detay_arac_girisleri').click(function()
          
 });
 
-// hidden block2 aylık button click event
+// hidden block3 aylık button click event
 $('#hidden_block3_month').click(function()
 {
     //alert('test');
@@ -1148,7 +1079,7 @@ $('#hidden_block3_month').click(function()
          
 });
 
-// hidden block2 yıllık button click event
+// hidden block3 yıllık button click event
 $('#hidden_block3_year').click(function()
 {
     //alert('test');
@@ -1533,7 +1464,7 @@ $('#detay_acilan_ciro').click(function()
 });
 
 
-// hidden block1 aylık button click event
+// hidden block4 aylık button click event
 $('#hidden_block4_month').click(function()
 {
     //alert('test');
@@ -2667,6 +2598,94 @@ function getAlisFaturalariAylikWithoutServices() {
         });
 }
 
+function getAlisFaturalariAylikWithServices() {
+     $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayAlisFaturalariAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH+'.'+window.lang.translate('week')+'');
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+
+                    });
+                    graphDataAll.reverse();
+                    //console.log(graphDataAll);
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total purchase invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Purchase invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
 function getAlisFaturalariYillikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -2752,7 +2771,177 @@ function getAlisFaturalariYillikWithoutServices() {
         });
 }
 
+function getAlisFaturalariYillikWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayAlisFaturalariYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.AY);
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total purchase invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Purchase invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
 function getIsEmriFaturalariWeeklyWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsemriFaturalari_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    if(chart1 != null) {
+                        //alert('chart 1bulumnamadı');
+                        //chart1.destroy();
+                        //chart1 = new Highcharts.Chart(optionsChart1,highlightSer);
+                    }
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.FATURATUTAR));
+                        graphDataAll.push(graphData);
+                    });
+                    //console.log(graphDataAll);
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total business order invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Business order invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getIsEmriFaturalariWeeklyWithServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             data: { url:'getAfterSalesDetayIsemriFaturalari_infoAfterSales' ,
@@ -2924,7 +3113,179 @@ function getIsEmriFaturalariAylikWithoutServices() {
         });
 }
 
+function getIsEmriFaturalariAylikWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsemriFaturalariAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH+'.'+window.lang.translate('week')+'');
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+
+                    });
+                    graphDataAll.reverse();
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total business order invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Business order invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
 function getIsEmriFaturalariYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsemriFaturalariYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.AY);
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total business order invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Business order invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getIsEmriFaturalariYillikWithServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             data: { url:'getAfterSalesDetayIsemriFaturalariYillik_infoAfterSales' ,
@@ -3094,7 +3455,180 @@ function getSatışFaturalariWeeklyWithoutServices() {
         });
 }
 
+function getSatışFaturalariWeeklyWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetaySatisFaturalari_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    if(chart1 != null) {
+                        //alert('chart 1bulumnamadı');
+                        //chart1.destroy();
+                        //chart1 = new Highcharts.Chart(optionsChart1,highlightSer);
+                    }
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.FATURATUTAR));
+                        graphDataAll.push(graphData);
+                    });
+                    //console.log(graphDataAll);
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total Sales invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Sales invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
 function getSatisFaturalariAylikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetaySatisFaturalariAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH+'.'+window.lang.translate('week')+'');
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+
+                    });
+                    graphDataAll.reverse();
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total Sales invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Sales invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getSatisFaturalariAylikWithServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             data: { url:'getAfterSalesDetaySatisFaturalariAylik_infoAfterSales' ,
@@ -3268,7 +3802,178 @@ function getSatisFaturalariYillikWithoutServices() {
         });
 }
 
+function getSatisFaturalariYillikWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetaySatisFaturalariYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.AY);
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total Sales invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Sales invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
 function getIcmalFaturalariWeeklyWithoutServices(){
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIcmalFaturalari_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    if(chart1 != null) {
+                        //alert('chart 1bulumnamadı');
+                        //chart1.destroy();
+                        //chart1 = new Highcharts.Chart(optionsChart1,highlightSer);
+                    }
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.FATURATUTAR));
+                        graphDataAll.push(graphData);
+                    });
+                    //console.log(graphDataAll);
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total brief invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getIcmalFaturalariWeeklyWithServices(){
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             data: { url:'getAfterSalesDetayIcmalFaturalari_infoAfterSales' ,
@@ -3441,7 +4146,181 @@ function getIcmalFaturalariAylikWithoutServices() {
         });
 }
 
+function getIcmalFaturalariAylikWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIcmalFaturalariAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH+'.'+window.lang.translate('week')+'');
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+
+                    });
+                    graphDataAll.reverse();
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total brief invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
 function getIcmalFaturalariYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIcmalFaturalariYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.AY);
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_block1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total brief invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    
+                    $("#panel_hidden1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getIcmalFaturalariYillikWithServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             data: { url:'getAfterSalesDetayIcmalFaturalariYillik_infoAfterSales' ,
@@ -3746,6 +4625,469 @@ function getAcikIsEmirleriWeeklyWithServices() {
         });
 };
 
+function getAcikIsEmirleriAylikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcikWithoutServices_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.MIKTAR));
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    chart2 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Total business order invoices')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Business order invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+};
+
+function getAcikIsEmirleriAylikWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    if(chart1 != null) {
+                        //alert('chart 1bulumnamadı');
+                        //chart1.destroy();
+                        //chart1 = new Highcharts.Chart(optionsChart1,highlightSer);
+                    }
+                    var categ = [];
+                    var acilanIsEmri = [];
+                    var kapananIsEmri = [];
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        if (value.ACILAN_IS_EMRI != null)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
+                        if (value.KAPANAN_IS_EMRI != null)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
+                    });
+                    categ.unique();
+                    /*console.log(categ);
+                    console.log(acilanIsEmri);
+                    console.log(kapananIsEmri);*/
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: [{
+                            name: window.lang.translate('Closed'),
+                            data: kapananIsEmri
+                        }, {
+                            name: window.lang.translate('Opened'),
+                            data: acilanIsEmri
+                        }, ]
+                    });
+                    
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getAcikIsEmirleriYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    if(chart1 != null) {
+                        //alert('chart 1bulumnamadı');
+                        //chart1.destroy();
+                        //chart1 = new Highcharts.Chart(optionsChart1,highlightSer);
+                    }
+                    var categ = [];
+                    var acilanIsEmri = [];
+                    var kapananIsEmri = [];
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        if (value.ACILAN_IS_EMRI != null)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
+                        if (value.KAPANAN_IS_EMRI != null)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
+                    });
+                    categ.unique();
+                    /*console.log(categ);
+                    console.log(acilanIsEmri);
+                    console.log(kapananIsEmri);*/
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: [{
+                            name: window.lang.translate('Closed'),
+                            data: kapananIsEmri
+                        }, {
+                            name: window.lang.translate('Opened'),
+                            data: acilanIsEmri
+                        }, ]
+                    });
+                    
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getAcikIsEmirleriYillikWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    if(chart1 != null) {
+                        //alert('chart 1bulumnamadı');
+                        //chart1.destroy();
+                        //chart1 = new Highcharts.Chart(optionsChart1,highlightSer);
+                    }
+                    var categ = [];
+                    var acilanIsEmri = [];
+                    var kapananIsEmri = [];
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        if (value.ACILAN_IS_EMRI != null)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
+                        if (value.KAPANAN_IS_EMRI != null)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
+                    });
+                    categ.unique();
+                    /*console.log(categ);
+                    console.log(acilanIsEmri);
+                    console.log(kapananIsEmri);*/
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: [{
+                            name: window.lang.translate('Closed'),
+                            data: kapananIsEmri
+                        }, {
+                            name: window.lang.translate('Opened'),
+                            data: acilanIsEmri
+                        }, ]
+                    });
+                    
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getAcilanKapananIsEmriWeeklyWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    if(chart1 != null) {
+                        //alert('chart 1bulumnamadı');
+                        //chart1.destroy();
+                        //chart1 = new Highcharts.Chart(optionsChart1,highlightSer);
+                    }
+                    var categ = [];
+                    var acilanIsEmri = [];
+                    var kapananIsEmri = [];
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        if (value.ACILAN_IS_EMRI != null)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
+                        if (value.KAPANAN_IS_EMRI != null)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
+                    });
+                    categ.unique();
+                    /*console.log(categ);
+                    console.log(acilanIsEmri);
+                    console.log(kapananIsEmri);*/
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: [{
+                            name: window.lang.translate('Closed'),
+                            data: kapananIsEmri
+                        }, {
+                            name: window.lang.translate('Opened'),
+                            data: acilanIsEmri
+                        }, ]
+                    });
+                    
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
 function getAcilanKapananIsEmriWeeklyWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -3864,6 +5206,279 @@ function getAcilanKapananIsEmrAylikWithoutServices() {
                     categ.reverse();
                     acilanIsEmri.reverse();
                     kapananIsEmri.reverse();
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: [{
+                            name: window.lang.translate('Closed'),
+                            data: kapananIsEmri
+                        }, {
+                            name: window.lang.translate('Opened'),
+                            data: acilanIsEmri
+                        }, ]
+                    });
+                    
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getAcilanKapananIsEmrAylikWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapananAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var categ = [];
+                    var acilanIsEmri = [];
+                    var kapananIsEmri = [];
+                    $.each(data.resultSet, function(key, value) {
+                        if (value.TARIH != null)categ.push(value.TARIH+'.'+window.lang.translate('week')+'');
+                        if (value.ACILAN_IS_EMRI != null)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
+                        if (value.KAPANAN_IS_EMRI != null)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
+                    });
+                    categ.reverse();
+                    acilanIsEmri.reverse();
+                    kapananIsEmri.reverse();
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: [{
+                            name: window.lang.translate('Closed'),
+                            data: kapananIsEmri
+                        }, {
+                            name: window.lang.translate('Opened'),
+                            data: acilanIsEmri
+                        }, ]
+                    });
+                    
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getAcilanKapananIsEmriYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapananYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var categ = [];
+                    var acilanIsEmri = [];
+                    var kapananIsEmri = [];
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.YIL+'/'+value.AY, categ)) == -1)categ.push(value.YIL+'/'+value.AY);
+                        if (value.TARIH != null)categ.push(value.TARIH+'.'+window.lang.translate('week')+'');
+                        if (value.ACILAN_IS_EMRI != 0)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
+                        if (value.KAPANAN_IS_EMRI != 0)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
+                    });
+                    categ.unique();
+                    categ.reverse();
+                    acilanIsEmri.reverse();
+                    kapananIsEmri.reverse();
+                    
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: [{
+                            name: window.lang.translate('Closed'),
+                            data: kapananIsEmri
+                        }, {
+                            name: window.lang.translate('Opened'),
+                            data: acilanIsEmri
+                        }, ]
+                    });
+                    
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getAcilanKapananIsEmriYillikWithServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapananYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var categ = [];
+                    var acilanIsEmri = [];
+                    var kapananIsEmri = [];
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.YIL+'/'+value.AY, categ)) == -1)categ.push(value.YIL+'/'+value.AY);
+                        if (value.TARIH != null)categ.push(value.TARIH+'.'+window.lang.translate('week')+'');
+                        if (value.ACILAN_IS_EMRI != 0)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
+                        if (value.KAPANAN_IS_EMRI != 0)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
+                    });
+                    categ.unique();
+                    categ.reverse();
+                    acilanIsEmri.reverse();
+                    kapananIsEmri.reverse();
+                    
                     var chart1 = Highcharts.chart('container_satis_all', {
                         chart: {
                             type: 'column',
