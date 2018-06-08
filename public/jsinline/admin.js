@@ -7,6 +7,12 @@ $(document).ready(function () {
  */
 $("#langCode").jsLangMaster();
 
+var sm  = $(window).successMessage();
+var dm  = $(window).dangerMessage();
+var wm  = $(window).warningMessage();
+var wcm = $(window).warningComplexMessage({ denyButtonLabel : 'Vazgeç' ,
+                                           actionButtonLabel : 'İşleme devam et'});
+
 /**
  * high charts settings created dynamically
  * @author Mustafa Zeynel Dağlı
@@ -578,13 +584,11 @@ $('#hidden_block2_month').click(function()
     if(hidden_block2_controller == 1) {
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
-        // açılan/kapanan iş emirleri aylık
-        //getAcilanKapananIsEmrAylikWithoutServices();
-        
+
         if(serviceControler == true) {
             getAcikIsEmirleriAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcikIsEmirlerAylikWithoutServices();
+            getAcikIsEmirleriAylikWithoutServices();
         }
         
     }
@@ -622,9 +626,9 @@ $('#hidden_block2_year').click(function()
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
         if(serviceControler == true) {
-            getAlisFaturalariYillikWithServices();
+            getAcikIsEmirleriYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAlisFaturalariYillikWithoutServices();
+            getAcikIsEmirleriYillikWithoutServices();
         }
         
     }
@@ -1500,8 +1504,7 @@ $.ajax({
         }
     },
     error: function (jqXHR, textStatus, errorThrown) {
-        console.error(jqXHR);
-        //console.error(jqXHR);
+        console.error(textStatus);
     }
 });
     
@@ -1561,7 +1564,7 @@ $.ajax({
         }
     },
     error: function (jqXHR, textStatus, errorThrown) {
-        console.error(jqXHR);
+        console.error(textStatus);
     }
 });
   
@@ -4150,7 +4153,7 @@ function getIcmalFaturalariYillikWithoutServices() {
                             pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
-                            name: 'Population',
+                            //name: 'Population',
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
@@ -4189,7 +4192,6 @@ function getIcmalFaturalariYillikWithServices(multiSelectedRoles) {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
-                    
                     var categ = [];
                     var servisMiktar = function() {  
                     };
@@ -4497,7 +4499,7 @@ function getAcikIsEmirleriWeeklyWithServices(multiSelectedRoles) {
 function getAcikIsEmirleriAylikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcikWithoutServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayIsEmriAcikAylik_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -4520,7 +4522,7 @@ function getAcikIsEmirleriAylikWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Total business order invoices')
+                            text: window.lang.translate('Open Orders')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -4538,17 +4540,17 @@ function getAcikIsEmirleriAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: window.lang.translate('piece')
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Business order invoices')+': <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                            pointFormat: ''+window.lang.translate('Open Orders')+': <b>{point.y} '+window.lang.translate('piece')+'</b>'
                         },
                         series: [{
-                            name: 'Population',
+                            //name: 'Population',
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
@@ -4603,16 +4605,15 @@ function getAcikIsEmirleriAylikWithServices(multiSelectedRoles) {
                         if(serviceIdControler){
                             instance.name = value.SERVISAD;
                         }
-                        
                         if(counter == 1) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            serviceData.push(parseInt(value.MIKTAR));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            serviceData.push(parseInt(value.MIKTAR));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -4622,7 +4623,7 @@ function getAcikIsEmirleriAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            serviceData.push(parseInt(value.MIKTAR));
                         }
                         counter++;
                     });
@@ -4667,8 +4668,234 @@ function getAcikIsEmirleriAylikWithServices(multiSelectedRoles) {
                             shadow: false
                         },
                         tooltip: {
+                            headerFormat: '<b>'+window.lang.translate('Total')+' {point.x} '+window.lang.translate('piece')+'</b><br/>',
+                            //pointFormat: '{series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} ',
+                            pointFormat: ''+window.lang.translate('Open Orders')+': <b>{point.y} '+window.lang.translate('piece')+'</b>'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getAcikIsEmirleriYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcikYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.AY);
+                        var arr = value.OAY_KAPATILMAYAN_EMIRLER.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.OAY_KAPATILMAYAN_EMIRLER));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: ''+window.lang.translate('Open Orders')+' '
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: [{
+                            //name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getAcikIsEmirleriYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcikYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.AY+'/'+value.YIL, categ)) == -1)categ.push(value.AY+'/'+value.YIL);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            console.log('servis id null');
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.OAY_KAPATILMAYAN_EMIRLER));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.OAY_KAPATILMAYAN_EMIRLER));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.OAY_KAPATILMAYAN_EMIRLER));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Open Orders')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
                         },
                         plotOptions: {
                             column: {
@@ -4683,13 +4910,14 @@ function getAcikIsEmirleriAylikWithServices(multiSelectedRoles) {
                         series
                     });
                     
+                    
                     /*var chart1 = Highcharts.chart('container_satis_all', {
                         chart: {
                             type: 'column',
                             height : 300,
                         },
                         title: {
-                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
+                            text: ''+window.lang.translate('Open Orders')+''
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -4740,189 +4968,6 @@ function getAcikIsEmirleriAylikWithServices(multiSelectedRoles) {
                             data: acilanIsEmri
                         }, ]
                     });*/
-                    
-                    $("#panel").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
-            }
-        });
-}
-
-function getAcikIsEmirleriYillikWithoutServices() {
-    $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-                    
-                    var categ = [];
-                    var acilanIsEmri = [];
-                    var kapananIsEmri = [];
-                    $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
-                        if (value.ACILAN_IS_EMRI != null)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
-                        if (value.KAPANAN_IS_EMRI != null)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
-                    });
-                    categ.unique();
-                    /*console.log(categ);
-                    console.log(acilanIsEmri);
-                    console.log(kapananIsEmri);*/
-                    //chart1.destroy();
-                    var chart1 = Highcharts.chart('container_satis_all', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
-                        },
-                        xAxis: {
-                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-                            categories: categ
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('piece')
-                            },
-                            stackLabels: {
-                                enabled: true,
-                                style: {
-                                    fontWeight: 'bold',
-                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                                }
-                            }
-                        },
-                        legend: {
-                            align: 'right',
-                            x: -30,
-                            verticalAlign: 'top',
-                            y: 25,
-                            floating: true,
-                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-                            borderColor: '#CCC',
-                            borderWidth: 1,
-                            shadow: false
-                        },
-                        tooltip: {
-                            headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
-                        },
-                        plotOptions: {
-                            column: {
-                                stacking: 'normal',
-                                dataLabels: {
-                                    enabled: true,
-                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-                                }
-                            }
-                        },
-                        series: [{
-                            name: window.lang.translate('Closed'),
-                            data: kapananIsEmri
-                        }, {
-                            name: window.lang.translate('Opened'),
-                            data: acilanIsEmri
-                        }, ]
-                    });
-                    
-                    $("#panel").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
-            }
-        });
-}
-
-function getAcikIsEmirleriYillikWithServices() {
-    $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-                    var categ = [];
-                    var acilanIsEmri = [];
-                    var kapananIsEmri = [];
-                    $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
-                        if (value.ACILAN_IS_EMRI != null)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
-                        if (value.KAPANAN_IS_EMRI != null)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
-                    });
-                    categ.unique();
-                    /*console.log(categ);
-                    console.log(acilanIsEmri);
-                    console.log(kapananIsEmri);*/
-                    //chart1.destroy();
-                    var chart1 = Highcharts.chart('container_satis_all', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
-                        },
-                        xAxis: {
-                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-                            categories: categ
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('piece')
-                            },
-                            stackLabels: {
-                                enabled: true,
-                                style: {
-                                    fontWeight: 'bold',
-                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                                }
-                            }
-                        },
-                        legend: {
-                            align: 'right',
-                            x: -30,
-                            verticalAlign: 'top',
-                            y: 25,
-                            floating: true,
-                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-                            borderColor: '#CCC',
-                            borderWidth: 1,
-                            shadow: false
-                        },
-                        tooltip: {
-                            headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
-                        },
-                        plotOptions: {
-                            column: {
-                                stacking: 'normal',
-                                dataLabels: {
-                                    enabled: true,
-                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-                                }
-                            }
-                        },
-                        series: [{
-                            name: window.lang.translate('Closed'),
-                            data: kapananIsEmri
-                        }, {
-                            name: window.lang.translate('Opened'),
-                            data: acilanIsEmri
-                        }, ]
-                    });
                     
                     $("#panel").loadImager('removeLoadImage');
                 }
