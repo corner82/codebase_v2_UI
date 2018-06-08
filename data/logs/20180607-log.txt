@@ -1,0 +1,12 @@
+2018-06-07T08:54:20+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-db\src\Adapter\Driver\Pdo\Statement.php at line : 240
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/error/error404
+2018-06-07T08:54:53+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\authentication\FactoryServicePublicKeySaver.php at line : 16
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /admin
+2018-06-07T08:55:33+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-db\src\Adapter\Driver\Pdo\Connection.php at line : 253
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/error/error404
+2018-06-07T08:56:29+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\acl\FactoryServiceACLPrivilegeFinder.php at line : 61
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/performans
+2018-06-07T08:57:29+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\acl\FactoryServiceACLPrivilegeFinder.php at line : 46
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/error/error404
+2018-06-07T08:57:38+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\acl\FactoryServiceACLPrivilegeFinder.php at line : 66
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/performans

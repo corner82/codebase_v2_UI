@@ -1,0 +1,16 @@
+2018-06-06T08:53:59+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 939
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/error/error404
+2018-06-06T08:55:22+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\authentication\FactoryServicePublicKeySaver.php at line : 16
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/performans
+2018-06-06T08:57:16+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\acl\FactoryServiceACLRoleFinder.php at line : 48
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/performans
+2018-06-06T09:00:13+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\acl\FactoryServiceACLPrivilegeFinder.php at line : 46
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/error/error404
+2018-06-06T12:48:53+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 939
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/performans
+2018-06-06T13:31:06+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\acl\FactoryServiceACLRoleFinder.php at line : 48
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/performans
+2018-06-06T13:33:18+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\authentication\FactoryServicePublicKeySaver.php at line : 16
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/performans
+2018-06-06T14:45:09+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\services\src\acl\FactoryServiceACLRoleFinder.php at line : 43
+    with type error : E_ERROR : Maximum execution time of 30 seconds exceeded in /man/performans
