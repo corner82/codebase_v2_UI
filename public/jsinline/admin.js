@@ -79,11 +79,18 @@ $("#panel_hidden1").loadImager();
 $("#panel").loadImager();
 
 /**
- * loading image  acılan/kapanan detay data block 4
+ * loading image  araç girişleri detay data block 3
  * @author Mustafa Zeynel Dağlı
  * @since 31/05/2018
  */
 $("#panel_hidden3").loadImager();
+
+/**
+ * loading image  downtime detay data block 3_1
+ * @author Mustafa Zeynel Dağlı
+ * @since 09/06/2018
+ */
+$("#panel_hidden3_1").loadImager();
 
 /**
  * loading image  acılan/kapanan detay data block 3
@@ -93,17 +100,32 @@ $("#panel_hidden3").loadImager();
 $("#panel_hidden4").loadImager();
 
 /**
+ * loading image   block müşteri memnuniyeti CSI
+ * @author Mustafa Zeynel Dağlı
+ * @since 09/06/2018
+ */
+$("#panel_hidden_MM_CSI").loadImager();
+
+/**
+ * loading image   block müşteri memnuniyeti CXI
+ * @author Mustafa Zeynel Dağlı
+ * @since 09/06/2018
+ */
+$("#panel_hidden_MM_CXI").loadImager();
+
+/**
  * loading image  acılan/kapanan detay data block 4
  * @author Mustafa Zeynel Dağlı
  * @since 06/05/2018
  */
 $("#panel_hidden5").loadImager();
-  
+ 
+
+
 /**
  * Sand-Signika theme for Highcharts JS
  * @author Torstein Honsi
  */
-
 // Load the fonts
 Highcharts.createElement('link', {
    href: '//fonts.googleapis.com/css?family=Signika:200,700',
@@ -209,6 +231,396 @@ Highcharts.theme = {
 
 // Apply the theme
 Highcharts.setOptions(Highcharts.theme);
+
+
+    
+Highcharts.chart('gauge-container-verimlilik', {
+
+    chart: {
+        type: 'gauge',
+        plotBorderWidth: 1,
+        plotBackgroundColor: {
+            //linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            //linearGradient: { x1: 0, y1: 0 },
+            /*stops: [
+                [0, '#CBD0D8'],
+                [0.3, '#FFFFFF'],
+                [1, '#9CA5B3']
+            ]*/
+        },
+        plotBackgroundImage: null,
+        height: 200
+    },
+    title: {
+        text: 'VU meter'
+    },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['50%', '90%'],
+        size: 200
+    }, /*{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['10%', '70%'],
+        size: 300
+    }*/],
+    tooltip: {
+        enabled: false
+    },
+    yAxis: [{
+        min: 0,
+        max: 100,
+        minorTickPosition: 'inside',
+        tickPosition: 'inside',
+        labels: {
+            rotation: 'auto',
+            distance: 5
+        },
+        plotBands: [{
+            from: 0,
+            to: 25,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 0,
+        title: {
+            text: 'VU<br/><span style="font-size:8px">Channel A</span>',
+            y: -40
+        }
+    }, /*{
+        min: -20,
+        max: 6,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 20
+        },
+        plotBands: [{
+            from: 0,
+            to: 6,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 1,
+        title: {
+            text: 'VU<br/><span style="font-size:8px">Channel B</span>',
+            y: -40
+        }
+    }*/],
+    plotOptions: {
+        gauge: {
+            dataLabels: {
+                enabled: false
+            },
+            dial: {
+                radius: '100%'
+            }
+        }
+    },
+
+
+    series: [{
+        name: 'Channel A',
+        data: [50],
+        yAxis: 0
+    }, /*{
+        name: 'Channel B',
+        data: [-20],
+        yAxis: 1
+    }*/]
+
+},
+    // Let the music play
+    function (chart) {
+        setInterval(function () {
+            if (chart.series) { // the chart may be destroyed
+                var left = chart.series[0].points[0],
+                    //right = chart.series[1].points[0],
+                    leftVal,
+                    rightVal,
+                    inc = (Math.random() - 0.5) * 1;
+
+                leftVal = left.y + inc;
+                rightVal = leftVal + inc / 3;
+                if (leftVal < -20 || leftVal > 6) {
+                    leftVal = left.y - inc;
+                }
+                /*if (rightVal < -20 || rightVal > 6) {
+                    rightVal = leftVal;
+                }*/
+
+                left.update(leftVal, false);
+                //right.update(rightVal, false);
+                chart.redraw();
+            }
+        }, 500);
+
+    });
+ 
+Highcharts.chart('gauge-container-verimlilik2', {
+
+    chart: {
+        type: 'gauge',
+        plotBorderWidth: 1,
+        plotBackgroundColor: {
+            //linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            stops: [
+                [0, '#CBD0D8'],
+                [0.3, '#FFFFFF'],
+                [1, '#9CA5B3']
+            ]
+        },
+        plotBackgroundImage: null,
+        height: 200
+    },
+    title: {
+        text: 'VU meter'
+    },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['50%', '90%'],
+        size: 200
+    }, /*{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['10%', '70%'],
+        size: 300
+    }*/],
+    tooltip: {
+        enabled: false
+    },
+    yAxis: [{
+        min: -20,
+        max: 6,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 20
+        },
+        plotBands: [{
+            from: 0,
+            to: 6,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 0,
+        title: {
+            text: 'VU<br/><span style="font-size:8px">Channel A</span>',
+            y: -40
+        }
+    }, /*{
+        min: -20,
+        max: 6,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 20
+        },
+        plotBands: [{
+            from: 0,
+            to: 6,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 1,
+        title: {
+            text: 'VU<br/><span style="font-size:8px">Channel B</span>',
+            y: -40
+        }
+    }*/],
+    plotOptions: {
+        gauge: {
+            dataLabels: {
+                enabled: false
+            },
+            dial: {
+                radius: '100%'
+            }
+        }
+    },
+
+
+    series: [{
+        name: 'Channel A',
+        data: [-20],
+        yAxis: 0
+    }, /*{
+        name: 'Channel B',
+        data: [-20],
+        yAxis: 1
+    }*/]
+
+},
+    // Let the music play
+    function (chart) {
+        setInterval(function () {
+            if (chart.series) { // the chart may be destroyed
+                var left = chart.series[0].points[0],
+                    //right = chart.series[1].points[0],
+                    leftVal,
+                    rightVal,
+                    inc = (Math.random() - 0.5) * 3;
+
+                leftVal = left.y + inc;
+                rightVal = leftVal + inc / 3;
+                if (leftVal < -20 || leftVal > 6) {
+                    leftVal = left.y - inc;
+                }
+                /*if (rightVal < -20 || rightVal > 6) {
+                    rightVal = leftVal;
+                }*/
+
+                left.update(leftVal, false);
+                //right.update(rightVal, false);
+                chart.redraw();
+            }
+        }, 500);
+
+    });
+    
+Highcharts.chart('gauge-container-verimlilik3', {
+
+    chart: {
+        type: 'gauge',
+        plotBorderWidth: 1,
+        plotBackgroundColor: {
+            //linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            linearGradient: { x1: 0, y1: 0 },
+            stops: [
+                [0, '#CBD0D8'],
+                [0.3, '#FFFFFF'],
+                [1, '#9CA5B3']
+            ]
+        },
+        plotBackgroundImage: null,
+        height: 200
+    },
+    title: {
+        text: 'VU meter'
+    },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['50%', '90%'],
+        size: 200
+    }, /*{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['10%', '70%'],
+        size: 300
+    }*/],
+    tooltip: {
+        enabled: false
+    },
+    yAxis: [{
+        min: 0,
+        max: 100,
+        minorTickPosition: 'inside',
+        tickPosition: 'inside',
+        labels: {
+            rotation: 'auto',
+            distance: 10
+        },
+        plotBands: [{
+            from: 0,
+            to: 25,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 0,
+        title: {
+            text: 'VU<br/><span style="font-size:8px">Channel A</span>',
+            y: -40
+        }
+    }, /*{
+        min: -20,
+        max: 6,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 20
+        },
+        plotBands: [{
+            from: 0,
+            to: 6,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 1,
+        title: {
+            text: 'VU<br/><span style="font-size:8px">Channel B</span>',
+            y: -40
+        }
+    }*/],
+    plotOptions: {
+        gauge: {
+            dataLabels: {
+                enabled: false
+            },
+            dial: {
+                radius: '100%'
+            }
+        }
+    },
+
+
+    series: [{
+        name: 'Channel A',
+        data: [50],
+        yAxis: 0
+    }, /*{
+        name: 'Channel B',
+        data: [-20],
+        yAxis: 1
+    }*/]
+
+},
+    // Let the music play
+    function (chart) {
+        setInterval(function () {
+            if (chart.series) { // the chart may be destroyed
+                var left = chart.series[0].points[0],
+                    //right = chart.series[1].points[0],
+                    leftVal,
+                    rightVal,
+                    inc = (Math.random() - 0.5) * 1;
+
+                leftVal = left.y + inc;
+                rightVal = leftVal + inc / 3;
+                if (leftVal < -20 || leftVal > 6) {
+                    leftVal = left.y - inc;
+                }
+                /*if (rightVal < -20 || rightVal > 6) {
+                    rightVal = leftVal;
+                }*/
+
+                left.update(leftVal, false);
+                //right.update(rightVal, false);
+                chart.redraw();
+            }
+        }, 500);
+
+    });
+
     
 Array.prototype.unique = function() {
   return this.filter(function (value, index, self) { 
@@ -216,10 +628,10 @@ Array.prototype.unique = function() {
   });
 }
 
-var chart1;
+/*var chart1;
 var chart2;
 var chart3;
-var chart4;
+var chart4;*/
 
 // detay bloc 1
  var hidden_block1_controller;
@@ -738,9 +1150,171 @@ $('#hidden_block3_year').click(function()
     }
          
 });
-
 // detay block 3 son
 
+// detay blok 3_1 
+var hidden_block3_1_controller;
+// araç giriş sayıları detay click 
+$('#detay_downtime').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden3_1").css('display') == 'none')
+    {
+        hidden_block3_1_controller = 1;
+        $("#panel_hidden3_1").loadImager('removeLoadImage');
+        $("#panel_hidden3_1").loadImager('appendImage');
+        $("#panel_hidden3_1_title").html(window.lang.translate('Downtime'));
+        $("#panel_hidden3_1").animate({height:'toggle'},1000); 
+        
+        if(serviceControler == true) {
+            getDowntimeYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getDowntimeYillikWithoutServices();
+        } 
+
+    }else {
+        hidden_block3_1_controller = 1;
+        $("#panel_hidden3_1").loadImager('removeLoadImage');
+        $("#panel_hidden3_1").loadImager('appendImage');
+        $("#panel_hidden3_1_title").html(window.lang.translate('Downtime'));
+        
+        if(serviceControler == true) {
+            getDowntimeYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+             getDowntimeYillikWithoutServices();
+        } 
+    }     
+});
+
+// hidden block3 aylık button click event
+$('#hidden_block3_1_month').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_block3_controller == 1)
+    {
+        $("#panel_hidden3_1").loadImager('removeLoadImage');
+        $("#panel_hidden3_1").loadImager('appendImage');
+        $("#panel_hidden3_1_title").html(window.lang.translate('Vehicle Entries'));
+        
+        if(serviceControler == true) {
+            getAracGirisleriAylikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAracGirisleriAylikWithoutServices();
+        }  
+    }  
+});
+
+// hidden block3 yıllık button click event
+$('#hidden_block3_1_year').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_block3_controller == 1)
+    {
+        $("#panel_hidden3_1").loadImager('removeLoadImage');
+        $("#panel_hidden3_1").loadImager('appendImage');
+        $("#panel_hidden3_1_title").html(window.lang.translate('Vehicle Entries'));
+        
+        if(serviceControler == true) {
+            getAracGirisleriYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAracGirisleriYillikWithoutServices();
+        }
+         
+    }
+         
+});
+// detay block 3_1 son
+
+// detay blok Müşteri Memnuniyeti 
+var hidden_block3_1_controller;
+// araç giriş sayıları detay click 
+$('#detay_downtime').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden3_1").css('display') == 'none')
+    {
+        hidden_block3_1_controller = 1;
+        $("#panel_hidden3_1").loadImager('removeLoadImage');
+        $("#panel_hidden3_1").loadImager('appendImage');
+        $("#panel_hidden3_1_title").html(window.lang.translate('Downtime'));
+        $("#panel_hidden3_1").animate({height:'toggle'},1000); 
+        
+        if(serviceControler == true) {
+            getDowntimeYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getDowntimeYillikWithoutServices();
+        } 
+
+    }else {
+        hidden_block3_1_controller = 1;
+        $("#panel_hidden3_1").loadImager('removeLoadImage');
+        $("#panel_hidden3_1").loadImager('appendImage');
+        $("#panel_hidden3_1_title").html(window.lang.translate('Downtime'));
+        
+        if(serviceControler == true) {
+            getDowntimeYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+             getDowntimeYillikWithoutServices();
+        } 
+    }     
+});
+
+// hidden block3 aylık button click event
+$('#hidden_block3_1_month').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_block3_controller == 1)
+    {
+        $("#panel_hidden3_1").loadImager('removeLoadImage');
+        $("#panel_hidden3_1").loadImager('appendImage');
+        $("#panel_hidden3_1_title").html(window.lang.translate('Vehicle Entries'));
+        
+        if(serviceControler == true) {
+            getAracGirisleriAylikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAracGirisleriAylikWithoutServices();
+        }  
+    }  
+});
+
+// hidden block3 yıllık button click event
+$('#hidden_block3_1_year').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_block3_controller == 1)
+    {
+        $("#panel_hidden3_1").loadImager('removeLoadImage');
+        $("#panel_hidden3_1").loadImager('appendImage');
+        $("#panel_hidden3_1_title").html(window.lang.translate('Vehicle Entries'));
+        
+        if(serviceControler == true) {
+            getAracGirisleriYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAracGirisleriYillikWithoutServices();
+        }
+         
+    }
+         
+});
+// detay block Müşteri Memnuniyeti son
 
 
 // detay block 4
@@ -1110,6 +1684,78 @@ $('#hidden_block4_year').click(function()
 });
 // detay bloc 4 son
 
+// detay blok Müşteri Memnuniyeti 
+var hidden_MM_CSI_controller;
+var hidden_MM_CXI_controller;
+// müşteri memnuniyeti CSI detay click 
+$('#detay_CSI').click(function(){
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden_MM_CSI").css('display') == 'none')
+    {
+        hidden_MM_CSI_controller = 1;
+        $("#panel_hidden_MM_CSI").loadImager('removeLoadImage');
+        $("#panel_hidden_MM_CSI").loadImager('appendImage');
+        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer Happiness'));
+        $("#panel_hidden_MM_CSI").animate({height:'toggle'},1000); 
+        
+        if(serviceControler == true) {
+            getMMCSIYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getMMCSIYillikWithoutServices();
+        } 
+
+    }else {
+        hidden_MM_CSI_controller = 1;
+        $("#panel_hidden_MM_CSI").loadImager('removeLoadImage');
+        $("#panel_hidden_MM_CSI").loadImager('appendImage');
+        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer Happiness'));
+        
+        if(serviceControler == true) {
+            getMMCSIYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getMMCSIYillikWithoutServices();
+        } 
+    }     
+});
+
+// müşteri memnuniyeti CXI detay click 
+$('#detay_CXI').click(function(){
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden_MM_CXI").css('display') == 'none')
+    {
+        hidden_MM_CXI_controller = 1;
+        $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
+        $("#panel_hidden_MM_CXI").loadImager('appendImage');
+        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer Happiness'));
+        $("#panel_hidden_MM_CXI").animate({height:'toggle'},1000); 
+        
+        if(serviceControler == true) {
+            getMMCXIYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getMMCXIYillikWithoutServices();
+        } 
+
+    }else {
+        hidden_MM_CXI_controller = 1;
+        $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
+        $("#panel_hidden_MM_CXI").loadImager('appendImage');
+        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer Happiness'));
+        
+        if(serviceControler == true) {
+            getMMCXIYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getMMCXIYillikWithoutServices();
+        }
+    }     
+});
+// detay block Müşteri Memnuniyeti son
+
 // detay bloc 5
 // acılan bayi stoklar detay graph click event
 $('#detay_acilan_bayi_stoklari').click(function()
@@ -1264,310 +1910,28 @@ $('#detay_acilan_bayi_stoklari').click(function()
 var filler = $('#todolistbox').todolistFiller();
 
 // son iş emirleri dashboard
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardIsEmriLastDataMusteri_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        if(data!=null) {
-            $("#todolistboxServisMusteri").loadImager('removeLoadImage');
-           var fillerTest2 = $('#servisMusteriFillerUL').listFiller();
-            fillerTest2.listFiller('option', 'data', data['resultSet']);
-            fillerTest2.listFiller('fill'); 
-
-
-            $("#todolistboxServis").loadImager('removeLoadImage');
-            var fillerTest2 = $('#servisFillerUL').listFiller();
-            fillerTest2.listFiller('option', 'data', data['resultSet']);
-            fillerTest2.listFiller('fill2');
-        }
-
-
-        //console.log(data);
-        /*filler.todolistFiller('option','domObjectKey','span[data-fill="true"]');
-        filler.todolistFiller('option','otherDomObjectKeys','small[data-fill-number="true"],small[data-fill-number2="true"]');
-        filler.todolistFiller('option','otherDomObjectKeysDataLabels',new Array('sure'));
-        filler.todolistFiller('option','data',data);
-        filler.todolistFiller('fill');*/
-        //$('#todolistbox').loadImager('removeLoadImage');  
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(jqXHR);
-    }
-
-});
+getSonIsEmirleriDashboard();
 
 // araç girişleri dashboard
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardAracGirisSayilari_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        //console.log(data.resultSet);
-        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
-            var dataSet = data.resultSet;
-            $.each(dataSet, function ($key, $value) {
-                //console.log($key+'--'+$value);
-                //console.log($value.ACIKLAMA);
-                if($value.A) {
-                    if($value.A == null || $value.A == '') {
-                        $value.A = 0;
-                    }
-                } else {
-                    $value.A = 0;
-                }
-                $("#toplam_header_arac_giris_sayilari_container").headerSetterAfterSales($value);
-            })
-        }
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        //console.error(jqXHR);
-    }
-});
+getAracGirisleriDashboard();
     
 // Sales  dashboard data (#container)
-$.ajax({
-   url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-   data: { url:'getSalesDashboardData_infoSales' ,
-           pk : $("#pk").val()}, 
-   type: 'GET',
-   dataType: 'json',
-   language_id:647,
-   //data: 'rowIndex='+rowData.id,
-   success: function (data, textStatus, jqXHR) {
-
-       //console.log(data.resultSet);
-       if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
-           var dataSet = data.resultSet;
-           $.each(dataSet, function ($key, $value) {
-               //console.log($key+'--'+$value);
-               //console.log($value.ACIKLAMA);
-               if($value.CONTROLER == 1) {
-                   $("#toplam_sales_1_container").headerSetterAfterSalesInvoices($value);
-               } else if($value.CONTROLER == 2){
-                   $("#toplam_sales_2_container").headerSetterAfterSalesInvoices($value);
-               } else if($value.CONTROLER == 3){
-                   $("#toplam_sales_3_container").headerSetterAfterSalesInvoices($value);
-               } else if($value.CONTROLER == 4) {
-                   $("#toplam_sales_4_container").headerSetterAfterSalesInvoices($value);
-               } else if($value.CONTROLER == 5) {
-                   $("#toplam_sales_block2_1_container").headerSetterAfterSales($value);
-               }else if($value.CONTROLER == 6) {
-                   $("#toplam_sales_block2_2_container").headerSetterAfterSales($value);
-               }
-           })
-       }
-
-
-
-           var data = [
-               [Date.UTC(2015,5,19),0.8808],
-               [Date.UTC(2015,5,21),0.8794],
-               [Date.UTC(2015,5,22),0.8818],
-               [Date.UTC(2015,5,23),0.8952],
-               [Date.UTC(2015,5,24),0.8924],
-               [Date.UTC(2015,5,25),0.8925],
-               [Date.UTC(2015,5,26),0.8955],
-               [Date.UTC(2015,5,28),0.9113],
-               [Date.UTC(2015,5,29),0.8900],
-               [Date.UTC(2015,5,30),0.8950]
-           ]
-
-$('#timeSeries').highcharts({
-       chart: {
-           zoomType: 'x'
-       },
-       title: {
-           text: 'USD to EUR exchange rate over time'
-       },
-       subtitle: {
-           text: document.ontouchstart === undefined ?
-                   'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
-       },
-       xAxis: {
-           type: 'datetime'
-       },
-       yAxis: {
-           title: {
-               text: 'Exchange rate'
-           }
-       },
-       legend: {
-           enabled: false
-       },
-       plotOptions: {
-           area: {
-               fillColor: {
-                   linearGradient: {
-                       x1: 0,
-                       y1: 0,
-                       x2: 0,
-                       y2: 1
-                   },
-                   stops: [
-                       [0, Highcharts.getOptions().colors[0]],
-                       [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-                   ]
-               },
-               marker: {
-                   radius: 2
-               },
-               lineWidth: 1,
-               states: {
-                   hover: {
-                       lineWidth: 1
-                   }
-               },
-               threshold: null
-           }
-       },
-
-       series: [{
-           type: 'area',
-           name: 'USD to EUR',
-           data: data
-       }]
-   });
-
-
-   },
-   error: function (jqXHR, textStatus, errorThrown) {
-       //console.error(jqXHR);
-   }
-});
+getSalesDashboard();
 
 // afterSales iş emirleri  dashboard data (#container)
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardIsEmriData_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        //console.log(data.resultSet);
-        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
-            var dataSet = data.resultSet;
-            $.each(dataSet, function ($key, $value) {
-                //console.log($key+'--'+$value);
-                //console.log($value.ACIKLAMA);
-                if($value.CONTROLER == 1) {
-                    $("#toplam_header_1_container").headerSetterAfterSales($value);
-                } else if($value.CONTROLER == 2){
-                    $("#toplam_header_2_container").headerSetterAfterSales($value);
-                } else if($value.CONTROLER == 3){
-                    $("#toplam_header_3_container").headerSetterAfterSales($value);
-                }
-            })
-        }
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        //console.error(jqXHR);
-    }
-});
+getAfterSalesIsEmirleriDashboard();
     
-// afterSales  faturalar  dashboard data (#container_toplam_fatura)
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardFaturaData_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        //console.log(data.resultSet);
-        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
-            var dataSet = data.resultSet;
-            $.each(dataSet, function ($key, $value) {
-                //console.log($key+'--'+$value);
-                //console.log($value.ACIKLAMA);
-                if($value.CONTROLER == 1) {
-                    $("#toplam_fatura_1_container").headerSetterAfterSalesInvoices($value);
-                } else if($value.CONTROLER == 2){
-                    $("#toplam_fatura_2_container").headerSetterAfterSalesInvoices($value);
-                } else if($value.CONTROLER == 3){
-                    $("#toplam_fatura_3_container").headerSetterAfterSalesInvoices($value);
-                } else if($value.CONTROLER == 4) {
-                    $("#toplam_fatura_4_container").headerSetterAfterSalesInvoices($value);
-                }
-            })
-        }
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(textStatus);
-    }
-});
+//afterSales  faturalar  dashboard data (#container_toplam_fatura)
+getAfterSalesFaturalarDashboard();
     
 // afterSales  ciro, yedek parça,toplam müşteri  dashboard data (#container_toplam_ciro)
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardCiroYedekParca_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        //console.log(data.resultSet);
-        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
-            var dataSet = data.resultSet;
-            var dataToday;
-            var dataYesterday;
+getMusteriCiroDashboard();
 
-            var ciroToday;
-            var ciroYesterday;
+// stoklar dashboard data
+getStoklarDashboard(); 
 
-            $.each(dataSet, function ($key, $value) {
-                //console.log($key+'--'+$value);
-                //console.log($value.ACIKLAMA);
-                if($value.CONTROLER == 1) {
-                    ciroToday = $value;
-                    $("#toplam_ciro_2_container").headerSetterAfterSalesCiro($value);
-                } else if($value.CONTROLER == 2){
-                    dataToday = $value;
-                    $("#toplam_ciro_1_container").headerSetterAfterSalesCiro($value);
-                } else if($value.CONTROLER == 3){
-                    $("#toplam_header_4_container").headerSetterAfterSales($value);
-                } else if ($value.CONTROLER == 4){
-                    dataYesterday = $value;
-                }else if ($value.CONTROLER == 5){
-                    ciroYesterday = $value;
-                }
-            });
-            //console.log(dataToday);
-            //console.log(dataYesterday);
-            //dataToday.A = 128;
-            //Müşteri sayısı compare
-            if(parseInt(dataToday.A) > parseInt(dataYesterday.A)) {
-                $("#toplam_musteri_container_progress_bar").headerSetterAfterSalesMusteriCompare(dataToday.A, dataYesterday.A, {compare:'today_greater'});
-            } else if(parseInt(dataYesterday.A) > parseInt(dataToday.A) ) {
-                $("#toplam_musteri_container_progress_bar").headerSetterAfterSalesMusteriCompare(dataToday.A, dataYesterday.A, {compare:'today_little'});
-            } else if(parseInt(dataToday.A) == parseInt(dataYesterday.A) ) {
-                $("#toplam_musteri_container_progress_bar").headerSetterAfterSalesMusteriCompare(dataToday.A, dataYesterday.A, {compare:'today_equal'});
-            }
-
-            //console.log(ciroToday);
-            //console.log(ciroYesterday);
-            //ciroToday.A = 677106,50;
-            // Ciro compare
-            $("#toplam_ciro_container_progress_bar").headerSetterAfterSalesCiroCompare(ciroToday.A, ciroYesterday.A, {compare:'today_greater'});
-        }
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(textStatus);
-    }
-});
-  
+// downtime dashboard data
+getDownTimeDashboard();
     
 /**
  * loading image for roles dropdown
@@ -1635,13 +1999,13 @@ ajaxACLResources.ajaxCallWidget ({
 }) 
 ajaxACLResources.ajaxCallWidget('call');
     
-    /*
-     * Author: Abdullah A Almsaeed
-     * Date: 4 Jan 2014
-     * Description:
-     *      This is a demo file used only for the main dashboard (index.html)
-     **/
-    "use strict";
+/*
+ * Author: Abdullah A Almsaeed
+ * Date: 4 Jan 2014
+ * Description:
+ *      This is a demo file used only for the main dashboard (index.html)
+ **/
+"use strict";
 
 $(function () {
 
@@ -6130,27 +6494,701 @@ function getAracGirisleriYillikWithServices(multiSelectedRoles) {
 }
 // 3. block ve ikinci block hidden fonk. son
 
+// 3_1. block hidden fonk.
+function getDowntimeYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        graphData.push(value.YIL+'/'+value.TARIH);
+                        var arr = value.DOWNTIME.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseFloat(d));
+                        } else{
+                            graphData.push(parseFloat(d));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_block3_1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Downtime')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('hour')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: {point.y:.,2f}<br/>'+window.lang.translate('downtime')+''
+                        },
+                        series: [{
+                            name: window.lang.translate('Downtime'),
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden3_1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getDowntimeYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        if(counter == 1) {
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseFloat(d));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseFloat(d));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseFloat(d));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_block3_1', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Downtime')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('hour')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.2f}<br/> } '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden3_1").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+// 3_1. block  hidden fonk. son
+
+// müşteri memnuniyeti CSI block hidden fonk.
+function getMMCSIYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayMMCSIYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        var d =  value.DOWNTIME
+                        //d = d.replace(",", ".");
+                        graphData.push(value.YIL+'/'+value.TARIH);
+                        //var arr = value.DOWNTIME.split(',');
+                        /*if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseFloat(d));
+                        } else{
+                            graphData.push(parseFloat(d));
+                        }*/
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    Highcharts.chart('container_hidden_MM_CSI', {
+                        title: {
+                            text: window.lang.translate('Customer Happiness')
+                        },
+                        subtitle: {
+                            //text: 'Source: thesolarfoundation.com'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Number of Employees'
+                            }
+                        },
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'top',
+                            verticalAlign: 'top'
+                        },
+                        plotOptions: {
+                            series: {
+                                label: {
+                                    connectorAllowed: false
+                                },
+                                pointStart: 2010
+                            }
+                        },
+                        series: [{
+                            name: 'Installation',
+                            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
+                            showInLegend: false
+                        }, {
+                            name: 'Manufacturing',
+                            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
+                            showInLegend: false
+                        }, {
+                            name: 'Sales & Distribution',
+                            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
+                            showInLegend: false
+                        }, {
+                            name: 'Project Development',
+                            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
+                            showInLegend: false
+                        }, {
+                            name: 'Other',
+                            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
+                            showInLegend: false
+                        }],
+                        responsive: {
+                            rules: [{
+                                condition: {
+                                    maxWidth: 500
+                                },
+                                chartOptions: {
+                                    legend: {
+                                        layout: 'horizontal',
+                                        align: 'top',
+                                        verticalAlign: 'top'
+                                    }
+                                }
+                            }]
+                        }
+
+                    });
+                    $("#panel_hidden_MM_CSI").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getMMCSIYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayMMCSIYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        var d =  value.DOWNTIME
+                        //d = d.replace(",", ".");
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        if(counter == 1) {
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseFloat(d));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseFloat(d));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseFloat(d));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    Highcharts.chart('container_hidden_MM_CSI', {
+                        title: {
+                            text: window.lang.translate('Customer Happiness')
+                        },
+                        subtitle: {
+                            //text: 'Source: thesolarfoundation.com'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Number of Employees'
+                            }
+                        },
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'top',
+                            verticalAlign: 'top'
+                        },
+                        plotOptions: {
+                            series: {
+                                label: {
+                                    connectorAllowed: false
+                                },
+                                pointStart: 2010
+                            }
+                        },
+                        series: [{
+                            name: 'Installation',
+                            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
+                            showInLegend: false
+                        }, {
+                            name: 'Manufacturing',
+                            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
+                            showInLegend: false
+                        }, {
+                            name: 'Sales & Distribution',
+                            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
+                            showInLegend: false
+                        }, {
+                            name: 'Project Development',
+                            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
+                            showInLegend: false
+                        }, {
+                            name: 'Other',
+                            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
+                            showInLegend: false
+                        }],
+                        responsive: {
+                            rules: [{
+                                condition: {
+                                    maxWidth: 500
+                                },
+                                chartOptions: {
+                                    legend: {
+                                        layout: 'horizontal',
+                                        align: 'top',
+                                        verticalAlign: 'top'
+                                    }
+                                }
+                            }]
+                        }
+
+                    });
+                    $("#panel_hidden_MM_CSI").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+// müşteri memnuniyeti CSI hidden fonk. son
+
+// müşteri memnuniyeti CXI block hidden fonk.
+function getMMCXIYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayMMCXIYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        var d =  value.DOWNTIME
+                        //d = d.replace(",", ".");
+                        graphData.push(value.YIL+'/'+value.TARIH);
+                        //var arr = value.DOWNTIME.split(',');
+                        /*if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseFloat(d));
+                        } else{
+                            graphData.push(parseFloat(d));
+                        }*/
+                        graphDataAll.push(graphData);
+                    });
+
+                    Highcharts.chart('container_hidden_MM_CXI', {
+                        title: {
+                            text: window.lang.translate('Customer Happiness')
+                        },
+                        subtitle: {
+                            //text: 'Source: thesolarfoundation.com'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Number of Employees'
+                            }
+                        },
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'top',
+                            verticalAlign: 'top'
+                        },
+                        plotOptions: {
+                            series: {
+                                label: {
+                                    connectorAllowed: false
+                                },
+                                pointStart: 2010
+                            }
+                        },
+                        series: [{
+                            name: 'Installation',
+                            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
+                            showInLegend: false
+                        }, {
+                            name: 'Manufacturing',
+                            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
+                            showInLegend: false
+                        }, {
+                            name: 'Sales & Distribution',
+                            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
+                            showInLegend: false
+                        }, {
+                            name: 'Project Development',
+                            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
+                            showInLegend: false
+                        }, {
+                            name: 'Other',
+                            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
+                            showInLegend: false
+                        }],
+                        responsive: {
+                            rules: [{
+                                condition: {
+                                    maxWidth: 500
+                                },
+                                chartOptions: {
+                                    legend: {
+                                        layout: 'horizontal',
+                                        align: 'top',
+                                        verticalAlign: 'top'
+                                    }
+                                }
+                            }]
+                        }
+
+                    });
+                    $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getMMCXIYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayMMCXIYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        var d =  value.DOWNTIME
+                        //d = d.replace(",", ".");
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        if(counter == 1) {
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseFloat(d));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseFloat(d));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseFloat(d));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    Highcharts.chart('container_hidden_MM_CXI', {
+                        title: {
+                            text: window.lang.translate('Customer Happiness')
+                        },
+                        subtitle: {
+                            //text: 'Source: thesolarfoundation.com'
+                        },
+                        yAxis: {
+                            title: {
+                                text: 'Number of Employees'
+                            }
+                        },
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'top',
+                            verticalAlign: 'top'
+                        },
+                        plotOptions: {
+                            series: {
+                                label: {
+                                    connectorAllowed: false
+                                },
+                                pointStart: 2010
+                            }
+                        },
+                        series: [{
+                            name: 'Installation',
+                            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
+                            showInLegend: false
+                        }, {
+                            name: 'Manufacturing',
+                            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
+                            showInLegend: false
+                        }, {
+                            name: 'Sales & Distribution',
+                            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
+                            showInLegend: false
+                        }, {
+                            name: 'Project Development',
+                            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
+                            showInLegend: false
+                        }, {
+                            name: 'Other',
+                            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
+                            showInLegend: false
+                        }],
+                        responsive: {
+                            rules: [{
+                                condition: {
+                                    maxWidth: 500
+                                },
+                                chartOptions: {
+                                    legend: {
+                                        layout: 'horizontal',
+                                        align: 'top',
+                                        verticalAlign: 'top'
+                                    }
+                                }
+                            }]
+                        }
+
+                    });
+                    $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+// müşteri memnuniyeti CXI hidden fonk. son
+
 // satış sonrası servisler ile ilgili fonk.
 function getServiceDropdownSelectedItems() {
     var serviceControler = false;
-    var ddDataRoles = $('#dropdownRoles').data('ddslick');
-    var multiSelectedRoles = $('#dropdownRoles').ddslick('selectedValues',
+    if($('#dropdownRoles').length) {
+        var ddDataRoles = $('#dropdownRoles').data('ddslick');
+        if(ddDataRoles != null) {
+            var multiSelectedRoles = $('#dropdownRoles').ddslick('selectedValues',
                                                                 {id: ''+ddDataRoles.settings.multiSelectTagID+'' 
                                                                 });
+        }
+        
+    }
      return multiSelectedRoles;                                                           
 }
 
 function getServiceSelectedItemsControl(multiSelectedRoles) {
     var multiSelectedRoles = multiSelectedRoles;
-    if(multiSelectedRoles.length) {
-        if(multiSelectedRoles.length == 0) {
-         return false;
-     } else if(multiSelectedRoles.length > 0){
-         return true;
-     }
+    if(multiSelectedRoles != null){
+        if(multiSelectedRoles.length) {
+                if(multiSelectedRoles.length == 0) {
+                 return false;
+             } else if(multiSelectedRoles.length > 0){
+                 return true;
+             }
+        } else {
+        return false;
+        }
     } else {
         return false;
     }
+    
 }
 
 function getServicesSelectedAsUrl(multiSelectedServices) {
@@ -6171,6 +7209,576 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
         return '';
     }
 }
+
 // satış sonrası servisler ile ilgili fonk. 
+
+// dashboard özet verileri fonk.
+// Son iş emirleri dashboard
+function getSonIsEmirleriDashboard() {
+    $.ajax({
+    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'getAfterSalesDashboardIsEmriLastDataMusteri_infoAfterSales' ,
+            pk : $("#pk").val()}, 
+    type: 'GET',
+    dataType: 'json',
+    language_id:647,
+    //data: 'rowIndex='+rowData.id,
+    success: function (data, textStatus, jqXHR) {
+        if(data!=null) {
+            $("#todolistboxServisMusteri").loadImager('removeLoadImage');
+           var fillerTest2 = $('#servisMusteriFillerUL').listFiller();
+            fillerTest2.listFiller('option', 'data', data['resultSet']);
+            fillerTest2.listFiller('fill'); 
+
+
+            $("#todolistboxServis").loadImager('removeLoadImage');
+            var fillerTest2 = $('#servisFillerUL').listFiller();
+            fillerTest2.listFiller('option', 'data', data['resultSet']);
+            fillerTest2.listFiller('fill2');
+        }  
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.error(errorThrown);
+    }
+
+});
+}
+
+// Araç girişleri dashboard
+function getAracGirisleriDashboard() {  
+$.ajax({
+    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'getAfterSalesDashboardAracGirisSayilari_infoAfterSales' ,
+            pk : $("#pk").val()}, 
+    type: 'GET',
+    dataType: 'json',
+    language_id:647,
+    //data: 'rowIndex='+rowData.id,
+    success: function (data, textStatus, jqXHR) {
+        //console.log(data.resultSet);
+        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+            var dataSet = data.resultSet;
+            $.each(dataSet, function ($key, $value) {
+                //console.log($key+'--'+$value);
+                //console.log($value.ACIKLAMA);
+                if($value.A) {
+                    if($value.A == null || $value.A == '') {
+                        $value.A = 0;
+                    }
+                } else {
+                    $value.A = 0;
+                }
+                $("#toplam_header_arac_giris_sayilari_container").headerSetterAfterSales($value);
+            })
+        }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.error(errorThrown);
+    }
+});
+}
+
+// Sales  dashboard data
+function getSalesDashboard() {
+$.ajax({
+   url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+   data: { url:'getSalesDashboardData_infoSales' ,
+           pk : $("#pk").val()}, 
+   type: 'GET',
+   dataType: 'json',
+   language_id:647,
+   //data: 'rowIndex='+rowData.id,
+   success: function (data, textStatus, jqXHR) {
+       if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+           var dataSet = data.resultSet;
+           $.each(dataSet, function ($key, $value) {
+               if($value.CONTROLER == 1) {
+                   $("#toplam_sales_1_container").headerSetterAfterSalesInvoices($value);
+               } else if($value.CONTROLER == 2){
+                   $("#toplam_sales_2_container").headerSetterAfterSalesInvoices($value);
+               } else if($value.CONTROLER == 3){
+                   $("#toplam_sales_3_container").headerSetterAfterSalesInvoices($value);
+               } else if($value.CONTROLER == 4) {
+                   $("#toplam_sales_4_container").headerSetterAfterSalesInvoices($value);
+               } else if($value.CONTROLER == 5) {
+                   $("#toplam_sales_block2_1_container").headerSetterAfterSales($value);
+               }else if($value.CONTROLER == 6) {
+                   $("#toplam_sales_block2_2_container").headerSetterAfterSales($value);
+               }
+           })
+       }
+
+        var data = [
+            [Date.UTC(2015,5,19),0.8808],
+            [Date.UTC(2015,5,21),0.8794],
+            [Date.UTC(2015,5,22),0.8818],
+            [Date.UTC(2015,5,23),0.8952],
+            [Date.UTC(2015,5,24),0.8924],
+            [Date.UTC(2015,5,25),0.8925],
+            [Date.UTC(2015,5,26),0.8955],
+            [Date.UTC(2015,5,28),0.9113],
+            [Date.UTC(2015,5,29),0.8900],
+            [Date.UTC(2015,5,30),0.8950]
+        ]
+
+        $('#timeSeries').highcharts({
+       chart: {
+           zoomType: 'x'
+       },
+       title: {
+           text: 'USD to EUR exchange rate over time'
+       },
+       subtitle: {
+           text: document.ontouchstart === undefined ?
+                   'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
+       },
+       xAxis: {
+           type: 'datetime'
+       },
+       yAxis: {
+           title: {
+               text: 'Exchange rate'
+           }
+       },
+       legend: {
+           enabled: false
+       },
+       plotOptions: {
+           area: {
+               fillColor: {
+                   linearGradient: {
+                       x1: 0,
+                       y1: 0,
+                       x2: 0,
+                       y2: 1
+                   },
+                   stops: [
+                       [0, Highcharts.getOptions().colors[0]],
+                       [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                   ]
+               },
+               marker: {
+                   radius: 2
+               },
+               lineWidth: 1,
+               states: {
+                   hover: {
+                       lineWidth: 1
+                   }
+               },
+               threshold: null
+           }
+       },
+
+       series: [{
+           type: 'area',
+           name: 'USD to EUR',
+           data: data
+       }]
+   });
+
+
+   },
+   error: function (jqXHR, textStatus, errorThrown) {
+       console.error(errorThrown);
+   }
+});   
+}
+
+// AfterSales  faturalar  dashboard data (#container_toplam_fatura)
+function getAfterSalesFaturalarDashboard() {    
+$.ajax({
+    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'getAfterSalesDashboardFaturaData_infoAfterSales' ,
+            pk : $("#pk").val()}, 
+    type: 'GET',
+    dataType: 'json',
+    language_id:647,
+    //data: 'rowIndex='+rowData.id,
+    success: function (data, textStatus, jqXHR) {
+        //console.log(data.resultSet);
+        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+            var dataSet = data.resultSet;
+            $.each(dataSet, function ($key, $value) {
+                //console.log($key+'--'+$value);
+                //console.log($value.ACIKLAMA);
+                if($value.CONTROLER == 1) {
+                    $("#toplam_fatura_1_container").headerSetterAfterSalesInvoices($value);
+                } else if($value.CONTROLER == 2){
+                    $("#toplam_fatura_2_container").headerSetterAfterSalesInvoices($value);
+                } else if($value.CONTROLER == 3){
+                    $("#toplam_fatura_3_container").headerSetterAfterSalesInvoices($value);
+                } else if($value.CONTROLER == 4) {
+                    $("#toplam_fatura_4_container").headerSetterAfterSalesInvoices($value);
+                }
+            })
+        }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.error(errorThrown);
+    }
+});
+}
+
+// afterSales iş emirleri  dashboard data (#container)
+function getAfterSalesIsEmirleriDashboard() {   
+$.ajax({
+    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'getAfterSalesDashboardIsEmriData_infoAfterSales' ,
+            pk : $("#pk").val()}, 
+    type: 'GET',
+    dataType: 'json',
+    language_id:647,
+    //data: 'rowIndex='+rowData.id,
+    success: function (data, textStatus, jqXHR) {
+        //console.log(data.resultSet);
+        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+            var dataSet = data.resultSet;
+            $.each(dataSet, function ($key, $value) {
+                //console.log($key+'--'+$value);
+                //console.log($value.ACIKLAMA);
+                if($value.CONTROLER == 1) {
+                    $("#toplam_header_1_container").headerSetterAfterSales($value);
+                } else if($value.CONTROLER == 2){
+                    $("#toplam_header_2_container").headerSetterAfterSales($value);
+                } else if($value.CONTROLER == 3){
+                    $("#toplam_header_3_container").headerSetterAfterSales($value);
+                }
+            })
+        }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.error(errorThrown);
+    }
+});
+}
+
+// afterSales  ciro, yedek parça,toplam müşteri  dashboard data (#container_toplam_ciro)
+function  getMusteriCiroDashboard() {   
+$.ajax({
+    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'getAfterSalesDashboardCiroYedekParca_infoAfterSales' ,
+            pk : $("#pk").val()}, 
+    type: 'GET',
+    dataType: 'json',
+    language_id:647,
+    //data: 'rowIndex='+rowData.id,
+    success: function (data, textStatus, jqXHR) {
+        //console.log(data.resultSet);
+        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+            var dataSet = data.resultSet;
+            var dataToday;
+            var dataYesterday;
+
+            var ciroToday;
+            var ciroYesterday;
+
+            $.each(dataSet, function ($key, $value) {
+                //console.log($key+'--'+$value);
+                //console.log($value.ACIKLAMA);
+                if($value.CONTROLER == 1) {
+                    ciroToday = $value;
+                    $("#toplam_ciro_2_container").headerSetterAfterSalesCiro($value);
+                } else if($value.CONTROLER == 2){
+                    dataToday = $value;
+                    $("#toplam_ciro_1_container").headerSetterAfterSalesCiro($value);
+                } else if($value.CONTROLER == 3){
+                    //$("#toplam_header_4_container").headerSetterAfterSales($value);
+                } else if ($value.CONTROLER == 4){
+                    dataYesterday = $value;
+                }else if ($value.CONTROLER == 5){
+                    ciroYesterday = $value;
+                }
+            });
+            
+            if(parseInt(dataToday.A) > parseInt(dataYesterday.A)) {
+                $("#toplam_musteri_container_progress_bar").headerSetterAfterSalesMusteriCompare(dataToday.A, dataYesterday.A, {compare:'today_greater'});
+            } else if(parseInt(dataYesterday.A) > parseInt(dataToday.A) ) {
+                $("#toplam_musteri_container_progress_bar").headerSetterAfterSalesMusteriCompare(dataToday.A, dataYesterday.A, {compare:'today_little'});
+            } else if(parseInt(dataToday.A) == parseInt(dataYesterday.A) ) {
+                $("#toplam_musteri_container_progress_bar").headerSetterAfterSalesMusteriCompare(dataToday.A, dataYesterday.A, {compare:'today_equal'});
+            }
+            $("#toplam_ciro_container_progress_bar").headerSetterAfterSalesCiroCompare(ciroToday.A, ciroYesterday.A, {compare:'today_greater'});
+        }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.error(textStatus);
+    }
+});
+}
+
+// stoklar dashboard data
+function getStoklarDashboard() { 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardStoklarWithServices_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var dataToday;
+                    var dataYesterday;
+
+                    var ciroToday;
+                    var ciroYesterday;
+
+                    $.each(dataSet, function ($key, $value) {
+                        //console.log($key+'--'+$value);
+                        //console.log($value.ACIKLAMA);
+                        $("#toplam_header_4_container").headerSetterAfterSalesStocks($value);
+                    });
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardStoklar_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var dataToday;
+                    var dataYesterday;
+
+                    var ciroToday;
+                    var ciroYesterday;
+
+                    $.each(dataSet, function ($key, $value) {
+                        //console.log($key+'--'+$value);
+                        //console.log($value.ACIKLAMA);
+                        $("#toplam_header_4_container").headerSetterAfterSalesStocks($value);
+                    });
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// downtime dashboard data
+function getDownTimeDashboard() { 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var downtime;
+                $.each(dataSet, function (key, value) {
+                    var d =  value.DOWNTIME
+                    d = d.replace(",", ".");
+                    //console.log(d);
+                    downtime+= parseInt(d);
+                });
+                console.log(downtime);
+                $("#toplam_header_downtime_container").headerSetterAfterSalesStocks(downtime);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var downtime = 0;
+                    $.each(dataSet, function (key, value) {
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        console.log(d);
+                        console.log(downtime);
+                        downtime = parseFloat(downtime)+parseFloat(d);
+                    });
+                    console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    $("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// downtime dashboard data
+function getMMCSIDashboard() { 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardMMCSIWithServices_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var downtime;
+                $.each(dataSet, function (key, value) {
+                    var d =  value.DOWNTIME
+                    d = d.replace(",", ".");
+                    //console.log(d);
+                    downtime+= parseInt(d);
+                });
+                console.log(downtime);
+                $("#toplam_header_MM_CSI_container").headerSetterAfterSalesStocks(downtime);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardMMCSI_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var downtime = 0;
+                    $.each(dataSet, function (key, value) {
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        console.log(d);
+                        console.log(downtime);
+                        downtime = parseFloat(downtime)+parseFloat(d);
+                    });
+                    console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    $("#toplam_header_MM_CSI_container").headerSetterAfterSalesDowntime(dt);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// downtime dashboard data
+function getMMCXIDashboard() { 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDetayMMCXIYillikWithServices_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var downtime;
+                $.each(dataSet, function (key, value) {
+                    var d =  value.DOWNTIME
+                    d = d.replace(",", ".");
+                    //console.log(d);
+                    downtime+= parseInt(d);
+                });
+                console.log(downtime);
+                $("#toplam_header_MM_CXI_container").headerSetterAfterSalesStocks(downtime);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayMMCXIYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var downtime = 0;
+                    $.each(dataSet, function (key, value) {
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        console.log(d);
+                        console.log(downtime);
+                        downtime = parseFloat(downtime)+parseFloat(d);
+                    });
+                    console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    $("#toplam_header_MM_CXI_container").headerSetterAfterSalesDowntime(dt);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// dashboard özet verileri fonk. son
+
+
     
 });

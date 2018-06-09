@@ -47,9 +47,13 @@
                 "Opened":"Açılan",
                 "Closed":"Kapanan",
                 "Total Spare Parts":"Toplam Yedek Parça",
+                "Inventory":"Stoklar",
                 "Open | Closed":"Açılan | Kapanan",
                 "Open Orders":"Açık İş Emirleri",
                 "Vehicle Entries":"Araç Giriş Sayıları",
+                "Downtime":"Downtime",
+                "hour":"saat",
+                "Customer Happiness":"Müşteri Memnuniyeti",
                 "Last orders":"Son iş emirleri",
                 "Management Dashboard2":"Yönetici paneli",
                 "Location":"Türkçe lokasyon"

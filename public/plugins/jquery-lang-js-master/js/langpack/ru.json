@@ -46,9 +46,13 @@
                 "Opened":"открытый",
                 "Closed":"закрыто", 
                 "Total Spare Parts":"Общие запасные части",
+                "Inventory":"инвентарь",
                 "Open | Closed":"НА РУССКОМ  | НА РУССКОМ ",
                 "Open Orders":"Открытые заказы",
                 "Vehicle Entries":"Записи транспортных средств",
+                "hour":"час",
+                "Customer Happiness":"Счастье клиента",
+                "Downtime":"время простоя",
                 "Last orders":"Последние заказы",
                 "Management Dashboard2":"НА РУССКОМ ",
                 "Location":"НА РУССКОМ  НА РУССКОМ "

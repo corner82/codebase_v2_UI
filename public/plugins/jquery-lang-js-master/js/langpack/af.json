@@ -46,9 +46,13 @@
                 "Opened":"Geopen",
                 "Closed":"Geslote",
                 "Total Spare Parts":"Totale Onderdele",
+                "Inventory":"Voorraad",
                 "Open | Closed":"Geopen | Geslote",
                 "Open Orders":"Open Bestellings",
                 "Vehicle Entries":"Voertuiginskrywings",
+                "Downtime":"Af tyd",
+                "hour":"uur",
+                "Customer Happiness":"Kliënt geluk",
                 "Last orders":"Laaste bestellings",
                 "Management Dashboard2":"Bestuur Dashboard",
                 "Location":"Lokasie"

@@ -46,9 +46,13 @@
                 "Opened":"افتتاح شد",
                 "Closed":"بسته شد", 
                 "Total Spare Parts":"قطعات یدکی کل",
+                "Inventory":"فهرست",
                 "Open | Closed":"فارسی| | فارسی",
                 "Open Orders":"سفارشات را باز کنید",
                 "Vehicle Entries":"نوشته های خودرو",
+                "hour":"ساعت",
+                "Customer Happiness":"شادی مشتری",
+                "Downtime":"خرابی",
                 "Last orders":"آخرین سفارشات",
                 "Management Dashboard2":"فارسی",
                 "Location":"فارسی  فارسی"

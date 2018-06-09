@@ -255,7 +255,7 @@
                                     <i class="fa fa-refresh fa-spin" ></i>
                                 </div>
                             </h3>
-                            <p lang="en">Total Spare Parts</p>
+                            <p lang="en">Inventory</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
@@ -310,7 +310,7 @@
             
             <!-- aftersales dashboard data üçüncü blok -->
             <div class="row">
-                <div class="col-lg-12 col-xs-12">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <!-- small box -->
                     <div id="toplam_header_arac_giris_sayilari_container" class="small-box bg-man-ligth-grey bg-aqua ">
                         <div class="inner">
@@ -324,6 +324,22 @@
                             <i class="ion ion-android-alert"></i>
                         </div>
                         <a href="cursor: pointer;" id="detay_arac_girisleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div><!-- ./col -->
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <!-- small box -->
+                    <div id="toplam_header_downtime_container" class="small-box bg-man-ligth-grey bg-aqua ">
+                        <div class="inner">
+                            <h3 class="man-header-red"><div class="overlay" >
+                                    <i class="fa fa-refresh fa-spin" ></i>
+                                </div>
+                            </h3>
+                            <p lang="en">Downtime</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-android-time"></i>
+                        </div>
+                        <a href="cursor: pointer;" id="detay_downtime" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div><!-- ./col -->
             </div><!-- /.row -->
@@ -368,6 +384,120 @@
             <!--</section>  -->
             </div>
             <!--hidden data block 3 son-->
+            
+            <!--hidden data block 3_1 -->
+            <div class="row">
+                <!--<section class="col-lg-7 connectedSortable">-->
+                <div class="col-md-12">
+                  <div class="box" id="panel_hidden3_1" style="display: none;">
+                    <div class="box-header with-border">
+                      <h3 class="box-title" id="panel_hidden3_1_title" lang="en">Downtime</h3>
+                      <div class="box-tools pull-right">
+                        <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
+                        <!--<div class="btn-group open">
+                            <button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-calendar"></i>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a id='hidden_block3_1_month' lang="en">Last month</a></li>
+                              <li class="divider"></li>
+                              <li><a id='hidden_block3_1_year' lang="en">Last 1 year</a></li>
+                            </ul>
+                         </div>-->
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-md-12">
+                          
+                          <div id="container_hidden_block3_1" style="min-width: 200px;  margin: 0 auto"></div>
+                          
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+            <!--</section>  -->
+            </div>
+            <!--hidden data block 3_1 son-->
+            
+            <!-- aftersales dashboard data verimlilik blok -->
+            <div class="row">
+                <div class="col-lg-4">
+                  <div class="box" id="panel_hidden3_1" >
+                    <div class="box-header with-border">
+                      <h3 class="box-title" id="panel_hidden3_1_title" lang="en">Downtime</h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-md-12">
+                          
+                          <div id="gauge-container-verimlilik" style="min-width: 200px;  margin: 0 auto"></div>
+                          
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+                <div class="col-lg-4">
+                  <div class="box" id="panel_hidden3_1" >
+                    <div class="box-header with-border">
+                      <h3 class="box-title" id="panel_hidden3_1_title" lang="en">Downtime</h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-md-12">
+                          
+                          <div id="gauge-container-verimlilik2" style="min-width: 200px;  margin: 0 auto"></div>
+                          
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+                <div class="col-lg-4">
+                  <div class="box" id="panel_hidden3_1" >
+                    <div class="box-header with-border">
+                      <h3 class="box-title" id="panel_hidden3_1_title" lang="en">Downtime</h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-md-12">
+                          
+                          <div id="gauge-container-verimlilik3" style="min-width: 200px;  margin: 0 auto"></div>
+                          
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+            </div><!-- /.row -->
+            <!-- aftersales dashboard data verimlilik blok son -->
             
             <!-- aftersales dashboard data karsılaştırma blok-->
             <div class="row">
@@ -414,12 +544,6 @@
                   </span>
                 </div><!-- /.info-box-content -->
               </div>
-                    
-                    
-                    
-                    
-                    
-                    
                 </div><!-- /.col -->
                 
             </div>
@@ -463,6 +587,97 @@
             <!--</section>  -->
             </div>
             <!--hidden data block 4 son-->
+            
+            <!-- aftersales müşteri memnuniyeti blok -->
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <!-- small box -->
+                    <div id="toplam_header_MM_CSI_container" class="small-box bg-man-yellow ">
+                        <div class="inner">
+                            <h3 class="man-header-red"><div class="overlay" >(CSI)
+                                    <i class="fa fa-refresh fa-spin" ></i>
+                                </div>
+                            </h3>
+                            <p lang="en">Customer Happiness</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-android-checkmark-circle"></i>
+                        </div>
+                        <a href="cursor: pointer;" id="detay_CSI" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div><!-- ./col -->
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <!-- small box -->
+                    <div id="toplam_header_MM_CXI_container" class="small-box bg-man-yellow  ">
+                        <div class="inner" >
+                            <h3 class="man-header-red"><div class="overlay" >(CXI)
+                                    <i class="fa fa-refresh fa-spin" ></i>
+                                </div>
+                            </h3>
+                            <p lang="en">Customer Happiness</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-android-checkmark-circle"></i>
+                        </div>
+                        <a href="cursor: pointer;" id="detay_CXI" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div><!-- ./col -->
+            </div><!-- /.row -->
+            <!-- aftersales müşteri memnuniyeti blok son -->
+            
+            <!--hidden data block müşteri memnuniyeti CSI -->
+            <div class="row">
+                <!--<section class="col-lg-7 connectedSortable">-->
+                <div class="col-md-12">
+                  <div class="box" id="panel_hidden_MM_CSI" style="display: none;">
+                    <div class="box-header with-border">
+                      <h3 class="box-title" id="panel_hidden_MM_CSI_title" lang="en">Customer Happiness</h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div id="container_hidden_MM_CSI" style="min-width: 200px;  margin: 0 auto"></div>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+            <!--</section>  -->
+            </div>
+            <!--hidden data block müşteri memnuniyeti CSI son-->
+            
+            <!--hidden data block müşteri memnuniyeti CXI -->
+            <div class="row">
+                <!--<section class="col-lg-7 connectedSortable">-->
+                <div class="col-md-12">
+                  <div class="box" id="panel_hidden_MM_CXI" style="display: none;">
+                    <div class="box-header with-border">
+                      <h3 class="box-title" id="panel_hidden_MM_CXI_title" lang="en">Customer Happiness</h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div id="container_hidden_MM_CXI" style="min-width: 200px;  margin: 0 auto"></div>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+            <!--</section>  -->
+            </div>
+            <!--hidden data block müşteri memnuniyeti CXI son-->
             
             <!--Graph data blok-->
             <div class="row">

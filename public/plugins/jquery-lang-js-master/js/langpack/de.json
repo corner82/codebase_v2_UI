@@ -46,9 +46,13 @@
                 "Opened":"geöffnet",
                 "Closed":"geschlossen", 
                 "Total Spare Parts":"Gesamte Ersatzteile",
+                "Inventory":"Inventar",
                 "Open | Closed":"Geöffnet | Geschlossen",
                 "Open Orders":"Offene Bestellungen",
                 "Vehicle Entries":"Fahrzeug Einträge",
+                "hour":"Stunde",
+                "Customer Happiness":"Kundenglück",
+                "Downtime":"Downtime",
                 "Last orders":"Letzte Bestellungen",
                 "Management Dashboard2":"Manager-Dashboard",
                 "Location":"Lage"

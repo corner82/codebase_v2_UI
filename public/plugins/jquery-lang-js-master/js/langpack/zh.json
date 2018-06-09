@@ -46,9 +46,13 @@
                 "Opened":"打开",
                 "Closed":"关闭", 
                 "Total Spare Parts":"总备件",
+                "Inventory":"库存",
                 "Open | Closed":"中文网 | 中文网",
                 "Open Orders":"开放订单",
                 "Vehicle Entries":"车辆入口",
+                "hour":"小时",
+                "Customer Happiness":"顾客的幸福",
+                "Downtime":"停机",
                 "Last orders":"最后的订单",
                 "Management Dashboard2":"中文网",
                 "Location":"中文网 中文网"

@@ -42,10 +42,36 @@
             $this = $(this);
             if (typeof data != 'undefined') {
                 $this.find('div:first h3:first-child').html(data.A);
+                //$.number( 5020.2364 )
                 //$this.find('p:first').html(data.ACIKLAMA);
             }
         });
     };
+    $.fn.headerSetterAfterSalesStocks = function (data, options) {
+        var data = data;
+        var opts = $.extend({}, $.fn.headerSetterAfterSales.defaults, options);
+        return this.each(function () {
+            $this = $(this);
+            if (typeof data != 'undefined') {
+                $this.find('div:first h3:first-child').html($.number(data.A)+' &#x20BA');
+                //$.number( 5020.2364 )
+                //$this.find('p:first').html(data.ACIKLAMA);
+            }
+        });
+    };
+    $.fn.headerSetterAfterSalesDowntime = function (data, options) {
+        var data = data;
+        var opts = $.extend({}, $.fn.headerSetterAfterSales.defaults, options);
+        return this.each(function () {
+            $this = $(this);
+            if (typeof data != 'undefined') {
+                $this.find('div:first h3:first-child').html(data);
+                //$.number( 5020.2364 )
+                //$this.find('p:first').html(data.ACIKLAMA);
+            }
+        });
+    };
+    
     $.fn.headerSetter.defaults = {
         class: 'test',
         background: 'yellow'

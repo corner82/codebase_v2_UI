@@ -47,9 +47,13 @@
                 "Opened":"افتتح",
                 "Closed":"مغلق", 
                 "Total Spare Parts":"مجموع قطع الغيار",
+                "Inventory":"المخزون",
                 "Open | Closed":"العربية | العربية",
                 "Open Orders":"فتح الطلبات",
+                "hour":"ساعة",
+                "Customer Happiness":"سعادة العملاء",
                 "Vehicle Entries":"إدخالات السيارة",
+                "Downtime":"التوقف",
                 "Management Dashboard2":"العربية  العربية",
                 "Location":"العربية"
 	}
