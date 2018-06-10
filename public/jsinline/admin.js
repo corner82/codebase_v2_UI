@@ -100,6 +100,27 @@ $("#panel_hidden3_1").loadImager();
 $("#panel_hidden4").loadImager();
 
 /**
+ * loading image   verimlilik gauge
+ * @author Mustafa Zeynel Dağlı
+ * @since 10/06/2018
+ */
+$("#panel_productivity").loadImager();
+
+/**
+ * loading image   kapasite gauge
+ * @author Mustafa Zeynel Dağlı
+ * @since 10/06/2018
+ */
+$("#panel_kapasite").loadImager();
+
+/**
+ * loading image   etkinlik gauge
+ * @author Mustafa Zeynel Dağlı
+ * @since 10/06/2018
+ */
+$("#panel_etkinlik").loadImager();
+
+/**
  * loading image   block müşteri memnuniyeti CSI
  * @author Mustafa Zeynel Dağlı
  * @since 09/06/2018
@@ -232,396 +253,7 @@ Highcharts.theme = {
 // Apply the theme
 Highcharts.setOptions(Highcharts.theme);
 
-
-    
-Highcharts.chart('gauge-container-verimlilik', {
-
-    chart: {
-        type: 'gauge',
-        plotBorderWidth: 1,
-        plotBackgroundColor: {
-            //linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-            //linearGradient: { x1: 0, y1: 0 },
-            /*stops: [
-                [0, '#CBD0D8'],
-                [0.3, '#FFFFFF'],
-                [1, '#9CA5B3']
-            ]*/
-        },
-        plotBackgroundImage: null,
-        height: 200
-    },
-    title: {
-        text: 'VU meter'
-    },
-    pane: [{
-        startAngle: -45,
-        endAngle: 45,
-        background: null,
-        center: ['50%', '90%'],
-        size: 200
-    }, /*{
-        startAngle: -45,
-        endAngle: 45,
-        background: null,
-        center: ['10%', '70%'],
-        size: 300
-    }*/],
-    tooltip: {
-        enabled: false
-    },
-    yAxis: [{
-        min: 0,
-        max: 100,
-        minorTickPosition: 'inside',
-        tickPosition: 'inside',
-        labels: {
-            rotation: 'auto',
-            distance: 5
-        },
-        plotBands: [{
-            from: 0,
-            to: 25,
-            color: '#C02316',
-            innerRadius: '100%',
-            outerRadius: '105%'
-        }],
-        pane: 0,
-        title: {
-            text: 'VU<br/><span style="font-size:8px">Channel A</span>',
-            y: -40
-        }
-    }, /*{
-        min: -20,
-        max: 6,
-        minorTickPosition: 'outside',
-        tickPosition: 'outside',
-        labels: {
-            rotation: 'auto',
-            distance: 20
-        },
-        plotBands: [{
-            from: 0,
-            to: 6,
-            color: '#C02316',
-            innerRadius: '100%',
-            outerRadius: '105%'
-        }],
-        pane: 1,
-        title: {
-            text: 'VU<br/><span style="font-size:8px">Channel B</span>',
-            y: -40
-        }
-    }*/],
-    plotOptions: {
-        gauge: {
-            dataLabels: {
-                enabled: false
-            },
-            dial: {
-                radius: '100%'
-            }
-        }
-    },
-
-
-    series: [{
-        name: 'Channel A',
-        data: [50],
-        yAxis: 0
-    }, /*{
-        name: 'Channel B',
-        data: [-20],
-        yAxis: 1
-    }*/]
-
-},
-    // Let the music play
-    function (chart) {
-        setInterval(function () {
-            if (chart.series) { // the chart may be destroyed
-                var left = chart.series[0].points[0],
-                    //right = chart.series[1].points[0],
-                    leftVal,
-                    rightVal,
-                    inc = (Math.random() - 0.5) * 1;
-
-                leftVal = left.y + inc;
-                rightVal = leftVal + inc / 3;
-                if (leftVal < -20 || leftVal > 6) {
-                    leftVal = left.y - inc;
-                }
-                /*if (rightVal < -20 || rightVal > 6) {
-                    rightVal = leftVal;
-                }*/
-
-                left.update(leftVal, false);
-                //right.update(rightVal, false);
-                chart.redraw();
-            }
-        }, 500);
-
-    });
- 
-Highcharts.chart('gauge-container-verimlilik2', {
-
-    chart: {
-        type: 'gauge',
-        plotBorderWidth: 1,
-        plotBackgroundColor: {
-            //linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-            stops: [
-                [0, '#CBD0D8'],
-                [0.3, '#FFFFFF'],
-                [1, '#9CA5B3']
-            ]
-        },
-        plotBackgroundImage: null,
-        height: 200
-    },
-    title: {
-        text: 'VU meter'
-    },
-    pane: [{
-        startAngle: -45,
-        endAngle: 45,
-        background: null,
-        center: ['50%', '90%'],
-        size: 200
-    }, /*{
-        startAngle: -45,
-        endAngle: 45,
-        background: null,
-        center: ['10%', '70%'],
-        size: 300
-    }*/],
-    tooltip: {
-        enabled: false
-    },
-    yAxis: [{
-        min: -20,
-        max: 6,
-        minorTickPosition: 'outside',
-        tickPosition: 'outside',
-        labels: {
-            rotation: 'auto',
-            distance: 20
-        },
-        plotBands: [{
-            from: 0,
-            to: 6,
-            color: '#C02316',
-            innerRadius: '100%',
-            outerRadius: '105%'
-        }],
-        pane: 0,
-        title: {
-            text: 'VU<br/><span style="font-size:8px">Channel A</span>',
-            y: -40
-        }
-    }, /*{
-        min: -20,
-        max: 6,
-        minorTickPosition: 'outside',
-        tickPosition: 'outside',
-        labels: {
-            rotation: 'auto',
-            distance: 20
-        },
-        plotBands: [{
-            from: 0,
-            to: 6,
-            color: '#C02316',
-            innerRadius: '100%',
-            outerRadius: '105%'
-        }],
-        pane: 1,
-        title: {
-            text: 'VU<br/><span style="font-size:8px">Channel B</span>',
-            y: -40
-        }
-    }*/],
-    plotOptions: {
-        gauge: {
-            dataLabels: {
-                enabled: false
-            },
-            dial: {
-                radius: '100%'
-            }
-        }
-    },
-
-
-    series: [{
-        name: 'Channel A',
-        data: [-20],
-        yAxis: 0
-    }, /*{
-        name: 'Channel B',
-        data: [-20],
-        yAxis: 1
-    }*/]
-
-},
-    // Let the music play
-    function (chart) {
-        setInterval(function () {
-            if (chart.series) { // the chart may be destroyed
-                var left = chart.series[0].points[0],
-                    //right = chart.series[1].points[0],
-                    leftVal,
-                    rightVal,
-                    inc = (Math.random() - 0.5) * 3;
-
-                leftVal = left.y + inc;
-                rightVal = leftVal + inc / 3;
-                if (leftVal < -20 || leftVal > 6) {
-                    leftVal = left.y - inc;
-                }
-                /*if (rightVal < -20 || rightVal > 6) {
-                    rightVal = leftVal;
-                }*/
-
-                left.update(leftVal, false);
-                //right.update(rightVal, false);
-                chart.redraw();
-            }
-        }, 500);
-
-    });
-    
-Highcharts.chart('gauge-container-verimlilik3', {
-
-    chart: {
-        type: 'gauge',
-        plotBorderWidth: 1,
-        plotBackgroundColor: {
-            //linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
-            linearGradient: { x1: 0, y1: 0 },
-            stops: [
-                [0, '#CBD0D8'],
-                [0.3, '#FFFFFF'],
-                [1, '#9CA5B3']
-            ]
-        },
-        plotBackgroundImage: null,
-        height: 200
-    },
-    title: {
-        text: 'VU meter'
-    },
-    pane: [{
-        startAngle: -45,
-        endAngle: 45,
-        background: null,
-        center: ['50%', '90%'],
-        size: 200
-    }, /*{
-        startAngle: -45,
-        endAngle: 45,
-        background: null,
-        center: ['10%', '70%'],
-        size: 300
-    }*/],
-    tooltip: {
-        enabled: false
-    },
-    yAxis: [{
-        min: 0,
-        max: 100,
-        minorTickPosition: 'inside',
-        tickPosition: 'inside',
-        labels: {
-            rotation: 'auto',
-            distance: 10
-        },
-        plotBands: [{
-            from: 0,
-            to: 25,
-            color: '#C02316',
-            innerRadius: '100%',
-            outerRadius: '105%'
-        }],
-        pane: 0,
-        title: {
-            text: 'VU<br/><span style="font-size:8px">Channel A</span>',
-            y: -40
-        }
-    }, /*{
-        min: -20,
-        max: 6,
-        minorTickPosition: 'outside',
-        tickPosition: 'outside',
-        labels: {
-            rotation: 'auto',
-            distance: 20
-        },
-        plotBands: [{
-            from: 0,
-            to: 6,
-            color: '#C02316',
-            innerRadius: '100%',
-            outerRadius: '105%'
-        }],
-        pane: 1,
-        title: {
-            text: 'VU<br/><span style="font-size:8px">Channel B</span>',
-            y: -40
-        }
-    }*/],
-    plotOptions: {
-        gauge: {
-            dataLabels: {
-                enabled: false
-            },
-            dial: {
-                radius: '100%'
-            }
-        }
-    },
-
-
-    series: [{
-        name: 'Channel A',
-        data: [50],
-        yAxis: 0
-    }, /*{
-        name: 'Channel B',
-        data: [-20],
-        yAxis: 1
-    }*/]
-
-},
-    // Let the music play
-    function (chart) {
-        setInterval(function () {
-            if (chart.series) { // the chart may be destroyed
-                var left = chart.series[0].points[0],
-                    //right = chart.series[1].points[0],
-                    leftVal,
-                    rightVal,
-                    inc = (Math.random() - 0.5) * 1;
-
-                leftVal = left.y + inc;
-                rightVal = leftVal + inc / 3;
-                if (leftVal < -20 || leftVal > 6) {
-                    leftVal = left.y - inc;
-                }
-                /*if (rightVal < -20 || rightVal > 6) {
-                    rightVal = leftVal;
-                }*/
-
-                left.update(leftVal, false);
-                //right.update(rightVal, false);
-                chart.redraw();
-            }
-        }, 500);
-
-    });
-
-    
+        
 Array.prototype.unique = function() {
   return this.filter(function (value, index, self) { 
     return self.indexOf(value) === index;
@@ -1932,6 +1564,15 @@ getStoklarDashboard();
 
 // downtime dashboard data
 getDownTimeDashboard();
+
+// verimlilik gauge dashboard data
+getVerimlilikDashboard();
+
+// kapasite gauge dashboard data
+getKapasiteDashboard();
+
+// etkinlik gauge dashboard data
+getEtkinlikDashboard();
     
 /**
  * loading image for roles dropdown
@@ -7602,7 +7243,7 @@ function getDownTimeDashboard() {
                     //console.log(d);
                     downtime+= parseInt(d);
                 });
-                console.log(downtime);
+                //console.log(downtime);
                 $("#toplam_header_downtime_container").headerSetterAfterSalesStocks(downtime);
             }
         },
@@ -7631,9 +7272,916 @@ function getDownTimeDashboard() {
                         console.log(downtime);
                         downtime = parseFloat(downtime)+parseFloat(d);
                     });
-                    console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
+                    //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
                     var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
                     $("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// verimlilik gauge dashboard data
+function getVerimlilikDashboard() {
+    $("#panel_productivity").loadImager('removeLoadImage');
+    $("#panel_productivity").loadImager('appendImage');
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var downtime;
+                $.each(dataSet, function (key, value) {
+                    var d =  value.DOWNTIME
+                    d = d.replace(",", ".");
+                    //console.log(d);
+                    downtime+= parseInt(d);
+                });
+                //console.log(downtime);
+                //$("#toplam_header_downtime_container").headerSetterAfterSalesStocks(downtime);
+                $("#panel_productivity").loadImager('removeLoadImage');
+                Highcharts.chart('gauge-container-verimlilik', {
+    chart: {
+        type: 'gauge',
+        plotBorderWidth: 1,
+        plotBackgroundColor: {
+            //linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            linearGradient: { x1: 0, y1: 0 },
+            stops: [
+                [0, '#CBD0D8'],
+                [0.3, '#FFFFFF'],
+                [1, '#9CA5B3']
+            ]
+        },
+        plotBackgroundImage: null,
+        height: 200
+    },
+    title: {
+        text: window.lang.translate('Productivity')
+    },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['50%', '90%'],
+        size: 200
+    }, /*{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['10%', '70%'],
+        size: 300
+    }*/],
+    tooltip: {
+        enabled: false
+    },
+    yAxis: [{
+        min: 0,
+        max: 100,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 5
+        },
+        plotBands: [{
+            from: 0,
+            to: 40,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 75,
+            to: 100,
+            color: '#BBC801',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 40,
+            to: 75,
+            color: '#FDC400',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 0,
+        title: {
+            text: '<br/><br/><span style="font-size:10px">MAN</span>',
+            y: -30
+        }
+    }, /*{
+        min: -20,
+        max: 6,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 20
+        },
+        plotBands: [{
+            from: 0,
+            to: 6,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 1,
+        title: {
+            text: 'VU<br/><span style="font-size:8px">Channel B</span>',
+            y: -40
+        }
+    }*/],
+    plotOptions: {
+        gauge: {
+            dataLabels: {
+                enabled: false
+            },
+            dial: {
+                radius: '100%'
+            }
+        }
+    },
+    series: [{
+        name: 'Verimlilik',
+        data: [87],
+        yAxis: 0
+    }, /*{
+        name: 'Channel B',
+        data: [-20],
+        yAxis: 1
+    }*/]
+
+},
+                            // Let the music play
+                            function (chart) {
+                                   setInterval(function () {
+                                       if (chart.series) { // the chart may be destroyed
+                                           var left = chart.series[0].points[0],
+                                               //right = chart.series[1].points[0],
+                                               leftVal,
+                                               rightVal,
+                                               inc = (Math.random() - 0.5) * 2;
+
+                                           leftVal = left.y + inc;
+                                           rightVal = leftVal + inc / 3;
+                                           if (leftVal < -20 || leftVal > 6) {
+                                               leftVal = left.y - inc;
+                                           }
+                                           /*if (rightVal < -20 || rightVal > 6) {
+                                               rightVal = leftVal;
+                                           }*/
+
+                                           left.update(leftVal, false);
+                                           //right.update(rightVal, false);
+                                           chart.redraw();
+                                       }
+                                   }, 500);
+
+                               });
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var downtime = 0;
+                    $.each(dataSet, function (key, value) {
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        console.log(d);
+                        console.log(downtime);
+                        downtime = parseFloat(downtime)+parseFloat(d);
+                    });
+                    //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    //$("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
+                    $("#panel_productivity").loadImager('removeLoadImage');
+                    Highcharts.chart('gauge-container-verimlilik', {
+    chart: {
+        type: 'gauge',
+        plotBorderWidth: 1,
+        plotBackgroundColor: {
+            //linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            linearGradient: { x1: 0, y1: 0 },
+            stops: [
+                [0, '#CBD0D8'],
+                [0.3, '#FFFFFF'],
+                [1, '#9CA5B3']
+            ]
+        },
+        plotBackgroundImage: null,
+        height: 200
+    },
+    title: {
+        text: window.lang.translate('Productivity')
+    },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['50%', '90%'],
+        size: 200
+    }, /*{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['10%', '70%'],
+        size: 300
+    }*/],
+    tooltip: {
+        enabled: false
+    },
+    yAxis: [{
+        min: 0,
+        max: 100,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 5
+        },
+        plotBands: [{
+            from: 0,
+            to: 40,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 75,
+            to: 100,
+            color: '#BBC801',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 40,
+            to: 75,
+            color: '#FDC400',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 0,
+        title: {
+            text: '<br/><br/><span style="font-size:10px">MAN</span>',
+            y: -30
+        }
+    }, /*{
+        min: -20,
+        max: 6,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 20
+        },
+        plotBands: [{
+            from: 0,
+            to: 6,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 1,
+        title: {
+            text: 'VU<br/><span style="font-size:8px">Channel B</span>',
+            y: -40
+        }
+    }*/],
+    plotOptions: {
+        gauge: {
+            dataLabels: {
+                enabled: false
+            },
+            dial: {
+                radius: '100%'
+            }
+        }
+    },
+    series: [{
+        name: 'Verimlilik',
+        data: [87],
+        yAxis: 0
+    }, /*{
+        name: 'Channel B',
+        data: [-20],
+        yAxis: 1
+    }*/]
+
+},
+                            // Let the music play
+                            function (chart) {
+                                   setInterval(function () {
+                                       if (chart.series) { // the chart may be destroyed
+                                           var left = chart.series[0].points[0],
+                                               //right = chart.series[1].points[0],
+                                               leftVal,
+                                               rightVal,
+                                               inc = (Math.random() - 0.5) * 2;
+
+                                           leftVal = left.y + inc;
+                                           rightVal = leftVal + inc / 3;
+                                           if (leftVal < -20 || leftVal > 6) {
+                                               leftVal = left.y - inc;
+                                           }
+                                           /*if (rightVal < -20 || rightVal > 6) {
+                                               rightVal = leftVal;
+                                           }*/
+
+                                           left.update(leftVal, false);
+                                           //right.update(rightVal, false);
+                                           chart.redraw();
+                                       }
+                                   }, 500);
+
+                               });
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// kapasite gauge dashboard data
+function getKapasiteDashboard() {
+    $("#panel_kapasite").loadImager('removeLoadImage');
+    $("#panel_kapasite").loadImager('appendImage');
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var downtime;
+                $.each(dataSet, function (key, value) {
+                    var d =  value.DOWNTIME
+                    d = d.replace(",", ".");
+                    //console.log(d);
+                    downtime+= parseInt(d);
+                });
+                //console.log(downtime);
+                //$("#toplam_header_downtime_container").headerSetterAfterSalesStocks(downtime);
+                $("#panel_kapasite").loadImager('removeLoadImage');
+                Highcharts.chart('gauge-container-kapasite', {
+    chart: {
+        type: 'gauge',
+        plotBorderWidth: 1,
+        plotBackgroundColor: {
+            linearGradient: { x1: 0, y1: 0,  },
+            stops: [
+                [0, '#CBD0D8'],
+                [0.3, '#FFFFFF'],
+                [1, '#9CA5B3']
+            ]
+        },
+        plotBackgroundImage: null,
+        height: 200
+    },
+    title: {
+        text: ''+window.lang.translate('Capacity utilization')+''
+    },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['50%', '90%'],
+        size: 200
+    }, ],
+    tooltip: {
+        enabled: false
+    },
+    yAxis: [{
+        min: 0,
+        max: 100,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 20
+        },
+        plotBands: [{
+            from: 0,
+            to: 40,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 75,
+            to: 100,
+            color: '#BBC801',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 40,
+            to: 75,
+            color: '#FDC400',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 0,
+        title: {
+            text: '<br/><br/><span style="font-size:10px">MAN</span>',
+            y: -30
+        }
+    }, ],
+    plotOptions: {
+        gauge: {
+            dataLabels: {
+                enabled: false
+            },
+            dial: {
+                radius: '100%'
+            }
+        }
+    },
+    series: [{
+        name: 'Kapasite kul.',
+        data: [85],
+        yAxis: 0
+    },]
+},
+                        // Let the music play
+                        function (chart) {
+                                setInterval(function () {
+                                    if (chart.series) { // the chart may be destroyed
+                                        var left = chart.series[0].points[0],
+                                            //right = chart.series[1].points[0],
+                                            leftVal,
+                                            rightVal,
+                                            inc = (Math.random() - 0.5) * 2;
+
+                                        leftVal = left.y + inc;
+                                        rightVal = leftVal + inc / 3;
+                                        if (leftVal < -20 || leftVal > 6) {
+                                            leftVal = left.y - inc;
+                                        }
+                                        left.update(leftVal, false);
+                                        chart.redraw();
+                                    }
+                                }, 500);
+                            });
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var downtime = 0;
+                    $.each(dataSet, function (key, value) {
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        console.log(d);
+                        console.log(downtime);
+                        downtime = parseFloat(downtime)+parseFloat(d);
+                    });
+                    //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    //$("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
+                    $("#panel_kapasite").loadImager('removeLoadImage');
+                    Highcharts.chart('gauge-container-kapasite', {
+    chart: {
+        type: 'gauge',
+        plotBorderWidth: 1,
+        plotBackgroundColor: {
+            linearGradient: { x1: 0, y1: 0,  },
+            stops: [
+                [0, '#CBD0D8'],
+                [0.3, '#FFFFFF'],
+                [1, '#9CA5B3']
+            ]
+        },
+        plotBackgroundImage: null,
+        height: 200
+    },
+    title: {
+        text: ''+window.lang.translate('Capacity utilization')+''
+    },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['50%', '90%'],
+        size: 200
+    }, ],
+    tooltip: {
+        enabled: false
+    },
+    yAxis: [{
+        min: 0,
+        max: 100,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 20
+        },
+        plotBands: [{
+            from: 0,
+            to: 40,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 75,
+            to: 100,
+            color: '#BBC801',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 40,
+            to: 75,
+            color: '#FDC400',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 0,
+        title: {
+            text: '<br/><br/><span style="font-size:10px">MAN</span>',
+            y: -30
+        }
+    }, ],
+    plotOptions: {
+        gauge: {
+            dataLabels: {
+                enabled: false
+            },
+            dial: {
+                radius: '100%'
+            }
+        }
+    },
+    series: [{
+        name: 'Kapasite kul.',
+        data: [85],
+        yAxis: 0
+    },]
+},
+                        // Let the music play
+                        function (chart) {
+                                setInterval(function () {
+                                    if (chart.series) { // the chart may be destroyed
+                                        var left = chart.series[0].points[0],
+                                            //right = chart.series[1].points[0],
+                                            leftVal,
+                                            rightVal,
+                                            inc = (Math.random() - 0.5) * 2;
+
+                                        leftVal = left.y + inc;
+                                        rightVal = leftVal + inc / 3;
+                                        if (leftVal < -20 || leftVal > 6) {
+                                            leftVal = left.y - inc;
+                                        }
+                                        left.update(leftVal, false);
+                                        chart.redraw();
+                                    }
+                                }, 500);
+                            });
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// kapasite gauge dashboard data
+function getEtkinlikDashboard() {
+    $("#panel_etkinlik").loadImager('removeLoadImage');
+    $("#panel_etkinlik").loadImager('appendImage');
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var downtime;
+                $.each(dataSet, function (key, value) {
+                    var d =  value.DOWNTIME
+                    d = d.replace(",", ".");
+                    //console.log(d);
+                    downtime+= parseInt(d);
+                });
+                //console.log(downtime);
+                //$("#toplam_header_downtime_container").headerSetterAfterSalesStocks(downtime);
+                $("#panel_etkinlik").loadImager('removeLoadImage');
+                Highcharts.chart('gauge-container-etkinlik', {
+
+    chart: {
+        type: 'gauge',
+        plotBorderWidth: 1,
+        plotBackgroundColor: {
+            linearGradient: { x1: 0, y1: 0 },
+            stops: [
+                [0, '#CBD0D8'],
+                [0.3, '#FFFFFF'],
+                [1, '#9CA5B3']
+            ]
+        },
+        plotBackgroundImage: null,
+        height: 200
+    },
+    title: {
+        text: ''+window.lang.translate('Efficiency')+''
+    },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['50%', '90%'],
+        size: 200
+    }, ],
+    tooltip: {
+        enabled: false
+    },
+    yAxis: [{
+        min: 0,
+        max: 100,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 10
+        },
+        plotBands: [{
+            from: 0,
+            to: 40,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 75,
+            to: 100,
+            color: '#BBC801',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 40,
+            to: 75,
+            color: '#FDC400',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 0,
+        title: {
+            text: '<br/><br/><span style="font-size:10px">MAN</span>',
+            y: -30
+        }
+    }, ],
+    plotOptions: {
+        gauge: {
+            dataLabels: {
+                enabled: false
+            },
+            dial: {
+                radius: '100%'
+            }
+        }
+    },
+    series: [{
+        name: 'Etkinlik',
+        data: [75],
+        yAxis: 0
+    }, ]
+
+},
+                // Let the music play
+                function (chart) {
+                        setInterval(function () {
+                            if (chart.series) { // the chart may be destroyed
+                                var left = chart.series[0].points[0],
+                                    //right = chart.series[1].points[0],
+                                    leftVal,
+                                    rightVal,
+                                    inc = (Math.random() - 0.5) * 2;
+
+                                leftVal = left.y + inc;
+                                rightVal = leftVal + inc / 3;
+                                if (leftVal < -20 || leftVal > 6) {
+                                    leftVal = left.y - inc;
+                                }
+                                /*if (rightVal < -20 || rightVal > 6) {
+                                    rightVal = leftVal;
+                                }*/
+
+                                left.update(leftVal, false);
+                                //right.update(rightVal, false);
+                                chart.redraw();
+                            }
+                        }, 500);
+
+                    });
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var downtime = 0;
+                    $.each(dataSet, function (key, value) {
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        console.log(d);
+                        console.log(downtime);
+                        downtime = parseFloat(downtime)+parseFloat(d);
+                    });
+                    //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    //$("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
+                    $("#panel_etkinlik").loadImager('removeLoadImage');
+                    Highcharts.chart('gauge-container-etkinlik', {
+
+    chart: {
+        type: 'gauge',
+        plotBorderWidth: 1,
+        plotBackgroundColor: {
+            linearGradient: { x1: 0, y1: 0 },
+            stops: [
+                [0, '#CBD0D8'],
+                [0.3, '#FFFFFF'],
+                [1, '#9CA5B3']
+            ]
+        },
+        plotBackgroundImage: null,
+        height: 200
+    },
+    title: {
+        text: ''+window.lang.translate('Efficiency')+''
+    },
+    pane: [{
+        startAngle: -45,
+        endAngle: 45,
+        background: null,
+        center: ['50%', '90%'],
+        size: 200
+    }, ],
+    tooltip: {
+        enabled: false
+    },
+    yAxis: [{
+        min: 0,
+        max: 100,
+        minorTickPosition: 'outside',
+        tickPosition: 'outside',
+        labels: {
+            rotation: 'auto',
+            distance: 10
+        },
+        plotBands: [{
+            from: 0,
+            to: 40,
+            color: '#C02316',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 75,
+            to: 100,
+            color: '#BBC801',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        },
+        {
+            from: 40,
+            to: 75,
+            color: '#FDC400',
+            innerRadius: '100%',
+            outerRadius: '105%'
+        }],
+        pane: 0,
+        title: {
+            text: '<br/><br/><span style="font-size:10px">MAN</span>',
+            y: -30
+        }
+    }, ],
+    plotOptions: {
+        gauge: {
+            dataLabels: {
+                enabled: false
+            },
+            dial: {
+                radius: '100%'
+            }
+        }
+    },
+    series: [{
+        name: 'Etkinlik',
+        data: [75],
+        yAxis: 0
+    }, ]
+
+},
+                    // Let the music play
+                    function (chart) {
+                            setInterval(function () {
+                                if (chart.series) { // the chart may be destroyed
+                                    var left = chart.series[0].points[0],
+                                        //right = chart.series[1].points[0],
+                                        leftVal,
+                                        rightVal,
+                                        inc = (Math.random() - 0.5) * 2;
+
+                                    leftVal = left.y + inc;
+                                    rightVal = leftVal + inc / 3;
+                                    if (leftVal < -20 || leftVal > 6) {
+                                        leftVal = left.y - inc;
+                                    }
+                                    /*if (rightVal < -20 || rightVal > 6) {
+                                        rightVal = leftVal;
+                                    }*/
+
+                                    left.update(leftVal, false);
+                                    //right.update(rightVal, false);
+                                    chart.redraw();
+                                }
+                            }, 500);
+
+                        });
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
