@@ -57,8 +57,9 @@
                 "Customer Happiness":"Счастье клиента",
                 "Downtime":"время простоя",
                 "Last orders":"Последние заказы",
-                "Management Dashboard2":"НА РУССКОМ ",
-                "Location":"НА РУССКОМ  НА РУССКОМ "
+                "Management Dashboard":"НА РУССКОМ ",
+                "Location":"НА РУССКОМ  НА РУССКОМ ",
+                "Services":"Сервисы"
 	}
 	
 }

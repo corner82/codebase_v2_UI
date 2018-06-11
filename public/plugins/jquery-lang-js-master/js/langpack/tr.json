@@ -58,8 +58,9 @@
                 "Efficiency":"Etkinlik",
                 "Customer Happiness":"Müşteri Memnuniyeti",
                 "Last orders":"Son iş emirleri",
-                "Management Dashboard2":"Yönetici paneli",
-                "Location":"Türkçe lokasyon"
+                "Management Dashboard":"Yönetici paneli",
+                "Location":"Türkçe lokasyon",
+                "Services":"Servisler"
 	}
 	
 }

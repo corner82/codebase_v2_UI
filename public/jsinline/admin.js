@@ -93,6 +93,13 @@ $("#panel_hidden3").loadImager();
 $("#panel_hidden3_1").loadImager();
 
 /**
+ * loading image  verimlilik raporları block detay data panel_hidden_verimlilik_blok
+ * @author Mustafa Zeynel Dağlı
+ * @since 11/06/2018
+ */
+$("#panel_hidden_verimlilik_blok").loadImager();
+
+/**
  * loading image  acılan/kapanan detay data block 3
  * @author Mustafa Zeynel Dağlı
  * @since 06/05/2018
@@ -260,10 +267,6 @@ Array.prototype.unique = function() {
   });
 }
 
-/*var chart1;
-var chart2;
-var chart3;
-var chart4;*/
 
 // detay bloc 1
  var hidden_block1_controller;
@@ -821,132 +824,118 @@ $('#detay_downtime').click(function()
     }     
 });
 
-// hidden block3 aylık button click event
-$('#hidden_block3_1_month').click(function()
-{
-    var serviceControler = false;
-    var multiSelectedRoles = getServiceDropdownSelectedItems();
-    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
-    
-    if(hidden_block3_controller == 1)
-    {
-        $("#panel_hidden3_1").loadImager('removeLoadImage');
-        $("#panel_hidden3_1").loadImager('appendImage');
-        $("#panel_hidden3_1_title").html(window.lang.translate('Vehicle Entries'));
-        
-        if(serviceControler == true) {
-            getAracGirisleriAylikWithServices(multiSelectedRoles);
-        } else if(serviceControler == false ){
-            getAracGirisleriAylikWithoutServices();
-        }  
-    }  
-});
-
-// hidden block3 yıllık button click event
-$('#hidden_block3_1_year').click(function()
-{
-    var serviceControler = false;
-    var multiSelectedRoles = getServiceDropdownSelectedItems();
-    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
-    
-    if(hidden_block3_controller == 1)
-    {
-        $("#panel_hidden3_1").loadImager('removeLoadImage');
-        $("#panel_hidden3_1").loadImager('appendImage');
-        $("#panel_hidden3_1_title").html(window.lang.translate('Vehicle Entries'));
-        
-        if(serviceControler == true) {
-            getAracGirisleriYillikWithServices(multiSelectedRoles);
-        } else if(serviceControler == false ){
-            getAracGirisleriYillikWithoutServices();
-        }
-         
-    }
-         
-});
 // detay block 3_1 son
 
-// detay blok Müşteri Memnuniyeti 
-var hidden_block3_1_controller;
-// araç giriş sayıları detay click 
-$('#detay_downtime').click(function()
+
+// detay verimlilik blok
+var hidden_block_verimlilik_blok_controller;
+// acılan faturalar detay graph click event
+$('#panel_productivity_detail').click(function()
 {
     var serviceControler = false;
     var multiSelectedRoles = getServiceDropdownSelectedItems();
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
-    if($("#panel_hidden3_1").css('display') == 'none')
+    if($("#panel_hidden_verimlilik_blok").css('display') == 'none')
     {
-        hidden_block3_1_controller = 1;
-        $("#panel_hidden3_1").loadImager('removeLoadImage');
-        $("#panel_hidden3_1").loadImager('appendImage');
-        $("#panel_hidden3_1_title").html(window.lang.translate('Downtime'));
-        $("#panel_hidden3_1").animate({height:'toggle'},1000); 
+        hidden_block_verimlilik_blok_controller = 1;
+        $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+        $("#panel_hidden_verimlilik_blok").loadImager('appendImage');
+        $("#panel_hidden_verimlilik_blok").animate({height:'toggle'},1000); 
+        $("#panel_hidden_verimlilik_blok_title").html('Productivity');
         
         if(serviceControler == true) {
-            getDowntimeYillikWithServices(multiSelectedRoles);
+            getVerimlilikYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDowntimeYillikWithoutServices();
+            getVerimlilikYillikWithoutServices();
         } 
-
     }else {
-        hidden_block3_1_controller = 1;
-        $("#panel_hidden3_1").loadImager('removeLoadImage');
-        $("#panel_hidden3_1").loadImager('appendImage');
-        $("#panel_hidden3_1_title").html(window.lang.translate('Downtime'));
+        hidden_block_verimlilik_blok_controller = 1;
+        $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+        $("#panel_hidden_verimlilik_blok").loadImager('appendImage');
+        $("#panel_hidden_verimlilik_blok_title").html('Productivity');
         
         if(serviceControler == true) {
-            getDowntimeYillikWithServices(multiSelectedRoles);
+            getVerimlilikYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-             getDowntimeYillikWithoutServices();
-        } 
-    }     
-});
-
-// hidden block3 aylık button click event
-$('#hidden_block3_1_month').click(function()
-{
-    var serviceControler = false;
-    var multiSelectedRoles = getServiceDropdownSelectedItems();
-    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
-    
-    if(hidden_block3_controller == 1)
-    {
-        $("#panel_hidden3_1").loadImager('removeLoadImage');
-        $("#panel_hidden3_1").loadImager('appendImage');
-        $("#panel_hidden3_1_title").html(window.lang.translate('Vehicle Entries'));
-        
-        if(serviceControler == true) {
-            getAracGirisleriAylikWithServices(multiSelectedRoles);
-        } else if(serviceControler == false ){
-            getAracGirisleriAylikWithoutServices();
-        }  
-    }  
-});
-
-// hidden block3 yıllık button click event
-$('#hidden_block3_1_year').click(function()
-{
-    var serviceControler = false;
-    var multiSelectedRoles = getServiceDropdownSelectedItems();
-    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
-    
-    if(hidden_block3_controller == 1)
-    {
-        $("#panel_hidden3_1").loadImager('removeLoadImage');
-        $("#panel_hidden3_1").loadImager('appendImage');
-        $("#panel_hidden3_1_title").html(window.lang.translate('Vehicle Entries'));
-        
-        if(serviceControler == true) {
-            getAracGirisleriYillikWithServices(multiSelectedRoles);
-        } else if(serviceControler == false ){
-            getAracGirisleriYillikWithoutServices();
+            getVerimlilikYillikWithoutServices();
         }
-         
+        
     }
          
 });
-// detay block Müşteri Memnuniyeti son
+
+$('#panel_kapasite_detail').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden_verimlilik_blok").css('display') == 'none')
+    {
+        hidden_block_verimlilik_blok_controller = 2;
+        $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+        $("#panel_hidden_verimlilik_blok").loadImager('appendImage');
+        $("#panel_hidden_verimlilik_blok").animate({height:'toggle'},1000); 
+        $("#panel_hidden_verimlilik_blok_title").html('Capacity utilization');
+        
+        if(serviceControler == true) {
+            getKapasiteYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getKapasiteYillikWithoutServices();
+        } 
+    }else {
+        hidden_block_verimlilik_blok_controller = 1;
+        $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+        $("#panel_hidden_verimlilik_blok").loadImager('appendImage');
+        $("#panel_hidden_verimlilik_blok_title").html('Capacity utilization');
+        
+        if(serviceControler == true) {
+            getKapasiteYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getKapasiteYillikWithoutServices();
+        }
+        
+    }
+         
+});
+
+$('#panel_etkinlik_detail').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden_verimlilik_blok").css('display') == 'none')
+    {
+        hidden_block_verimlilik_blok_controller = 3;
+        $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+        $("#panel_hidden_verimlilik_blok").loadImager('appendImage');
+        $("#panel_hidden_verimlilik_blok").animate({height:'toggle'},1000); 
+        $("#panel_hidden_verimlilik_blok_title").html('Efficiency');
+        
+        if(serviceControler == true) {
+            getEtkinlikYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getEtkinlikYillikWithoutServices();
+        } 
+    }else {
+        hidden_block_verimlilik_blok_controller = 1;
+        $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+        $("#panel_hidden_verimlilik_blok").loadImager('appendImage');
+        $("#panel_hidden_verimlilik_blok_title").html('Efficiency');
+        
+        if(serviceControler == true) {
+            getEtkinlikYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getEtkinlikYillikWithoutServices();
+        }
+        
+    }
+         
+});
+
+// detay verimlilik blok son
 
 
 // detay block 4
@@ -5984,11 +5973,11 @@ function getAracGirisleriYillikWithoutServices() {
                             enabled: false
                         },
                         tooltip: {
-                            headerFormat: '<b>{point.x}</b><br/>',
+                            //headerFormat: '<b>{point.x}</b><br/>',
                             pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('piece')+''
                         },
                         series: [{
-                            name: 'Population',
+                            name: window.lang.translate('Vehicle Entries'),
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
@@ -6341,6 +6330,629 @@ function getDowntimeYillikWithServices(multiSelectedRoles) {
         });
 }
 // 3_1. block  hidden fonk. son
+
+// verimlilik block hidden fonk.
+function getVerimlilikYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            //data: { url:'getAfterSalesDetayVerimlilikYillik_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        graphData.push(value.YIL+'/'+value.TARIH);
+                        var arr = value.DOWNTIME.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseFloat(d));
+                        } else{
+                            graphData.push(parseFloat(d));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_verimlilik_blok', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Productivity')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('Productivity')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: {point.y:.,2f}<br/>'+window.lang.translate('Productivity')+''
+                        },
+                        series: [{
+                            name: window.lang.translate('Productivity'),
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getVerimlilikYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
+            //data: { url:'getAfterSalesDetayVerimlilikYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        if(counter == 1) {
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseFloat(d));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseFloat(d));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseFloat(d));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_verimlilik_blok', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Productivity')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('Productivity')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.2f}<br/> } '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getKapasiteYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            //data: { url:'getAfterSalesDetayKapasiteYillik_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        graphData.push(value.YIL+'/'+value.TARIH);
+                        var arr = value.DOWNTIME.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseFloat(d));
+                        } else{
+                            graphData.push(parseFloat(d));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_verimlilik_blok', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Capacity utilization')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('Capacity utilization')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: {point.y:.,2f}<br/>'+window.lang.translate('Productivity')+''
+                        },
+                        series: [{
+                            name: window.lang.translate('Capacity utilization'),
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getKapasiteYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
+            //data: { url:'getAfterSalesDetayKapasiteYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        if(counter == 1) {
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseFloat(d));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseFloat(d));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseFloat(d));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_verimlilik_blok', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Capacity utilization')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('Capacity utilization')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.2f}<br/> } '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
+function getEtkinlikYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            //data: { url:'getAfterSalesDetayEtkinlikYillik_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        graphData.push(value.YIL+'/'+value.TARIH);
+                        var arr = value.DOWNTIME.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseFloat(d));
+                        } else{
+                            graphData.push(parseFloat(d));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_verimlilik_blok', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Efficiency')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('Efficiency')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: {point.y:.,2f}<br/>'+window.lang.translate('Productivity')+''
+                        },
+                        series: [{
+                            name: window.lang.translate('Efficiency'),
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getEtkinlikYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
+            //data: { url:'getAfterSalesDetayEtkinlikYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        if(counter == 1) {
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseFloat(d));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseFloat(d));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseFloat(d));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_verimlilik_blok', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Efficiency')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('Efficiency')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.2f}<br/> } '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_verimlilik_blok").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+// verimlilik block  hidden fonk. son
 
 // müşteri memnuniyeti CSI block hidden fonk.
 function getMMCSIYillikWithoutServices() {
@@ -7436,7 +8048,7 @@ function getVerimlilikDashboard() {
                                                //right = chart.series[1].points[0],
                                                leftVal,
                                                rightVal,
-                                               inc = (Math.random() - 0.5) * 2;
+                                               inc = (Math.random() - 0.5) * 1;
 
                                            leftVal = left.y + inc;
                                            rightVal = leftVal + inc / 3;
@@ -7606,7 +8218,7 @@ function getVerimlilikDashboard() {
                                                //right = chart.series[1].points[0],
                                                leftVal,
                                                rightVal,
-                                               inc = (Math.random() - 0.5) * 2;
+                                               inc = (Math.random() - 0.5) * 1;
 
                                            leftVal = left.y + inc;
                                            rightVal = leftVal + inc / 3;
@@ -7752,7 +8364,7 @@ function getKapasiteDashboard() {
                                             //right = chart.series[1].points[0],
                                             leftVal,
                                             rightVal,
-                                            inc = (Math.random() - 0.5) * 2;
+                                            inc = (Math.random() - 0.5) * 1;
 
                                         leftVal = left.y + inc;
                                         rightVal = leftVal + inc / 3;
@@ -7883,7 +8495,7 @@ function getKapasiteDashboard() {
                                             //right = chart.series[1].points[0],
                                             leftVal,
                                             rightVal,
-                                            inc = (Math.random() - 0.5) * 2;
+                                            inc = (Math.random() - 0.5) * 1;
 
                                         leftVal = left.y + inc;
                                         rightVal = leftVal + inc / 3;
@@ -8025,7 +8637,7 @@ function getEtkinlikDashboard() {
                                     //right = chart.series[1].points[0],
                                     leftVal,
                                     rightVal,
-                                    inc = (Math.random() - 0.5) * 2;
+                                    inc = (Math.random() - 0.5) * 0.5;
 
                                 leftVal = left.y + inc;
                                 rightVal = leftVal + inc / 3;
@@ -8164,7 +8776,7 @@ function getEtkinlikDashboard() {
                                         //right = chart.series[1].points[0],
                                         leftVal,
                                         rightVal,
-                                        inc = (Math.random() - 0.5) * 2;
+                                        inc = (Math.random() - 0.5) * 0.5;
 
                                     leftVal = left.y + inc;
                                     rightVal = leftVal + inc / 3;

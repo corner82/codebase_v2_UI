@@ -32,8 +32,7 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1 lang="en">Management Dashboard2</h1>
-            <span lang="en">Location</span>
+            <h1 lang="en">Management Dashboard</h1>
             <!-- admin breadcrumb panel -->
             <?php echo $this->partial('partials/adminbreadcrumbpartial.phtml'); ?>
             <!-- admin breadcrumb panel son-->
@@ -48,7 +47,7 @@
                 <div class="col-md-12">
                   <div class="box ">
                     <div class="box-header with-border">
-                      <h3 class="box-title">Servisler</h3>
+                      <h3 class="box-title" lang="en">Services</h3>
                       <div class="box-tools pull-right">
                         <button id="test-collapse" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                       </div>
@@ -432,6 +431,7 @@
                     <div class="box-header with-border">
                       <h3 class="box-title" id="panel_productivity_title" lang="en">Productivity</h3>
                       <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" id="panel_productivity_detail" onclick="return false;" ><i class="fa fa-archive"></i></button>
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                       </div>
@@ -445,8 +445,7 @@
                         </div><!-- /.col -->
                       </div><!-- /.row -->
                     </div><!-- ./box-body -->
-                    <div class="box-footer" style="display: block;">
-                      
+                    <div class="box-footer" style="display: block;">   
                     </div><!-- /.box-footer -->
                   </div><!-- /.box -->
                 </div>
@@ -455,6 +454,7 @@
                     <div class="box-header with-border">
                       <h3 class="box-title" id="panel_kapasite_title" lang="en">Capacity utilization</h3>
                       <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" id="panel_kapasite_detail" onclick="return false;" ><i class="fa fa-archive"></i></button>
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                       </div>
@@ -478,6 +478,7 @@
                     <div class="box-header with-border">
                       <h3 class="box-title" id="panel_etkinlik_title" lang="en">Efficiency</h3>
                       <div class="box-tools pull-right">
+                          <button class="btn btn-box-tool" id="panel_etkinlik_detail" onclick="return false;" ><i class="fa fa-archive"></i></button>
                         <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                       </div>
@@ -498,6 +499,46 @@
                 </div>
             </div><!-- /.row -->
             <!-- aftersales dashboard data verimlilik blok son -->
+            
+            <!--hidden data verimlilik blok -->
+            <div class="row">
+                <!--<section class="col-lg-7 connectedSortable">-->
+                <div class="col-md-12">
+                  <div class="box" id="panel_hidden_verimlilik_blok" style="display: none;">
+                    <div class="box-header with-border">
+                      <h3 class="box-title" id="panel_hidden_verimlilik_blok_title" lang="en">Downtime</h3>
+                      <div class="box-tools pull-right">
+                        <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
+                        <!--<div class="btn-group open">
+                            <button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-calendar"></i>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a id='hidden_block3_1_month' lang="en">Last month</a></li>
+                              <li class="divider"></li>
+                              <li><a id='hidden_block3_1_year' lang="en">Last 1 year</a></li>
+                            </ul>
+                         </div>-->
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-md-12">
+                          
+                          <div id="container_hidden_verimlilik_blok" style="min-width: 200px;  margin: 0 auto"></div>
+                          
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+            <!--</section>  -->
+            </div>
+            <!--hidden data verimlilik blok son-->
             
             <!-- aftersales dashboard data karsılaştırma blok-->
             <div class="row">

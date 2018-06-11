@@ -57,8 +57,9 @@
                 "Customer Happiness":"Kundenglück",
                 "Downtime":"Downtime",
                 "Last orders":"Letzte Bestellungen",
-                "Management Dashboard2":"Manager-Dashboard",
-                "Location":"Lage"
+                "Management Dashboard":"Manager-Dashboard",
+                "Location":"Lage",
+                "Services":"Dienstleistungen"
 	}
 	
 }

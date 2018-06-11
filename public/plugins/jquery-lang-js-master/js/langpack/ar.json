@@ -57,8 +57,9 @@
                 "Customer Happiness":"سعادة العملاء",
                 "Vehicle Entries":"إدخالات السيارة",
                 "Downtime":"التوقف",
-                "Management Dashboard2":"العربية  العربية",
-                "Location":"العربية"
+                "Management Dashboard":"العربية  العربية",
+                "Location":"العربية",
+                "Services":"خدمات"
 	}
 	
 }

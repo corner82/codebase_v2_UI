@@ -57,8 +57,9 @@
                 "Efficiency":"Doeltreffendheid",
                 "Customer Happiness":"Kliënt geluk",
                 "Last orders":"Laaste bestellings",
-                "Management Dashboard2":"Bestuur Dashboard",
-                "Location":"Lokasie"
+                "Management Dashboard":"Bestuur Dashboard",
+                "Location":"Lokasie",
+                "Services":"Dienste"
 	}
 	
 }
