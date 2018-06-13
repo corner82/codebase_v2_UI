@@ -4678,28 +4678,31 @@ if it's not present, don't show loader */
   color:#fff;
 }
 
-.bg-man-silver {
-  background-color: #B3B2B2;
-  color:#fff;
+.bg-man-anthracite {
+    background-color: #303c49;
 }
 
-.bg-man-blue {
-  background-color: #4A96D2;
+.bg-man-red {
+  background-color: #E41A52;
+  color:#fff;
+}
+.bg-man-silver {
+  background-color: #AFAFAF;
   color:#fff;
 }
 
 .bg-man-yellow {
-  background-color: #FDC400;
+  background-color: #FFCD00;
   color:#fff;
 }
 
 .bg-man-green {
-  background-color: #BBC801;
+  background-color: #91B900;
   color:#fff;
 }
 
-.bg-man-red {
-  background-color: #E50046;
+.bg-man-blue {
+  background-color: #4B96D2;
   color:#fff;
 }
 
@@ -4708,7 +4711,7 @@ if it's not present, don't show loader */
 }
 
 .man-header-red {
-    color:#E50046;
+    color:#E41A52;
     font-weight: bold;
 }
 
