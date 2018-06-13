@@ -1,4 +1,6 @@
 <?php
+ini_set('max_execution_time', 300);
+
 /**
  * This makes our life easier when dealing with paths. Everything is relative
  * to the application root now.

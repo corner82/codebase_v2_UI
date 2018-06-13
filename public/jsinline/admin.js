@@ -79,6 +79,13 @@ $("#panel_hidden1").loadImager();
 $("#panel").loadImager();
 
 /**
+ * loading image  stoklar detay block 
+ * @author Mustafa Zeynel Dağlı
+ * @since 11/06/2018
+ */
+$("#panel_stoklar").loadImager();
+
+/**
  * loading image  araç girişleri detay data block 3
  * @author Mustafa Zeynel Dağlı
  * @since 31/05/2018
@@ -621,6 +628,40 @@ $('#detay_kapanan_is_emirleri').click(function()
     }     
 });
 
+var hidden_panel_stoklar_controller;
+// stoklar detay click 
+$('#detay_stoklar').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_stoklar").css('display') == 'none')
+    {
+        hidden_panel_stoklar_controller = 1;
+        $("#panel_stoklar").loadImager('removeLoadImage');
+        $("#panel_stoklar").loadImager('appendImage');
+        $("#panel_stoklar").animate({height:'toggle'},1000); 
+        $("#panel_stoklar_title").html(window.lang.translate('Inventory'));
+        // açık iş emirlerini servis ayrımı yaparak çağırıyoruz
+        if(serviceControler == true) {
+            getDetayGridStoklarWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getDetayGridStoklar();
+        }     
+    }else {
+        hidden_panel_stoklar_controller = 1;
+        $("#panel_stoklar").loadImager('removeLoadImage');
+        $("#panel_stoklar").loadImager('appendImage');
+        $("#panel_stoklar_title").html(window.lang.translate('Inventory'));
+        if(serviceControler == true) {
+            getDetayGridStoklarWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getDetayGridStoklar();
+        }
+    }     
+});
+
 // hidden block2 aylık button click event
 $('#hidden_block2_month').click(function()
 {
@@ -805,9 +846,12 @@ $('#detay_downtime').click(function()
         $("#panel_hidden3_1").animate({height:'toggle'},1000); 
         
         if(serviceControler == true) {
+            getDetayGridDowntimeWithServices(multiSelectedRoles);
             getDowntimeYillikWithServices(multiSelectedRoles);
+            
         } else if(serviceControler == false ){
             getDowntimeYillikWithoutServices();
+            getDetayGridDowntime();
         } 
 
     }else {
@@ -817,9 +861,11 @@ $('#detay_downtime').click(function()
         $("#panel_hidden3_1_title").html(window.lang.translate('Downtime'));
         
         if(serviceControler == true) {
+            getDetayGridDowntimeWithServices(multiSelectedRoles);
             getDowntimeYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
              getDowntimeYillikWithoutServices();
+             getDetayGridDowntime();
         } 
     }     
 });
@@ -1350,6 +1396,7 @@ $('#detay_CXI').click(function(){
     
     if($("#panel_hidden_MM_CXI").css('display') == 'none')
     {
+        alert('ilk açılış');
         hidden_MM_CXI_controller = 1;
         $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CXI").loadImager('appendImage');
@@ -1363,6 +1410,7 @@ $('#detay_CXI').click(function(){
         } 
 
     }else {
+        alert('zaten açık');
         hidden_MM_CXI_controller = 1;
         $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CXI").loadImager('appendImage');
@@ -1562,6 +1610,12 @@ getKapasiteDashboard();
 
 // etkinlik gauge dashboard data
 getEtkinlikDashboard();
+
+// müşteri memnuniyeti(CSI) dashboard data 
+getMMCSIDashboard();
+
+// müşteri memnuniyeti(CXI) dashboard data 
+getMMCXIDashboard();
     
 /**
  * loading image for roles dropdown
@@ -5515,6 +5569,48 @@ function getAcilanKapananIsEmriYillikWithServices() {
             }
         });
 }
+
+function getDetayGridStoklar() {
+   $("#example").dataTable().fnDestroy();
+   $('#example').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                url : 'getAfterSalesDetayStoklarGrid_infoAfterSales',
+                pk: $('#pk').val(),
+            },
+            complete: function() {
+                $("#panel_stoklar").loadImager('removeLoadImage');
+              }
+        }
+    } );
+
+}
+
+function getDetayGridStoklarWithServices(multiSelectedRoles) {
+   var services = getServicesSelectedAsUrl(multiSelectedRoles);
+   $("#example").dataTable().fnDestroy();
+   $('#example').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                src : services,
+                url : 'getAfterSalesDetayStoklarGridWithServices_infoAfterSales',
+                pk: $('#pk').val(),
+            },
+            complete: function() {
+                $("#panel_stoklar").loadImager('removeLoadImage');
+              }
+        }
+    } );
+}
+
 // 2. block ve ikinci block hidden fonk. son
 
 // 3. block ve ikinci block hidden fonk.
@@ -6329,6 +6425,46 @@ function getDowntimeYillikWithServices(multiSelectedRoles) {
             }
         });
 }
+
+function getDetayGridDowntime() {
+   $("#grid_downtime").dataTable().fnDestroy();
+   $('#grid_downtime').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                url : 'getAfterSalesDetayGridDowntime_infoAfterSales',
+                pk: $('#pk').val(),
+            },
+            complete: function() {
+                //$("#panel_stoklar").loadImager('removeLoadImage');
+              }
+        }
+    } );
+}
+
+function getDetayGridDowntimeWithServices(multiSelectedRoles) {
+   var services = getServicesSelectedAsUrl(multiSelectedRoles);
+   $("#grid_downtime").dataTable().fnDestroy();
+   $('#grid_downtime').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                src : services,
+                url : 'getAfterSalesDetayGridDowntimeWithServices_infoAfterSales',
+                pk: $('#pk').val(),
+            },
+            complete: function() {
+                //$("#panel_stoklar").loadImager('removeLoadImage');
+              }
+        }
+    } );
+}
 // 3_1. block  hidden fonk. son
 
 // verimlilik block hidden fonk.
@@ -6966,29 +7102,65 @@ function getMMCSIYillikWithoutServices() {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
-                    var graphDataAll = [];
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
                     $.each(data.resultSet, function(key, value) {
-                        var graphData = [];
-                        var d =  value.DOWNTIME
-                        //d = d.replace(",", ".");
-                        graphData.push(value.YIL+'/'+value.TARIH);
-                        //var arr = value.DOWNTIME.split(',');
-                        /*if(arr.length == 3) {
-                            var tutar = null;
-                            tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseFloat(d));
-                        } else{
-                            graphData.push(parseFloat(d));
-                        }*/
-                        graphDataAll.push(graphData);
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                            instance.showInLegend = false;
+                        }
+                        
+                        if(counter == 1) {
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            instance.showInLegend = false;
+                            serviceData.push(parseInt(value.MEMNUNIYET));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.MEMNUNIYET));
+                            instance.data = serviceData;
+                            
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.MEMNUNIYET));
+                        }
+                        counter++;
                     });
                     
+                    //console.log(series);
+
+                    var d = new Date();
+                    var mnt = d.getMonth();
+                    var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CSI', {
                         title: {
                             text: window.lang.translate('Customer Happiness')
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
+                        },
+                        xAxis : { 
+                            type           : 'datetime',
+                            tickInterval   : 24 * 3600 * 1000 *30, //one month
+                            //minTickInterval: 28*24*3600*1000,
+                            labels         : {
+                                rotation : 0
+                            },
                         },
                         yAxis: {
                             title: {
@@ -7005,30 +7177,12 @@ function getMMCSIYillikWithoutServices() {
                                 label: {
                                     connectorAllowed: false
                                 },
-                                pointStart: 2010
+                                //pointStart: 2010
+                                pointStart: Date.UTC(year, mnt),
+                                pointInterval: 24 * 3600 * 1000 *30 // one month
                             }
                         },
-                        series: [{
-                            name: 'Installation',
-                            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
-                            showInLegend: false
-                        }, {
-                            name: 'Manufacturing',
-                            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
-                            showInLegend: false
-                        }, {
-                            name: 'Sales & Distribution',
-                            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
-                            showInLegend: false
-                        }, {
-                            name: 'Project Development',
-                            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
-                            showInLegend: false
-                        }, {
-                            name: 'Other',
-                            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
-                            showInLegend: false
-                        }],
+                        series: series,
                         responsive: {
                             rules: [{
                                 condition: {
@@ -7071,7 +7225,6 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
                     var categ = [];
                     var servisMiktar = function() {  
                     };
-                    var tarih = '';
                     var serviceID = null;
                     var series = [];
                     var instance; 
@@ -7081,21 +7234,22 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
                     $.each(data.resultSet, function(key, value) {
                         if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
                         //counter++;
-                        var d =  value.DOWNTIME
-                        //d = d.replace(",", ".");
                         if(serviceIdControler){
                             instance.name = value.SERVISAD;
+                            instance.showInLegend = false;
                         }
+                        
                         if(counter == 1) {
-                            //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseFloat(d));
+                            instance.showInLegend = false;
+                            serviceData.push(parseInt(value.MEMNUNIYET));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseFloat(d));
+                            serviceData.push(parseInt(value.MEMNUNIYET));
                             instance.data = serviceData;
+                            
                             series.push(instance);
                             serviceData = [];
                             instance = null;
@@ -7103,20 +7257,29 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseFloat(d));
+                            serviceData.push(parseInt(value.MEMNUNIYET));
                         }
                         counter++;
                     });
-                    //console.log(series);
-                    categ.unique();
-                    //console.log(categ);
                     
+                    //console.log(series);
+                    var d = new Date();
+                    var mnt = d.getMonth();
+                    var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CSI', {
                         title: {
                             text: window.lang.translate('Customer Happiness')
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
+                        },
+                        xAxis : { 
+                            type           : 'datetime',
+                            tickInterval   : 24 * 3600 * 1000 *30, //one month
+                            //minTickInterval: 28*24*3600*1000,
+                            labels         : {
+                                rotation : 0
+                            },
                         },
                         yAxis: {
                             title: {
@@ -7133,30 +7296,17 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
                                 label: {
                                     connectorAllowed: false
                                 },
-                                pointStart: 2010
+                                //pointStart: 2010
+                                pointStart: Date.UTC(year, mnt),
+                                pointInterval: 24 * 3600 * 1000 *30 // one month
                             }
                         },
-                        series: [{
+                        series: series
+                            /*[{
                             name: 'Installation',
                             data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
                             showInLegend: false
-                        }, {
-                            name: 'Manufacturing',
-                            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
-                            showInLegend: false
-                        }, {
-                            name: 'Sales & Distribution',
-                            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
-                            showInLegend: false
-                        }, {
-                            name: 'Project Development',
-                            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
-                            showInLegend: false
-                        }, {
-                            name: 'Other',
-                            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
-                            showInLegend: false
-                        }],
+                        }]*/,
                         responsive: {
                             rules: [{
                                 condition: {
@@ -7195,29 +7345,63 @@ function getMMCXIYillikWithoutServices() {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
-                    var graphDataAll = [];
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
                     $.each(data.resultSet, function(key, value) {
-                        var graphData = [];
-                        var d =  value.DOWNTIME
-                        //d = d.replace(",", ".");
-                        graphData.push(value.YIL+'/'+value.TARIH);
-                        //var arr = value.DOWNTIME.split(',');
-                        /*if(arr.length == 3) {
-                            var tutar = null;
-                            tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseFloat(d));
-                        } else{
-                            graphData.push(parseFloat(d));
-                        }*/
-                        graphDataAll.push(graphData);
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                            instance.showInLegend = false;
+                        }
+                        
+                        if(counter == 1) {
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            instance.showInLegend = false;
+                            serviceData.push(parseInt(value.MEMNUNIYET));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.MEMNUNIYET));
+                            instance.data = serviceData;
+                            
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.MEMNUNIYET));
+                        }
+                        counter++;
                     });
-
+                    
+                    var d = new Date();
+                    var mnt = d.getMonth();
+                    var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CXI', {
                         title: {
                             text: window.lang.translate('Customer Happiness')
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
+                        },
+                        xAxis : { 
+                            type           : 'datetime',
+                            tickInterval   : 24 * 3600 * 1000 *30, //one month
+                            //minTickInterval: 28*24*3600*1000,
+                            labels         : {
+                                rotation : 0
+                            },
                         },
                         yAxis: {
                             title: {
@@ -7234,30 +7418,17 @@ function getMMCXIYillikWithoutServices() {
                                 label: {
                                     connectorAllowed: false
                                 },
-                                pointStart: 2010
+                                //pointStart: 2010
+                                pointStart: Date.UTC(year, mnt),
+                                pointInterval: 24 * 3600 * 1000 *30 // one month
                             }
                         },
-                        series: [{
-                            name: 'Installation',
-                            data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
-                            showInLegend: false
-                        }, {
-                            name: 'Manufacturing',
-                            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
-                            showInLegend: false
-                        }, {
-                            name: 'Sales & Distribution',
-                            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
-                            showInLegend: false
-                        }, {
-                            name: 'Project Development',
-                            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
-                            showInLegend: false
-                        }, {
+                        series: series
+                            /*[ {
                             name: 'Other',
                             data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
                             showInLegend: false
-                        }],
+                        }]*/,
                         responsive: {
                             rules: [{
                                 condition: {
@@ -7300,7 +7471,6 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
                     var categ = [];
                     var servisMiktar = function() {  
                     };
-                    var tarih = '';
                     var serviceID = null;
                     var series = [];
                     var instance; 
@@ -7310,21 +7480,22 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
                     $.each(data.resultSet, function(key, value) {
                         if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
                         //counter++;
-                        var d =  value.DOWNTIME
-                        //d = d.replace(",", ".");
                         if(serviceIdControler){
                             instance.name = value.SERVISAD;
+                            instance.showInLegend = false;
                         }
+                        
                         if(counter == 1) {
-                            //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseFloat(d));
+                            instance.showInLegend = false;
+                            serviceData.push(parseInt(value.MEMNUNIYET));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseFloat(d));
+                            serviceData.push(parseInt(value.MEMNUNIYET));
                             instance.data = serviceData;
+                            
                             series.push(instance);
                             serviceData = [];
                             instance = null;
@@ -7332,19 +7503,29 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseFloat(d));
+                            serviceData.push(parseInt(value.MEMNUNIYET));
                         }
                         counter++;
                     });
+                    
                     //console.log(series);
-                    categ.unique();
-                    //console.log(categ);
+                    var d = new Date();
+                    var mnt = d.getMonth();
+                    var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CXI', {
                         title: {
                             text: window.lang.translate('Customer Happiness')
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
+                        },
+                        xAxis : { 
+                            type           : 'datetime',
+                            tickInterval   : 24 * 3600 * 1000 *30, //one month
+                            //minTickInterval: 28*24*3600*1000,
+                            labels         : {
+                                rotation : 0
+                            },
                         },
                         yAxis: {
                             title: {
@@ -7361,30 +7542,17 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
                                 label: {
                                     connectorAllowed: false
                                 },
-                                pointStart: 2010
+                                //pointStart: 2010
+                                pointStart: Date.UTC(year, mnt),
+                                pointInterval: 24 * 3600 * 1000 *30 // one month
                             }
                         },
-                        series: [{
+                        series: series
+                        /*[{
                             name: 'Installation',
                             data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
                             showInLegend: false
-                        }, {
-                            name: 'Manufacturing',
-                            data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
-                            showInLegend: false
-                        }, {
-                            name: 'Sales & Distribution',
-                            data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
-                            showInLegend: false
-                        }, {
-                            name: 'Project Development',
-                            data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
-                            showInLegend: false
-                        }, {
-                            name: 'Other',
-                            data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
-                            showInLegend: false
-                        }],
+                        }]*/,
                         responsive: {
                             rules: [{
                                 condition: {
@@ -8822,15 +8990,11 @@ function getMMCSIDashboard() {
             //console.log(data.resultSet);
             if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                 var dataSet = data.resultSet;
-                var downtime;
+                var dt = 0;
                 $.each(dataSet, function (key, value) {
-                    var d =  value.DOWNTIME
-                    d = d.replace(",", ".");
-                    //console.log(d);
-                    downtime+= parseInt(d);
+                    dt =  value.AY_DATA +'(CSI)'
                 });
-                console.log(downtime);
-                $("#toplam_header_MM_CSI_container").headerSetterAfterSalesStocks(downtime);
+                $("#toplam_header_MM_CSI_container").headerSetterAfterSalesDowntime(dt);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -8850,16 +9014,10 @@ function getMMCSIDashboard() {
                 //console.log(data.resultSet);
                 if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                     var dataSet = data.resultSet;
-                    var downtime = 0;
+                    var dt = 0;
                     $.each(dataSet, function (key, value) {
-                        var d =  value.DOWNTIME
-                        d = d.replace(",", ".");
-                        console.log(d);
-                        console.log(downtime);
-                        downtime = parseFloat(downtime)+parseFloat(d);
+                        dt =  value.AY_DATA +'(CSI)'
                     });
-                    console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
-                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
                     $("#toplam_header_MM_CSI_container").headerSetterAfterSalesDowntime(dt);
                 }
             },
@@ -8879,7 +9037,7 @@ function getMMCXIDashboard() {
     if(serviceControler == true) {
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDetayMMCXIYillikWithServices_infoAfterSales' ,
+        data: { url:'getAfterSalesDashboardMMCXI_infoAfterSales' ,
                 pk : $("#pk").val()}, 
         type: 'GET',
         dataType: 'json',
@@ -8889,15 +9047,11 @@ function getMMCXIDashboard() {
             //console.log(data.resultSet);
             if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                 var dataSet = data.resultSet;
-                var downtime;
+                var dt = 0;
                 $.each(dataSet, function (key, value) {
-                    var d =  value.DOWNTIME
-                    d = d.replace(",", ".");
-                    //console.log(d);
-                    downtime+= parseInt(d);
+                    dt =  value.AY_DATA +'(CXI)'
                 });
-                console.log(downtime);
-                $("#toplam_header_MM_CXI_container").headerSetterAfterSalesStocks(downtime);
+                $("#toplam_header_MM_CXI_container").headerSetterAfterSalesDowntime(dt);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -8907,7 +9061,7 @@ function getMMCXIDashboard() {
     } else if(serviceControler == false ){
         $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayMMCXIYillik_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardMMCXI_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -8917,18 +9071,14 @@ function getMMCXIDashboard() {
                 //console.log(data.resultSet);
                 if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                     var dataSet = data.resultSet;
-                    var downtime = 0;
+                    var dt = 0;
                     $.each(dataSet, function (key, value) {
-                        var d =  value.DOWNTIME
-                        d = d.replace(",", ".");
-                        console.log(d);
-                        console.log(downtime);
-                        downtime = parseFloat(downtime)+parseFloat(d);
+                        dt =  value.AY_DATA +'(CXI)'
                     });
-                    console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
-                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
                     $("#toplam_header_MM_CXI_container").headerSetterAfterSalesDowntime(dt);
                 }
+                   
+                
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.error(textStatus);
