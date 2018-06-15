@@ -102,15 +102,12 @@
             <!--</section>  -->
             </div>
             <!--servisler blok son-->
-            
-            
 
-            
-            <!-- aftersales dashboard data ikinci blok -->
+            <!-- aftersales dashboard data ana blok -->
             <div class="row">
                 <div class="col-lg-4 col-xs-6">
                     <!-- small box -->
-                    <div id="toplam_header_1_container" class="small-box bg-man-ligth-grey bg-aqua ">
+                    <div id="toplam_header_yedek_parca_container" class="small-box bg-man-ligth-grey bg-aqua ">
                         <div class="inner">
                             <h3 class="man-header-red"><div class="overlay" >
                                     <i class="fa fa-refresh fa-spin" ></i>
@@ -121,12 +118,12 @@
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="cursor: pointer;" id="detay_acik_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="cursor: pointer;" id="detay_yedek_parca" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div><!-- ./col -->
                 <div class="col-lg-4 col-xs-6">
                     <!-- small box -->
-                    <div id="toplam_header_2_container" class="small-box bg-man-ligth-grey bg-green">
+                    <div id="toplam_header_yag_container" class="small-box bg-man-ligth-grey bg-green">
                         <div class="inner">
                             <h3 class="man-header-red"><div class="overlay" >
                                     <i class="fa fa-refresh fa-spin" ></i>
@@ -138,12 +135,12 @@
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a style="cursor: pointer;" id="detay_acilan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                        <a style="cursor: pointer;" id="detay_yag" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div><!-- ./col -->
                 <div class="col-lg-4 col-xs-6">
                     <!-- small box -->
-                    <div id="toplam_header_3_container" class="small-box bg-man-ligth-grey bg-yellow">
+                    <div id="toplam_header_stok_container" class="small-box bg-man-ligth-grey bg-yellow">
                         <div class="inner">
                             <h3 class="man-header-red"><div class="overlay" >
                                     <i class="fa fa-refresh fa-spin" ></i>
@@ -154,14 +151,14 @@
                         <div class="icon">
                             <i class="ion ion-briefcase"></i>
                         </div>
-                        <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                        <a style="cursor: pointer;" id="detay_stok" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div><!-- ./col -->
 
             </div><!-- /.row -->
-            <!-- aftersales dashboard data ikinci blok son -->
+            <!-- aftersales dashboard data ana blok son -->
             
-            <!--yedek parça (servis içinde onarıma kullanılan) block 2 -->
+            <!--yedek parça (servis içinde onarıma kullanılan) hidden block  -->
             <div class="row">
                 <!--<section class="col-lg-7 connectedSortable">-->
                 <div class="col-md-12">
@@ -198,7 +195,7 @@
                                     <p lang="en">Uygun parça</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-briefcase"></i>
+                                    <i class="ion ion-android-bus"></i>
                                 </div>
                                 <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                             </div>
@@ -314,7 +311,7 @@
                                     <p lang="en">Y.S Parça</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-briefcase"></i>
+                                    <i class="ion ion-android-bus"></i>
                                 </div>
                                 <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                             </div>
@@ -403,9 +400,9 @@
                 </div>
             <!--</section>  -->
             </div>
-            <!--yedek parça (servis içinde onarıma kullanılan) son-->
+            <!--yedek parça (servis içinde onarıma kullanılan) hidden blok son-->
             
-            <!--yedek parça (servis dışına/direk satılan) block 2 -->
+            <!--yedek parça (servis dışına/direk satılan) hidden block  -->
             <div class="row">
                 <!--<section class="col-lg-7 connectedSortable">-->
                 <div class="col-md-12">
@@ -413,17 +410,6 @@
                     <div class="box-header with-border">
                       <h3 class="box-title" id="panel_yedek_parca_servis_disi_title" lang="en">Servis dışına/direk satılan</h3>
                       <div class="box-tools pull-right">
-                        <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
-                        <div class="btn-group open">
-                            <button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                <i class="fa fa-calendar"></i>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                              <li><a id='hidden_block2_month' lang="en">Last month</a></li>
-                              <li class="divider"></li>
-                              <li><a id='hidden_block2_year' lang="en">Last 1 year</a></li>
-                            </ul>
-                         </div>
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                       </div>
                     </div><!-- /.box-header -->
@@ -442,7 +428,7 @@
                                     <p lang="en">Uygun parça</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-briefcase"></i>
+                                    <i class="ion ion-android-arrow-dropright-circle"></i>
                                 </div>
                                 <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                             </div>
@@ -558,7 +544,7 @@
                                     <p lang="en">Y.S Parça</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-briefcase"></i>
+                                    <i class="ion ion-android-arrow-dropright-circle"></i>
                                 </div>
                                 <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                             </div>
@@ -647,74 +633,67 @@
                 </div>
             <!--</section>  -->
             </div>
-            <!--yedek parça (servis dışına/direk satılan) son-->
+            <!--yedek parça (servis dışına/direk satılan) hidden block son-->
             
-            
-            
-            <!-- aftersales dashboard data üçüncü blok -->
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <!-- small box -->
-                    <div id="toplam_header_arac_giris_sayilari_container" class="small-box bg-man-ligth-grey bg-aqua ">
-                        <div class="inner">
-                            <h3 class="man-header-red"><div class="overlay" >
-                                    <i class="fa fa-refresh fa-spin" ></i>
-                                </div>
-                            </h3>
-                            <p lang="en">Vehicle Entries</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-android-alert"></i>
-                        </div>
-                        <a href="cursor: pointer;" id="detay_arac_girisleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div><!-- ./col -->
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <!-- small box -->
-                    <div id="toplam_header_downtime_container" class="small-box bg-man-ligth-grey bg-aqua ">
-                        <div class="inner">
-                            <h3 class="man-header-red"><div class="overlay" >
-                                    <i class="fa fa-refresh fa-spin" ></i>
-                                </div>
-                            </h3>
-                            <p lang="en">Downtime</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-android-time"></i>
-                        </div>
-                        <a href="cursor: pointer;" id="detay_downtime" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div><!-- ./col -->
-            </div><!-- /.row -->
-            <!-- aftersales dashboard data üçüncü blok son -->
-            
-            <!--hidden data block 3 -->
+            <!--yag  hidden block  -->
             <div class="row">
                 <!--<section class="col-lg-7 connectedSortable">-->
                 <div class="col-md-12">
-                  <div class="box" id="panel_hidden3" style="display: none;">
+                  <div class="box" id="panel_yag" style="display: none;">
                     <div class="box-header with-border">
-                      <h3 class="box-title" id="panel_hidden3_title" lang="en">Work order</h3>
+                      <h3 class="box-title" id="panel_yag_servis_ici_title" lang="en">Yag</h3>
                       <div class="box-tools pull-right">
-                        <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
-                        <div class="btn-group open">
-                            <button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                <i class="fa fa-calendar"></i>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                              <li><a id='hidden_block3_month' lang="en">Last month</a></li>
-                              <li class="divider"></li>
-                              <li><a id='hidden_block3_year' lang="en">Last 1 year</a></li>
-                            </ul>
-                         </div>
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                       </div>
                     </div><!-- /.box-header -->
                     <div class="box-body" style="display: block;">
                       <div class="row">
+                        <!-- yag (servis içinde onarıma kullanılan) baş.-->
+                        <div class="col-lg-6 col-xs-12">
+                        <!-- small box -->
+                            <div id="servisici_yag_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
+                                <div class="inner">
+                                    <!--<h3 class="man-header-red"><div class="overlay" >0
+                                            <i class="fa fa-refresh fa-spin" ></i>
+                                        </div>
+                                    </h3>-->
+                                    <h3 class="man-header-red">0</h3>
+                                    <p lang="en">Servis içinde onarıma kullanılan</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-wrench"></i>
+                                </div>
+                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                            <!-- yag (servis içinde onarıma kullanılan) son.-->
+                        </div><!-- /.col -->
+                        <!-- yag (servis içinde onarıma kullanılan) son.-->
+                        
+                        <!-- yag (servis dışına /direk satılan)  baş.-->
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <!-- small box -->
+                            <div id="servisdisi_yag_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
+                                <div class="inner">
+                                    <!--<h3 class="man-header-red"><div class="overlay" >0
+                                            <i class="fa fa-refresh fa-spin" ></i>
+                                        </div>
+                                    </h3>-->
+                                    <h3 class="man-header-red">0</h3>
+                                    <p lang="en">Servis dışına direk satılan</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-wrench"></i>
+                                </div>
+                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div><!-- /.col -->
+                        <!-- yag (servis dışına /direk satılan) son.-->
+                        
+                      </div><!-- /.row -->
+                      <div class="row">
                         <div class="col-md-12">
                           
-                          <div id="container_hidden_block3" style="min-width: 200px;  margin: 0 auto"></div>
+                          <!--<div id="container_satis_all" style="min-width: 200px;  margin: 0 auto"></div>-->
                           
                         </div><!-- /.col -->
                       </div><!-- /.row -->
@@ -726,57 +705,126 @@
                 </div>
             <!--</section>  -->
             </div>
-            <!--hidden data block 3 son-->
+            <!--yag  hidden block son-->
             
-            <!--hidden data block 3_1 -->
+            <!--stok  hidden block  -->
             <div class="row">
                 <!--<section class="col-lg-7 connectedSortable">-->
                 <div class="col-md-12">
-                  <div class="box" id="panel_hidden3_1" style="display: none;">
+                  <div class="box" id="panel_stok" style="display: none;">
                     <div class="box-header with-border">
-                      <h3 class="box-title" id="panel_hidden3_1_title" lang="en">Downtime</h3>
+                      <h3 class="box-title" id="panel_stok_title" lang="en">Stok</h3>
                       <div class="box-tools pull-right">
-                        <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
-                        <!--<div class="btn-group open">
-                            <button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                <i class="fa fa-calendar"></i>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                              <li><a id='hidden_block3_1_month' lang="en">Last month</a></li>
-                              <li class="divider"></li>
-                              <li><a id='hidden_block3_1_year' lang="en">Last 1 year</a></li>
-                            </ul>
-                         </div>-->
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                       </div>
                     </div><!-- /.box-header -->
                     <div class="box-body" style="display: block;">
                       <div class="row">
+                        <!-- stok baş.-->
+                        <div class="col-lg-12 col-xs-12">
+                        <!-- small box -->
+                            <div id="servisici_yag_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
+                                <div class="inner">
+                                    <!--<h3 class="man-header-red"><div class="overlay" >0
+                                            <i class="fa fa-refresh fa-spin" ></i>
+                                        </div>
+                                    </h3>-->
+                                    <h3 class="man-header-red">0</h3>
+                                    <p lang="en">Yedek stok bilgisi maliyetten (Yağ hariç)</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-battery-charging"></i>
+                                </div>
+                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                            <!-- stok OEM detay baş.-->
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+
+                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-number" lang="tr">OEM</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar">
+                                        <div class="progress-bar" style="width: 0%;"></div>
+                                      </div>
+                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- stok OEM detay son.-->
+                            <!-- stok OES detay baş.-->
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+
+                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-number" lang="tr">OEM</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar">
+                                        <div class="progress-bar" style="width: 0%;"></div>
+                                      </div>
+                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- stok OES detay son.-->
+                            <!-- stok ESD detay baş.-->
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+
+                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-number" lang="tr">OEM</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar">
+                                        <div class="progress-bar" style="width: 0%;"></div>
+                                      </div>
+                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- stok ESD detay son.-->
+                            <!-- stok Y.SAN detay baş.-->
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+
+                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-number" lang="tr">OEM</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar">
+                                        <div class="progress-bar" style="width: 0%;"></div>
+                                      </div>
+                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- stok Y.SAN detay son.-->
+                            <!-- stok Y.SAN.MY detay baş.-->
+                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+
+                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-number" lang="tr">OEM</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar">
+                                        <div class="progress-bar" style="width: 0%;"></div>
+                                      </div>
+                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- stok Y.SAN.MY detay son.-->
+                        </div><!-- /.col -->
+                        <!-- stok  son.-->
+
+                      </div><!-- /.row -->
+                      <div class="row">
                         <div class="col-md-12">
                           
-                          <div id="container_hidden_block3_1" style="min-width: 200px;  margin: 0 auto"></div>
-                          
-                          <table id="grid_downtime" class="table table-striped table-bordered" class="display" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Servis Adı</th>
-                                    <th>DownTime</th>
-                                    <th>Yıl</th>
-                                    <th>Ay</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Servis Adı</th>
-                                    <th>DownTime</th>
-                                    <th>Yıl</th>
-                                    <th>Ay</th>
-                                </tr>
-                            </tfoot>
-                        </table>
-                          
+                          <!--<div id="container_satis_all" style="min-width: 200px;  margin: 0 auto"></div>-->
                           
                         </div><!-- /.col -->
                       </div><!-- /.row -->
@@ -788,86 +836,16 @@
                 </div>
             <!--</section>  -->
             </div>
-            <!--hidden data block 3_1 son-->
-            
- 
-            
+            <!--stok  hidden block son-->
+
             <!-- Main row -->
             <div class="row">
             
                 <section class="col-lg-6 connectedSortable">
-                    
-                    
-
-                    <!-- quick email widget -->
-                    <div class="box ">
-                        <div class="box-header">
-                            <i class="fa fa-envelope"></i>
-                            <h3 class="box-title" lang="en">Email</h3>
-                            <!-- tools box -->
-                            <div class="pull-right box-tools">
-                                <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            </div><!-- /. tools -->
-                        </div>
-                        <div class="box-body">
-                            <form action="#" method="post">
-                                <div class="form-group">
-                                    <input type="email" lang="en" class="form-control" name="Kime" placeholder="to who"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" name="Konu" lang="en" placeholder="subject"/>
-                                </div>
-                                <div>
-                                    <textarea class="textarea" lang="en" placeholder="message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="box-footer clearfix">
-                            <button class="pull-right btn btn-default" id="sendEmail" lang="en">Send<i class="fa fa-arrow-circle-right"></i></button>
-                        </div>
-                    </div>
-
 
                 </section><!-- /.Left col -->
                 <!-- right col (We are only adding the ID to make the widgets sortable)-->
                 <section class="col-lg-6 connectedSortable">
-
-
-                    <!-- Map box -->
-                    <div class="box box-solid bg-light-blue-gradient">
-                        <div class="box-header">
-                            <!-- tools box -->
-                            <div class="pull-right box-tools">
-                              <!--<button class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>-->
-                                <button class="btn btn-primary btn-sm pull-right" data-widget='collapse' data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>
-                            </div><!-- /. tools -->
-
-                            <i class="fa fa-map-marker"></i>
-                            <h3 class="box-title">
-                                <!--Üye Ülkeler-->
-                            </h3>
-                        </div>
-                        <div class="box-body">
-                            <div id="world-map" style="height: 250px; width: 100%;"></div>
-                        </div><!-- /.box-body-->
-                        <div class="box-footer no-border">
-                            <div class="row">
-                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                    <div id="sparkline-1"></div>
-                                    <div class="knob-label"><!--OSB Imalat verileri...--></div>
-                                </div><!-- ./col -->
-                                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                                    <div id="sparkline-2"></div>
-                                    <div class="knob-label"><!--OSB Imalat verileri...--></div>
-                                </div><!-- ./col -->
-                                <div class="col-xs-4 text-center">
-                                    <div id="sparkline-3"></div>
-                                    <div class="knob-label"><!--OSB Imalat verileri...--></div>
-                                </div><!-- ./col -->
-                            </div><!-- /.row -->
-                        </div>
-                    </div>
-                    <!-- /.box -->
 
                 </section><!-- right col -->
             </div><!-- /.row (main row) -->
