@@ -154,7 +154,20 @@ $("#panel_hidden_MM_CXI").loadImager();
  * @since 06/05/2018
  */
 $("#panel_hidden5").loadImager();
+
+/**
+ * loading image  yedek parça toplam satış detay blok
+ * @author Mustafa Zeynel Dağlı
+ * @since 14/06/2018
+ */
+$("#panel_hidden_yedek_parca_toplam_satis").loadImager();
  
+ /**
+ * loading image  yedek parça yag satış detay blok
+ * @author Mustafa Zeynel Dağlı
+ * @since 14/06/2018
+ */
+$("#panel_hidden_yedek_parca_yag_satis").loadImager();
 
 
 /**
@@ -869,9 +882,167 @@ $('#detay_downtime').click(function()
         } 
     }     
 });
-
 // detay block 3_1 son
 
+
+// detay blok yedek parça toplam satış
+var hidden_yedekparca_toplam_satis_controller;
+// araç giriş sayıları detay click 
+$('#detay_yedekparca_toplam_satis').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden_yedek_parca_toplam_satis").css('display') == 'none')
+    {
+        hidden_yedekparca_toplam_satis_controller = 1;
+        $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+        $("#panel_hidden_yedek_parca_toplam_satis").loadImager('appendImage');
+        $("#panel_hidden_yedek_parca_toplam_satis_title").html(window.lang.translate('Spare parts total sales'));
+        $("#panel_hidden_yedek_parca_toplam_satis").animate({height:'toggle'},1000); 
+        
+        if(serviceControler == true) {
+            getYedekParcaTSWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getYedekParcaTSWeeklyWithoutServices();
+        } 
+    }else {
+        hidden_yedekparca_toplam_satis_controller = 1;
+        $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+        $("#panel_hidden_yedek_parca_toplam_satis").loadImager('appendImage');
+        $("#panel_hidden_yedek_parca_toplam_satis_title").html(window.lang.translate('Spare parts total sales'));
+        
+        if(serviceControler == true) {
+            getYedekParcaTSWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getYedekParcaTSWeeklyWithoutServices();
+        } 
+    }   
+});
+
+// hidden yedek parca toplam satış aylık button click event
+$('#hidden_yedek_parca_toplam_satis_month').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_yedekparca_toplam_satis_controller == 1)
+    {
+        $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+        $("#panel_hidden_yedek_parca_toplam_satis").loadImager('appendImage');
+        $("#panel_hidden_yedek_parca_toplam_satis_title").html(window.lang.translate('Spare parts total sales'));
+        
+        if(serviceControler == true) {
+            getYedekParcaTSAylikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getYedekParcaTSAylikWithoutServices();
+        }  
+    }  
+});
+
+// hidden yedek parca toplam satış yıllık button click event
+$('#hidden_yedek_parca_toplam_satis_year').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_yedekparca_toplam_satis_controller == 1)
+
+    {
+        $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+        $("#panel_hidden_yedek_parca_toplam_satis").loadImager('appendImage');
+        $("#panel_hidden_yedek_parca_toplam_satis_title").html(window.lang.translate('Spare parts total sales'));
+        
+        if(serviceControler == true) {
+            getYedekParcaTSYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getYedekParcaTSYillikWithoutServices();
+        } 
+    }   
+});
+// detay block yedek parça toplam satış son
+
+// detay blok yedek parça yag satış
+var hidden_yedekparca_yag_satis_controller;
+// araç giriş sayıları detay click 
+$('#detay_yedekparca_yag_satis').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden_yedek_parca_yag_satis").css('display') == 'none')
+    {
+        hidden_yedekparca_yag_satis_controller = 1;
+        $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+        $("#panel_hidden_yedek_parca_yag_satis").loadImager('appendImage');
+        $("#panel_hidden_yedek_parca_yag_satis_title").html(window.lang.translate('Spare parts oil sales'));
+        $("#panel_hidden_yedek_parca_yag_satis").animate({height:'toggle'},1000); 
+        
+        if(serviceControler == true) {
+            getYedekParcaYSWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getYedekParcaYSWeeklyWithoutServices();
+        } 
+    }else {
+        hidden_yedekparca_yag_satis_controller = 1;
+        $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+        $("#panel_hidden_yedek_parca_yag_satis").loadImager('appendImage');
+        $("#panel_hidden_yedek_parca_yag_satis_title").html(window.lang.translate('Spare parts oil sales'));
+        
+        if(serviceControler == true) {
+            getYedekParcaYSWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getYedekParcaYSWeeklyWithoutServices();
+        } 
+    }   
+});
+
+// hidden yedek parca yag satış aylık button click event
+$('#hidden_yedek_parca_yag_satis_month').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_yedekparca_yag_satis_controller == 1)
+    {
+        $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+        $("#panel_hidden_yedek_parca_yag_satis").loadImager('appendImage');
+        $("#panel_hidden_yedek_parca_yag_satis_title").html(window.lang.translate('Spare parts oil sales'));
+        
+        if(serviceControler == true) {
+            getYedekParcaYSAylikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getYedekParcaYSAylikWithoutServices();
+        }  
+    }  
+});
+
+// hidden yedek parca yag satış yıllık button click event
+$('#hidden_yedek_parca_yag_satis_year').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_yedekparca_yag_satis_controller == 1)
+    {
+        $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+        $("#panel_hidden_yedek_parca_yag_satis").loadImager('appendImage');
+        $("#panel_hidden_yedek_parca_yag_satis_title").html(window.lang.translate('Spare parts oil sales'));
+        
+        if(serviceControler == true) {
+            getYedekParcaYSYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getYedekParcaYSYillikWithoutServices();
+        } 
+    }   
+});
+// detay block yedek parça yag satış son
 
 // detay verimlilik blok
 var hidden_block_verimlilik_blok_controller;
@@ -980,7 +1151,6 @@ $('#panel_etkinlik_detail').click(function()
     }
          
 });
-
 // detay verimlilik blok son
 
 
@@ -989,6 +1159,10 @@ var hidden_block4_controller;
 // acılan faturalar detay graph click event
 $('#detay_acilan_ciro').click(function()
 {
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
     if($("#panel_hidden4").css('display') == 'none')
     {
         hidden_block4_controller = 1;
@@ -996,262 +1170,45 @@ $('#detay_acilan_ciro').click(function()
         $("#panel_hidden4").loadImager('appendImage');
         $("#panel_hidden4").animate({height:'toggle'},1000); 
         $("#panel_hidden4_title").html('Cirolar');
-         $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayCiro_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-                    
-                    var graphDataAll = [];
-                    $.each(data.resultSet, function(key, value) {
-                        var graphData = [];
-                        graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.FATURATUTAR));
-                        graphDataAll.push(graphData);
-                    });
-                    //console.log(graphDataAll);
-
-                    chart3 = Highcharts.chart('container_hidden_block4', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: 'Cirolar Toplamı'
-                        },
-                        subtitle: {
-                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
-                        },
-                        xAxis: {
-                            type: 'category',
-                            labels: {
-                                rotation: -45,
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('1K')
-                            }
-                        },
-                        legend: {
-                            enabled: false
-                        },
-                        tooltip: {
-                            pointFormat: 'Cirolar: <b>{point.y} '+window.lang.translate('1K')+'</b>'
-                        },
-                        series: [{
-                            name: 'Population',
-                            data: graphDataAll,
-                            dataLabels: {
-                                enabled: true,
-                                rotation: -90,
-                                color: '#FFFFFF',
-                                align: 'right',
-                                format: '{point.y}', // one decimal
-                                y: 10, // 10 pixels down from the top
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        }]
-                    });
-                    $("#panel_hidden4").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
-            }
-        });
+        
+        if(serviceControler == true) {
+            getCiroWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getCiroWeeklyWithoutServices();
+        }
           
     }else {
         hidden_block4_controller = 1;
         $("#panel_hidden4").loadImager('removeLoadImage');
         $("#panel_hidden4").loadImager('appendImage');
         $("#panel_hidden4_title").html('Cirolar');
-        $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayCiro_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-                    var graphDataAll = [];
-                    $.each(data.resultSet, function(key, value) {
-                        var graphData = [];
-                        graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.FATURATUTAR));
-                        graphDataAll.push(graphData);
-                    });
-                    //console.log(graphDataAll);
-
-                    chart3 = Highcharts.chart('container_hidden_block4', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: 'Cirolar Toplamı'
-                        },
-                        subtitle: {
-                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
-                        },
-                        xAxis: {
-                            type: 'category',
-                            labels: {
-                                rotation: -45,
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('1K')
-                            }
-                        },
-                        legend: {
-                            enabled: false
-                        },
-                        tooltip: {
-                            pointFormat: 'Cirolar : <b>{point.y} '+window.lang.translate('1K')+'</b>'
-                        },
-                        series: [{
-                            name: 'Population',
-                            data: graphDataAll,
-                            dataLabels: {
-                                enabled: true,
-                                rotation: -90,
-                                color: '#FFFFFF',
-                                align: 'right',
-                                format: '{point.y}', // one decimal
-                                y: 10, // 10 pixels down from the top
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        }]
-                    });
-                    $("#panel_hidden4").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
-            }
-        });
-    }
-         
+        
+        if(serviceControler == true) {
+            getCiroWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getCiroAylikWithoutServices();
+        }
+    }     
 });
 
 
 // hidden block4 aylık button click event
 $('#hidden_block4_month').click(function()
 {
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
     if(hidden_block4_controller == 1){
        $("#panel_hidden4").loadImager('removeLoadImage');
-        $("#panel_hidden4").loadImager('appendImage');
-        $("#panel_hidden4_title").html('Cirolar');
-         $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayCiroAylik_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-                    var graphDataAll = [];
-                    $.each(data.resultSet, function(key, value) {
-                        var graphData = [];
-                        graphData.push(value.TARIH+'.'+window.lang.translate('week')+'');
-                        var arr = value.FATURATUTAR.split(',');
-                        if(arr.length == 3) {
-                            var tutar = null;
-                            tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseInt(tutar));
-                        } else{
-                            graphData.push(parseInt(value.FATURATUTAR));
-                        }
-                        graphDataAll.push(graphData);
-
-                    });
-                    graphDataAll.reverse();
-                    //console.log(graphDataAll);
-
-                    chart2 = Highcharts.chart('container_hidden_block4', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: 'Cirolar'
-                        },
-                        subtitle: {
-                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
-                        },
-                        xAxis: {
-                            type: 'category',
-                            labels: {
-                                rotation: -45,
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('1K')
-                            }
-                        },
-                        legend: {
-                            enabled: false
-                        },
-                        tooltip: {
-                            pointFormat: 'Ciro : <b>{point.y} '+window.lang.translate('1K')+'</b>'
-                        },
-                        series: [{
-                            name: 'Population',
-                            data: graphDataAll,
-                            dataLabels: {
-                                enabled: true,
-                                rotation: -90,
-                                color: '#FFFFFF',
-                                align: 'right',
-                                format: '{point.y}', // one decimal
-                                y: 10, // 10 pixels down from the top
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        }]
-                    });
-                    $("#panel_hidden4").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
-            }
-        });
+       $("#panel_hidden4").loadImager('appendImage');
+       $("#panel_hidden4_title").html('Cirolar');
+       
+       if(serviceControler == true) {
+            getCiroAylikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getCiroWeeklyWithoutServices();
+        } 
           
     }  
 });
@@ -1259,95 +1216,20 @@ $('#hidden_block4_month').click(function()
 // hidden block4 yıllık button click event
 $('#hidden_block4_year').click(function()
 {
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     if(hidden_block4_controller == 1){
        $("#panel_hidden4").loadImager('removeLoadImage');
-        $("#panel_hidden4").loadImager('appendImage');
-        $("#panel_hidden4_title").html('Cirolar');
-         $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayCiroYillik_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-                    var graphDataAll = [];
-                    $.each(data.resultSet, function(key, value) {
-                        var graphData = [];
-                        graphData.push(value.YIL+'/'+value.AY);
-                        var arr = value.FATURATUTAR.split(',');
-                        if(arr.length == 3) {
-                            var tutar = null;
-                            tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseInt(tutar));
-                        } else{
-                            graphData.push(parseInt(value.FATURATUTAR));
-                        }
-                        graphDataAll.push(graphData);
-                    });
-                    
-                    chart2 = Highcharts.chart('container_hidden_block4', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: 'Cirolar'
-                        },
-                        subtitle: {
-                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
-                        },
-                        xAxis: {
-                            type: 'category',
-                            labels: {
-                                rotation: -45,
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('1K')
-                            }
-                        },
-                        legend: {
-                            enabled: false
-                        },
-                        tooltip: {
-                            pointFormat: 'Cirolar : <b>{point.y} '+window.lang.translate('1K')+'</b>'
-                        },
-                        series: [{
-                            name: 'Population',
-                            data: graphDataAll,
-                            dataLabels: {
-                                enabled: true,
-                                rotation: -90,
-                                color: '#FFFFFF',
-                                align: 'right',
-                                format: '{point.y}', // one decimal
-                                y: 10, // 10 pixels down from the top
-                                style: {
-                                    fontSize: '13px',
-                                    fontFamily: 'Verdana, sans-serif'
-                                }
-                            }
-                        }]
-                    });
-                    $("#panel_hidden4").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
-            }
-        });
-          
+       $("#panel_hidden4").loadImager('appendImage');
+       $("#panel_hidden4_title").html('Cirolar');
+       
+       if(serviceControler == true) {
+            getCiroYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getCiroYillikWithoutServices();
+        }  
     }
-    
 });
 // detay bloc 4 son
 
@@ -1369,8 +1251,10 @@ $('#detay_CSI').click(function(){
         $("#panel_hidden_MM_CSI").animate({height:'toggle'},1000); 
         
         if(serviceControler == true) {
+            getDetayGridMMCSIWithServices(multiSelectedRoles);
             getMMCSIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
+            getDetayGridMMCSI();
             getMMCSIYillikWithoutServices();
         } 
 
@@ -1381,8 +1265,10 @@ $('#detay_CSI').click(function(){
         $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer Happiness'));
         
         if(serviceControler == true) {
+            getDetayGridMMCSIWithServices(multiSelectedRoles);
             getMMCSIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
+            getDetayGridMMCSI();
             getMMCSIYillikWithoutServices();
         } 
     }     
@@ -1396,7 +1282,6 @@ $('#detay_CXI').click(function(){
     
     if($("#panel_hidden_MM_CXI").css('display') == 'none')
     {
-        alert('ilk açılış');
         hidden_MM_CXI_controller = 1;
         $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CXI").loadImager('appendImage');
@@ -1404,21 +1289,24 @@ $('#detay_CXI').click(function(){
         $("#panel_hidden_MM_CXI").animate({height:'toggle'},1000); 
         
         if(serviceControler == true) {
+            getDetayGridMMCXIWithServices(multiSelectedRoles);
             getMMCXIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
+            getDetayGridMMCXI();
             getMMCXIYillikWithoutServices();
         } 
 
     }else {
-        alert('zaten açık');
         hidden_MM_CXI_controller = 1;
         $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CXI").loadImager('appendImage');
         $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer Happiness'));
         
         if(serviceControler == true) {
+            getDetayGridMMCXIWithServices(multiSelectedRoles);
             getMMCXIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
+            getDetayGridMMCXI();
             getMMCXIYillikWithoutServices();
         }
     }     
@@ -1601,6 +1489,12 @@ getStoklarDashboard();
 
 // downtime dashboard data
 getDownTimeDashboard();
+
+// yedek parca toplam satış dashboard data
+getYedekParcaToplamSatisDashboard();
+
+// yedek parca yag satış dashboard data
+getYedekParcaYagSatisDashboard();
 
 // verimlilik gauge dashboard data
 getVerimlilikDashboard();
@@ -1821,6 +1715,8 @@ $(function () {
         });
 
     });
+
+
 
 // 1. block ve ilk block hidden fonk.
 function getAlisFaturalariWithoutServicesWeekly() {
@@ -4345,6 +4241,8 @@ function getIcmalFaturalariYillikWithServices(multiSelectedRoles) {
 }
 // 1. block ve ilk block hidden fonk. son
 
+
+
 // 2. block ve ikinci block hidden fonk.
 function getAcikIsEmirleriWeeklyWithoutServices() {
     $.ajax({
@@ -5613,6 +5511,8 @@ function getDetayGridStoklarWithServices(multiSelectedRoles) {
 
 // 2. block ve ikinci block hidden fonk. son
 
+
+
 // 3. block ve ikinci block hidden fonk.
 function getAracGirisleriWeeklyWithoutServices() {
     $.ajax({
@@ -5814,7 +5714,6 @@ function getAracGirisleriWeeklyWithServices(multiSelectedRoles) {
 };
 
 function getAracGirisleriAylikWithoutServices() {
-    
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             data: { url:'getAfterSalesDetayAracGirisSayilariAylik_infoAfterSales' ,
@@ -5888,7 +5787,7 @@ function getAracGirisleriAylikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 };
@@ -6007,7 +5906,7 @@ function getAracGirisleriAylikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -6093,7 +5992,7 @@ function getAracGirisleriYillikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -6214,11 +6113,13 @@ function getAracGirisleriYillikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
 // 3. block ve ikinci block hidden fonk. son
+
+
 
 // 3_1. block hidden fonk.
 function getDowntimeYillikWithoutServices() {
@@ -6466,6 +6367,1824 @@ function getDetayGridDowntimeWithServices(multiSelectedRoles) {
     } );
 }
 // 3_1. block  hidden fonk. son
+
+
+
+// yedek parça toplam satış hidden block hidden fonk.
+function getYedekParcaTSWeeklyWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.ARAC_GIRIS_SAYISI));
+                        graphDataAll.push(graphData);
+                    });
+                    console.log(graphDataAll);
+                    
+                    chart2 = Highcharts.chart('container_hidden_yedek_parca_toplam_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts total sales')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Spare parts total sales')+': <b>{point.y:,.2f} </b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() { 
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 7 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_hidden_yedek_parca_toplam_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts total sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Spare parts total sales')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+    
+function getYedekParcaTSAylikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.ARAC_GIRIS));
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    chart2 = Highcharts.chart('container_hidden_yedek_parca_toplam_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts total sales')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Spare parts total sales')+': <b>{point.y:,.2f} '+window.lang.translate('piece')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSAylikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 4 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_yedek_parca_toplam_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts total sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getYedekParcaTSYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.TARIH);
+                        var arr = value.ARAC_GIRIS.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_yedek_parca_toplam_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts total sales')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            //headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('piece')+''
+                        },
+                        series: [{
+                            name: window.lang.translate('Spare parts total sales'),
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            console.log('servis id null');
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_yedek_parca_toplam_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts total sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_yedek_parca_toplam_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+// yedek parça toplam satış  hidden fonk. son
+
+
+
+// yedek parça yağ satış hidden block hidden fonk.
+function getYedekParcaYSWeeklyWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.ARAC_GIRIS_SAYISI));
+                        graphDataAll.push(graphData);
+                    });
+                    console.log(graphDataAll);
+                    
+                    chart2 = Highcharts.chart('container_hidden_yedek_parca_yag_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts oil sales')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Spare parts oil sales')+': <b>{point.y:,.2f} </b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() { 
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 7 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_hidden_yedek_parca_yag_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts oil sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Spare parts oil sales')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+    
+function getYedekParcaYSAylikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.ARAC_GIRIS));
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    chart2 = Highcharts.chart('container_hidden_yedek_parca_yag_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts oil sales')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Spare parts oil sales')+': <b>{point.y:,.2f} '+window.lang.translate('piece')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSAylikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 4 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_yedek_parca_yag_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts oil sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getYedekParcaYSYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.TARIH);
+                        var arr = value.ARAC_GIRIS.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_yedek_parca_yag_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts oil sales')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            //headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('piece')+''
+                        },
+                        series: [{
+                            name: window.lang.translate('Spare parts total sales'),
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            console.log('servis id null');
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_yedek_parca_yag_satis', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts total sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_yedek_parca_yag_satis").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+// yedek parça yağ satış  hidden fonk. son
+
+// ciro hidden block hidden fonk.
+function getCiroWeeklyWithoutServices() {
+     $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayCiro_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.FATURATUTAR));
+                        graphDataAll.push(graphData);
+                    });
+                    //console.log(graphDataAll);
+
+                    chart3 = Highcharts.chart('container_hidden_block4', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: 'Cirolar Toplamı'
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: 'Cirolar: <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden4").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getCiroWeeklyWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayCiroWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() { 
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 7 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_hidden_block4', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts oil sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Spare parts oil sales')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden4").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+    
+function getCiroAylikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayCiroAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH+'.'+window.lang.translate('week')+'');
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+
+                    });
+                    graphDataAll.reverse();
+                    //console.log(graphDataAll);
+
+                    chart2 = Highcharts.chart('container_hidden_block4', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: 'Cirolar'
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: 'Ciro : <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden4").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getCiroAylikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayCiroAylikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 4 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_block4', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts oil sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden4").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getCiroYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayCiroYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.AY);
+                        var arr = value.FATURATUTAR.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.FATURATUTAR));
+                        }
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    chart2 = Highcharts.chart('container_hidden_block4', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: 'Cirolar'
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: 'Cirolar : <b>{point.y} '+window.lang.translate('1K')+'</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden4").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getCiroYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayCiroYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            console.log('servis id null');
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_block4', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts total sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden4").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+// ciro  hidden fonk. son
 
 // verimlilik block hidden fonk.
 function getVerimlilikYillikWithoutServices() {
@@ -7090,6 +8809,8 @@ function getEtkinlikYillikWithServices(multiSelectedRoles) {
 }
 // verimlilik block  hidden fonk. son
 
+
+
 // müşteri memnuniyeti CSI block hidden fonk.
 function getMMCSIYillikWithoutServices() {
     $.ajax({
@@ -7330,6 +9051,46 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
                 console.error(textStatus);
             }
         });
+}
+
+function getDetayGridMMCSI() {
+   $("#grid_CSI").dataTable().fnDestroy();
+   $('#grid_CSI').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                url : 'getAfterSalesDetayGridMMCSI_infoAfterSales',
+                pk: $('#pk').val(),
+            },
+            complete: function() {
+                //$("#panel_stoklar").loadImager('removeLoadImage');
+              }
+        }
+    } );
+}
+
+function getDetayGridMMCSIWithServices(multiSelectedRoles) {
+   var services = getServicesSelectedAsUrl(multiSelectedRoles);
+   $("#grid_CSI").dataTable().fnDestroy();
+   $('#grid_CSI').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                src : services,
+                url : 'getAfterSalesDetayGridMMCSIWithServices_infoAfterSales',
+                pk: $('#pk').val(),
+            },
+            complete: function() {
+                //$("#panel_stoklar").loadImager('removeLoadImage');
+              }
+        }
+    } );
 }
 // müşteri memnuniyeti CSI hidden fonk. son
 
@@ -7576,6 +9337,46 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
                 console.error(textStatus);
             }
         });
+}
+
+function getDetayGridMMCXI() {
+   $("#grid_CXI").dataTable().fnDestroy();
+   $('#grid_CXI').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                url : 'getAfterSalesDetayGridMMCXI_infoAfterSales',
+                pk: $('#pk').val(),
+            },
+            complete: function() {
+                //$("#panel_stoklar").loadImager('removeLoadImage');
+              }
+        }
+    } );
+}
+
+function getDetayGridMMCXIWithServices(multiSelectedRoles) {
+   var services = getServicesSelectedAsUrl(multiSelectedRoles);
+   $("#grid_CXI").dataTable().fnDestroy();
+   $('#grid_CXI').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                src : services,
+                url : 'getAfterSalesDetayGridMMCXIWithServices_infoAfterSales',
+                pk: $('#pk').val(),
+            },
+            complete: function() {
+                //$("#panel_stoklar").loadImager('removeLoadImage');
+              }
+        }
+    } );
 }
 // müşteri memnuniyeti CXI hidden fonk. son
 
@@ -8962,6 +10763,140 @@ function getEtkinlikDashboard() {
                             }, 500);
 
                         });
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// yedek parca toplam satis dashboard data
+function getYedekParcaToplamSatisDashboard() { 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardYedekParcaTS_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var downtime;
+                $.each(dataSet, function (key, value) {
+                    var d =  value.DOWNTIME
+                    d = d.replace(",", ".");
+                    //console.log(d);
+                    downtime+= parseInt(d);
+                });
+                //console.log(downtime);
+                $("#toplam_yedek_parca_toplam_satis_container").headerSetterAfterSalesStocks(downtime);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardYedekParcaTS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var downtime = 0;
+                    $.each(dataSet, function (key, value) {
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        console.log(d);
+                        console.log(downtime);
+                        downtime = parseFloat(downtime)+parseFloat(d);
+                    });
+                    //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    $("#toplam_yedek_parca_toplam_satis_container").headerSetterAfterSalesDowntime(dt);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// yedek parca yag satis dashboard data
+function getYedekParcaYagSatisDashboard() { 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var downtime;
+                $.each(dataSet, function (key, value) {
+                    var d =  value.DOWNTIME
+                    d = d.replace(",", ".");
+                    //console.log(d);
+                    downtime+= parseInt(d);
+                });
+                //console.log(downtime);
+                $("#toplam_yedek_parca_toplam_yag_satis_container").headerSetterAfterSalesStocks(downtime);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var downtime = 0;
+                    $.each(dataSet, function (key, value) {
+                        var d =  value.DOWNTIME
+                        d = d.replace(",", ".");
+                        console.log(d);
+                        console.log(downtime);
+                        downtime = parseFloat(downtime)+parseFloat(d);
+                    });
+                    //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    $("#toplam_yedek_parca_toplam_yag_satis_container").headerSetterAfterSalesDowntime(dt);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
