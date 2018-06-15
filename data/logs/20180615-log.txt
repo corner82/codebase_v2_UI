@@ -1,0 +1,10 @@
+2018-06-15T11:58:07+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'PDOException' with message 'SQLSTATE[08006] [7] could not connect to server: Connection timed out (0x0000274C/10060)
+	Is the server running on host "185.86.4.73" and accepting
+	TCP/IP connections on port 5432?' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-db\src\Adapter\Driver\Pdo\Connection.php:253
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-db\src\Adapter\Driver\Pdo\Connection.php(253): PDO->__construct('pgsql:host=185....', 'postgres', '1Qaaal123', Array)
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-db\src\Adapter\Driver\Pdo\Pdo.php(249): Zend\Db\Adapter\Driver\Pdo\Connection->connect()
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-db\src\Sql\Sql.php(128): Zend\Db\Adapter\Driver\Pdo\Pdo->createStatement()
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-db\src\TableGateway\AbstractTableGateway.php(237): Zend\Db\Sql\Sql->prepareStatementForSqlObject(Object(Zend\Db\Sql\Select))
+#4 C:\xampp\htdocs\miya in /admin/faal
