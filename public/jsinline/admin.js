@@ -605,19 +605,32 @@ $('#detay_acik_is_emirleri').click(function()
 // açılan is emirleri detay click 
 $('#detay_acilan_is_emirleri').click(function()
 {
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
     if($("#panel").css('display') == 'none')
     {
         hidden_block2_controller = 2;
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
         $("#panel").animate({height:'toggle'},1000); 
-        getAcilanKapananIsEmriWeeklyWithoutServices();
-          
+        
+        if(serviceControler == true) {
+            getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAcilanKapananIsEmriWeeklyWithoutServices();
+        } 
     }else {
         hidden_block2_controller = 2;
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
-        getAcilanKapananIsEmriWeeklyWithoutServices();
+        
+        if(serviceControler == true) {
+            getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAcilanKapananIsEmriWeeklyWithoutServices();
+        } 
     }
          
 });
@@ -625,19 +638,32 @@ $('#detay_acilan_is_emirleri').click(function()
 // kapanan is emirleri detay click 
 $('#detay_kapanan_is_emirleri').click(function()
 {
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     if($("#panel").css('display') == 'none')
     {
         hidden_block2_controller = 3;
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
         $("#panel").animate({height:'toggle'},1000); 
-        getAcilanKapananIsEmriWeeklyWithoutServices();
+        
+        if(serviceControler == true) {
+            getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAcilanKapananIsEmriWeeklyWithoutServices();
+        } 
           
     }else {
         hidden_block2_controller = 3;
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
-        getAcilanKapananIsEmriWeeklyWithoutServices();
+        
+        if(serviceControler == true) {
+            getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAcilanKapananIsEmriWeeklyWithoutServices();
+        } 
     }     
 });
 
@@ -739,7 +765,7 @@ $('#hidden_block2_year').click(function()
         $("#panel").loadImager('appendImage');
 
         if(serviceControler == true) {
-            getAcilanKapananIsEmriYillikWithServices();
+            getAcilanKapananIsEmriYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
             getAcilanKapananIsEmriYillikWithoutServices();
         }
@@ -749,7 +775,7 @@ $('#hidden_block2_year').click(function()
        $("#panel").loadImager('appendImage');
 
        if(serviceControler == true) {
-            getAcilanKapananIsEmriYillikWithServices();
+            getAcilanKapananIsEmriYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
             getAcilanKapananIsEmriYillikWithoutServices();
         }
@@ -4855,157 +4881,6 @@ function getAcikIsEmirleriYillikWithServices(multiSelectedRoles) {
                         series: 
                         series
                     });
-                    
-                    
-                    /*var chart1 = Highcharts.chart('container_satis_all', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: ''+window.lang.translate('Open Orders')+''
-                        },
-                        xAxis: {
-                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-                            categories: categ
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('piece')
-                            },
-                            stackLabels: {
-                                enabled: true,
-                                style: {
-                                    fontWeight: 'bold',
-                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                                }
-                            }
-                        },
-                        legend: {
-                            align: 'right',
-                            x: -30,
-                            verticalAlign: 'top',
-                            y: 25,
-                            floating: true,
-                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-                            borderColor: '#CCC',
-                            borderWidth: 1,
-                            shadow: false
-                        },
-                        tooltip: {
-                            headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
-                        },
-                        plotOptions: {
-                            column: {
-                                stacking: 'normal',
-                                dataLabels: {
-                                    enabled: true,
-                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-                                }
-                            }
-                        },
-                        series: [{
-                            name: window.lang.translate('Closed'),
-                            data: kapananIsEmri
-                        }, {
-                            name: window.lang.translate('Opened'),
-                            data: acilanIsEmri
-                        }, ]
-                    });*/
-                    
-                    $("#panel").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
-            }
-        });
-}
-
-function getAcilanKapananIsEmriWeeklyWithServices() {
-    $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-                    var categ = [];
-                    var acilanIsEmri = [];
-                    var kapananIsEmri = [];
-                    $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
-                        if (value.ACILAN_IS_EMRI != null)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
-                        if (value.KAPANAN_IS_EMRI != null)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
-                    });
-                    categ.unique();
-                    /*console.log(categ);
-                    console.log(acilanIsEmri);
-                    console.log(kapananIsEmri);*/
-                    //chart1.destroy();
-                    var chart1 = Highcharts.chart('container_satis_all', {
-                        chart: {
-                            type: 'column',
-                            height : 300,
-                        },
-                        title: {
-                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
-                        },
-                        xAxis: {
-                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-                            categories: categ
-                        },
-                        yAxis: {
-                            min: 0,
-                            title: {
-                                text: window.lang.translate('piece')
-                            },
-                            stackLabels: {
-                                enabled: true,
-                                style: {
-                                    fontWeight: 'bold',
-                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                                }
-                            }
-                        },
-                        legend: {
-                            align: 'right',
-                            x: -30,
-                            verticalAlign: 'top',
-                            y: 25,
-                            floating: true,
-                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-                            borderColor: '#CCC',
-                            borderWidth: 1,
-                            shadow: false
-                        },
-                        tooltip: {
-                            headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
-                        },
-                        plotOptions: {
-                            column: {
-                                stacking: 'normal',
-                                dataLabels: {
-                                    enabled: true,
-                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-                                }
-                            }
-                        },
-                        series: [{
-                            name: window.lang.translate('Closed'),
-                            data: kapananIsEmri
-                        }, {
-                            name: window.lang.translate('Opened'),
-                            data: acilanIsEmri
-                        }, ]
-                    });
-                    
                     $("#panel").loadImager('removeLoadImage');
                 }
             },
@@ -5106,6 +4981,143 @@ function getAcilanKapananIsEmriWeeklyWithoutServices() {
         });
 }
 
+function getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapananWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() { 
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var instance2; 
+                    var serviceData = [];
+                    var serviceData2 = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = 'Açılan/'+value.SERVISAD;
+                            instance2.name = 'Kapanan/'+value.SERVISAD;
+                            instance.stack = value.SERVISAD;
+                            instance2.stack = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.stack = value.SERVISAD;
+                            instance.name = 'Açılan/'+value.SERVISAD;
+                            serviceData.push(parseInt(value.ACILAN_IS_EMRI));
+                            
+                            instance2 = new servisMiktar();
+                            instance2.stack = value.SERVISAD;
+                            instance2.name = 'Kapanan/'+value.SERVISAD;
+                            serviceData2.push(parseInt(value.KAPANAN_IS_EMRI));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 7 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ACILAN_IS_EMRI));
+                            instance.data = serviceData;
+                            serviceData2.push(parseInt(value.KAPANAN_IS_EMRI));
+                            instance2.data = serviceData2;
+                            series.push(instance);
+                            series.push(instance2);
+                            serviceData = [];
+                            serviceData2 = [];
+                            instance = null;
+                            instance2 = null;
+                            instance = new servisMiktar();
+                            instance2 = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ACILAN_IS_EMRI));
+                            serviceData2.push(parseInt(value.KAPANAN_IS_EMRI));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    
+                    var chart1 = Highcharts.chart('container_satis_all', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: ''+window.lang.translate('Opened')+' | '+window.lang.translate('Closed')+''
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('piece')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y}<br/>'+window.lang.translate('Total')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: true,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: series
+                    });
+                    
+                    $("#panel").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(jqXHR);
+            }
+        });
+}
+
 function getAcilanKapananIsEmrAylikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -5195,11 +5207,13 @@ function getAcilanKapananIsEmrAylikWithoutServices() {
         });
 }
 
-function getAcilanKapananIsEmrAylikWithServices() {
+function getAcilanKapananIsEmrAylikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapananAylik_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapananAylikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
             type: 'GET',
             dataType: 'json',
             language_id:647,
@@ -5207,16 +5221,67 @@ function getAcilanKapananIsEmrAylikWithServices() {
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
                     var categ = [];
-                    var acilanIsEmri = [];
-                    var kapananIsEmri = [];
+                    var servisMiktar = function() { 
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var instance2; 
+                    var serviceData = [];
+                    var serviceData2 = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
                     $.each(data.resultSet, function(key, value) {
-                        if (value.TARIH != null)categ.push(value.TARIH+'.'+window.lang.translate('week')+'');
-                        if (value.ACILAN_IS_EMRI != null)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
-                        if (value.KAPANAN_IS_EMRI != null)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = 'Açılan/'+value.SERVISAD;
+                            instance2.name = 'Kapanan/'+value.SERVISAD;
+                            instance.stack = value.SERVISAD;
+                            instance2.stack = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.stack = value.SERVISAD;
+                            instance.name = 'Açılan/'+value.SERVISAD;
+                            serviceData.push(parseInt(value.ACILAN_IS_EMRI));
+                            
+                            instance2 = new servisMiktar();
+                            instance2.stack = value.SERVISAD;
+                            instance2.name = 'Kapanan/'+value.SERVISAD;
+                            serviceData2.push(parseInt(value.KAPANAN_IS_EMRI));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 4 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ACILAN_IS_EMRI));
+                            instance.data = serviceData;
+                            serviceData2.push(parseInt(value.KAPANAN_IS_EMRI));
+                            instance2.data = serviceData2;
+                            series.push(instance);
+                            series.push(instance2);
+                            serviceData = [];
+                            serviceData2 = [];
+                            instance = null;
+                            instance2 = null;
+                            instance = new servisMiktar();
+                            instance2 = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ACILAN_IS_EMRI));
+                            serviceData2.push(parseInt(value.KAPANAN_IS_EMRI));
+                        }
+                        counter++;
                     });
-                    categ.reverse();
-                    acilanIsEmri.reverse();
-                    kapananIsEmri.reverse();
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    
                     var chart1 = Highcharts.chart('container_satis_all', {
                         chart: {
                             type: 'column',
@@ -5266,13 +5331,7 @@ function getAcilanKapananIsEmrAylikWithServices() {
                                 }
                             }
                         },
-                        series: [{
-                            name: window.lang.translate('Closed'),
-                            data: kapananIsEmri
-                        }, {
-                            name: window.lang.translate('Opened'),
-                            data: acilanIsEmri
-                        }, ]
+                        series: series
                     });
                     
                     $("#panel").loadImager('removeLoadImage');
@@ -5376,11 +5435,13 @@ function getAcilanKapananIsEmriYillikWithoutServices() {
         });
 }
 
-function getAcilanKapananIsEmriYillikWithServices() {
+function getAcilanKapananIsEmriYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapananYillik_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
+            data: { url:'getAfterSalesDetayIsEmriAcilanKapananYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
             type: 'GET',
             dataType: 'json',
             language_id:647,
@@ -5388,18 +5449,65 @@ function getAcilanKapananIsEmriYillikWithServices() {
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
                     var categ = [];
-                    var acilanIsEmri = [];
-                    var kapananIsEmri = [];
+                    var servisMiktar = function() { 
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var instance2; 
+                    var serviceData = [];
+                    var serviceData2 = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
                     $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.YIL+'/'+value.AY, categ)) == -1)categ.push(value.YIL+'/'+value.AY);
-                        if (value.TARIH != null)categ.push(value.TARIH+'.'+window.lang.translate('week')+'');
-                        if (value.ACILAN_IS_EMRI != 0)acilanIsEmri.push(parseInt(value.ACILAN_IS_EMRI));
-                        if (value.KAPANAN_IS_EMRI != 0)kapananIsEmri.push(parseInt(value.KAPANAN_IS_EMRI));
+                        if ((jQuery.inArray(value.AY+'/'+value.YIL, categ)) == -1)categ.push(value.AY+'/'+value.YIL);
+                        
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = 'Açılan/'+value.SERVISAD;
+                            instance2.name = 'Kapanan/'+value.SERVISAD;
+                            instance.stack = value.SERVISAD;
+                            instance2.stack = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.stack = value.SERVISAD;
+                            instance.name = 'Açılan/'+value.SERVISAD;
+                            serviceData.push(parseInt(value.ACILAN_IS_EMRI));
+                            
+                            instance2 = new servisMiktar();
+                            instance2.stack = value.SERVISAD;
+                            instance2.name = 'Kapanan/'+value.SERVISAD;
+                            serviceData2.push(parseInt(value.KAPANAN_IS_EMRI));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.ACILAN_IS_EMRI));
+                            instance.data = serviceData;
+                            serviceData2.push(parseInt(value.KAPANAN_IS_EMRI));
+                            instance2.data = serviceData2;
+                            series.push(instance);
+                            series.push(instance2);
+                            serviceData = [];
+                            serviceData2 = [];
+                            instance = null;
+                            instance2 = null;
+                            instance = new servisMiktar();
+                            instance2 = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.ACILAN_IS_EMRI));
+                            serviceData2.push(parseInt(value.KAPANAN_IS_EMRI));
+                        }
+                        counter++;
                     });
+                    //console.log(series);
                     categ.unique();
-                    categ.reverse();
-                    acilanIsEmri.reverse();
-                    kapananIsEmri.reverse();
+                    //console.log(categ);
                     
                     var chart1 = Highcharts.chart('container_satis_all', {
                         chart: {
@@ -5450,13 +5558,7 @@ function getAcilanKapananIsEmriYillikWithServices() {
                                 }
                             }
                         },
-                        series: [{
-                            name: window.lang.translate('Closed'),
-                            data: kapananIsEmri
-                        }, {
-                            name: window.lang.translate('Opened'),
-                            data: acilanIsEmri
-                        }, ]
+                        series: series
                     });
                     
                     $("#panel").loadImager('removeLoadImage');
