@@ -33,9 +33,12 @@ Highcharts.wrap(Highcharts.Chart.prototype, 'getContainer', function (proceed) {
 });
 
 Highcharts.theme = {
-   colors: ["#E41A52", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+   //colors: ["#E41A52", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+   //   "#91B900", "#DF5353", "#7798BF", "#aaeeee"],
+  colors: ["#E41A52", "#afafaf", "#ffcd00", "#91b900", "#4b96d2", "#ff0066", "#eeaaee",
       "#91B900", "#DF5353", "#7798BF", "#aaeeee"],
-   chart: {
+    
+  chart: {
       backgroundColor: null,
       height : 200,
       style: {
@@ -235,28 +238,28 @@ $.ajax({
                      '       <span class="progress-text" id="alan1_'+numerator+'"></span>'+
                      '       <span class="progress-number" id="progressnumber1_'+numerator+'"><b>160</b>/200</span>'+
                      '       <div class="progress sm">'+
-                     '         <div class="progress-bar progress-bar-aqua" id="progressbar1_'+numerator+'" style="width: 100%"></div>'+
+                     '         <div class="progress-bar progress-bar-man_blue" id="progressbar1_'+numerator+'" style="width: 100%"></div>'+
                      '       </div>'+
                      '     </div><!-- /.progress-group -->'+
                      '     <div class="progress-group">'+
                      '       <span class="progress-text" id="alan2_'+numerator+'"></span>'+
                      '       <span class="progress-number" id="progressnumber2_'+numerator+'"><b>310</b>/400</span>'+
                      '       <div class="progress sm">'+
-                     '         <div class="progress-bar progress-bar-red" id="progressbar2_'+numerator+'" style="width: 100%"></div>'+
+                     '         <div class="progress-bar progress-bar-man-red" id="progressbar2_'+numerator+'" style="width: 100%"></div>'+
                      '       </div>'+
                      '     </div><!-- /.progress-group -->'+
                      '     <div class="progress-group">'+
                      '       <span class="progress-text" id="alan3_'+numerator+'"></span>'+
                      '       <span class="progress-number" id="progressnumber3_'+numerator+'"><b>480</b>/800</span>'+
                      '       <div class="progress sm">'+
-                     '         <div class="progress-bar progress-bar-green" id="progressbar3_'+numerator+'" style="width: 100%"></div>'+
+                     '         <div class="progress-bar progress-bar-man-green" id="progressbar3_'+numerator+'" style="width: 100%"></div>'+
                      '       </div>'+
                      '     </div><!-- /.progress-group -->'+
                      '     <div class="progress-group">'+
                      '       <span class="progress-text" id="alan4_'+numerator+'"></span>'+
                      '       <span class="progress-number" id="progressnumber4_'+numerator+'"><b>250</b>/500</span>'+
                      '       <div class="progress sm">'+
-                     '         <div class="progress-bar progress-bar-yellow" id="progressbar4_'+numerator+'" style="width: 100%"></div>'+
+                     '         <div class="progress-bar progress-bar-man-yellow" id="progressbar4_'+numerator+'" style="width: 100%"></div>'+
                      '       </div>'+
                      '     </div><!-- /.progress-group -->'+
                      '   </div><!-- /.col -->'+
@@ -341,15 +344,15 @@ $.ajax({
                     plotBands: [{
                         from: 0,
                         to: 150,
-                        color: '#55BF3B' // green
+                        color: '#91b900' //'#55BF3B' // green
                     }, {
                         from: 150,
                         to: 160,
-                        color: '#DDDF0D' // yellow
+                        color: '#ffcd00' //'#DDDF0D' // yellow
                     }, {
                         from: 160,
                         to: maxData,
-                        color: '#DF5353' // red
+                        color: '#e41a52' //'#DF5353' // red
                     }]
                 },
 
