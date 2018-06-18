@@ -6489,7 +6489,7 @@ function getYedekParcaTSWeeklyWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.ARAC_GIRIS_SAYISI));
+                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                         graphDataAll.push(graphData);
                     });
                     console.log(graphDataAll);
@@ -6518,7 +6518,7 @@ function getYedekParcaTSWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: window.lang.translate('1K')
                             }
                         },
                         legend: {
@@ -6528,7 +6528,7 @@ function getYedekParcaTSWeeklyWithoutServices() {
                             pointFormat: ''+window.lang.translate('Spare parts total sales')+': <b>{point.y:,.2f} </b>'
                         },
                         series: [{
-                            name: 'Population',
+                            //name: 'Population',
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
@@ -7093,7 +7093,7 @@ function getYedekParcaYSWeeklyWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.ARAC_GIRIS_SAYISI));
+                        graphData.push(parseInt(value.YAGSATISTUTAR));
                         graphDataAll.push(graphData);
                     });
                     console.log(graphDataAll);
@@ -7292,7 +7292,7 @@ function getYedekParcaYSAylikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.ARAC_GIRIS));
+                        graphData.push(parseInt(value.YAGSATISTUTAR));
                         graphDataAll.push(graphData);
                     });
                     
@@ -7320,14 +7320,14 @@ function getYedekParcaYSAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: window.lang.translate('1K')
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Spare parts oil sales')+': <b>{point.y:,.2f} '+window.lang.translate('piece')+'</b>'
+                            pointFormat: ''+window.lang.translate('Spare parts oil sales')+': <b>{point.y:,.2f} </b>'
                         },
                         series: [{
                             name: 'Population',
@@ -7487,15 +7487,16 @@ function getYedekParcaYSYillikWithoutServices() {
                     var graphDataAll = [];
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
-                        graphData.push(value.YIL+'/'+value.TARIH);
-                        var arr = value.ARAC_GIRIS.split(',');
-                        if(arr.length == 3) {
+                        graphData.push(value.YIL+'/'+value.AY);
+                        //var arr = value.ARAC_GIRIS.split(',');
+                        /*if(arr.length == 3) {
                             var tutar = null;
                             tutar = arr[0]+arr[1]+','+arr[2];
                             graphData.push(parseInt(tutar));
                         } else{
-                            graphData.push(parseInt(value.ARAC_GIRIS));
-                        }
+                            graphData.push(parseInt(value.YAGSATISTUTAR));
+                        }*/
+                        graphData.push(parseInt(value.YAGSATISTUTAR));
                         graphDataAll.push(graphData);
                     });
 
@@ -7523,7 +7524,7 @@ function getYedekParcaYSYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: window.lang.translate('1K')
                             }
                         },
                         legend: {
@@ -7531,7 +7532,7 @@ function getYedekParcaYSYillikWithoutServices() {
                         },
                         tooltip: {
                             //headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('piece')+''
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'
                         },
                         series: [{
                             name: window.lang.translate('Spare parts total sales'),
@@ -9951,8 +9952,8 @@ function getDownTimeDashboard() {
                     $.each(dataSet, function (key, value) {
                         var d =  value.DOWNTIME
                         d = d.replace(",", ".");
-                        console.log(d);
-                        console.log(downtime);
+                        //console.log(d);
+                        //console.log(downtime);
                         downtime = parseFloat(downtime)+parseFloat(d);
                     });
                     //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
@@ -10160,8 +10161,8 @@ function getVerimlilikDashboard() {
                     $.each(dataSet, function (key, value) {
                         var d =  value.DOWNTIME
                         d = d.replace(",", ".");
-                        console.log(d);
-                        console.log(downtime);
+                        //console.log(d);
+                        //console.log(downtime);
                         downtime = parseFloat(downtime)+parseFloat(d);
                     });
                     //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
@@ -10470,8 +10471,8 @@ function getKapasiteDashboard() {
                     $.each(dataSet, function (key, value) {
                         var d =  value.DOWNTIME
                         d = d.replace(",", ".");
-                        console.log(d);
-                        console.log(downtime);
+                        //console.log(d);
+                        //console.log(downtime);
                         downtime = parseFloat(downtime)+parseFloat(d);
                     });
                     //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
@@ -10749,8 +10750,8 @@ function getEtkinlikDashboard() {
                     $.each(dataSet, function (key, value) {
                         var d =  value.DOWNTIME
                         d = d.replace(",", ".");
-                        console.log(d);
-                        console.log(downtime);
+                        //console.log(d);
+                        //console.log(downtime);
                         downtime = parseFloat(downtime)+parseFloat(d);
                     });
                     //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
@@ -10893,15 +10894,15 @@ function getYedekParcaToplamSatisDashboard() {
             //console.log(data.resultSet);
             if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                 var dataSet = data.resultSet;
-                var downtime;
+                var yedekparcaTS;
                 $.each(dataSet, function (key, value) {
-                    var d =  value.DOWNTIME
-                    d = d.replace(",", ".");
+                    yedekparcaTS =  value.YEDEKPARCATOPLAMSATIS
+                    //d = d.replace(",", ".");
                     //console.log(d);
-                    downtime+= parseInt(d);
+                    //downtime+= parseInt(d);
                 });
                 //console.log(downtime);
-                $("#toplam_yedek_parca_toplam_satis_container").headerSetterAfterSalesStocks(downtime);
+                $("#toplam_yedek_parca_toplam_satis_container").headerSetterAfterSalesYedekParcaDashboard(yedekparcaTS);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -10921,17 +10922,17 @@ function getYedekParcaToplamSatisDashboard() {
                 //console.log(data.resultSet);
                 if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                     var dataSet = data.resultSet;
-                    var downtime = 0;
+                    var yedekparcaTS = 0;
                     $.each(dataSet, function (key, value) {
-                        var d =  value.DOWNTIME
-                        d = d.replace(",", ".");
-                        console.log(d);
-                        console.log(downtime);
-                        downtime = parseFloat(downtime)+parseFloat(d);
+                        yedekparcaTS =  value.YEDEKPARCATOPLAMSATIS
+                        //d = d.replace(",", ".");
+                        //console.log(d);
+                        //console.log(downtime);
+                        //downtime = parseFloat(downtime)+parseFloat(d);
                     });
                     //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
-                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
-                    $("#toplam_yedek_parca_toplam_satis_container").headerSetterAfterSalesDowntime(dt);
+                    //var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    $("#toplam_yedek_parca_toplam_satis_container").headerSetterAfterSalesYedekParcaDashboard(yedekparcaTS);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -10960,15 +10961,11 @@ function getYedekParcaYagSatisDashboard() {
             //console.log(data.resultSet);
             if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                 var dataSet = data.resultSet;
-                var downtime;
+                var yedekParcaYS;
                 $.each(dataSet, function (key, value) {
-                    var d =  value.DOWNTIME
-                    d = d.replace(",", ".");
-                    //console.log(d);
-                    downtime+= parseInt(d);
+                    yedekParcaYS =  value.YAGSATISTUTAR
                 });
-                //console.log(downtime);
-                $("#toplam_yedek_parca_toplam_yag_satis_container").headerSetterAfterSalesStocks(downtime);
+                $("#toplam_yedek_parca_toplam_yag_satis_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -10988,17 +10985,11 @@ function getYedekParcaYagSatisDashboard() {
                 //console.log(data.resultSet);
                 if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                     var dataSet = data.resultSet;
-                    var downtime = 0;
+                    var yedekParcaYS = 0;
                     $.each(dataSet, function (key, value) {
-                        var d =  value.DOWNTIME
-                        d = d.replace(",", ".");
-                        console.log(d);
-                        console.log(downtime);
-                        downtime = parseFloat(downtime)+parseFloat(d);
+                        yedekParcaYS =  value.YAGSATISTUTAR
                     });
-                    //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
-                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
-                    $("#toplam_yedek_parca_toplam_yag_satis_container").headerSetterAfterSalesDowntime(dt);
+                    $("#toplam_yedek_parca_toplam_yag_satis_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
