@@ -10046,21 +10046,21 @@ function getVerimlilikDashboard() {
         plotBands: [{
             from: 0,
             to: 40,
-            color: '#C02316',
+            color: '#E41A52',  //MAN RED //'#C02316',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 75,
             to: 100,
-            color: '#BBC801',
+            color: '#91B900', //MAN GREEN  //'#BBC801',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 40,
             to: 75,
-            color: '#FDC400',
+            color: '#FFCD00', //MAN YELLOW //'#FDC400',
             innerRadius: '100%',
             outerRadius: '105%'
         }],
@@ -10081,7 +10081,7 @@ function getVerimlilikDashboard() {
         plotBands: [{
             from: 0,
             to: 6,
-            color: '#C02316',
+            color: '#E41A52', //'#C02316',
             innerRadius: '100%',
             outerRadius: '105%'
         }],
@@ -10216,21 +10216,21 @@ function getVerimlilikDashboard() {
         plotBands: [{
             from: 0,
             to: 40,
-            color: '#C02316',
+            color: '#E41A52', //MAN RED //'#C02316',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 75,
             to: 100,
-            color: '#BBC801',
+            color: '#91B900', //MAN GREEN //'#BBC801',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 40,
             to: 75,
-            color: '#FDC400',
+            color: '#FFCD00', //MAN YELLOW //'#FDC400',
             innerRadius: '100%',
             outerRadius: '105%'
         }],
@@ -10251,7 +10251,7 @@ function getVerimlilikDashboard() {
         plotBands: [{
             from: 0,
             to: 6,
-            color: '#C02316',
+            color: '#E41A52', //'#C02316',
             innerRadius: '100%',
             outerRadius: '105%'
         }],
@@ -10388,21 +10388,21 @@ function getKapasiteDashboard() {
         plotBands: [{
             from: 0,
             to: 40,
-            color: '#C02316',
+            color: '#E41A52', //MAN RED //'#C02316',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 75,
             to: 100,
-            color: '#BBC801',
+            color: '#91B900', //MAN GREEN //'#BBC801',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 40,
             to: 75,
-            color: '#FDC400',
+            color: '#FFCD00', //MAN YELLOW //'#FDC400',
             innerRadius: '100%',
             outerRadius: '105%'
         }],
@@ -10519,21 +10519,21 @@ function getKapasiteDashboard() {
         plotBands: [{
             from: 0,
             to: 40,
-            color: '#C02316',
+            color: '#E41A52', //MAN RED //'#C02316',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 75,
             to: 100,
-            color: '#BBC801',
+            color: '#91B900', //MAN GREEN //'#BBC801',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 40,
             to: 75,
-            color: '#FDC400',
+            color: '#FFCD00', //MAN YELLOW //'#FDC400',
             innerRadius: '100%',
             outerRadius: '105%'
         }],
@@ -10660,21 +10660,21 @@ function getEtkinlikDashboard() {
         plotBands: [{
             from: 0,
             to: 40,
-            color: '#C02316',
+            color: '#E41A52', //MAN RED //'#C02316',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 75,
             to: 100,
-            color: '#BBC801',
+            color: '#91B900', //MAN GREEN //'#BBC801',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 40,
             to: 75,
-            color: '#FDC400',
+            color: '#FFCD00', //MAN YELLOW //'#FDC400',
             innerRadius: '100%',
             outerRadius: '105%'
         }],
@@ -10799,21 +10799,21 @@ function getEtkinlikDashboard() {
         plotBands: [{
             from: 0,
             to: 40,
-            color: '#C02316',
+            color: '#E41A52', //'#C02316',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 75,
             to: 100,
-            color: '#BBC801',
+            color: '#91B900', //MAN GREEN //'#BBC801',
             innerRadius: '100%',
             outerRadius: '105%'
         },
         {
             from: 40,
             to: 75,
-            color: '#FDC400',
+            color: '#FFCD00', //MAN YELLOW //'#FDC400',
             innerRadius: '100%',
             outerRadius: '105%'
         }],

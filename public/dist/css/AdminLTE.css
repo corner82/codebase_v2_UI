@@ -4772,3 +4772,25 @@ if it's not present, don't show loader */
 .bg-man-main-aside {
     background-color: #000000;
 }
+
+.text-man-red {
+  color: #e41a52 !important;
+}
+.text-man-yellow {
+  color: #ffcd00 !important;
+}
+.text-man-blue {
+  color: #4b96d2 !important;
+}
+.text-man-green {
+  color: #91b900 !important;
+}
+.text-man-black {
+  color: #000000 !important;
+}
+.text-man-silver {
+  color: #afafaf !important;
+}
+.text-man-anthracite {
+  color: #303c49 !important;
+}
