@@ -60,7 +60,9 @@
                 "Last orders":"Son iş emirleri",
                 "Management Dashboard":"Yönetici paneli",
                 "Location":"Türkçe lokasyon",
-                "Services":"Servisler"
+                "Services":"Servisler",
+                "Total sales of spare parts":"Yedek parça toplam satış",
+                "Sale of spare parts oil":"Yedek parça yağ satış"   
 	}
 	
 }

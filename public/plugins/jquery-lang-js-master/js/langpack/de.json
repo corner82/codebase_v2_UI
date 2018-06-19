@@ -59,7 +59,9 @@
                 "Last orders":"Letzte Bestellungen",
                 "Management Dashboard":"Manager-Dashboard",
                 "Location":"Lage",
-                "Services":"Dienstleistungen"
+                "Services":"Dienstleistungen",
+                "Total sales of spare parts":"Gesamtverkauf von Ersatzteilen",
+                "Sale of spare parts oil":"Verkauf von Ersatzteilen Öl"
 	}
 	
 }

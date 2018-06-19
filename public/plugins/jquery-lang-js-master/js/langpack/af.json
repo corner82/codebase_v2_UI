@@ -59,7 +59,10 @@
                 "Last orders":"Laaste bestellings",
                 "Management Dashboard":"Bestuur Dashboard",
                 "Location":"Lokasie",
-                "Services":"Dienste"
+                "Services":"Dienste",
+                "Total sales of spare parts":"Totale verkope van onderdele",
+                "Sale of spare parts oil":"Verkoop van onderdele olie"
+        
 	}
 	
 }
