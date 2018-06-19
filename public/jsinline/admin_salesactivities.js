@@ -34,8 +34,10 @@ Highcharts.wrap(Highcharts.Chart.prototype, 'getContainer', function (proceed) {
 });
 
 Highcharts.theme = {
-   colors: ["#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+   colors: ["#91b900", "#4b96d2", "#afafaf", "#ffcd00", "#E41A52", "#303c49", "#eeaaee",
       "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
+   //colors: ["#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+   //  "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
    chart: {
       backgroundColor: null,
       height : 200,
