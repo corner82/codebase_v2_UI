@@ -59,7 +59,10 @@
                 "Last orders":"Последние заказы",
                 "Management Dashboard":"НА РУССКОМ ",
                 "Location":"НА РУССКОМ  НА РУССКОМ ",
-                "Services":"Сервисы"
+                "Services":"Сервисы",
+                "Total sales of spare parts":"Общий объем продаж запасных частей",
+                "Sale of spare parts oil":"Продажа масла для запасных частей"
+        
 	}
 	
 }
