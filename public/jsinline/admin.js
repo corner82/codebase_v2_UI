@@ -169,6 +169,27 @@ $("#panel_hidden_yedek_parca_toplam_satis").loadImager();
  */
 $("#panel_hidden_yedek_parca_yag_satis").loadImager();
 
+/**
+ * loading image  atölye cirosu detay blok
+ * @author Mustafa Zeynel Dağlı
+ * @since 19/06/2018
+ */
+$("#panel_hidden_atolye_cirosu").loadImager();
+
+/**
+ * loading image  garanti cirosu detay blok
+ * @author Mustafa Zeynel Dağlı
+ * @since 19/06/2018
+ */
+$("#panel_hidden_garanti_cirosu").loadImager();
+
+/**
+ * loading image  direk satış cirosu detay blok
+ * @author Mustafa Zeynel Dağlı
+ * @since 19/06/2018
+ */
+$("#panel_hidden_direk_satis_cirosu").loadImager();
+
 
 /**
  * Sand-Signika theme for Highcharts JS
@@ -1070,6 +1091,251 @@ $('#hidden_yedek_parca_yag_satis_year').click(function()
 });
 // detay block yedek parça yag satış son
 
+
+// detay blok atölye cirosu 
+var hidden_atolye_cirosu_controller;
+// atölye cirosu detay click 
+$('#detay_atolye_cirosu').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden_atolye_cirosu").css('display') == 'none')
+    {
+        hidden_atolye_cirosu_controller = 1;
+        $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_atolye_cirosu").loadImager('appendImage');
+        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Spare parts total sales'));
+        $("#panel_hidden_atolye_cirosu").animate({height:'toggle'},1000); 
+        
+        if(serviceControler == true) {
+            getAtolyeCirosuWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAtolyeCirosuWeeklyWithoutServices();
+        } 
+    }else {
+        hidden_atolye_cirosu_controller = 1;
+        $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_atolye_cirosu").loadImager('appendImage');
+        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Atölye cirosu'));
+        
+        if(serviceControler == true) {
+            getAtolyeCirosuWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAtolyeCirosuWeeklyWithoutServices();
+        }  
+    }   
+});
+
+// hidden atölye cirosu aylık button click event
+$('#hidden_atolye_cirosu_month').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_atolye_cirosu_controller == 1)
+    {
+        $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_atolye_cirosu").loadImager('appendImage');
+        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Atölye cirosu'));
+        
+        if(serviceControler == true) {
+            getAtolyeCirosuAylikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAtolyeCirosuAylikWithoutServices();
+        }  
+    }  
+});
+
+// hidden atölye cirosu yıllık button click event
+$('#hidden_atolye_cirosu_year').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_atolye_cirosu_controller == 1)
+
+    {
+        $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_atolye_cirosu").loadImager('appendImage');
+        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Atölye cirosu'));
+        
+        if(serviceControler == true) {
+            getAtolyeCirosuYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getAtolyeCirosuYillikWithoutServices();
+        } 
+    }   
+});
+// detay block atölye cirosu son
+
+
+
+
+// detay blok garanti cirosu 
+var hidden_garanti_cirosu_controller;
+// garanti cirosu detay click 
+$('#detay_garanti_cirosu').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden_garanti_cirosu").css('display') == 'none')
+    {
+        hidden_garanti_cirosu_controller = 1;
+        $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_garanti_cirosu").loadImager('appendImage');
+        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        $("#panel_hidden_garanti_cirosu").animate({height:'toggle'},1000); 
+        
+        if(serviceControler == true) {
+            getGarantiCirosuWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getGarantiCirosuWeeklyWithoutServices();
+        } 
+    }else {
+        hidden_garanti_cirosu_controller = 1;
+        $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_garanti_cirosu").loadImager('appendImage');
+        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        
+        if(serviceControler == true) {
+            getGarantiCirosuWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getGarantiCirosuWeeklyWithoutServices();
+        }  
+    }   
+});
+
+// hidden garanti cirosu aylık button click event
+$('#hidden_garanti_cirosu_month').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_garanti_cirosu_controller == 1)
+    {
+        $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_garanti_cirosu").loadImager('appendImage');
+        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        
+        if(serviceControler == true) {
+            getGarantiCirosuAylikWithServices(multiSelectedRoles)
+        } else if(serviceControler == false ){
+            getGarantiCirosuAylikWithoutServices();
+        }  
+    }  
+});
+
+// hidden garanti cirosu yıllık button click event
+$('#hidden_garanti_cirosu_year').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_garanti_cirosu_controller == 1)
+
+    {
+        $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_garanti_cirosu").loadImager('appendImage');
+        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        
+        if(serviceControler == true) {
+            getGarantiCirosuYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getGarantiCirosuYillikWithoutServices();
+        } 
+    }   
+});
+// detay block garanti cirosu son
+
+
+// detay blok direk satış cirosu 
+var hidden_direk_satis_cirosu_controller;
+// direk satış cirosu detay click 
+$('#detay_direk_satis_cirosu').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if($("#panel_hidden_direk_satis_cirosu").css('display') == 'none')
+    {
+        hidden_direk_satis_cirosu_controller = 1;
+        $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_direk_satis_cirosu").loadImager('appendImage');
+        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Direk satış cirosu'));
+        $("#panel_hidden_direk_satis_cirosu").animate({height:'toggle'},1000); 
+        
+        if(serviceControler == true) {
+            getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getDirekSatisCirosuWeeklyWithoutServices();
+        } 
+    }else {
+        hidden_direk_satis_cirosu_controller = 1;
+        $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_direk_satis_cirosu").loadImager('appendImage');
+        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Direk satış cirosu'));
+        
+        if(serviceControler == true) {
+            getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getDirekSatisCirosuWeeklyWithoutServices();
+        }  
+    }   
+});
+
+// hidden direk satış cirosu aylık button click event
+$('#hidden_direk_satis_cirosu_month').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_direk_satis_cirosu_controller == 1)
+    {
+        $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_direk_satis_cirosu").loadImager('appendImage');
+        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Direk satış cirosu'));
+        
+        if(serviceControler == true) {
+            getDirekSatisCirosuAylikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getDirekSatisCirosuAylikWithoutServices();
+        }  
+    }  
+});
+
+// hidden direk satış cirosu yıllık button click event
+$('#hidden_direk_satis_cirosu_year').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(hidden_direk_satis_cirosu_controller == 1)
+    {
+        $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+        $("#panel_hidden_direk_satis_cirosu").loadImager('appendImage');
+        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        
+        if(serviceControler == true) {
+            getDirekSatisCirosuYillikWithServices(multiSelectedRoles);
+        } else if(serviceControler == false ){
+            getDirekSatisCirosuAylikWithoutServices();
+        } 
+    }   
+});
+// detay block direk satış cirosu son
+
+
 // detay verimlilik blok
 var hidden_block_verimlilik_blok_controller;
 // acılan faturalar detay graph click event
@@ -1521,6 +1787,15 @@ getYedekParcaToplamSatisDashboard();
 
 // yedek parca yag satış dashboard data
 getYedekParcaYagSatisDashboard();
+
+// atölye cirosu dashboard data
+getAtolyeCirosuDashboard();
+
+// garanti cirosu dashboard data
+getGarantiCirosuDashboard();
+
+// direk satış cirosu dashboard data
+getDirekSatisCirosuDashboard();
 
 // verimlilik gauge dashboard data
 getVerimlilikDashboard();
@@ -6589,11 +6864,11 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -6602,7 +6877,7 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                         }
                         counter++;
                     });
@@ -6626,7 +6901,7 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: window.lang.translate('1K')
                             },
                             stackLabels: {
                                 enabled: true,
@@ -6688,7 +6963,7 @@ function getYedekParcaTSAylikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.ARAC_GIRIS));
+                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                         graphDataAll.push(graphData);
                     });
                     
@@ -6716,14 +6991,14 @@ function getYedekParcaTSAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: window.lang.translate('1K')
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Spare parts total sales')+': <b>{point.y:,.2f} '+window.lang.translate('piece')+'</b>'
+                            pointFormat: ''+window.lang.translate('Spare parts total sales')+': <b>{point.y:,.2f} </b>'
                         },
                         series: [{
                             name: 'Population',
@@ -6786,11 +7061,11 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -6800,7 +7075,7 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                         }
                         counter++;
                     });
@@ -6823,7 +7098,7 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: window.lang.translate('1K')
                             },
                             stackLabels: {
                                 enabled: true,
@@ -6846,7 +7121,7 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
                         },
                         plotOptions: {
                             column: {
@@ -6883,15 +7158,16 @@ function getYedekParcaTSYillikWithoutServices() {
                     var graphDataAll = [];
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
-                        graphData.push(value.YIL+'/'+value.TARIH);
-                        var arr = value.ARAC_GIRIS.split(',');
+                        graphData.push(value.YIL+'/'+value.AY);
+                        /*var arr = value.ARAC_GIRIS.split(',');
                         if(arr.length == 3) {
                             var tutar = null;
                             tutar = arr[0]+arr[1]+','+arr[2];
                             graphData.push(parseInt(tutar));
                         } else{
                             graphData.push(parseInt(value.ARAC_GIRIS));
-                        }
+                        }*/
+                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                         graphDataAll.push(graphData);
                     });
 
@@ -6919,7 +7195,7 @@ function getYedekParcaTSYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: window.lang.translate('1K')
                             }
                         },
                         legend: {
@@ -6927,7 +7203,7 @@ function getYedekParcaTSYillikWithoutServices() {
                         },
                         tooltip: {
                             //headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('piece')+''
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'
                         },
                         series: [{
                             name: window.lang.translate('Spare parts total sales'),
@@ -6980,7 +7256,7 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                     var counter = 1;
                     var serviceIdControler = false;
                     $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        if ((jQuery.inArray(value.AY+'/'+value.YIL, categ)) == -1)categ.push(value.AY+'/'+value.YIL);
                         //counter++;
                         if(serviceIdControler){
                             instance.name = value.SERVISAD;
@@ -6991,11 +7267,11 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                             //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7004,7 +7280,7 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
                         }
                         counter++;
                     });
@@ -7027,7 +7303,7 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: window.lang.translate('1K')
                             },
                             stackLabels: {
                                 enabled: true,
@@ -7050,7 +7326,7 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
                         },
                         plotOptions: {
                             column: {
@@ -7188,16 +7464,15 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                         if(serviceIdControler){
                             instance.name = value.SERVISAD;
                         }
-                        
                         if(counter == 1) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7206,7 +7481,7 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
                         }
                         counter++;
                     });
@@ -7230,7 +7505,7 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: window.lang.translate('1K')
                             },
                             stackLabels: {
                                 enabled: true,
@@ -7390,11 +7665,11 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7404,7 +7679,7 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
                         }
                         counter++;
                     });
@@ -7450,7 +7725,7 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
                         },
                         plotOptions: {
                             column: {
@@ -7585,7 +7860,7 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                     var counter = 1;
                     var serviceIdControler = false;
                     $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
+                        if ((jQuery.inArray(value.AY+'/'+value.YIL, categ)) == -1)categ.push(value.AY+'/'+value.YIL);
                         //counter++;
                         if(serviceIdControler){
                             instance.name = value.SERVISAD;
@@ -7596,11 +7871,11 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                             //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7609,7 +7884,7 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
                         }
                         counter++;
                     });
@@ -7655,7 +7930,7 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
                         },
                         plotOptions: {
                             column: {
@@ -7678,6 +7953,1818 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
         });
 }
 // yedek parça yağ satış  hidden fonk. son
+
+
+// atolye cirosu hidden block hidden fonk.
+function getAtolyeCirosuWeeklyWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        graphDataAll.push(graphData);
+                    });
+                    console.log(graphDataAll);
+                    
+                    chart2 = Highcharts.chart('container_hidden_atolye_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Atölye cirosu')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Atölye cirosu')+': <b>{point.y:,.2f} </b>'
+                        },
+                        series: [{
+                            //name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() { 
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 7 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_hidden_atolye_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Spare parts total sales')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Spare parts total sales')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+    
+function getAtolyeCirosuAylikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    chart2 = Highcharts.chart('container_hidden_atolye_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Atölye cirosu')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Atölye cirosu')+': <b>{point.y:,.2f} </b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getAtolyeCirosuAylikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSAylikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 4 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_atolye_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Atölye cirosu')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getAtolyeCirosuYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.AY);
+                        /*var arr = value.ARAC_GIRIS.split(',');
+                        if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.ARAC_GIRIS));
+                        }*/
+                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_atolye_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Atölye cirosu')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            //headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'
+                        },
+                        series: [{
+                            name: window.lang.translate('Atölye cirosu'),
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getAtolyeCirosuYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaTSYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.AY+'/'+value.YIL, categ)) == -1)categ.push(value.AY+'/'+value.YIL);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            console.log('servis id null');
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_atolye_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Atölye cirosu')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+// atolye cirosu  hidden fonk. son
+
+
+
+// garanti cirosu hidden block hidden fonk.
+function getGarantiCirosuWeeklyWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        graphDataAll.push(graphData);
+                    });
+                    //console.log(graphDataAll);
+                    
+                    chart2 = Highcharts.chart('container_hidden_garanti_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Garanti cirosu')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Garanti cirosu')+': <b>{point.y:,.2f} </b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() { 
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 7 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_hidden_garanti_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Garanti cirosu')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Garanti cirosu')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+    
+function getGarantiCirosuAylikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    chart2 = Highcharts.chart('container_hidden_garanti_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Garanti cirosu')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Garanti cirosu')+': <b>{point.y:,.2f} </b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getGarantiCirosuAylikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSAylikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 4 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_garanti_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Garanti cirosu')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getGarantiCirosuYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.AY);
+                        //var arr = value.ARAC_GIRIS.split(',');
+                        /*if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.YAGSATISTUTAR));
+                        }*/
+                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_garanti_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Garanti cirosu')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            //headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'
+                        },
+                        series: [{
+                            name: window.lang.translate('Garanti cirosu'),
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getGarantiCirosuYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.AY+'/'+value.YIL, categ)) == -1)categ.push(value.AY+'/'+value.YIL);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            console.log('servis id null');
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_garanti_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Garanti cirosu')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+// garanti cirosu  hidden fonk. son
+
+
+// garanti cirosu hidden block hidden fonk.
+function getDirekSatisCirosuWeeklyWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        graphDataAll.push(graphData);
+                    });
+                    //console.log(graphDataAll);
+                    
+                    chart2 = Highcharts.chart('container_hidden_direk_satis_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Direk satış cirosu')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Direk satış cirosu')+': <b>{point.y:,.2f} </b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() { 
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 7 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    //chart1.destroy();
+                    var chart1 = Highcharts.chart('container_hidden_direk_satis_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Direk satış cirosu')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Direk satış cirosu')+': {point.stackTotal}'
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+    
+function getDirekSatisCirosuAylikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSAylik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.TARIH);
+                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        graphDataAll.push(graphData);
+                    });
+                    
+                    chart2 = Highcharts.chart('container_hidden_direk_satis_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Direk satış cirosu')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''+window.lang.translate('Direk satış cirosu')+': <b>{point.y:,.2f} </b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getDirekSatisCirosuAylikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSAylikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.TARIH, categ)) == -1)categ.push(value.TARIH);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            //console.log('servis id null');
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 4 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_direk_satis_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Direk satış cirosu')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getDirekSatisCirosuYillikWithoutServices() {
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSYillik_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    var graphDataAll = [];
+                    $.each(data.resultSet, function(key, value) {
+                        var graphData = [];
+                        graphData.push(value.YIL+'/'+value.AY);
+                        //var arr = value.ARAC_GIRIS.split(',');
+                        /*if(arr.length == 3) {
+                            var tutar = null;
+                            tutar = arr[0]+arr[1]+','+arr[2];
+                            graphData.push(parseInt(tutar));
+                        } else{
+                            graphData.push(parseInt(value.YAGSATISTUTAR));
+                        }*/
+                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        graphDataAll.push(graphData);
+                    });
+
+                    chart2 = Highcharts.chart('container_hidden_direk_satis_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Direk satış cirosu')
+                        },
+                        subtitle: {
+                            //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            }
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            //headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'
+                        },
+                        series: [{
+                            name: window.lang.translate('Direk satış cirosu'),
+                            data: graphDataAll,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+
+function getDirekSatisCirosuYillikWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+    $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDetayYedekParcaYSYillikWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services }, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    
+                    var categ = [];
+                    var servisMiktar = function() {  
+                    };
+                    var tarih = '';
+                    var serviceID = null;
+                    var series = [];
+                    var instance; 
+                    var serviceData = [];
+                    var counter = 1;
+                    var serviceIdControler = false;
+                    $.each(data.resultSet, function(key, value) {
+                        if ((jQuery.inArray(value.AY+'/'+value.YIL, categ)) == -1)categ.push(value.AY+'/'+value.YIL);
+                        //counter++;
+                        if(serviceIdControler){
+                            instance.name = value.SERVISAD;
+                        }
+                        
+                        if(counter == 1) {
+                            console.log('servis id null');
+                            //instance = new servisMiktar(value.SERVISID);
+                            instance = new servisMiktar();
+                            instance.name = value.SERVISAD;
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceID = value.SERVISAD;
+                        }
+                         else if(counter % 13 == 0 && counter!=0){
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            instance.data = serviceData;
+                            series.push(instance);
+                            serviceData = [];
+                            instance = null;
+                            instance = new servisMiktar();
+                            serviceIdControler = true;
+                            serviceID = value.SERVISAD;
+                        } else {
+                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                        }
+                        counter++;
+                    });
+                    //console.log(series);
+                    categ.unique();
+                    //console.log(categ);
+                    
+                    var chart1 = Highcharts.chart('container_hidden_direk_satis_cirosu', {
+                        chart: {
+                            type: 'column',
+                            height : 300,
+                        },
+                        title: {
+                            text: window.lang.translate('Direk satış cirosu')
+                        },
+                        xAxis: {
+                            //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+                            categories: categ
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: window.lang.translate('1K')
+                            },
+                            stackLabels: {
+                                enabled: true,
+                                style: {
+                                    fontWeight: 'bold',
+                                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                                }
+                            }
+                        },
+                        legend: {
+                            align: 'right',
+                            x: -30,
+                            verticalAlign: 'top',
+                            y: 25,
+                            floating: true,
+                            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                            borderColor: '#CCC',
+                            borderWidth: 1,
+                            shadow: false
+                        },
+                        tooltip: {
+                            headerFormat: '<b>{point.x}</b><br/>',
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
+                        },
+                        plotOptions: {
+                            column: {
+                                stacking: 'normal',
+                                dataLabels: {
+                                    enabled: false,
+                                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                                }
+                            }
+                        },
+                        series: 
+                        series
+                    });
+                    $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+}
+// garanti cirosu  hidden fonk. son
+
 
 // ciro hidden block hidden fonk.
 function getCiroWeeklyWithoutServices() {
@@ -10990,6 +13077,177 @@ function getYedekParcaYagSatisDashboard() {
                         yedekParcaYS =  value.YAGSATISTUTAR
                     });
                     $("#toplam_yedek_parca_toplam_yag_satis_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// atölye cirosu dashboard data
+function getAtolyeCirosuDashboard() { 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var yedekParcaYS;
+                $.each(dataSet, function (key, value) {
+                    yedekParcaYS =  value.YAGSATISTUTAR
+                });
+                $("#toplam_atolye_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var yedekParcaYS = 0;
+                    $.each(dataSet, function (key, value) {
+                        yedekParcaYS =  value.YAGSATISTUTAR
+                    });
+                    $("#toplam_atolye_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// garanti cirosu dashboard data
+function getGarantiCirosuDashboard() { 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var yedekParcaYS;
+                $.each(dataSet, function (key, value) {
+                    yedekParcaYS =  value.YAGSATISTUTAR
+                });
+                $("#toplam_garanti_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var yedekParcaYS = 0;
+                    $.each(dataSet, function (key, value) {
+                        yedekParcaYS =  value.YAGSATISTUTAR
+                    });
+                    $("#toplam_garanti_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+    }
+}
+
+// direk satis cirosu dashboard data
+function getDirekSatisCirosuDashboard() { 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                var dataSet = data.resultSet;
+                var yedekParcaYS;
+                $.each(dataSet, function (key, value) {
+                    yedekParcaYS =  value.YAGSATISTUTAR
+                });
+                $("#toplam_direk_satis_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
+            }
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+        }
+    });
+    } else if(serviceControler == false ){
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    var yedekParcaYS = 0;
+                    $.each(dataSet, function (key, value) {
+                        yedekParcaYS =  value.YAGSATISTUTAR
+                    });
+                    $("#toplam_direk_satis_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
