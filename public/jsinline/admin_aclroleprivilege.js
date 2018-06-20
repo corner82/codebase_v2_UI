@@ -555,7 +555,7 @@ window.insertMachPropDialog = function (nodeID, nodeName) {
                                                      <div class="hr-line-dashed"></div>\n\
                                                      <div class="form-group">\n\
                                                          <div class="col-sm-10 col-sm-offset-2">\n\
-                                                         <button id="insertUnitPopUp" class="btn btn-primary" type="submit" onclick="return insertMachPropWrapper(event, '+nodeID+', \''+nodeName+'\');">\n\
+                                                         <button id="insertUnitPopUp" class="btn btn-man-primary" type="submit" onclick="return insertMachPropWrapper(event, '+nodeID+', \''+nodeName+'\');">\n\
                                                              <i class="fa fa-save"></i> Kaydet </button>\n\
                                                          <button id="resetForm" onclick="regulateButtonsPopupInsert();" class="btn btn-flat" type="reset" " >\n\
                                                              <i class="fa fa-remove"></i> Reset </button>\n\
