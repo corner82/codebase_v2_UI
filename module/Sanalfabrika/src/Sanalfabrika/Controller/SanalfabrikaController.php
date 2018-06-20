@@ -120,7 +120,7 @@ class SanalfabrikaController extends AbstractActionController {
     private function ifLoggedinRedirect() {
         $authManager = $this->getServiceLocator()->get('authenticationManagerDefault');
         if (!$authManager->getStorage()->isEmpty()) {
-            //$this->getServiceLocator()->get('serviceAuthenticatedRedirectManager');
+            $this->getServiceLocator()->get('serviceAuthenticatedRedirectManager');
         }
     }
 
