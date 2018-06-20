@@ -105,56 +105,22 @@
 
             <!-- aftersales dashboard data ana blok -->
             <div class="row">
-                <div class="col-lg-4 col-xs-6">
+                <div class="col-lg-12 col-xs-12">
                     <!-- small box -->
-                    <div id="toplam_header_yedek_parca_container" class="small-box bg-man-ligth-grey bg-aqua ">
+                    <div id="toplam_header_yedek_parca_hedef_container" class="small-box bg-man-ligth-grey bg-aqua ">
                         <div class="inner">
                             <h3 class="man-header-red"><div class="overlay" >
                                     <i class="fa fa-refresh fa-spin" ></i>
                                 </div>
                             </h3>
-                            <p lang="en">Yedek Parça</p>
+                            <p lang="en">Servis Yedek Parça Hedef</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="cursor: pointer;" id="detay_yedek_parca" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="cursor: pointer;" id="yedek_parca_hedef" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div><!-- ./col -->
-                <div class="col-lg-4 col-xs-6">
-                    <!-- small box -->
-                    <div id="toplam_header_yag_container" class="small-box bg-man-ligth-grey bg-green">
-                        <div class="inner">
-                            <h3 class="man-header-red"><div class="overlay" >
-                                    <i class="fa fa-refresh fa-spin" ></i>
-                                </div>
-                            </h3>
-                            <p lang="en">Yağ</p>
-                            
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a style="cursor: pointer;" id="detay_yag" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div><!-- ./col -->
-                <div class="col-lg-4 col-xs-6">
-                    <!-- small box -->
-                    <div id="toplam_header_stok_container" class="small-box bg-man-ligth-grey bg-yellow">
-                        <div class="inner">
-                            <h3 class="man-header-red"><div class="overlay" >
-                                    <i class="fa fa-refresh fa-spin" ></i>
-                                </div>
-                            </h3>
-                            <p lang="en">Stok</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-briefcase"></i>
-                        </div>
-                        <a style="cursor: pointer;" id="detay_stok" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div><!-- ./col -->
-
             </div><!-- /.row -->
             <!-- aftersales dashboard data ana blok son -->
             
@@ -162,28 +128,19 @@
             <div class="row">
                 <!--<section class="col-lg-7 connectedSortable">-->
                 <div class="col-md-12">
-                  <div class="box" id="panel_yedek_parca_servis_ici" style="display: none;">
+                  <div class="box" id="panel_yedek_parca_hedef" style="display: none;">
                     <div class="box-header with-border">
-                      <h3 class="box-title" id="panel_yedek_parca_servis_ici_title" lang="en">Servis içinde onarıma kullanılan</h3>
+                      <h3 class="box-title" id="panel_yedek_parca_hedef_title" lang="en">Servis Yedek Parça Hedef</h3>
                       <div class="box-tools pull-right">
                         <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
-                        <div class="btn-group open">
-                            <button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                                <i class="fa fa-calendar"></i>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                              <li><a id='hidden_block2_month' lang="en">Last month</a></li>
-                              <li class="divider"></li>
-                              <li><a id='hidden_block2_year' lang="en">Last 1 year</a></li>
-                            </ul>
-                         </div>
+                       
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                       </div>
                     </div><!-- /.box-header -->
                     <div class="box-body" style="display: block;">
                       <div class="row">
                         <!-- yedek parca (servis içinde onarıma kullanılan)(uygun parça) baş.-->
-                        <div class="col-lg-6 col-xs-12">
+                        <div class="col-lg-12 col-xs-12">
                         <!-- small box -->
                             <div id="servisici_uygun_parca_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
                                 <div class="inner">
@@ -191,198 +148,238 @@
                                             <i class="fa fa-refresh fa-spin" ></i>
                                         </div>
                                     </h3>-->
-                                    <h3 class="man-header-red">0</h3>
-                                    <p lang="en">Uygun parça</p>
+                                    <h3 class="man-header-red">Servis Yedek Parça Hedef</h3>
+                                    <p lang="en">İlk satır "Garanti Hariç", İkinci satır "MAN Genuine Oil", Üçüncü satır "Garanti", Dördüncü satır "Toplam" ifade etmektedir.  
+                                    </p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-android-bus"></i>
                                 </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">&nbsp;&nbsp;</a>
                             </div>
-                            <!-- uygun parça ücretli baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
+                           
+                            </div>
+                            <!-- Baslık son.-->
+                            <!-- 2017 YTD baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
                                 <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Ücretli</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="info-box-number" lang="tr">2017 <br/>YTD <br/><br/><br/></span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
-                            <!-- uygun parça ücretli son.-->
-                            <!-- uygun parça garanti baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Garanti</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça garanti son.-->
-                            <!-- uygun parça toplam baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
+                            <!-- 2017 YTD son.-->
+                            <!-- 2018 YTD baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
                                 <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Toplam</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="info-box-number" lang="tr">2018<br/> YTD<br/><br/><br/></span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
-                            <!-- uygun parça toplam son.-->
-                            <!-- uygun parça OEM baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
+                            <!-- 2018 YTD son.-->
+                            <!-- 2017-2018 Karşılaştırma baş.-->
+                            <div class="col-md-1  " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="info-box-number" lang="tr">2017-<br/>2018<br/> YTD <br/>Karşılaştırma</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
-                            <!-- uygun parça OEM son.-->
-                            <!-- uygun parça OES baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
+                            <!-- 2017-2018 Karşılaştırma son.-->
+                            <!-- 2017 Toplam baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OES</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="info-box-number" lang="tr">2017<br/> Toplam<br/><br/><br/></span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
-                            <!-- uygun parça OES son.-->
-                            <!-- uygun parça ESD baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
+                            <!-- 2017 Toplam son.-->
+                            <!-- 3 Yıllık Ortalama baş.-->
+                            <div class="col-md-1  " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">ESD</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="info-box-number" lang="tr">3 Yıllık <br/>Ortalama<br/><br/><br/></span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
-                            <!-- uygun parça ESD son.-->
+                            <!-- 3 Yıllık Ortalama son.-->
+                            <!-- Aylık Ortalama Miktar baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+                                      <span class="info-box-number" lang="tr">Aylık <br/>Ortalama <br/>Miktar<br/><br/></span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- Aylık Ortalama Miktar son.-->
+                            <!-- %7 için Gereken Aylık Miktar baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+                                      <span class="info-box-number" lang="tr">%7 için<br/> Gereken <br/>Aylık <br/>Miktar</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- %7 için Gereken Aylık Miktar son.-->
+                            <!-- %8 için Gereken Aylık Miktar baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+                                      <span class="info-box-number" lang="tr">%8 için <br/>Gereken <br/>Aylık <br/>Miktar</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- %8 için Gereken Aylık Miktar son.-->
+                            <!-- %9 için Gereken Aylık Miktar baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+                                      <span class="info-box-number" lang="tr">%9 için <br/>Gereken <br/>Aylık <br/>Miktar</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- %9 için Gereken Aylık Miktar son.-->
+                            <!-- %7 için Gereken Yıllık Miktar baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+                                      <span class="info-box-number" lang="tr">%7 için <br/>Gereken <br/>Yıllık <br/>Miktar</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- %7 için Gereken Yıllık Miktar son.-->
+                            <!-- %8 için Gereken Yıllık Miktar baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+                                      <span class="info-box-number" lang="tr">%8 için<br/>Gereken <br/>Yıllık <br/>Miktar</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- %8 için Gereken Yıllık Miktar son.-->
+                            <!-- %9 için Gereken Yıllık Miktar baş.-->
+                            <div class="col-md-1 " style="padding-left: 0px;padding-right: 0px;">
+                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
+                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
+                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
+                                      <span class="info-box-number" lang="tr">%9 için <br/>Gereken <br/>Yıllık <br/>Miktar</span>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti_haric" lang="tr"> Garanti Hariç</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="man_oil" lang="tr"> MAN Genuine Oil</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="garanti" lang="tr"> Garanti</div>
+                                      <div class="progress" id="toplam_musteri_container_progress_bar"></div>
+                                      <div class="text" id="toplam" lang="tr"> Toplam </div>
+                                    </div><!-- /.info-box-content -->
+                                </div>
+                            </div>
+                            <!-- %9 için Gereken Yıllık Miktar son.-->
+
+                            
                         </div><!-- /.col -->
                         <!-- yedek parca (servis içinde onarıma kullanılan)(uygun parça) son.-->
-                        
-                        <!-- yedek parca (servis içinde onarıma kullanılan)(Y.S parça) baş.-->
-                        <div class="col-lg-6 col-xs-12">
-                        <!-- small box -->
-                            <div id="servisici_uygun_parca_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
-                                <div class="inner">
-                                    <!--<h3 class="man-header-red"><div class="overlay" >0
-                                            <i class="fa fa-refresh fa-spin" ></i>
-                                        </div>
-                                    </h3>-->
-                                    <h3 class="man-header-red">0</h3>
-                                    <p lang="en">Y.S Parça</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-android-bus"></i>
-                                </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                            <!-- uygun parça ücretli baş.-->
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Toplam rakam buaya koyulacak</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça ücretli son.-->
-                            
-                            
-                            <!-- Y.S parça Y.san baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Y.SAN</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- Y.S parça Y.san son.-->
-                            <!-- Y.S parça Y.san.my baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Y.San.My</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- Y.S parça Y.san.my son.-->
-                            <!-- Y.S parça toplam baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Toplam</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- Y.S parça toplam son.-->
-                        </div><!-- /.col -->
-                        <!-- yedek parca (servis ,ç,nde onarıma kullanılan)(Y.S parça) son.-->
                         
                       </div><!-- /.row -->
                       <div class="row">
@@ -394,7 +391,7 @@
                       </div><!-- /.row -->
                     </div><!-- ./box-body -->
                     <div class="box-footer" style="display: block;">
-                      
+
                     </div><!-- /.box-footer -->
                   </div><!-- /.box -->
                 </div>
@@ -402,441 +399,6 @@
             </div>
             <!--yedek parça (servis içinde onarıma kullanılan) hidden blok son-->
             
-            <!--yedek parça (servis dışına/direk satılan) hidden block  -->
-            <div class="row">
-                <!--<section class="col-lg-7 connectedSortable">-->
-                <div class="col-md-12">
-                  <div class="box" id="panel_yedek_parca_servis_disi" style="display: none;">
-                    <div class="box-header with-border">
-                      <h3 class="box-title" id="panel_yedek_parca_servis_disi_title" lang="en">Servis dışına/direk satılan</h3>
-                      <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                      </div>
-                    </div><!-- /.box-header -->
-                    <div class="box-body" style="display: block;">
-                      <div class="row">
-                        <!-- yedek parca (servis içinde onarıma kullanılan)(uygun parça) baş.-->
-                        <div class="col-lg-6 col-xs-12">
-                        <!-- small box -->
-                            <div id="servisici_uygun_parca_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
-                                <div class="inner">
-                                    <!--<h3 class="man-header-red"><div class="overlay" >0
-                                            <i class="fa fa-refresh fa-spin" ></i>
-                                        </div>
-                                    </h3>-->
-                                    <h3 class="man-header-red">0</h3>
-                                    <p lang="en">Uygun parça</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-android-arrow-dropright-circle"></i>
-                                </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                            <!-- uygun parça ücretli baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Ücretli</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça ücretli son.-->
-                            <!-- uygun parça garanti baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Garanti</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça garanti son.-->
-                            <!-- uygun parça toplam baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Toplam</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça toplam son.-->
-                            <!-- uygun parça OEM baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça OEM son.-->
-                            <!-- uygun parça OES baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OES</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça OES son.-->
-                            <!-- uygun parça ESD baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">ESD</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça ESD son.-->
-                        </div><!-- /.col -->
-                        <!-- yedek parca (servis içinde onarıma kullanılan)(uygun parça) son.-->
-                        
-                        <!-- yedek parca (servis içinde onarıma kullanılan)(Y.S parça) baş.-->
-                        <div class="col-lg-6 col-xs-12">
-                        <!-- small box -->
-                            <div id="servisici_uygun_parca_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
-                                <div class="inner">
-                                    <!--<h3 class="man-header-red"><div class="overlay" >0
-                                            <i class="fa fa-refresh fa-spin" ></i>
-                                        </div>
-                                    </h3>-->
-                                    <h3 class="man-header-red">0</h3>
-                                    <p lang="en">Y.S Parça</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-android-arrow-dropright-circle"></i>
-                                </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                            <!-- uygun parça ücretli baş.-->
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Toplam rakam buaya koyulacak</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça ücretli son.-->
-                            
-                            
-                            <!-- Y.S parça Y.san baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Y.SAN</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- Y.S parça Y.san son.-->
-                            <!-- Y.S parça Y.san.my baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Y.San.My</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- Y.S parça Y.san.my son.-->
-                            <!-- Y.S parça toplam baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Toplam</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- Y.S parça toplam son.-->
-                        </div><!-- /.col -->
-                        <!-- yedek parca (servis ,ç,nde onarıma kullanılan)(Y.S parça) son.-->
-                        
-                      </div><!-- /.row -->
-                      <div class="row">
-                        <div class="col-md-12">
-                          
-                          <!--<div id="container_satis_all" style="min-width: 200px;  margin: 0 auto"></div>-->
-                          
-                        </div><!-- /.col -->
-                      </div><!-- /.row -->
-                    </div><!-- ./box-body -->
-                    <div class="box-footer" style="display: block;">
-                      
-                    </div><!-- /.box-footer -->
-                  </div><!-- /.box -->
-                </div>
-            <!--</section>  -->
-            </div>
-            <!--yedek parça (servis dışına/direk satılan) hidden block son-->
-            
-            <!--yag  hidden block  -->
-            <div class="row">
-                <!--<section class="col-lg-7 connectedSortable">-->
-                <div class="col-md-12">
-                  <div class="box" id="panel_yag" style="display: none;">
-                    <div class="box-header with-border">
-                      <h3 class="box-title" id="panel_yag_servis_ici_title" lang="en">Yag</h3>
-                      <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                      </div>
-                    </div><!-- /.box-header -->
-                    <div class="box-body" style="display: block;">
-                      <div class="row">
-                        <!-- yag (servis içinde onarıma kullanılan) baş.-->
-                        <div class="col-lg-6 col-xs-12">
-                        <!-- small box -->
-                            <div id="servisici_yag_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
-                                <div class="inner">
-                                    <!--<h3 class="man-header-red"><div class="overlay" >0
-                                            <i class="fa fa-refresh fa-spin" ></i>
-                                        </div>
-                                    </h3>-->
-                                    <h3 class="man-header-red">0</h3>
-                                    <p lang="en">Servis içinde onarıma kullanılan</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-wrench"></i>
-                                </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                            <!-- yag (servis içinde onarıma kullanılan) son.-->
-                        </div><!-- /.col -->
-                        <!-- yag (servis içinde onarıma kullanılan) son.-->
-                        
-                        <!-- yag (servis dışına /direk satılan)  baş.-->
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <!-- small box -->
-                            <div id="servisdisi_yag_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
-                                <div class="inner">
-                                    <!--<h3 class="man-header-red"><div class="overlay" >0
-                                            <i class="fa fa-refresh fa-spin" ></i>
-                                        </div>
-                                    </h3>-->
-                                    <h3 class="man-header-red">0</h3>
-                                    <p lang="en">Servis dışına direk satılan</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-wrench"></i>
-                                </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div><!-- /.col -->
-                        <!-- yag (servis dışına /direk satılan) son.-->
-                        
-                      </div><!-- /.row -->
-                      <div class="row">
-                        <div class="col-md-12">
-                          
-                          <!--<div id="container_satis_all" style="min-width: 200px;  margin: 0 auto"></div>-->
-                          
-                        </div><!-- /.col -->
-                      </div><!-- /.row -->
-                    </div><!-- ./box-body -->
-                    <div class="box-footer" style="display: block;">
-                      
-                    </div><!-- /.box-footer -->
-                  </div><!-- /.box -->
-                </div>
-            <!--</section>  -->
-            </div>
-            <!--yag  hidden block son-->
-            
-            <!--stok  hidden block  -->
-            <div class="row">
-                <!--<section class="col-lg-7 connectedSortable">-->
-                <div class="col-md-12">
-                  <div class="box" id="panel_stok" style="display: none;">
-                    <div class="box-header with-border">
-                      <h3 class="box-title" id="panel_stok_title" lang="en">Stok</h3>
-                      <div class="box-tools pull-right">
-                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                      </div>
-                    </div><!-- /.box-header -->
-                    <div class="box-body" style="display: block;">
-                      <div class="row">
-                        <!-- stok baş.-->
-                        <div class="col-lg-12 col-xs-12">
-                        <!-- small box -->
-                            <div id="servisici_yag_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
-                                <div class="inner">
-                                    <!--<h3 class="man-header-red"><div class="overlay" >0
-                                            <i class="fa fa-refresh fa-spin" ></i>
-                                        </div>
-                                    </h3>-->
-                                    <h3 class="man-header-red">0</h3>
-                                    <p lang="en">Yedek stok bilgisi maliyetten (Yağ hariç)</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-battery-charging"></i>
-                                </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                            <!-- stok OEM detay baş.-->
-                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- stok OEM detay son.-->
-                            <!-- stok OES detay baş.-->
-                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- stok OES detay son.-->
-                            <!-- stok ESD detay baş.-->
-                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- stok ESD detay son.-->
-                            <!-- stok Y.SAN detay baş.-->
-                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- stok Y.SAN detay son.-->
-                            <!-- stok Y.SAN.MY detay baş.-->
-                            <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- stok Y.SAN.MY detay son.-->
-                        </div><!-- /.col -->
-                        <!-- stok  son.-->
-
-                      </div><!-- /.row -->
-                      <div class="row">
-                        <div class="col-md-12">
-                          
-                          <!--<div id="container_satis_all" style="min-width: 200px;  margin: 0 auto"></div>-->
-                          
-                        </div><!-- /.col -->
-                      </div><!-- /.row -->
-                    </div><!-- ./box-body -->
-                    <div class="box-footer" style="display: block;">
-                      
-                    </div><!-- /.box-footer -->
-                  </div><!-- /.box -->
-                </div>
-            <!--</section>  -->
-            </div>
-            <!--stok  hidden block son-->
 
             <!-- Main row -->
             <div class="row">
