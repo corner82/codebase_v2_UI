@@ -44,6 +44,24 @@
         return $view;
      }
      
+     public function hedefAction()
+     {
+         $this->layout('layout/admin');
+         $langCode = $this->getServiceLocator()
+                            ->get('serviceTranslator');
+        $requestUriRegulated = $this->getServiceLocator()
+                            ->get('serviceTranslatorUrlRegulator');
+        $publicKey = $this->getServiceLocator()
+                            ->get('servicePublicKeyReader'); 
+         
+        $view = new ViewModel(array(
+            'requestUriRegulated' => $requestUriRegulated,
+            'langCode' => $langCode,
+            'publicKey' => $publicKey,
+        ));
+        return $view;
+     }
+     
      public function funAction()
      {
          $this->layout('layout/fun');
