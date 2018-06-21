@@ -1,0 +1,34 @@
+2018-06-20T07:24:07+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\module\Sanalfabrika\src\Sanalfabrika\Controller\SanalfabrikaController.php at line : 122
+    with type error : E_NOTICE : Undefined variable: authManager in /man/performans
+2018-06-20T09:17:56+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Session\Exception\RuntimeException' with message 'Session validation failed' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-session\src\SessionManager.php:130
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\services\src\session\FactoryServiceSessionManagerDefaultLocator.php(40): Zend\Session\SessionManager->start()
+#1 [internal function]: Custom\Services\Session\FactoryServiceSessionManagerDefaultLocator->createService(Object(Zend\ServiceManager\ServiceManager), 'sessionmanagerd...', 'SessionManagerD...')
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(939): call_user_func(Array, Object(Zend\ServiceManager\ServiceManager), 'sessionmanagerd...', 'SessionManagerD...')
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(1097): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Array, 'sessionmanagerd...', 'SessionManagerD...')
+#4 C:\xampp\htdocs\miya_performans in /zh/admin
+2018-06-20T09:17:57+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Session\Exception\RuntimeException' with message 'Session validation failed' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-session\src\SessionManager.php:130
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\services\src\session\FactoryServiceSessionManagerDefaultLocator.php(40): Zend\Session\SessionManager->start()
+#1 [internal function]: Custom\Services\Session\FactoryServiceSessionManagerDefaultLocator->createService(Object(Zend\ServiceManager\ServiceManager), 'sessionmanagerd...', 'SessionManagerD...')
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(939): call_user_func(Array, Object(Zend\ServiceManager\ServiceManager), 'sessionmanagerd...', 'SessionManagerD...')
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(1097): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Array, 'sessionmanagerd...', 'SessionManagerD...')
+#4 C:\xampp\htdocs\miya_performans in /man/error/error404
+2018-06-20T09:26:52+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Session\Exception\RuntimeException' with message 'Session validation failed' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-session\src\SessionManager.php:130
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\services\src\session\FactoryServiceSessionManagerDefaultLocator.php(40): Zend\Session\SessionManager->start()
+#1 [internal function]: Custom\Services\Session\FactoryServiceSessionManagerDefaultLocator->createService(Object(Zend\ServiceManager\ServiceManager), 'sessionmanagerd...', 'SessionManagerD...')
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(939): call_user_func(Array, Object(Zend\ServiceManager\ServiceManager), 'sessionmanagerd...', 'SessionManagerD...')
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(1097): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Array, 'sessionmanagerd...', 'SessionManagerD...')
+#4 C:\xampp\htdocs\miya_performans in /tr/admin
+2018-06-20T09:26:54+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php at line : 946
+    with type error : E_ERROR : Uncaught exception 'Zend\Session\Exception\RuntimeException' with message 'Session validation failed' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-session\src\SessionManager.php:130
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\services\src\session\FactoryServiceSessionManagerDefaultLocator.php(40): Zend\Session\SessionManager->start()
+#1 [internal function]: Custom\Services\Session\FactoryServiceSessionManagerDefaultLocator->createService(Object(Zend\ServiceManager\ServiceManager), 'sessionmanagerd...', 'SessionManagerD...')
+#2 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(939): call_user_func(Array, Object(Zend\ServiceManager\ServiceManager), 'sessionmanagerd...', 'SessionManagerD...')
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-servicemanager\src\ServiceManager.php(1097): Zend\ServiceManager\ServiceManager->createServiceViaCallback(Array, 'sessionmanagerd...', 'SessionManagerD...')
+#4 C:\xampp\htdocs\miya_performans in /man/error/error404
