@@ -83,11 +83,11 @@ return array(
         ),
         'storage' => 'Zend\Session\Storage\SessionArrayStorage',
         'validators' => array(
-            'Zend\\Session\\Validator\\RemoteAddr',   
-            'Zend\\Session\\Validator\\HttpUserAgent',       
+            //'Zend\\Session\\Validator\\RemoteAddr',   
+            //'Zend\\Session\\Validator\\HttpUserAgent',       
         ),
         'remember_me_seconds' => 2419200,
-        'use_cookies' => true,
+        'use_cookies' => false,
         'cookie_httponly' => true,
     ),
     'dbAdapterPostgre' => array(
