@@ -61,7 +61,15 @@
                 "Location":"العربية",
                 "Services":"خدمات",
                 "Total sales of spare parts":"إجمالي مبيعات قطع الغيار",
-                "Sale of spare parts oil":"بيع قطع الغيار للنفط"
+                "Sale of spare parts oil":"بيع قطع الغيار للنفط",
+                "Brand Sales Units":"وحدات مبيعات العلامة التجارية",
+                "TOTAL REVENUE":"مجموع الإيرادات",
+                "TOTAL COST":"الكلفة الإجمالية",
+                "TOTAL PROFIT":"اجمالي الربح",
+                "GOAL COMPLETIONS":"استكمال الأهداف",
+                "MAN Vehicle Sales":"مبيعات السيارات مان",
+                "Sales (Brand Based)":"المبيعات (العلامة التجارية)",
+                "Reseller Bills":"فواتير التجزئة" 
 	}
 	
 }

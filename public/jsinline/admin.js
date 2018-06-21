@@ -169,27 +169,6 @@ $("#panel_hidden_yedek_parca_toplam_satis").loadImager();
  */
 $("#panel_hidden_yedek_parca_yag_satis").loadImager();
 
-/**
- * loading image  atölye cirosu detay blok
- * @author Mustafa Zeynel Dağlı
- * @since 19/06/2018
- */
-$("#panel_hidden_atolye_cirosu").loadImager();
-
-/**
- * loading image  garanti cirosu detay blok
- * @author Mustafa Zeynel Dağlı
- * @since 19/06/2018
- */
-$("#panel_hidden_garanti_cirosu").loadImager();
-
-/**
- * loading image  direk satış cirosu detay blok
- * @author Mustafa Zeynel Dağlı
- * @since 19/06/2018
- */
-$("#panel_hidden_direk_satis_cirosu").loadImager();
-
 
 /**
  * Sand-Signika theme for Highcharts JS
@@ -1091,7 +1070,6 @@ $('#hidden_yedek_parca_yag_satis_year').click(function()
 });
 // detay block yedek parça yag satış son
 
-
 // detay blok atölye cirosu 
 var hidden_atolye_cirosu_controller;
 // atölye cirosu detay click 
@@ -1334,6 +1312,7 @@ $('#hidden_direk_satis_cirosu_year').click(function()
     }   
 });
 // detay block direk satış cirosu son
+
 
 
 // detay verimlilik blok
@@ -1787,15 +1766,6 @@ getYedekParcaToplamSatisDashboard();
 
 // yedek parca yag satış dashboard data
 getYedekParcaYagSatisDashboard();
-
-// atölye cirosu dashboard data
-getAtolyeCirosuDashboard();
-
-// garanti cirosu dashboard data
-getGarantiCirosuDashboard();
-
-// direk satış cirosu dashboard data
-getDirekSatisCirosuDashboard();
 
 // verimlilik gauge dashboard data
 getVerimlilikDashboard();
@@ -6864,11 +6834,11 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -6877,7 +6847,7 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                         }
                         counter++;
                     });
@@ -6901,7 +6871,7 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: window.lang.translate('piece')
                             },
                             stackLabels: {
                                 enabled: true,
@@ -6963,7 +6933,7 @@ function getYedekParcaTSAylikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        graphData.push(parseInt(value.ARAC_GIRIS));
                         graphDataAll.push(graphData);
                     });
                     
@@ -6991,14 +6961,14 @@ function getYedekParcaTSAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: window.lang.translate('piece')
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Spare parts total sales')+': <b>{point.y:,.2f} </b>'
+                            pointFormat: ''+window.lang.translate('Spare parts total sales')+': <b>{point.y:,.2f} '+window.lang.translate('piece')+'</b>'
                         },
                         series: [{
                             name: 'Population',
@@ -7061,11 +7031,11 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7075,7 +7045,7 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                         }
                         counter++;
                     });
@@ -7098,7 +7068,7 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: window.lang.translate('piece')
                             },
                             stackLabels: {
                                 enabled: true,
@@ -7121,7 +7091,7 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -7158,16 +7128,15 @@ function getYedekParcaTSYillikWithoutServices() {
                     var graphDataAll = [];
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
-                        graphData.push(value.YIL+'/'+value.AY);
-                        /*var arr = value.ARAC_GIRIS.split(',');
+                        graphData.push(value.YIL+'/'+value.TARIH);
+                        var arr = value.ARAC_GIRIS.split(',');
                         if(arr.length == 3) {
                             var tutar = null;
                             tutar = arr[0]+arr[1]+','+arr[2];
                             graphData.push(parseInt(tutar));
                         } else{
                             graphData.push(parseInt(value.ARAC_GIRIS));
-                        }*/
-                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        }
                         graphDataAll.push(graphData);
                     });
 
@@ -7195,7 +7164,7 @@ function getYedekParcaTSYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: window.lang.translate('piece')
                             }
                         },
                         legend: {
@@ -7203,7 +7172,7 @@ function getYedekParcaTSYillikWithoutServices() {
                         },
                         tooltip: {
                             //headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('piece')+''
                         },
                         series: [{
                             name: window.lang.translate('Spare parts total sales'),
@@ -7256,7 +7225,7 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                     var counter = 1;
                     var serviceIdControler = false;
                     $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.AY+'/'+value.YIL, categ)) == -1)categ.push(value.AY+'/'+value.YIL);
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
                         //counter++;
                         if(serviceIdControler){
                             instance.name = value.SERVISAD;
@@ -7267,11 +7236,11 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                             //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7280,7 +7249,7 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                         }
                         counter++;
                     });
@@ -7303,7 +7272,7 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: window.lang.translate('piece')
                             },
                             stackLabels: {
                                 enabled: true,
@@ -7326,7 +7295,7 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -7464,15 +7433,16 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                         if(serviceIdControler){
                             instance.name = value.SERVISAD;
                         }
+                        
                         if(counter == 1) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7481,7 +7451,7 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                         }
                         counter++;
                     });
@@ -7505,7 +7475,7 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: window.lang.translate('piece')
                             },
                             stackLabels: {
                                 enabled: true,
@@ -7665,11 +7635,11 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7679,7 +7649,7 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                         }
                         counter++;
                     });
@@ -7725,7 +7695,7 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -7860,7 +7830,7 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                     var counter = 1;
                     var serviceIdControler = false;
                     $.each(data.resultSet, function(key, value) {
-                        if ((jQuery.inArray(value.AY+'/'+value.YIL, categ)) == -1)categ.push(value.AY+'/'+value.YIL);
+                        if ((jQuery.inArray(value.TARIH+'/'+value.YIL, categ)) == -1)categ.push(value.TARIH+'/'+value.YIL);
                         //counter++;
                         if(serviceIdControler){
                             instance.name = value.SERVISAD;
@@ -7871,11 +7841,11 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                             //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7884,7 +7854,7 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseInt(value.ARAC_GIRIS));
                         }
                         counter++;
                     });
@@ -7930,7 +7900,7 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -7954,10 +7924,9 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
 }
 // yedek parça yağ satış  hidden fonk. son
 
-
-// atolye cirosu hidden block hidden fonk.
-function getAtolyeCirosuWeeklyWithoutServices() {
-    $.ajax({
+// ciro hidden block hidden fonk.
+function getCiroWeeklyWithoutServices() {
+     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             data: { url:'getAfterSalesDetayAtolyeCirosu_infoAfterSales' ,
                     pk : $("#pk").val()}, 
@@ -7967,25 +7936,23 @@ function getAtolyeCirosuWeeklyWithoutServices() {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
-
+                    
                     var graphDataAll = [];
                     $.each(data.resultSet, function(key, value) {
-                        var graphData = [];
-                        graphData.push(value.TARIH);
-                        var d =  value.ATOLYECIROSUCARI
+                       var d =  value.ATOLYECIROSUCARI
                         d = d.replace(/,/g, "");
                         graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
                     //console.log(graphDataAll);
-                    
+
                     chart2 = Highcharts.chart('container_hidden_atolye_cirosu', {
                         chart: {
                             type: 'column',
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Atölye cirosu')
+                            text: 'Cirolar Toplamı'
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -8011,10 +7978,11 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                             enabled: false
                         },
                         tooltip: {
+
                             pointFormat: ''+window.lang.translate('Atölye cirosu')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
-                            //name: 'Population',
+                            name: 'Population',
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
@@ -8030,7 +7998,7 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                             }
                         }]
                     });
-                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+                    $("#panel_hidden4").loadImager('removeLoadImage');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -8039,7 +8007,7 @@ function getAtolyeCirosuWeeklyWithoutServices() {
         });
 }
 
-function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
+function getCiroWeeklyWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -8075,6 +8043,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
+
                             var d =  value.ATOLYECIROSUCARI
                             d = d.replace(/,/g, "");
                             serviceData.push(parseFloat(d));
@@ -8092,6 +8061,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
+
                             var d =  value.ATOLYECIROSUCARI
                             d = d.replace(/,/g, "");
                             serviceData.push(parseFloat(d));
@@ -8103,13 +8073,13 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                     //console.log(categ);
                     
                     //chart1.destroy();
-                    var chart1 = Highcharts.chart('container_hidden_atolye_cirosu', {
+                    var chart1 = Highcharts.chart('container_hidden_block4', {
                         chart: {
                             type: 'column',
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Spare parts total sales')
+                            text: window.lang.translate('Spare parts oil sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -8118,6 +8088,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
+
                                 //text: window.lang.translate('1K')
                                 text : 'YTL'
                             },
@@ -8156,7 +8127,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                         series: 
                         series
                     });
-                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
+                    $("#panel_hidden4").loadImager('removeLoadImage');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -8165,7 +8136,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
         });
 }
     
-function getAtolyeCirosuAylikWithoutServices() {
+function getCiroAylikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             data: { url:'getAfterSalesDetayAtolyeCirosuAylik_infoAfterSales' ,
@@ -8176,7 +8147,6 @@ function getAtolyeCirosuAylikWithoutServices() {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
-
                     var graphDataAll = [];
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
@@ -13154,6 +13124,7 @@ function getYedekParcaYagSatisDashboard() {
     }
 }
 
+
 // atölye cirosu dashboard data
 function getAtolyeCirosuDashboard() { 
     var serviceControler = false;
@@ -13327,6 +13298,7 @@ function getDirekSatisCirosuDashboard() {
         });
     }
 }
+
 
 // downtime dashboard data
 function getMMCSIDashboard() { 

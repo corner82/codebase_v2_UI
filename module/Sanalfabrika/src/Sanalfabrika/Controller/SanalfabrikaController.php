@@ -137,7 +137,7 @@ class SanalfabrikaController extends AbstractActionController {
                     /* ->attach(new \Zend\I18n\Validator\Alnum()) */
                     ->attach(new \Zend\Validator\NotEmpty())
                     ->attach(new \Zend\Validator\EmailAddress());
-            print_r($_POST['eposta']);
+
             // Validate the email
             if ($validatorChain->isValid($_POST['eposta'])) {
 
