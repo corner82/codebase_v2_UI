@@ -64,7 +64,7 @@ $('#tt_grid_dynamic').datagrid({
             {field:'action',title:'Action',width:80,align:'center',
                 formatter:function(value,row,index){
                     if(row.attributes.active == 0) {
-                        var e = '<button style="padding : 2px 4px;" title="Pasif yap"  class="btn btn-man-primary" type="button" onclick="return activePassiveACLRolesWrapper(event, '+row.id+');"><i class="fa fa-minus-circle"></i></button>';
+                        var e = '<button style="padding : 2px 4px;" title="Pasif yap"  class="btn btn-primary" type="button" onclick="return activePassiveACLRolesWrapper(event, '+row.id+');"><i class="fa fa-minus-circle"></i></button>';
                     } else {
                         var e = '<button style="padding : 2px 4px;" title="Aktif yap"  class="btn btn-warning" type="button" onclick="return activePassiveACLRolesWrapper(event, '+row.id+');"><i class="fa fa-plus-circle"></i></button>';
                     }

@@ -4,6 +4,7 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/tr.json</file>
+<<<<<<< HEAD
             <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/fa.json</file>
             <file>file:/C:/xampp/htdocs/miya_performans/public/jsinline/admin_salesactivities.js</file>
             <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/admin/admin/dealerinv.phtml</file>
@@ -16,6 +17,14 @@
             <file>file:/C:/xampp/htdocs/miya_performans/public/jsinline/admin_marketshares.js</file>
             <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/af.json</file>
             <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/zh.json</file>
+=======
+            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/src/Admin/Controller/AdminController.php</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/admin/admin/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/layout/admin.phtml</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/jsinline/admin_faal.js</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/jsinline/admin.js</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/admin/admin/faal.phtml</file>
+>>>>>>> parent of 0e08afd... man renk dünlemeleri ve dil düzenlemeleri yapıldı.
         </group>
     </open-files>
 </project-private>

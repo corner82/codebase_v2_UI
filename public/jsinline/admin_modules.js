@@ -61,7 +61,7 @@ $('#tt_grid_dynamic').datagrid({
             {field:'action',title:'Action',width:80,align:'center',
                 formatter:function(value,row,index){
                     if(row.attributes.active == 0) {
-                        var e = '<button style="padding : 2px 4px;" title="Pasif yap"  class="btn btn-man-primary" type="button" onclick="return activePassiveModuleWrapper(event, '+row.id+');"><i class="fa fa-minus-circle"></i></button>';
+                        var e = '<button style="padding : 2px 4px;" title="Pasif yap"  class="btn btn-primary" type="button" onclick="return activePassiveModuleWrapper(event, '+row.id+');"><i class="fa fa-minus-circle"></i></button>';
                     } else {
                         var e = '<button style="padding : 2px 4px;" title="Aktif yap"  class="btn btn-warning" type="button" onclick="return activePassiveModuleWrapper(event, '+row.id+');"><i class="fa fa-plus-circle"></i></button>';
                     }
@@ -320,7 +320,7 @@ window.updateModuleDialog = function (id, row) {
                                                          <div class="hr-line-dashed"></div>\n\
                                                          <div class="form-group">\n\
                                                              <div class="col-sm-10 col-sm-offset-2">\n\
-                                                             <button id="insertMachPopUp" class="btn btn-man-primary" type="submit" onclick="return updateModuleWrapper(event, '+id+');">\n\
+                                                             <button id="insertMachPopUp" class="btn btn-primary" type="submit" onclick="return updateModuleWrapper(event, '+id+');">\n\
                                                                  <i class="fa fa-save"></i> Güncelle </button>\n\
                                                          </div>\n\
                                                      </div>\n\
@@ -480,14 +480,14 @@ window.activePassiveModule = function (id, domElement) {
                 $(domElement).removeClass("fa-minus-circle");
                 $(domElement).addClass("fa-plus-circle");
                 
-                $(domElement).parent().removeClass("btn-man-primary");
+                $(domElement).parent().removeClass("btn-primary");
                 $(domElement).parent().addClass("btn-warning");
             } else if($(domElement).hasClass("fa-plus-circle" )) {
                 $(domElement).removeClass("fa-plus-circle");
                 $(domElement).addClass("fa-minus-circle");
                 
                 $(domElement).parent().removeClass("btn-warning");
-                $(domElement).parent().addClass("btn-man-primary");
+                $(domElement).parent().addClass("btn-primary");
             }
                 
                 
