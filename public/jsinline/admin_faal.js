@@ -215,11 +215,14 @@ $('#detay_stok').click(function()
 // detay ana  block  son
 
 
-// afterSales iş emirleri  dashboard data (#container)
-getAfterSalesIsEmirleriDashboard();
-    
+// yedek parca dashboard data (#container)
+getAfterSalesFaalYedekParcaDashboard();
 
+// yağ dashboard data (#container)
+getAfterSalesFaalYagDashboard();
 
+// stok dashboard data (#container)
+getAfterSalesFaalStokDashboard();
 
 
 
@@ -654,11 +657,60 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
 
 
 // dashboard özet verileri fonk.
-// yedek parca, yag, stok  dashboard data (#container)
-function getAfterSalesIsEmirleriDashboard() {   
+// yedek parca,  dashboard data (#container)
+function getAfterSalesFaalYedekParcaDashboard() {   
 $.ajax({
     url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardIsEmriData_infoAfterSales' ,
+    data: { url:'getAfterSalesDashboardFaalYedekParca_infoAfterSales' ,
+            pk : $("#pk").val()}, 
+    type: 'GET',
+    dataType: 'json',
+    language_id:647,
+    //data: 'rowIndex='+rowData.id,
+    success: function (data, textStatus, jqXHR) {
+        var dataSet = data;
+        var yedekparca;
+        $.each(dataSet, function (key, value) {
+            console.log(value);
+            yedekparca =  value.YEDEKPARCATOPLAMI
+        });
+        $("#toplam_header_yedek_parca_container").headerSetterAfterSalesYedekParcaDashboard(yedekparca);
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.error(textStatus);
+    }
+});
+}
+
+// yag  dashboard data (#container)
+function getAfterSalesFaalYagDashboard() {   
+$.ajax({
+    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'getAfterSalesDashboardFaalYagToplam_infoAfterSales' ,
+            pk : $("#pk").val()}, 
+    type: 'GET',
+    dataType: 'json',
+    language_id:647,
+    //data: 'rowIndex='+rowData.id,
+    success: function (data, textStatus, jqXHR) {
+            var dataSet = data;
+            var yag;
+            $.each(dataSet, function (key, value) {
+                yag =  value.YAGTOPLAM
+            });
+            $("#toplam_header_yag_container").headerSetterAfterSalesYedekParcaDashboard(yag);
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.error(textStatus);
+    }
+});
+}
+
+// stok  dashboard data (#container)
+function getAfterSalesFaalStokDashboard() {   
+$.ajax({
+    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'getAfterSalesDashboardFaalStokToplam_infoAfterSales' ,
             pk : $("#pk").val()}, 
     type: 'GET',
     dataType: 'json',
@@ -666,23 +718,21 @@ $.ajax({
     //data: 'rowIndex='+rowData.id,
     success: function (data, textStatus, jqXHR) {
         //console.log(data.resultSet);
-        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
-            var dataSet = data.resultSet;
-            $.each(dataSet, function ($key, $value) {
-                //console.log($key+'--'+$value);
-                //console.log($value.ACIKLAMA);
-                if($value.CONTROLER == 1) {
-                    $("#toplam_header_yedek_parca_container").headerSetterAfterSales($value);
-                } else if($value.CONTROLER == 2){
-                    $("#toplam_header_yag_container").headerSetterAfterSales($value);
-                } else if($value.CONTROLER == 3){
-                    $("#toplam_header_stok_container").headerSetterAfterSales($value);
-                }
-            })
-        }
+       
+        var dataSet = data;
+        var stok;
+        $.each(dataSet, function (key, value) {
+            console.log(value);
+            stok =  value.STOK_TOPLAM
+            //d = d.replace(",", ".");
+            //console.log(d);
+            //downtime+= parseInt(d);
+        });
+        $("#toplam_header_stok_container").headerSetterAfterSalesYedekParcaDashboard(stok);
+        
     },
     error: function (jqXHR, textStatus, errorThrown) {
-        console.error(errorThrown);
+        console.error(textStatus);
     }
 });
 }

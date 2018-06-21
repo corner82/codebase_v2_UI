@@ -8458,7 +8458,7 @@ function getAtolyeCirosuYillikWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaTSYillikWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayAtolyeCirosuYillikWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services }, 
             type: 'GET',
@@ -9087,7 +9087,7 @@ function getGarantiCirosuYillikWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSYillikWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayGarantiCirosuYillikWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services }, 
             type: 'GET',
