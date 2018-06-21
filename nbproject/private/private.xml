@@ -2,6 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/tr.json</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/fa.json</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/jsinline/admin_salesactivities.js</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/admin/admin/dealerinv.phtml</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/ru.json</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/th.json</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/ar.json</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/de.json</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/module/Admin/view/admin/admin/salesactivities.phtml</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/jsinline/admin_dealerinv.js</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/jsinline/admin_marketshares.js</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/af.json</file>
+            <file>file:/C:/xampp/htdocs/miya_performans/public/plugins/jquery-lang-js-master/js/langpack/zh.json</file>
+        </group>
     </open-files>
 </project-private>

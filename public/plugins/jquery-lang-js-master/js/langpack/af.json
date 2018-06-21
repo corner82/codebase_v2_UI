@@ -61,7 +61,15 @@
                 "Location":"Lokasie",
                 "Services":"Dienste",
                 "Total sales of spare parts":"Totale verkope van onderdele",
-                "Sale of spare parts oil":"Verkoop van onderdele olie"
+                "Sale of spare parts oil":"Verkoop van onderdele olie",
+                "Brand Sales Units":"Brand Verkoopseenhede",
+                "TOTAL REVENUE":"TOTALE INKOMSTE",
+                "TOTAL COST":"TOTALE KOSTE",
+                "TOTAL PROFIT":"TOTALE WINS",
+                "GOAL COMPLETIONS":"DOELSTELLINGS",
+                "MAN Vehicle Sales":"MAN Voertuigverkope",
+                "Sales (Brand Based)":"Verkope (Handelsmerk)",
+                "Reseller Bills":"Reseller Wetsontwerpe" 
         
 	}
 	

@@ -61,7 +61,15 @@
                 "Location":"中文网 中文网",
                 "Services":"服务",
                 "Total sales of spare parts":"备件销售总额",
-                "Sale of spare parts oil":"销售备件油"
+                "Sale of spare parts oil":"销售备件油",
+                "Brand Sales Units":"品牌销售单位",
+                "TOTAL REVENUE":"总收入",
+                "TOTAL COST":"总成本",
+                "TOTAL PROFIT":"总利润",
+                "GOAL COMPLETIONS":"目标完成",
+                "MAN Vehicle Sales":"MAN车辆销售",
+                "Sales (Brand Based)":"销售（基于品牌）",
+                "Reseller Bills":"经销商账单"   
 	}
 	
 }

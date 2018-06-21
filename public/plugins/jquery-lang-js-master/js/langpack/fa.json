@@ -61,7 +61,15 @@
                 "Location":"فارسی  فارسی",
                 "Services":"خدمات",
                 "Total sales of spare parts":"کل فروش قطعات یدکی",
-                "Sale of spare parts oil":"فروش قطعات یدکی روغن"
+                "Sale of spare parts oil":"فروش قطعات یدکی روغن",
+                "Brand Sales Units":"واحد فروش برند",
+                "TOTAL REVENUE":"درآمد کل",
+                "TOTAL COST":"هزینه کل",
+                "TOTAL PROFIT":"مجموع سود",
+                "GOAL COMPLETIONS":"تکالیف اهداف",
+                "MAN Vehicle Sales":"فروش خودرو مرد",
+                "Sales (Brand Based)":"فروش (برند بر اساس)",
+                "Reseller Bills":"صورتحساب فروشندگان" 
 	}
 	
 }

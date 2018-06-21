@@ -62,7 +62,23 @@
                 "Location":"Türkçe lokasyon",
                 "Services":"Servisler",
                 "Total sales of spare parts":"Yedek parça toplam satış",
-                "Sale of spare parts oil":"Yedek parça yağ satış"   
+                "Sale of spare parts oil":"Yedek parça yağ satış",
+                "Brand Sales Units":"Marka Satış Adetleri",
+                "TOTAL REVENUE":"TOPLAM GELİR",
+                "TOTAL COST":"TOPLAM MALİYET",
+                "TOTAL PROFIT":"TOPLAM KAR",
+                "GOAL COMPLETIONS":"HEDEF TAMAMLANMASI",
+                "MAN Vehicle Sales":"MAN Araç Satış",
+                "Sales (Brand Based)":"Satışlar (Marka Bazlı)",
+                "Reseller Bills":"Bayi Faturaları", 
+                "Number of Projects Acquired":"Kazanılan Proje Sayısı",
+                "Number of Cars in Projects Earned":"Kazanılan Projelerdeki Araç Sayısı",
+                "Completed Activity Count":"Tamamlanan Aktivite Sayısı",
+                "Number of Projects Created":"Vazgeçilen Proje Sayısı",
+                "Completed Activity Count":"Tamamlanan Aktivite Sayısı",
+                "Number of lost projects":"Kaybedilen Proje Sayısı"
+                "Vendors according to the number of invoices":"Fatura Adetlerine Göre Bayiler"
+                
 	}
 	
 }

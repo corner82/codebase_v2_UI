@@ -117,6 +117,7 @@ Highcharts.theme = {
 
 // Apply the theme
 Highcharts.setOptions(Highcharts.theme);
+
     
 // marka satışları 2016
 Highcharts.chart('container_satis_2016', {
@@ -128,7 +129,7 @@ Highcharts.chart('container_satis_2016', {
         height : 350,
     },
     title: {
-        text: 'Marka Satış Adetleri - 2016'
+        text: window.lang.translate('Brand Sales Units')+' - 2016'  //'Marka Satış Adetleri - 2016'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -189,7 +190,7 @@ Highcharts.chart('container_satis_2017', {
         height : 350,
     },
     title: {
-        text: 'Marka Satış Adetleri - 2017'
+        text: window.lang.translate('Brand Sales Units') + ' - 2017' //'Marka Satış Adetleri - 2017'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -247,7 +248,7 @@ Highcharts.chart('container_satis_all', {
         height: 350,
     },
     title: {
-        text: 'Satışlar(Marka Bazlı)'
+        text: window.lang.translate('Sales (Brand Based)')  //'Satışlar(Marka Bazlı)'
     },
     subtitle: {
         //text: 'Source: WorldClimate.com'
@@ -303,7 +304,7 @@ Highcharts.chart('container_satis_monthly', {
         height: 350,
     },
     title: {
-        text: 'MAN Araç Satış'
+        text: window.lang.translate('MAN Vehicle Sales') //'MAN Araç Satış'
     },
     subtitle: {
         //text: 'Source: WorldClimate.com'

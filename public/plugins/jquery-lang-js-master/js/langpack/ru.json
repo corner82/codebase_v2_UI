@@ -61,8 +61,15 @@
                 "Location":"НА РУССКОМ  НА РУССКОМ ",
                 "Services":"Сервисы",
                 "Total sales of spare parts":"Общий объем продаж запасных частей",
-                "Sale of spare parts oil":"Продажа масла для запасных частей"
-        
+                "Sale of spare parts oil":"Продажа масла для запасных частей",
+                "Brand Sales Units":"Бренд продаж единиц",
+                "TOTAL REVENUE":"ОБЩИЙ ДОХОД",
+                "TOTAL COST":"ОБЩАЯ СТОИМОСТЬ",
+                "TOTAL PROFIT":"ОБЩАЯ ПРИБЫЛЬ",
+                "GOAL COMPLETIONS":"ЦЕЛИ",
+                "MAN Vehicle Sales":"Продажа автомобилей MAN",
+                "Sales (Brand Based)":"Продажи (на основе бренда)",
+                "Reseller Bills":"Реселлерские счета"       
 	}
 	
 }

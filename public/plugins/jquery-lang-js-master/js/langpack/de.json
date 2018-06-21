@@ -61,7 +61,16 @@
                 "Location":"Lage",
                 "Services":"Dienstleistungen",
                 "Total sales of spare parts":"Gesamtverkauf von Ersatzteilen",
-                "Sale of spare parts oil":"Verkauf von Ersatzteilen Öl"
+                "Sale of spare parts oil":"Verkauf von Ersatzteilen Öl",
+                "Brand Sales Units":"Markenverkaufseinheiten",
+                "TOTAL REVENUE":"GESAMTUMSATZ",
+                "TOTAL COST":"GESAMTKOSTEN",
+                "TOTAL PROFIT":"GESAMTGEWINN",
+                "GOAL COMPLETIONS":"ZİELABSCHLÜSSE",
+                "MAN Vehicle Sales":"MAN Fahrzeugverkauf",
+                "Sales (Brand Based)":"Verkäufe (Markenbasiert)",
+                "Reseller Bills":"Reseller Rechnungen" 
+        
 	}
 	
 }

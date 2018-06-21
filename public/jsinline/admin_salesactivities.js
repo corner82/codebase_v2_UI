@@ -130,7 +130,7 @@ var chart1 = new Highcharts.Chart({
         renderTo: 'container_satis_activities1',
     },
     title: {
-            text: 'Kazanılan Proje Sayısı'
+            text: window.lang.translate('Number of Projects Acquired')
         },
     xAxis: {
         labels: {
@@ -167,7 +167,7 @@ var chart2 = new Highcharts.Chart({
         renderTo: 'container_satis_activities2',
     },
     title: {
-            text: 'Kazanılan Projelerdeki Araç Sayısı'
+            text: window.lang.translate("Number of Cars in Projects Earned")   //'Kazanılan Projelerdeki Araç Sayısı'
         },
     xAxis: {
         labels: {
@@ -176,7 +176,7 @@ var chart2 = new Highcharts.Chart({
             }
         },
         title: {
-                text: 'Adet'
+                text: window.lang.translate("piece")
             },
 
         startOnTick: false,
@@ -188,7 +188,7 @@ var chart2 = new Highcharts.Chart({
     },
     yAxis : {
         title: {
-                text: 'Adet'
+                text: window.lang.translate("piece")
             },
     },
     series: [{
@@ -204,7 +204,7 @@ var chart3 = new Highcharts.Chart({
         renderTo: 'container_satis_activities3',
     },
     title: {
-            text: 'Tamamlanan Aktivite Sayısı'
+            text: window.lang.translate('Completed Activity Count')
         },
     xAxis: {
         labels: {

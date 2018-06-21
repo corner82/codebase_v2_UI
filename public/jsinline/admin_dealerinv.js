@@ -232,7 +232,7 @@ $.ajax({
                      '   </div><!-- /.col -->'+
                      '   <div class="col-md-6" >'+
                      '     <p class="text-center">'+
-                     '       <strong>Fatura Adetlerine Göre Bayiler </strong>'+
+                     '       <strong>' + window.lang.translate('Vendors according to the number of invoices') +'</strong>'+
                      '     </p>'+
                      '     <div class="progress-group">'+
                      '       <span class="progress-text" id="alan1_'+numerator+'"></span>'+
