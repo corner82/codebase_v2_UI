@@ -7959,7 +7959,7 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
 function getAtolyeCirosuWeeklyWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaTS_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayAtolyeCirosu_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -7972,10 +7972,10 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        graphData.push(parseFloat(value.ATOLYECIROSUCARI));
                         graphDataAll.push(graphData);
                     });
-                    console.log(graphDataAll);
+                    //console.log(graphDataAll);
                     
                     chart2 = Highcharts.chart('container_hidden_atolye_cirosu', {
                         chart: {
@@ -8040,7 +8040,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaTSWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayAtolyeCirosuWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services}, 
             type: 'GET',
@@ -8072,11 +8072,11 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseFloat(value.ATOLYECIROSUCARI));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseFloat(value.ATOLYECIROSUCARI));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -8085,7 +8085,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            serviceData.push(parseFloat(value.ATOLYECIROSUCARI));
                         }
                         counter++;
                     });
@@ -8564,7 +8564,7 @@ function getAtolyeCirosuYillikWithServices(multiSelectedRoles) {
 function getGarantiCirosuWeeklyWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYS_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayGarantiCirosu_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -8577,7 +8577,7 @@ function getGarantiCirosuWeeklyWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        graphData.push(parseFloat(value.ATOLYECIROSUGARANTI));
                         graphDataAll.push(graphData);
                     });
                     //console.log(graphDataAll);
@@ -8613,7 +8613,7 @@ function getGarantiCirosuWeeklyWithoutServices() {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Garanti cirosu')+': <b>{point.y:,.2f} </b>'
+                            pointFormat: ''+window.lang.translate('Garanti cirosu')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             name: 'Population',
@@ -8645,7 +8645,7 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayGarantiCirosuWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services}, 
             type: 'GET',
@@ -8676,11 +8676,12 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            
+                            serviceData.push(parseFloat(value.ATOLYECIROSUGARANTI));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseFloat(value.ATOLYECIROSUGARANTI));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -8689,7 +8690,7 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseFloat(value.ATOLYECIROSUGARANTI));
                         }
                         counter++;
                     });
@@ -9167,7 +9168,7 @@ function getGarantiCirosuYillikWithServices(multiSelectedRoles) {
 function getDirekSatisCirosuWeeklyWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYS_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayDirekSatisCirosu_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -9180,7 +9181,7 @@ function getDirekSatisCirosuWeeklyWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        graphData.push(parseInt(value.DIREKSATISTUTAR));
                         graphDataAll.push(graphData);
                     });
                     //console.log(graphDataAll);
@@ -9216,7 +9217,7 @@ function getDirekSatisCirosuWeeklyWithoutServices() {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Direk satış cirosu')+': <b>{point.y:,.2f} </b>'
+                            pointFormat: ''+window.lang.translate('Direk satış cirosu')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             name: 'Population',
@@ -9248,7 +9249,7 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayDirekSatisCirosuWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services}, 
             type: 'GET',
@@ -9279,11 +9280,11 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseFloat(value.DIREKSATISTUTAR));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseFloat(value.DIREKSATISTUTAR));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -9292,7 +9293,7 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            serviceData.push(parseFloat(value.DIREKSATISTUTAR));
                         }
                         counter++;
                     });
@@ -9339,7 +9340,7 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Direk satış cirosu')+': {point.stackTotal}'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Direk satış cirosu')+': {point.stackTotal}'
                         },
                         plotOptions: {
                             column: {
@@ -13095,7 +13096,8 @@ function getAtolyeCirosuDashboard() {
     if(serviceControler == true) {
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+        //data: { url:'getAfterSalesDashboardAtolyeCirosuWithServices_infoAfterSales' ,
+        data: { url:'getAfterSalesDashboardAtolyeCirosu_infoAfterSales' ,
                 pk : $("#pk").val()}, 
         type: 'GET',
         dataType: 'json',
@@ -13107,7 +13109,7 @@ function getAtolyeCirosuDashboard() {
                 var dataSet = data.resultSet;
                 var yedekParcaYS;
                 $.each(dataSet, function (key, value) {
-                    yedekParcaYS =  value.YAGSATISTUTAR
+                    yedekParcaYS =  value.ATOLYECIROSUCARI
                 });
                 $("#toplam_atolye_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
             }
@@ -13119,7 +13121,7 @@ function getAtolyeCirosuDashboard() {
     } else if(serviceControler == false ){
         $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardAtolyeCirosu_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -13131,7 +13133,7 @@ function getAtolyeCirosuDashboard() {
                     var dataSet = data.resultSet;
                     var yedekParcaYS = 0;
                     $.each(dataSet, function (key, value) {
-                        yedekParcaYS =  value.YAGSATISTUTAR
+                        yedekParcaYS =  value.ATOLYECIROSUCARI
                     });
                     $("#toplam_atolye_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
                 }
@@ -13152,7 +13154,8 @@ function getGarantiCirosuDashboard() {
     if(serviceControler == true) {
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+        //data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+        data: { url:'getAfterSalesDashboardGarantiCirosu_infoAfterSales' ,
                 pk : $("#pk").val()}, 
         type: 'GET',
         dataType: 'json',
@@ -13164,7 +13167,7 @@ function getGarantiCirosuDashboard() {
                 var dataSet = data.resultSet;
                 var yedekParcaYS;
                 $.each(dataSet, function (key, value) {
-                    yedekParcaYS =  value.YAGSATISTUTAR
+                    yedekParcaYS =  value.ATOLYECIROSUGARANTI
                 });
                 $("#toplam_garanti_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
             }
@@ -13176,7 +13179,7 @@ function getGarantiCirosuDashboard() {
     } else if(serviceControler == false ){
         $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardGarantiCirosu_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -13188,7 +13191,7 @@ function getGarantiCirosuDashboard() {
                     var dataSet = data.resultSet;
                     var yedekParcaYS = 0;
                     $.each(dataSet, function (key, value) {
-                        yedekParcaYS =  value.YAGSATISTUTAR
+                        yedekParcaYS =  value.ATOLYECIROSUGARANTI
                     });
                     $("#toplam_garanti_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
                 }
@@ -13209,7 +13212,8 @@ function getDirekSatisCirosuDashboard() {
     if(serviceControler == true) {
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+        //data: { url:'getAfterSalesDashboardDirekSatisCirosuWithServices_infoAfterSales' ,
+        data: { url:'getAfterSalesDashboardDirekSatisCirosu_infoAfterSales' ,
                 pk : $("#pk").val()}, 
         type: 'GET',
         dataType: 'json',
@@ -13221,7 +13225,7 @@ function getDirekSatisCirosuDashboard() {
                 var dataSet = data.resultSet;
                 var yedekParcaYS;
                 $.each(dataSet, function (key, value) {
-                    yedekParcaYS =  value.YAGSATISTUTAR
+                    yedekParcaYS =  value.DIREKSATISTUTAR
                 });
                 $("#toplam_direk_satis_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
             }
@@ -13233,7 +13237,7 @@ function getDirekSatisCirosuDashboard() {
     } else if(serviceControler == false ){
         $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardDirekSatisCirosu_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -13245,7 +13249,7 @@ function getDirekSatisCirosuDashboard() {
                     var dataSet = data.resultSet;
                     var yedekParcaYS = 0;
                     $.each(dataSet, function (key, value) {
-                        yedekParcaYS =  value.YAGSATISTUTAR
+                        yedekParcaYS =  value.DIREKSATISTUTAR
                     });
                     $("#toplam_direk_satis_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
                 }
