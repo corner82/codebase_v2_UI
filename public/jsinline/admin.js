@@ -7385,7 +7385,9 @@ function getYedekParcaYSWeeklyWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        var d =  value.YAGSATISTUTAR;
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseInt(d));
                         graphDataAll.push(graphData);
                     });
                     console.log(graphDataAll);
@@ -7414,14 +7416,15 @@ function getYedekParcaYSWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                //text: window.lang.translate('piece')
+                                text : 'YTL'
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Spare parts oil sales')+': <b>{point.y:,.2f} </b>'
+                            pointFormat: ''+window.lang.translate('Spare parts oil sales')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             name: 'Population',
@@ -7431,7 +7434,7 @@ function getYedekParcaYSWeeklyWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -7590,7 +7593,9 @@ function getYedekParcaYSAylikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        var d =  value.YAGSATISTUTAR;
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseInt(d));
                         graphDataAll.push(graphData);
                     });
                     
@@ -7618,14 +7623,15 @@ function getYedekParcaYSAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                //text: window.lang.translate('1K')
+                                text : 'YTL'
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Spare parts oil sales')+': <b>{point.y:,.2f} </b>'
+                            pointFormat: ''+window.lang.translate('Spare parts oil sales')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             name: 'Population',
@@ -7635,7 +7641,7 @@ function getYedekParcaYSAylikWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -7793,15 +7799,9 @@ function getYedekParcaYSYillikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.YIL+'/'+value.AY);
-                        //var arr = value.ARAC_GIRIS.split(',');
-                        /*if(arr.length == 3) {
-                            var tutar = null;
-                            tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseInt(tutar));
-                        } else{
-                            graphData.push(parseInt(value.YAGSATISTUTAR));
-                        }*/
-                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        var d =  value.YAGSATISTUTAR;
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseInt(d));
                         graphDataAll.push(graphData);
                     });
 
@@ -7829,7 +7829,8 @@ function getYedekParcaYSYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                //text: window.lang.translate('1K')
+                                text : 'YTL'
                             }
                         },
                         legend: {
@@ -7840,14 +7841,14 @@ function getYedekParcaYSYillikWithoutServices() {
                             pointFormat: '{series.name}: {point.y:,.2f}<br/>'
                         },
                         series: [{
-                            name: window.lang.translate('Spare parts total sales'),
+                            name: window.lang.translate('Spare parts oil sales'),
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
