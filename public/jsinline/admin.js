@@ -1328,7 +1328,7 @@ $('#hidden_direk_satis_cirosu_year').click(function()
         if(serviceControler == true) {
             getDirekSatisCirosuYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDirekSatisCirosuAylikWithoutServices();
+            getDirekSatisCirosuYillikWithoutServices();
         } 
     }   
 });
@@ -8634,7 +8634,9 @@ function getGarantiCirosuWeeklyWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseFloat(value.ATOLYECIROSUGARANTI));
+                        var d =  value.ATOLYECIROSUGARANTI
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
                     //console.log(graphDataAll);
@@ -8663,7 +8665,8 @@ function getGarantiCirosuWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                //text: window.lang.translate('1K')
+                                text : 'YTL'
                             }
                         },
                         legend: {
@@ -8673,14 +8676,14 @@ function getGarantiCirosuWeeklyWithoutServices() {
                             pointFormat: ''+window.lang.translate('Garanti cirosu')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
-                            name: 'Population',
+                            //name: 'Population',
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -8820,7 +8823,7 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
 function getGarantiCirosuAylikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSAylik_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayGarantiCirosuAylik_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -8833,7 +8836,9 @@ function getGarantiCirosuAylikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        var d =  value.ATOLYECIROSUGARANTI
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
                     
@@ -8861,24 +8866,24 @@ function getGarantiCirosuAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Garanti cirosu')+': <b>{point.y:,.2f} </b>'
+                            pointFormat: ''+window.lang.translate('Garanti cirosu')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
-                            name: 'Population',
+                            //name: 'Population',
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -9017,7 +9022,7 @@ function getGarantiCirosuAylikWithServices(multiSelectedRoles) {
 function getGarantiCirosuYillikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSYillik_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayGarantiCirosuYillik_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -9029,15 +9034,9 @@ function getGarantiCirosuYillikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.YIL+'/'+value.AY);
-                        //var arr = value.ARAC_GIRIS.split(',');
-                        /*if(arr.length == 3) {
-                            var tutar = null;
-                            tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseInt(tutar));
-                        } else{
-                            graphData.push(parseInt(value.YAGSATISTUTAR));
-                        }*/
-                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        var d =  value.ATOLYECIROSUGARANTI
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
 
@@ -9065,7 +9064,7 @@ function getGarantiCirosuYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -9073,7 +9072,7 @@ function getGarantiCirosuYillikWithoutServices() {
                         },
                         tooltip: {
                             //headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'
                         },
                         series: [{
                             name: window.lang.translate('Garanti cirosu'),
@@ -9083,7 +9082,7 @@ function getGarantiCirosuYillikWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -9238,7 +9237,9 @@ function getDirekSatisCirosuWeeklyWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.DIREKSATISTUTAR));
+                        var d =  value.DIREKSATISTUTAR
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
                     //console.log(graphDataAll);
@@ -9267,7 +9268,7 @@ function getDirekSatisCirosuWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -9277,14 +9278,14 @@ function getDirekSatisCirosuWeeklyWithoutServices() {
                             pointFormat: ''+window.lang.translate('Direk satış cirosu')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
-                            name: 'Population',
+                            //name: 'Population',
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -9423,7 +9424,7 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
 function getDirekSatisCirosuAylikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSAylik_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayDirekSatisCirosuAylik_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -9436,7 +9437,9 @@ function getDirekSatisCirosuAylikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        var d =  value.DIREKSATISTUTAR
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
                     
@@ -9464,24 +9467,24 @@ function getDirekSatisCirosuAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Direk satış cirosu')+': <b>{point.y:,.2f} </b>'
+                            pointFormat: ''+window.lang.translate('Direk satış cirosu')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
-                            name: 'Population',
+                            //name: 'Population',
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -9620,7 +9623,7 @@ function getDirekSatisCirosuAylikWithServices(multiSelectedRoles) {
 function getDirekSatisCirosuYillikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSYillik_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayDirekSatisCirosuYillik_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -9632,15 +9635,9 @@ function getDirekSatisCirosuYillikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.YIL+'/'+value.AY);
-                        //var arr = value.ARAC_GIRIS.split(',');
-                        /*if(arr.length == 3) {
-                            var tutar = null;
-                            tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseInt(tutar));
-                        } else{
-                            graphData.push(parseInt(value.YAGSATISTUTAR));
-                        }*/
-                        graphData.push(parseInt(value.YAGSATISTUTAR));
+                        var d =  value.DIREKSATISTUTAR
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
 
@@ -9668,7 +9665,7 @@ function getDirekSatisCirosuYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -9676,7 +9673,7 @@ function getDirekSatisCirosuYillikWithoutServices() {
                         },
                         tooltip: {
                             //headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'
                         },
                         series: [{
                             name: window.lang.translate('Direk satış cirosu'),
@@ -9686,7 +9683,7 @@ function getDirekSatisCirosuYillikWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
