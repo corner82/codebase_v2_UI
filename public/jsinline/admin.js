@@ -7482,14 +7482,17 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                         }
                         
                         if(counter == 1) {
-                            //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YAGSATISTUTAR;
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YAGSATISTUTAR;
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7498,7 +7501,9 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YAGSATISTUTAR;
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -7513,7 +7518,8 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Spare parts oil sales')
+                            //text: window.lang.translate('Spare parts oil sales')
+                            text : 'YTL'
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -7545,7 +7551,7 @@ function getYedekParcaYSWeeklyWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Spare parts oil sales')+': {point.stackTotal}'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Spare parts oil sales')+': {point.stackTotal:,.0f}'
                         },
                         plotOptions: {
                             column: {
@@ -7682,11 +7688,15 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YAGSATISTUTAR;
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YAGSATISTUTAR;
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7696,7 +7706,9 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YAGSATISTUTAR;
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -7719,7 +7731,8 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                //text: window.lang.translate('piece')
+                                text : 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -7742,7 +7755,7 @@ function getYedekParcaYSAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -7888,11 +7901,15 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                             //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YAGSATISTUTAR;
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YAGSATISTUTAR;
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7901,7 +7918,9 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YAGSATISTUTAR;
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -7915,7 +7934,7 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Spare parts total sales')
+                            text: window.lang.translate('Spare parts oil sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -7924,7 +7943,8 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                //text: window.lang.translate('piece')
+                                text : 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
