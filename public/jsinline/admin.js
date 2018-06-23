@@ -8736,12 +8736,15 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            
-                            serviceData.push(parseFloat(value.ATOLYECIROSUGARANTI));
+                            var d =  value.ATOLYECIROSUGARANTI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseFloat(value.ATOLYECIROSUGARANTI));
+                            var d =  value.ATOLYECIROSUGARANTI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -8750,7 +8753,9 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseFloat(value.ATOLYECIROSUGARANTI));
+                            var d =  value.ATOLYECIROSUGARANTI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -8774,7 +8779,7 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -8797,7 +8802,7 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Garanti cirosu')+': {point.stackTotal}'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Garanti cirosu')+': {point.stackTotal:,.0f}'
                         },
                         plotOptions: {
                             column: {
@@ -8905,7 +8910,7 @@ function getGarantiCirosuAylikWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSAylikWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayGarantiCirosuAylikWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services}, 
             type: 'GET',
@@ -8936,11 +8941,15 @@ function getGarantiCirosuAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.ATOLYECIROSUGARANTI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.ATOLYECIROSUGARANTI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -8950,7 +8959,9 @@ function getGarantiCirosuAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.ATOLYECIROSUGARANTI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -8973,7 +8984,7 @@ function getGarantiCirosuAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -8996,7 +9007,7 @@ function getGarantiCirosuAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -9132,15 +9143,17 @@ function getGarantiCirosuYillikWithServices(multiSelectedRoles) {
                         }
                         
                         if(counter == 1) {
-                            console.log('servis id null');
-                            //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.ATOLYECIROSUGARANTI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.ATOLYECIROSUGARANTI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -9149,7 +9162,9 @@ function getGarantiCirosuYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.ATOLYECIROSUGARANTI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -9172,7 +9187,7 @@ function getGarantiCirosuYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -9195,7 +9210,7 @@ function getGarantiCirosuYillikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -9338,11 +9353,15 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseFloat(value.DIREKSATISTUTAR));
+                            var d =  value.DIREKSATISTUTAR
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseFloat(value.DIREKSATISTUTAR));
+                            var d =  value.DIREKSATISTUTAR
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -9351,7 +9370,9 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseFloat(value.DIREKSATISTUTAR));
+                            var d =  value.DIREKSATISTUTAR
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -9375,7 +9396,7 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -9398,7 +9419,7 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Direk satış cirosu')+': {point.stackTotal}'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Direk satış cirosu')+': {point.stackTotal:,.0f}'
                         },
                         plotOptions: {
                             column: {
@@ -9506,7 +9527,7 @@ function getDirekSatisCirosuAylikWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSAylikWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayDirekSatisCirosuAylikWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services}, 
             type: 'GET',
@@ -9537,11 +9558,15 @@ function getDirekSatisCirosuAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.DIREKSATISTUTAR
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.DIREKSATISTUTAR
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -9551,7 +9576,9 @@ function getDirekSatisCirosuAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.DIREKSATISTUTAR
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -9574,7 +9601,7 @@ function getDirekSatisCirosuAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -9597,7 +9624,7 @@ function getDirekSatisCirosuAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -9705,7 +9732,7 @@ function getDirekSatisCirosuYillikWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaYSYillikWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayDirekSatisCirosuYillikWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services }, 
             type: 'GET',
@@ -9733,17 +9760,15 @@ function getDirekSatisCirosuYillikWithServices(multiSelectedRoles) {
                         }
                         
                         if(counter == 1) {
-                            console.log('servis id null');
-                            //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            var d =  value.ATOLYECIROSUCARI
+                            var d =  value.DIREKSATISTUTAR
                             d = d.replace(/,/g, "");
                             serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            var d =  value.ATOLYECIROSUCARI
+                            var d =  value.DIREKSATISTUTAR
                             d = d.replace(/,/g, "");
                             serviceData.push(parseFloat(d));
                             instance.data = serviceData;
@@ -9754,7 +9779,7 @@ function getDirekSatisCirosuYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            var d =  value.ATOLYECIROSUCARI
+                            var d =  value.DIREKSATISTUTAR
                             d = d.replace(/,/g, "");
                             serviceData.push(parseFloat(d));
                         }
@@ -9779,7 +9804,7 @@ function getDirekSatisCirosuYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
