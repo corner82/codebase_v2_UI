@@ -7898,8 +7898,6 @@ function getYedekParcaYSYillikWithServices(multiSelectedRoles) {
                         }
                         
                         if(counter == 1) {
-                            console.log('servis id null');
-                            //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
                             var d =  value.YAGSATISTUTAR;
@@ -8118,7 +8116,9 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseFloat(value.ATOLYECIROSUCARI));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -8127,7 +8127,6 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-
                             var d =  value.ATOLYECIROSUCARI
                             d = d.replace(/,/g, "");
                             serviceData.push(parseFloat(d));
@@ -8140,13 +8139,13 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                     //console.log(categ);
                     
                     //chart1.destroy();
-                    var chart1 = Highcharts.chart('container_hidden_block4', {
+                    var chart1 = Highcharts.chart('container_hidden_atolye_cirosu', {
                         chart: {
                             type: 'column',
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Spare parts oil sales')
+                            text: window.lang.translate('Atölye Cirosu')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -8181,7 +8180,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Spare parts total sales')+': {point.stackTotal}'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Atölye Cirosu')+': {point.stackTotal:,.0f}'
                         },
                         plotOptions: {
                             column: {
@@ -8195,7 +8194,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                         series: 
                         series
                     });
-                    $("#panel_hidden4").loadImager('removeLoadImage');
+                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -8286,7 +8285,7 @@ function getAtolyeCirosuAylikWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaTSAylikWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayAtolyeCirosuAylikWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services}, 
             type: 'GET',
@@ -8317,11 +8316,15 @@ function getAtolyeCirosuAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -8331,7 +8334,9 @@ function getAtolyeCirosuAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -8354,7 +8359,8 @@ function getAtolyeCirosuAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                //text: window.lang.translate('1K')
+                                text : 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -8377,7 +8383,7 @@ function getAtolyeCirosuAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -8519,15 +8525,17 @@ function getAtolyeCirosuYillikWithServices(multiSelectedRoles) {
                         }
                         
                         if(counter == 1) {
-                            console.log('servis id null');
-                            //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -8536,7 +8544,9 @@ function getAtolyeCirosuYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -8559,7 +8569,8 @@ function getAtolyeCirosuYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                //text: window.lang.translate('1K')
+                                text : 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -8582,7 +8593,7 @@ function getAtolyeCirosuYillikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -9731,11 +9742,15 @@ function getDirekSatisCirosuYillikWithServices(multiSelectedRoles) {
                             //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -9744,7 +9759,9 @@ function getDirekSatisCirosuYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.YAGSATISTUTAR));
+                            var d =  value.ATOLYECIROSUCARI
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -9790,7 +9807,7 @@ function getDirekSatisCirosuYillikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
+                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
