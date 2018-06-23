@@ -8020,7 +8020,7 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: 'Cirolar Toplamı'
+                            text: 'Atölye Cirosu'
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -8038,7 +8038,8 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                //text: window.lang.translate('1K')
+                                text : 'YTL'
                             }
                         },
                         legend: {
@@ -8056,7 +8057,7 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -8065,7 +8066,7 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                             }
                         }]
                     });
-                    $("#panel_hidden4").loadImager('removeLoadImage');
+                    $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -8203,10 +8204,10 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
         });
 }
     
-function getCiroAylikWithoutServices() {
+function getAtolyeCirosuAylikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaTSAylik_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayAtolyeCirosuAylik_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -8218,7 +8219,9 @@ function getCiroAylikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        var d =  value.ATOLYECIROSUCARI
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
                     
@@ -8246,14 +8249,15 @@ function getCiroAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                //text: window.lang.translate('1K')
+                                text : 'YTL'
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Atölye cirosu')+': <b>{point.y:,.2f} </b>'
+                            pointFormat: ''+window.lang.translate('Atölye cirosu')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             name: 'Population',
@@ -8263,7 +8267,7 @@ function getCiroAylikWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -8409,7 +8413,7 @@ function getAtolyeCirosuAylikWithServices(multiSelectedRoles) {
 function getAtolyeCirosuYillikWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayYedekParcaTSYillik_infoAfterSales' ,
+            data: { url:'getAfterSalesDetayAtolyeCirosuYillik_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -8421,15 +8425,9 @@ function getAtolyeCirosuYillikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.YIL+'/'+value.AY);
-                        /*var arr = value.ARAC_GIRIS.split(',');
-                        if(arr.length == 3) {
-                            var tutar = null;
-                            tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseInt(tutar));
-                        } else{
-                            graphData.push(parseInt(value.ARAC_GIRIS));
-                        }*/
-                        graphData.push(parseInt(value.YEDEKPARCATOPLAMSATIS));
+                        var d =  value.ATOLYECIROSUCARI
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
 
@@ -8457,7 +8455,7 @@ function getAtolyeCirosuYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -8465,7 +8463,7 @@ function getAtolyeCirosuYillikWithoutServices() {
                         },
                         tooltip: {
                             //headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'
                         },
                         series: [{
                             name: window.lang.translate('Atölye cirosu'),
@@ -8475,7 +8473,7 @@ function getAtolyeCirosuYillikWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
