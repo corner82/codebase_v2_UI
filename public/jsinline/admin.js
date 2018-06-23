@@ -6860,11 +6860,15 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YEDEKPARCATOPLAMSATIS
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YEDEKPARCATOPLAMSATIS
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -6873,7 +6877,9 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YEDEKPARCATOPLAMSATIS
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -6897,7 +6903,8 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                //text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -6920,7 +6927,7 @@ function getYedekParcaTSWeeklyWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('Spare parts total sales')+': {point.stackTotal}'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Spare parts total sales')+': {point.stackTotal:,.0f}'
                         },
                         plotOptions: {
                             column: {
@@ -7061,11 +7068,15 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YEDEKPARCATOPLAMSATIS
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YEDEKPARCATOPLAMSATIS
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7075,7 +7086,9 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YEDEKPARCATOPLAMSATIS
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -7098,7 +7111,8 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                //text: window.lang.translate('piece')
+                                text : 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -7121,7 +7135,7 @@ function getYedekParcaTSAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
                         },
                         plotOptions: {
                             column: {
@@ -7259,15 +7273,18 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                         }
                         
                         if(counter == 1) {
-                            console.log('servis id null');
                             //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YEDEKPARCATOPLAMSATIS
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YEDEKPARCATOPLAMSATIS
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -7276,7 +7293,9 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.ARAC_GIRIS));
+                            var d =  value.YEDEKPARCATOPLAMSATIS
+                            d = d.replace(/,/g, "");
+                            serviceData.push(parseFloat(d));
                         }
                         counter++;
                     });
@@ -7299,7 +7318,8 @@ function getYedekParcaTSYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                //text: window.lang.translate('piece')
+                                text : 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
