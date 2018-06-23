@@ -6959,8 +6959,11 @@ function getYedekParcaTSAylikWithoutServices() {
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.ARAC_GIRIS));
+                        var d =  value.YEDEKPARCATOPLAMSATIS
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
+                        
                     });
                     
                     chart2 = Highcharts.chart('container_hidden_yedek_parca_toplam_satis', {
@@ -6987,14 +6990,15 @@ function getYedekParcaTSAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                //text: window.lang.translate('piece')
+                                text : 'YTL'
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Spare parts total sales')+': <b>{point.y:,.2f} '+window.lang.translate('piece')+'</b>'
+                            pointFormat: ''+window.lang.translate('Spare parts total sales')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             name: 'Population',
@@ -7004,7 +7008,7 @@ function getYedekParcaTSAylikWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -7153,19 +7157,15 @@ function getYedekParcaTSYillikWithoutServices() {
                 if(data!=null) {
                     var graphDataAll = [];
                     $.each(data.resultSet, function(key, value) {
+                        
                         var graphData = [];
-                        graphData.push(value.YIL+'/'+value.TARIH);
-                        var arr = value.ARAC_GIRIS.split(',');
-                        if(arr.length == 3) {
-                            var tutar = null;
-                            tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseInt(tutar));
-                        } else{
-                            graphData.push(parseInt(value.ARAC_GIRIS));
-                        }
+                        graphData.push(value.YIL+'/'+value.AY);
+                        var d =  value.YEDEKPARCATOPLAMSATIS
+                        d = d.replace(/,/g, "");
+                        graphData.push(parseFloat(d));
                         graphDataAll.push(graphData);
                     });
-
+                    
                     chart2 = Highcharts.chart('container_hidden_yedek_parca_toplam_satis', {
                         chart: {
                             type: 'column',
@@ -7185,12 +7185,13 @@ function getYedekParcaTSYillikWithoutServices() {
                                     fontSize: '13px',
                                     fontFamily: 'Verdana, sans-serif'
                                 }
-                            }
+                            },
                         },
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                //text: window.lang.translate('piece')
+                                text : 'YTL'
                             }
                         },
                         legend: {
@@ -7198,7 +7199,7 @@ function getYedekParcaTSYillikWithoutServices() {
                         },
                         tooltip: {
                             //headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.2f}<br/>'+window.lang.translate('piece')+''
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'
                         },
                         series: [{
                             name: window.lang.translate('Spare parts total sales'),
@@ -7208,7 +7209,7 @@ function getYedekParcaTSYillikWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.0f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
