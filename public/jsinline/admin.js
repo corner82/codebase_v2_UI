@@ -11379,6 +11379,7 @@ function getMMCXIYillikWithoutServices() {
             type: 'GET',
             dataType: 'json',
             language_id:647,
+            async : false,
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
@@ -11501,6 +11502,7 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
             type: 'GET',
             dataType: 'json',
             language_id:647,
+            async : false,
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
