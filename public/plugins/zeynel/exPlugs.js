@@ -52,6 +52,7 @@
         var opts = $.extend({}, $.fn.headerSetterAfterSales.defaults, options);
         return this.each(function () {
             $this = $(this);
+            //console.log('explug değer-->'+data.A);
             if (typeof data != 'undefined') {
                 $this.find('div:first h3:first-child').html($.number(data.A)+' &#x20BA');
                 //$.number( 5020.2364 )
@@ -59,6 +60,21 @@
             }
         });
     };
+    
+    $.fn.headerSetterAfterSalesStocksNew = function (data, options) {
+        var data = data;
+        var opts = $.extend({}, $.fn.headerSetterAfterSales.defaults, options);
+        return this.each(function () {
+            $this = $(this);
+            console.log('explug değer-->'+data.A);
+            if (typeof data != 'undefined') {
+                $this.find('div:first h3:first-child').html($.number(data.A)+' &#x20BA');
+                //$.number( 5020.2364 )
+                //$this.find('p:first').html(data.ACIKLAMA);
+            }
+        });
+    };
+    
     $.fn.headerSetterAfterSalesYedekParcaDashboard = function (data, options) {
         var data = data;
         var opts = $.extend({}, $.fn.headerSetterAfterSales.defaults, options);
@@ -105,6 +121,20 @@
     $.fn.headerSetterAfterSalesInvoices.defaults = {
         class: 'test',
         background: 'yellow'
+    };
+    
+     $.fn.headerSetterAfterSalesInvoicesNew = function (data, options) {
+        var opts = $.extend({}, $.fn.headerSetterAfterSalesInvoices.defaults, options);
+        var data = data;
+        return this.each(function () {
+            $this = $(this);
+            if (typeof data != 'undefined') {
+                $this.find('h3:first').remove();
+                if(data.A == null) data.A = 0;
+                $this.find('span:first ').html(data.A+' &#x20BA');
+                //$this.find('span:last').html(data.ACIKLAMA);
+            }
+        });
     };
     
     $.fn.headerSetterAfterSalesCiro = function (data, options) {

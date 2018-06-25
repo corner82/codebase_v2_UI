@@ -309,6 +309,80 @@ Array.prototype.unique = function() {
 }
 
 
+// servis seçimlerine göre dashboard hesplamalarını yapan event
+$('#servisDashboardHesapla').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        alert('servis seçili');
+        
+        // son iş emirleri dashboard
+        getSonIsEmirleriDashboard();
+
+        // araç girişleri dashboard
+        getAracGirisleriDashboard();
+
+        // Sales  dashboard data (#container)
+        getSalesDashboard();
+
+        // afterSales iş emirleri  dashboard data (#container)
+        getAfterSalesIsEmirleriDashboard();
+
+        //afterSales  faturalar  dashboard data (#container_toplam_fatura)
+        getAfterSalesFaturalarDashboard();
+
+        // afterSales  ciro, yedek parça,toplam müşteri  dashboard data (#container_toplam_ciro)
+        //getMusteriCiroDashboard();
+
+        // stoklar dashboard data
+        getStoklarDashboard(); 
+
+        // downtime dashboard data
+        getDownTimeDashboard();
+
+        // yedek parca toplam satış dashboard data
+        getYedekParcaToplamSatisDashboard();
+
+        // yedek parca yag satış dashboard data
+        getYedekParcaYagSatisDashboard();
+
+        // yedek parca yag satış dashboard data
+        getAtolyeCirosuDashboard();
+        getGarantiCirosuDashboard();
+        getDirekSatisCirosuDashboard();
+
+        // verimlilik gauge dashboard data
+        //getVerimlilikDashboard();
+
+        // kapasite gauge dashboard data
+        //getKapasiteDashboard();
+
+        // etkinlik gauge dashboard data
+        //getEtkinlikDashboard();
+
+        // müşteri memnuniyeti(CSI) dashboard data 
+        getMMCSIDashboard();
+
+        // müşteri memnuniyeti(CXI) dashboard data 
+        getMMCXIDashboard();
+        
+        
+    } else if(serviceControler == false ){
+        dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+        dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  'Lütfen servis seçiniz...');
+    }
+   
+});
+
+
 // detay bloc 1
  var hidden_block1_controller;
 // acılan faturalar detay graph click event
@@ -11745,8 +11819,46 @@ function getSonIsEmirleriDashboard() {
 }
 
 // Araç girişleri dashboard
-function getAracGirisleriDashboard() {  
-$.ajax({
+function getAracGirisleriDashboard() {
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardAracGirisSayilariWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                //console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+                    var dataSet = data.resultSet;
+                    $.each(dataSet, function ($key, $value) {
+                        //console.log($key+'--'+$value);
+                        //console.log($value.ACIKLAMA);
+                        if($value.A) {
+                            if($value.A == null || $value.A == '') {
+                                $value.A = 0;
+                            }
+                        } else {
+                            $value.A = 0;
+                        }
+                        $("#toplam_header_arac_giris_sayilari_container").headerSetterAfterSales($value);
+                    })
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(errorThrown);
+            }
+        });
+    } else if(serviceControler == false) {
+        $.ajax({
     url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
     data: { url:'getAfterSalesDashboardAracGirisSayilari_infoAfterSales' ,
             pk : $("#pk").val()}, 
@@ -11776,6 +11888,9 @@ $.ajax({
         console.error(errorThrown);
     }
 });
+    }
+    
+
 }
 
 // Sales  dashboard data
@@ -11886,8 +12001,48 @@ $.ajax({
 }
 
 // AfterSales  faturalar  dashboard data (#container_toplam_fatura)
-function getAfterSalesFaturalarDashboard() {    
-$.ajax({
+function getAfterSalesFaturalarDashboard() {  
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
+        $.ajax({
+    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'getAfterSalesDashboardFaturaDataWithServices_infoAfterSales' ,
+            pk : $("#pk").val(),
+            src : services}, 
+    type: 'GET',
+    dataType: 'json',
+    language_id:647,
+    //data: 'rowIndex='+rowData.id,
+    success: function (data, textStatus, jqXHR) {
+        //console.log(data.resultSet);
+        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+            var dataSet = data.resultSet;
+            $.each(dataSet, function ($key, $value) {
+                //console.log($key+'--'+$value);
+                //console.log($value.ACIKLAMA);
+                if($value.CONTROLER == 1) {
+                    $("#toplam_fatura_1_container").headerSetterAfterSalesInvoicesNew($value);
+                } else if($value.CONTROLER == 2){
+                    $("#toplam_fatura_2_container").headerSetterAfterSalesInvoicesNew($value);
+                } else if($value.CONTROLER == 3){
+                    $("#toplam_fatura_3_container").headerSetterAfterSalesInvoicesNew($value);
+                } else if($value.CONTROLER == 4) {
+                    $("#toplam_fatura_4_container").headerSetterAfterSalesInvoicesNew($value);
+                }
+            })
+        }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.error(errorThrown);
+    }
+});
+        
+    } else  if(serviceControler == false) {
+        $.ajax({
     url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
     data: { url:'getAfterSalesDashboardFaturaData_infoAfterSales' ,
             pk : $("#pk").val()}, 
@@ -11903,13 +12058,13 @@ $.ajax({
                 //console.log($key+'--'+$value);
                 //console.log($value.ACIKLAMA);
                 if($value.CONTROLER == 1) {
-                    $("#toplam_fatura_1_container").headerSetterAfterSalesInvoices($value);
+                    $("#toplam_fatura_1_container").headerSetterAfterSalesInvoicesNew($value);
                 } else if($value.CONTROLER == 2){
-                    $("#toplam_fatura_2_container").headerSetterAfterSalesInvoices($value);
+                    $("#toplam_fatura_2_container").headerSetterAfterSalesInvoicesNew($value);
                 } else if($value.CONTROLER == 3){
-                    $("#toplam_fatura_3_container").headerSetterAfterSalesInvoices($value);
+                    $("#toplam_fatura_3_container").headerSetterAfterSalesInvoicesNew($value);
                 } else if($value.CONTROLER == 4) {
-                    $("#toplam_fatura_4_container").headerSetterAfterSalesInvoices($value);
+                    $("#toplam_fatura_4_container").headerSetterAfterSalesInvoicesNew($value);
                 }
             })
         }
@@ -11918,11 +12073,54 @@ $.ajax({
         console.error(errorThrown);
     }
 });
+    }
+    
+    
+    
+
 }
 
 // afterSales iş emirleri  dashboard data (#container)
-function getAfterSalesIsEmirleriDashboard() {   
-$.ajax({
+function getAfterSalesIsEmirleriDashboard() {  
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
+        $.ajax({
+    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'getAfterSalesDashboardIsEmriDataWithServices_infoAfterSales' ,
+            pk : $("#pk").val(),
+            src : services}, 
+    type: 'GET',
+    dataType: 'json',
+    language_id:647,
+    //data: 'rowIndex='+rowData.id,
+    success: function (data, textStatus, jqXHR) {
+        //console.log(data.resultSet);
+        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+            var dataSet = data.resultSet;
+            $.each(dataSet, function ($key, $value) {
+                //console.log($key+'--'+$value);
+                //console.log($value.ACIKLAMA);
+                if($value.CONTROLER == 1) {
+                    $("#toplam_header_1_container").headerSetterAfterSales($value);
+                } else if($value.CONTROLER == 2){
+                    $("#toplam_header_2_container").headerSetterAfterSales($value);
+                } else if($value.CONTROLER == 3){
+                    $("#toplam_header_3_container").headerSetterAfterSales($value);
+                }
+            })
+        }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+        console.error(errorThrown);
+    }
+});
+        
+    } else if(serviceControler == false) {
+        $.ajax({
     url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
     data: { url:'getAfterSalesDashboardIsEmriData_infoAfterSales' ,
             pk : $("#pk").val()}, 
@@ -11951,6 +12149,8 @@ $.ajax({
         console.error(errorThrown);
     }
 });
+    }
+
 }
 
 // afterSales  ciro, yedek parça,toplam müşteri  dashboard data (#container_toplam_ciro)
@@ -12014,10 +12214,12 @@ function getStoklarDashboard() {
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
     if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
         $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             data: { url:'getAfterSalesDashboardStoklarWithServices_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
+                    pk : $("#pk").val(),
+                    src : services}, 
             type: 'GET',
             dataType: 'json',
             language_id:647,
@@ -12033,9 +12235,9 @@ function getStoklarDashboard() {
                     var ciroYesterday;
 
                     $.each(dataSet, function ($key, $value) {
-                        //console.log($key+'--'+$value);
+                        console.log($key+'--'+$value);
                         //console.log($value.ACIKLAMA);
-                        $("#toplam_header_4_container").headerSetterAfterSalesStocks($value);
+                        $("#toplam_header_4_container").headerSetterAfterSalesStocksNew($value);
                     });
                 }
             },
@@ -12083,10 +12285,12 @@ function getDownTimeDashboard() {
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
     if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
-                pk : $("#pk").val()}, 
+        data: { url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
+                pk : $("#pk").val(),
+                src : services}, 
         type: 'GET',
         dataType: 'json',
         language_id:647,
@@ -12096,14 +12300,19 @@ function getDownTimeDashboard() {
             if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                 var dataSet = data.resultSet;
                 var downtime;
+                var counter = 0;
                 $.each(dataSet, function (key, value) {
+                    counter ++;
                     var d =  value.DOWNTIME
-                    d = d.replace(",", ".");
-                    //console.log(d);
-                    downtime+= parseInt(d);
+                        //d = d.replace(",", ".");
+                        //console.log(d);
+                        //console.log(downtime);
+                        downtime = parseFloat(downtime)+parseFloat(d);
                 });
-                //console.log(downtime);
-                $("#toplam_header_downtime_container").headerSetterAfterSalesStocks(downtime);
+                var dt = parseFloat((parseFloat(downtime)/counter)).toFixed(2);
+                console.log(downtime);
+                console.log(dt);
+                $("#toplam_header_downtime_container").headerSetterAfterSalesStocks(dt);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -12503,7 +12712,7 @@ function getKapasiteDashboard() {
     if(serviceControler == true) {
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+        data: { url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
                 pk : $("#pk").val()}, 
         type: 'GET',
         dataType: 'json',
@@ -13057,10 +13266,12 @@ function getYedekParcaToplamSatisDashboard() {
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
     if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDashboardYedekParcaTS_infoAfterSales' ,
-                pk : $("#pk").val()}, 
+        data: { url:'getAfterSalesDashboardYedekParcaTSWithServices_infoAfterSales' ,
+                pk : $("#pk").val(),
+                src : services}, 
         type: 'GET',
         dataType: 'json',
         language_id:647,
@@ -13124,10 +13335,12 @@ function getYedekParcaYagSatisDashboard() {
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
     if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
-                pk : $("#pk").val()}, 
+        data: { url:'getAfterSalesDashboardYedekParcaYSWithServices_infoAfterSales' ,
+                pk : $("#pk").val(),
+                src : services}, 
         type: 'GET',
         dataType: 'json',
         language_id:647,
@@ -13182,11 +13395,13 @@ function getAtolyeCirosuDashboard() {
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
     if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
         //data: { url:'getAfterSalesDashboardAtolyeCirosuWithServices_infoAfterSales' ,
-        data: { url:'getAfterSalesDashboardAtolyeCirosu_infoAfterSales' ,
-                pk : $("#pk").val()}, 
+        data: { url:'getAfterSalesDashboardAtolyeCirosuWithServices_infoAfterSales' ,
+                pk : $("#pk").val(),
+                src : services}, 
         type: 'GET',
         dataType: 'json',
         language_id:647,
@@ -13198,7 +13413,10 @@ function getAtolyeCirosuDashboard() {
                 var yedekParcaYS;
                 $.each(dataSet, function (key, value) {
                     yedekParcaYS =  value.ATOLYECIROSUCARI
+                    //d = d.replace(/,/g, ".");
+                    //yedekParcaYS = yedekParcaYS + parseFloat(d);
                 });
+                console.log(yedekParcaYS);
                 $("#toplam_atolye_cirosu_container").headerSetterAfterSalesYedekParcaDashboard(yedekParcaYS);
             }
         },
@@ -13240,11 +13458,13 @@ function getGarantiCirosuDashboard() {
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
     if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
         //data: { url:'getAfterSalesDashboardYedekParcaYS_infoAfterSales' ,
-        data: { url:'getAfterSalesDashboardGarantiCirosu_infoAfterSales' ,
-                pk : $("#pk").val()}, 
+        data: { url:'getAfterSalesDashboardGarantiCirosuWithServices_infoAfterSales' ,
+                pk : $("#pk").val(),
+                src : services}, 
         type: 'GET',
         dataType: 'json',
         language_id:647,
@@ -13297,12 +13517,16 @@ function getDirekSatisCirosuDashboard() {
     var multiSelectedRoles = getServiceDropdownSelectedItems();
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
+    
+    
     if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
         //data: { url:'getAfterSalesDashboardDirekSatisCirosuWithServices_infoAfterSales' ,
-        data: { url:'getAfterSalesDashboardDirekSatisCirosu_infoAfterSales' ,
-                pk : $("#pk").val()}, 
+        data: { url:'getAfterSalesDashboardDirekSatisCirosuWithServices_infoAfterSales' ,
+                pk : $("#pk").val(),
+                src : services}, 
         type: 'GET',
         dataType: 'json',
         language_id:647,
