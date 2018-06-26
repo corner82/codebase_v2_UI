@@ -99,9 +99,8 @@ $('#detay_stok').click(function()
         } else if(serviceControler == false ){
             getDetayGridDowntime();
         }
-    }
-     
-         
+    }  
+        
 });
 
 
@@ -328,6 +327,7 @@ function getDetayGridDowntime() {
             dataType: 'json',
             "data": {
                 url : 'getAfterSalesYedekParcaPDFServissiz_infoAfterSales',
+                //url : 'getAfterSalesDetayGridDowntime_infoAfterSales',
                 pk: $('#pk').val(),
             },
            complete: function() {
