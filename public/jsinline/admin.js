@@ -317,7 +317,57 @@ $('#servisDashboardHesapla').click(function()
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
     if(serviceControler == true) {
-        alert('servis seçili');
+        /*$("#panel_test").loadImager();
+        $("#panel_test").loadImager('appendImage');*/
+      $("#toplam_fatura_1_container").prepend(' <h3 id="" ><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      $("#toplam_fatura_1_container").find('span:first ').html('');
+      
+      $("#toplam_fatura_2_container").prepend(' <h3 id="" ><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      $("#toplam_fatura_2_container").find('span:first ').html('');
+      
+      
+      $("#toplam_fatura_3_container").prepend(' <h3 id="" ><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      $("#toplam_fatura_3_container").find('span:first ').html('');
+      
+      $("#toplam_fatura_4_container").prepend(' <h3 id="" ><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      $("#toplam_fatura_4_container").find('span:first ').html('');
+      
+      $("#toplam_header_1_container").find('div:first h3:first-child').html('');
+      $("#toplam_header_1_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      //$("#toplam_header_1_container").find('span:first ').html('');
+      
+      $("#toplam_header_2_container").find('div:first h3:first-child').html('');
+      $("#toplam_header_2_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+      $("#toplam_header_3_container").find('div:first h3:first-child').html('');
+      $("#toplam_header_3_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+      $("#toplam_header_4_container").find('div:first h3:first-child').html('');
+      $("#toplam_header_4_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+      $("#toplam_header_arac_giris_sayilari_container").find('div:first h3:first-child').html('');
+      $("#toplam_header_arac_giris_sayilari_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+      $("#toplam_header_downtime_container").find('div:first h3:first-child').html('');
+      $("#toplam_header_downtime_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+      $("#toplam_yedek_parca_toplam_satis_container").find('div:first h3:first-child').html('');
+      $("#toplam_yedek_parca_toplam_satis_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+      $("#toplam_yedek_parca_toplam_yag_satis_container").find('div:first h3:first-child').html('');
+      $("#toplam_yedek_parca_toplam_yag_satis_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+      $("#toplam_atolye_cirosu_container").find('div:first h3:first-child').html('');
+      $("#toplam_atolye_cirosu_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+      $("#toplam_garanti_cirosu_container").find('div:first h3:first-child').html('');
+      $("#toplam_garanti_cirosu_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+      $("#toplam_direk_satis_cirosu_container").find('div:first h3:first-child').html('');
+      $("#toplam_direk_satis_cirosu_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+      
+       //alert('servis seçili');
+        
         
         // son iş emirleri dashboard
         getSonIsEmirleriDashboard();
