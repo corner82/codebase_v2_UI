@@ -164,7 +164,7 @@ $('#detay_yag').click(function()
         if(serviceControler == true) {
             getYagWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYagWithServices();
+            getYagWithoutServices();
         }
           
     }else {
@@ -175,7 +175,7 @@ $('#detay_yag').click(function()
         if(serviceControler == true) {
             getYagWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYagWithServices();
+            getYagWithoutServices();
         }
     }
          
@@ -196,7 +196,7 @@ $('#detay_stok').click(function()
         if(serviceControler == true) {
             getStokWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getStokWithServices();
+            getStokWithoutServices();
         }
           
     }else {
@@ -206,7 +206,7 @@ $('#detay_stok').click(function()
         if(serviceControler == true) {
             getStokWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getStokWithServices();
+            getStokWithoutServices();
         }
     }     
 });
@@ -437,7 +437,7 @@ $(function () {
 function getDetayYedekParcaServisIciWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcikWithoutServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardFaalYedekParcaWithServices_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -445,7 +445,37 @@ function getDetayYedekParcaServisIciWithoutServices() {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
-
+                     $('#t1').html((data[0].KUTU2USTTOPLAM));
+                    $('#1_1').html(data[0].SERVISICIUYGUNPARCA);
+                    $('#1_2').html(data[0].SERVISICIUCRETLIUYGUNPARCA);
+                    $('#1_3').html(data[0].SERVISICIGARANTI);
+                    $('#1_4').html(data[0].KUTU1TOPLAM);
+                    $('#1_5').html(data[0].SERVISICIOEM);
+                    $('#1_6').html(data[0].SERVISICIOES);
+                    $('#1_7').html(data[0].SERVISICIESDEGER);
+                    
+                    /*$flow["SERVISICIUYGUNPARCA"],
+                    $flow["SERVISICIUCRETLIUYGUNPARCA"],
+                    $flow["SERVISICIGARANTI"],
+                    $flow["KUTU1TOPLAM"],
+                    $flow["SERVISICIOEM"],
+                    $flow["SERVISICIOES"],
+                    $flow["SERVISICIESDEGER"],*/
+                    
+                    
+                    $('#2_1').html(data[0].KUTU2USTTOPLAM);
+                    $('#2_2').html(data[0].SERVISICIYANSANAYI);
+                    $('#2_3').html(data[0].SERVISICIMYOK);
+                    $('#2_4').html(data[0].KUTU2YANTOPLAM);
+                    //$('#2_1').html(data[0].KUTU2USTTOPLAM);
+                    
+                    
+                    /*$flow["KUTU2TOPLAM"],
+                    $flow["SERVISICIYANSANAYI"],
+                    $flow["SERVISICIMYOK"],
+                    $flow["KUTU2YANTOPLAM"],*/
+                    
+                    
                     $("#panel_yedek_parca_servis_ici").loadImager('removeLoadImage');
                 }
             },
@@ -459,7 +489,7 @@ function getDetayYedekParcaServisIciWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcikWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardFaalYedekParcaWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services}, 
             type: 'GET',
@@ -468,7 +498,38 @@ function getDetayYedekParcaServisIciWithServices(multiSelectedRoles) {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
+                    $('#t1').html((data[0].KUTU2USTTOPLAM));
+                    $('#1_1').html(data[0].SERVISICIUYGUNPARCA);
+                    $('#1_2').html(data[0].SERVISICIUCRETLIUYGUNPARCA);
+                    $('#1_3').html(data[0].SERVISICIGARANTI);
+                    $('#1_4').html(data[0].KUTU1TOPLAM);
+                    $('#1_5').html(data[0].SERVISICIOEM);
+                    $('#1_6').html(data[0].SERVISICIOES);
+                    $('#1_7').html(data[0].SERVISICIESDEGER);
+                    
+                    /*$flow["SERVISICIUYGUNPARCA"],
+                    $flow["SERVISICIUCRETLIUYGUNPARCA"],
+                    $flow["SERVISICIGARANTI"],
+                    $flow["KUTU1TOPLAM"],
+                    $flow["SERVISICIOEM"],
+                    $flow["SERVISICIOES"],
+                    $flow["SERVISICIESDEGER"],*/
+                    
+                    
+                    $('#2_1').html(data[0].KUTU2USTTOPLAM);
+                    $('#2_2').html(data[0].SERVISICIYANSANAYI);
+                    $('#2_3').html(data[0].SERVISICIMYOK);
+                    $('#2_4').html(data[0].KUTU2YANTOPLAM);
+                    //$('#2_1').html(data[0].KUTU2USTTOPLAM);
+                    
+                    
+                    /*$flow["KUTU2TOPLAM"],
+                    $flow["SERVISICIYANSANAYI"],
+                    $flow["SERVISICIMYOK"],
+                    $flow["KUTU2YANTOPLAM"],*/
+                    
                     $("#panel_yedek_parca_servis_ici").loadImager('removeLoadImage');
+                    
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -480,7 +541,7 @@ function getDetayYedekParcaServisIciWithServices(multiSelectedRoles) {
 function getDetayYedekParcaServisDisiWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcikWithoutServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardFaalYedekParcaServisDisiWithServices_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -488,6 +549,29 @@ function getDetayYedekParcaServisDisiWithoutServices() {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
+                    $('#3_1').html(data[0].SERVISDISIUYGUNPARCA);
+                    $('#3_2').html(data[0].SERVISDISIUCRETLIUYGUNPARCA);
+                    $('#3_3').html(data[0].SERVISDISIGARANTI);
+                    $('#3_4').html(data[0].SERVISDISIUYGUNPARCA);
+                    $('#3_5').html(data[0].SERVISDISIUYGUNPARCA);
+                    $('#3_6').html(data[0].SERVISDISIOEM);
+                    $('#3_7').html(data[0].SERVISDISIOES);
+                    $('#3_8').html(data[0].SERVISDISIESDEGER);
+                    
+                    /*$flow["SERVISDISIUYGUNPARCA"],
+                    $flow["SERVISDISIOEM"],
+                    $flow["SERVISDISIOES"],
+                    $flow["SERVISDISIESDEGER"],*/
+                    
+                    $('#3_9').html(data[0].KUTU2USTTOPLAM);
+                    $('#3_10').html(data[0].SERVISDISIYANSANAYI);
+                    $('#3_11').html(data[0].SERVISDISIMYOK);
+                    $('#3_12').html(data[0].SERVISDISITOPLAM);
+                    $('#t2').html(data[0].SERVISDISITOPLAM);
+                    /*$flow["KUTU2USTTOPLAM"],
+                    $flow["SERVISDISIYANSANAYI"],
+                    $flow["SERVISDISIMYOK"],
+                    $flow["SERVISDISITOPLAM"],*/
                     $("#panel_yedek_parca_servis_disi").loadImager('removeLoadImage');
                 }
             },
@@ -501,7 +585,7 @@ function getDetayYedekParcaServisDisiWithServices(multiSelectedRoles) {
     var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcikWithServices_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardFaalYedekParcaServisDisiWithServices_infoAfterSales' ,
                     pk : $("#pk").val(),
                     src : services}, 
             type: 'GET',
@@ -510,6 +594,30 @@ function getDetayYedekParcaServisDisiWithServices(multiSelectedRoles) {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
+                    $('#3_1').html(data[0].SERVISDISIUYGUNPARCA);
+                    $('#3_2').html(data[0].SERVISDISIUCRETLIUYGUNPARCA);
+                    $('#3_3').html(data[0].SERVISDISIGARANTI);
+                    $('#3_4').html(data[0].SERVISDISIUYGUNPARCA);
+                    $('#3_5').html(data[0].SERVISDISIUYGUNPARCA);
+                    $('#3_6').html(data[0].SERVISDISIOEM);
+                    $('#3_7').html(data[0].SERVISDISIOES);
+                    $('#3_8').html(data[0].SERVISDISIESDEGER);
+                    
+                    /*$flow["SERVISDISIUYGUNPARCA"],
+                    $flow["SERVISDISIOEM"],
+                    $flow["SERVISDISIOES"],
+                    $flow["SERVISDISIESDEGER"],*/
+                    
+                    $('#3_9').html(data[0].KUTU2USTTOPLAM);
+                    $('#3_10').html(data[0].SERVISDISIYANSANAYI);
+                    $('#3_11').html(data[0].SERVISDISIMYOK);
+                    $('#3_12').html(data[0].SERVISDISITOPLAM);
+                    $('#t2').html(data[0].SERVISDISITOPLAM);
+                    /*$flow["KUTU2USTTOPLAM"],
+                    $flow["SERVISDISIYANSANAYI"],
+                    $flow["SERVISDISIMYOK"],
+                    $flow["SERVISDISITOPLAM"],*/
+                     
                     $("#panel_yedek_parca_servis_disi").loadImager('removeLoadImage');
                 }
             },
@@ -522,7 +630,7 @@ function getDetayYedekParcaServisDisiWithServices(multiSelectedRoles) {
 function getYagWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardFaalYagToplamWithServices_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -530,6 +638,8 @@ function getYagWithoutServices() {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
+                    $('#yag1').html(data[0].SERVISICIYAG);
+                    $('#yag2').html(data[0].SERVISDISIYAG);
                     $("#panel_yag").loadImager('removeLoadImage');
                 }
             },
@@ -539,17 +649,21 @@ function getYagWithoutServices() {
         });
 }
 
-function getYagWithServices() {
+function getYagWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
+            data: { url:'getAfterSalesDashboardFaalYagToplamWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
             type: 'GET',
             dataType: 'json',
             language_id:647,
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
+                    $('#yag1').html(data[0].SERVISICIYAG);
+                    $('#yag2').html(data[0].SERVISDISIYAG);
                     $("#panel_yag").loadImager('removeLoadImage');
                 }
             },
@@ -562,7 +676,7 @@ function getYagWithServices() {
 function getStokWithoutServices() {
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
+            data: { url:'getAfterSalesDashboardFaalStokToplamWithServices_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -570,6 +684,12 @@ function getStokWithoutServices() {
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
+                    $('#5_1').html(data[0].STOK_TOPLAM);
+                    $('#5_2').html(data[0].STOK_OES);
+                    $('#5_3').html(data[0].STOK_OEM);
+                    $('#5_4').html(data[0].STOK_ESDSANAYI);
+                    $('#5_5').html(data[0].STOK_MY);
+                    $('#5_6').html(data[0].STOK_YANSANAYI);
                     $("#panel_stok").loadImager('removeLoadImage');
                 }
             },
@@ -579,17 +699,26 @@ function getStokWithoutServices() {
         });
 }
 
-function getStokWithServices() {
+function getStokWithServices(multiSelectedRoles) {
+    var services = getServicesSelectedAsUrl(multiSelectedRoles);
     $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcilanKapanan_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
+            data: { url:'getAfterSalesDashboardFaalStokToplamWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
             type: 'GET',
             dataType: 'json',
             language_id:647,
             //data: 'rowIndex='+rowData.id,
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
+                    
+                    $('#5_1').html(data[0].STOK_TOPLAM);
+                    $('#5_2').html(data[0].STOK_OES);
+                    $('#5_3').html(data[0].STOK_OEM);
+                    $('#5_4').html(data[0].STOK_ESDSANAYI);
+                    $('#5_5').html(data[0].STOK_MY);
+                    $('#5_6').html(data[0].STOK_YANSANAYI);
                     $("#panel_stok").loadImager('removeLoadImage');
                 }
             },

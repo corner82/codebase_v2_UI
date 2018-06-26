@@ -118,7 +118,7 @@
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="cursor: pointer;" id="detay_yedek_parca" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                        <a style="cursor: pointer;" id="detay_yedek_parca" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div><!-- ./col -->
                 <div class="col-lg-4 col-xs-6">
@@ -167,7 +167,7 @@
                       <h3 class="box-title" id="panel_yedek_parca_servis_ici_title" lang="en">Servis içinde onarıma kullanılan</h3>
                       <div class="box-tools pull-right">
                         <!--<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
-                        <div class="btn-group open">
+                        <!--<div class="btn-group open">
                             <button class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                 <i class="fa fa-calendar"></i>
                             </button>
@@ -176,7 +176,7 @@
                               <li class="divider"></li>
                               <li><a id='hidden_block2_year' lang="en">Last 1 year</a></li>
                             </ul>
-                         </div>
+                         </div>-->
                         <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                       </div>
                     </div><!-- /.box-header -->
@@ -191,13 +191,13 @@
                                             <i class="fa fa-refresh fa-spin" ></i>
                                         </div>
                                     </h3>-->
-                                    <h3 class="man-header-red">0</h3>
+                                    <h3 class="man-header-red" id="1_1">0</h3>
                                     <p lang="en">Uygun parça</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-android-bus"></i>
                                 </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                                <a onclick="return false;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                             <!-- uygun parça ücretli baş.-->
                             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
@@ -205,12 +205,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text" id="1_2" >0</span>
                                       <span class="info-box-number" lang="tr">Ücretli</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -221,12 +221,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="1_3">0</span>
                                       <span class="info-box-number" lang="tr">Garanti</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -237,12 +237,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="1_4">0</span>
                                       <span class="info-box-number" lang="tr">Toplam</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -253,12 +253,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="1_5">0</span>
                                       <span class="info-box-number" lang="tr">OEM</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -269,12 +269,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="1_6">0</span>
                                       <span class="info-box-number" lang="tr">OES</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -285,7 +285,7 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="1_7">0</span>
                                       <span class="info-box-number" lang="tr">ESD</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
@@ -307,13 +307,13 @@
                                             <i class="fa fa-refresh fa-spin" ></i>
                                         </div>
                                     </h3>-->
-                                    <h3 class="man-header-red">0</h3>
+                                    <h3 class="man-header-red" id="t1">0</h3>
                                     <p lang="en">Y.S Parça</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-android-bus"></i>
                                 </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                                <a onclick="return false;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                             <!-- uygun parça ücretli baş.-->
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
@@ -321,12 +321,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Toplam rakam buaya koyulacak</span>
+                                      <span class="info-box-text " id="2_1">0</span>
+                                      <span class="info-box-number" lang="tr">Toplam </span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -339,12 +339,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="2_2">0</span>
                                       <span class="info-box-number" lang="tr">Y.SAN</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -355,12 +355,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="2_3">0</span>
                                       <span class="info-box-number" lang="tr">Y.San.My</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -371,12 +371,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="2_4">0</span>
                                       <span class="info-box-number" lang="tr">Toplam</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -420,62 +420,28 @@
                         <!-- small box -->
                             <div id="servisici_uygun_parca_container" class="small-box bg-man-ligth-grey bg-yellow" style="margin-bottom: 0px">
                                 <div class="inner">
-                                    <!--<h3 class="man-header-red"><div class="overlay" >0
-                                            <i class="fa fa-refresh fa-spin" ></i>
-                                        </div>
-                                    </h3>-->
-                                    <h3 class="man-header-red">0</h3>
+                                    <h3 class="man-header-red" id="3_1">0</h3>
                                     <p lang="en">Uygun parça</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-android-arrow-dropright-circle"></i>
                                 </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                                <a onclick="return false;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                             </div>
-                            <!-- uygun parça ücretli baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Ücretli</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça ücretli son.-->
-                            <!-- uygun parça garanti baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
-                                <div class="info-box bg-man-blue" style="margin-bottom: 0px;">
-                                    <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
-                                    <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
-
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Garanti</span>
-                                      <div class="progress" id="toplam_musteri_container_progress_bar">
-                                        <div class="progress-bar" style="width: 0%;"></div>
-                                      </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
-                                    </div><!-- /.info-box-content -->
-                                </div>
-                            </div>
-                            <!-- uygun parça garanti son.-->
+                            
+                            
                             <!-- uygun parça toplam baş.-->
-                            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
                                 <div class="info-box bg-man-blue" style="margin-left:0px;margin-bottom: 0px;">
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="3_4">0</span>
                                       <span class="info-box-number" lang="tr">Toplam</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -486,12 +452,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="3_5">0</span>
                                       <span class="info-box-number" lang="tr">OEM</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -502,12 +468,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="3_7">0</span>
                                       <span class="info-box-number" lang="tr">OES</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -518,12 +484,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="3_8">0</span>
                                       <span class="info-box-number" lang="tr">ESD</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -540,13 +506,13 @@
                                             <i class="fa fa-refresh fa-spin" ></i>
                                         </div>
                                     </h3>-->
-                                    <h3 class="man-header-red">0</h3>
+                                    <h3 class="man-header-red" id="t2"></h3>
                                     <p lang="en">Y.S Parça</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-android-arrow-dropright-circle"></i>
                                 </div>
-                                <a style="cursor: pointer;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                                <a onclick="return false;" id="detay_kapanan_is_emirleri" class="small-box-footer bg-man-grey-small-box-footer" lang="en">Details&nbsp;&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                             <!-- uygun parça ücretli baş.-->
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="padding-left: 0px;padding-right: 0px;">
@@ -554,12 +520,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">Toplam rakam buaya koyulacak</span>
+                                      <span class="info-box-text " id="3_9">0</span>
+                                      <span class="info-box-number" lang="tr">Toplam</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -572,12 +538,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="3_10">0</span>
                                       <span class="info-box-number" lang="tr">Y.SAN</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -588,12 +554,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="3_11">0</span>
                                       <span class="info-box-number" lang="tr">Y.San.My</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -604,12 +570,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="3_12">0</span>
                                       <span class="info-box-number" lang="tr">Toplam</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -657,7 +623,7 @@
                                             <i class="fa fa-refresh fa-spin" ></i>
                                         </div>
                                     </h3>-->
-                                    <h3 class="man-header-red">0</h3>
+                                    <h3 class="man-header-red" id="yag1">0</h3>
                                     <p lang="en">Servis içinde onarıma kullanılan</p>
                                 </div>
                                 <div class="icon">
@@ -678,7 +644,7 @@
                                             <i class="fa fa-refresh fa-spin" ></i>
                                         </div>
                                     </h3>-->
-                                    <h3 class="man-header-red">0</h3>
+                                    <h3 class="man-header-red" id="yag2">0</h3>
                                     <p lang="en">Servis dışına direk satılan</p>
                                 </div>
                                 <div class="icon">
@@ -729,8 +695,8 @@
                                             <i class="fa fa-refresh fa-spin" ></i>
                                         </div>
                                     </h3>-->
-                                    <h3 class="man-header-red">0</h3>
-                                    <p lang="en">Yedek stok bilgisi maliyetten (Yağ hariç)</p>
+                                    <h3 class="man-header-red" id="5_1">0</h3>
+                                    <p lang="en">Stok toplam</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-battery-charging"></i>
@@ -743,12 +709,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
+                                      <span class="info-box-text " id="5_2">0</span>
+                                      <span class="info-box-number" lang="tr">OES</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -759,12 +725,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
+                                      <span class="info-box-text " id="5_3">0</span>
                                       <span class="info-box-number" lang="tr">OEM</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -775,12 +741,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
+                                      <span class="info-box-text " id="5_4">0</span>
+                                      <span class="info-box-number" lang="tr">ESD</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -791,12 +757,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
+                                      <span class="info-box-text " id="5_5">0</span>
+                                      <span class="info-box-number" lang="tr">MY</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
@@ -807,12 +773,12 @@
                                     <!--<span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>-->
                                     <div class="info-box-content" style="margin-left:0px;" id="toplam_ciro_1_container">
 
-                                      <span class="info-box-text ">0</span>
-                                      <span class="info-box-number" lang="tr">OEM</span>
+                                      <span class="info-box-text " id="5_6">0</span>
+                                      <span class="info-box-number" lang="tr">YS</span>
                                       <div class="progress" id="toplam_musteri_container_progress_bar">
                                         <div class="progress-bar" style="width: 0%;"></div>
                                       </div>
-                                      <span class="progress-description">Bir önceki güne göre çok düşük</span>
+                                      <span class="progress-description"></span>
                                     </div><!-- /.info-box-content -->
                                 </div>
                             </div>
