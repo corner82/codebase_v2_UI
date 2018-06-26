@@ -85,7 +85,8 @@
                 "Truck Sales Status":"حالة مبيعات الشاحنات",
                 "Sales Activities":"أنشطة المبيعات",
                 "Workshop sales" : "مبيعات ورشة العمل",
-                "Warranty sales" : "Waarborgverkope"
+                "Warranty sales" : "البيع المباشر",
+                "Direct sales" : "البيع المباشر"
 	}
 	
 }

@@ -1312,7 +1312,7 @@ $('#detay_garanti_cirosu').click(function()
         hidden_garanti_cirosu_controller = 1;
         $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_garanti_cirosu").loadImager('appendImage');
-        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Warranty sales'));
         $("#panel_hidden_garanti_cirosu").animate({height:'toggle'},1000); 
         
         if(serviceControler == true) {
@@ -1324,7 +1324,7 @@ $('#detay_garanti_cirosu').click(function()
         hidden_garanti_cirosu_controller = 1;
         $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_garanti_cirosu").loadImager('appendImage');
-        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Warranty sales'));
         
         if(serviceControler == true) {
             getGarantiCirosuWeeklyWithServices(multiSelectedRoles);
@@ -1345,7 +1345,7 @@ $('#hidden_garanti_cirosu_month').click(function()
     {
         $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_garanti_cirosu").loadImager('appendImage');
-        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Warranty sales'));
         
         if(serviceControler == true) {
             getGarantiCirosuAylikWithServices(multiSelectedRoles)
@@ -1363,11 +1363,10 @@ $('#hidden_garanti_cirosu_year').click(function()
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
     if(hidden_garanti_cirosu_controller == 1)
-
     {
         $("#panel_hidden_garanti_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_garanti_cirosu").loadImager('appendImage');
-        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        $("#panel_hidden_garanti_cirosu_title").html(window.lang.translate('Warranty sales'));
         
         if(serviceControler == true) {
             getGarantiCirosuYillikWithServices(multiSelectedRoles);
@@ -1393,7 +1392,7 @@ $('#detay_direk_satis_cirosu').click(function()
         hidden_direk_satis_cirosu_controller = 1;
         $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_direk_satis_cirosu").loadImager('appendImage');
-        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Direk satış cirosu'));
+        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Direct sales'));
         $("#panel_hidden_direk_satis_cirosu").animate({height:'toggle'},1000); 
         
         if(serviceControler == true) {
@@ -1405,7 +1404,7 @@ $('#detay_direk_satis_cirosu').click(function()
         hidden_direk_satis_cirosu_controller = 1;
         $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_direk_satis_cirosu").loadImager('appendImage');
-        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Direk satış cirosu'));
+        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Direct sales'));
         
         if(serviceControler == true) {
             getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles);
@@ -1426,7 +1425,7 @@ $('#hidden_direk_satis_cirosu_month').click(function()
     {
         $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_direk_satis_cirosu").loadImager('appendImage');
-        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Direk satış cirosu'));
+        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Direct sales'));
         
         if(serviceControler == true) {
             getDirekSatisCirosuAylikWithServices(multiSelectedRoles);
@@ -1447,7 +1446,7 @@ $('#hidden_direk_satis_cirosu_year').click(function()
     {
         $("#panel_hidden_direk_satis_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_direk_satis_cirosu").loadImager('appendImage');
-        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Garanti cirosu'));
+        $("#panel_hidden_direk_satis_cirosu_title").html(window.lang.translate('Warranty sales'));
         
         if(serviceControler == true) {
             getDirekSatisCirosuYillikWithServices(multiSelectedRoles);
@@ -8771,7 +8770,7 @@ function getGarantiCirosuWeeklyWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Garanti cirosu')
+                            text: window.lang.translate('Warranty sales')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -8797,7 +8796,7 @@ function getGarantiCirosuWeeklyWithoutServices() {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Garanti cirosu')+': <b>{point.y:,.0f} </b>'
+                            pointFormat: ''+window.lang.translate('Warranty sales')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             //name: 'Population',
@@ -8894,7 +8893,7 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Garanti cirosu')
+                            text: window.lang.translate('Warranty sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -8926,7 +8925,7 @@ function getGarantiCirosuWeeklyWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Garanti cirosu')+': {point.stackTotal:,.0f}'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Warranty sales')+': {point.stackTotal:,.0f}'
                         },
                         plotOptions: {
                             column: {
@@ -8977,7 +8976,7 @@ function getGarantiCirosuAylikWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Garanti cirosu')
+                            text: window.lang.translate('Warranty sales')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -9002,7 +9001,7 @@ function getGarantiCirosuAylikWithoutServices() {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Garanti cirosu')+': <b>{point.y:,.0f} </b>'
+                            pointFormat: ''+window.lang.translate('Warranty sales')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             //name: 'Population',
@@ -9099,7 +9098,7 @@ function getGarantiCirosuAylikWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Garanti cirosu')
+                            text: window.lang.translate('Warranty sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -9181,7 +9180,7 @@ function getGarantiCirosuYillikWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Garanti cirosu')
+                            text: window.lang.translate('Warranty sales')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -9210,7 +9209,7 @@ function getGarantiCirosuYillikWithoutServices() {
                             pointFormat: '{series.name}: {point.y:,.0f}<br/>'
                         },
                         series: [{
-                            name: window.lang.translate('Garanti cirosu'),
+                            name: window.lang.translate('Warranty sales'),
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
@@ -9302,7 +9301,7 @@ function getGarantiCirosuYillikWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Garanti cirosu')
+                            text: window.lang.translate('Warranty sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -9389,7 +9388,7 @@ function getDirekSatisCirosuWeeklyWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Direk satış cirosu')
+                            text: window.lang.translate('Direct sales')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -9414,7 +9413,7 @@ function getDirekSatisCirosuWeeklyWithoutServices() {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Direk satış cirosu')+': <b>{point.y:,.0f} </b>'
+                            pointFormat: ''+window.lang.translate('Direct sales')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             //name: 'Population',
@@ -9511,7 +9510,7 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Direk satış cirosu')
+                            text: window.lang.translate('Direct sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -9543,7 +9542,7 @@ function getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Direk satış cirosu')+': {point.stackTotal:,.0f}'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Direct sales')+': {point.stackTotal:,.0f}'
                         },
                         plotOptions: {
                             column: {
@@ -9594,7 +9593,7 @@ function getDirekSatisCirosuAylikWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Direk satış cirosu')
+                            text: window.lang.translate('Direct sales')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -9619,7 +9618,7 @@ function getDirekSatisCirosuAylikWithoutServices() {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Direk satış cirosu')+': <b>{point.y:,.0f} </b>'
+                            pointFormat: ''+window.lang.translate('Direct sales')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             //name: 'Population',
@@ -9716,7 +9715,7 @@ function getDirekSatisCirosuAylikWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Direk satış cirosu')
+                            text: window.lang.translate('Direct sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -9798,7 +9797,7 @@ function getDirekSatisCirosuYillikWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Direk satış cirosu')
+                            text: window.lang.translate('Direct sales')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -9827,7 +9826,7 @@ function getDirekSatisCirosuYillikWithoutServices() {
                             pointFormat: '{series.name}: {point.y:,.0f}<br/>'
                         },
                         series: [{
-                            name: window.lang.translate('Direk satış cirosu'),
+                            name: window.lang.translate('Direct sales'),
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
@@ -9919,7 +9918,7 @@ function getDirekSatisCirosuYillikWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Direk satış cirosu')
+                            text: window.lang.translate('Direct sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']

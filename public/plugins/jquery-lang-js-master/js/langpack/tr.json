@@ -88,7 +88,8 @@
                 "Truck Sales Status":"Kamyon Satış Durumu",
                 "Sales Activities":"Proje Aktivite Durumları",
                 "Workshop sales" : "Atölye cirosu",
-                "Warranty sales" : "Garanti satışları"
+                "Warranty sales" : "Garanti satışları",
+                "Direct sales" : "Direk satış cirosu"
 	}
 	
 }

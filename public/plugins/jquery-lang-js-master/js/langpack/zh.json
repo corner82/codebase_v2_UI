@@ -85,6 +85,7 @@
                 "Truck Sales Status":"卡车销售状况",
                 "Sales Activities":"销售活动",
                 "Workshop sales" : "车间销售",
-                "Warranty sales" : "保修销售"
+                "Warranty sales" : "保修销售",
+                "Direct sales" : "直接销售"
         }
 }

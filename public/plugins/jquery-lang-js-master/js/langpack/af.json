@@ -84,7 +84,9 @@
                 "dealer invoices":"handelaar fakture",
                 "Truck Sales Status":"Vragmotorverkoopsstatus",
                 "Sales Activities":"Verkope aktiwiteite",
-                "Workshop sales" : "Werkswinkelverkope"
+                "Workshop sales" : "Werkswinkelverkope",
+                "Warranty sales" : "Garantieverkauf",
+                "Direct sales" : "Direkte verkope"
 	}
 	
 }

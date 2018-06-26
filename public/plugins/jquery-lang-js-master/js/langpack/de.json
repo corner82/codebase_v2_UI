@@ -85,7 +85,8 @@
                 "Truck Sales Status":"LKW-Verkaufsstatus",
                 "Sales Activities":"Verkaufsaktivitäten",
                 "Workshop sales" : "Werkstattverkauf",
-                "Warranty sales" : "Garantieverkauf"
+                "Warranty sales" : "Garantieverkauf",
+                "Direct sales" : "Direktverkauf"
 	}
 	
 }
