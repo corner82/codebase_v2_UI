@@ -80,7 +80,7 @@ $('#yedek_parca_hedef').click(function()
         $("#panel_stok").loadImager('removeLoadImage');
         $("#panel_stok").loadImager('appendImage');
         $("#panel_stok").animate({height:'toggle'},1000); 
-        $("#panel_stok_title").html(window.lang.translate('Scorecard'));
+        $("#panel_stok_title").html(window.lang.translate('Hedef'));
         // açık iş emirlerini servis ayrımı yaparak çağırıyoruz
         if(serviceControler == true) {
             getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
@@ -92,7 +92,7 @@ $('#yedek_parca_hedef').click(function()
         hidden_block3_1_controller = 1;
         $("#panel_stok").loadImager('removeLoadImage');
         $("#panel_stok").loadImager('appendImage');
-        $("#panel_stok_title").html(window.lang.translate('Scorecard'));
+        $("#panel_stok_title").html(window.lang.translate('Hedef'));
         if(serviceControler == true) {
             getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
 
@@ -334,6 +334,7 @@ function getAfterSalesYedekParcaHedefServissiz() {
                 $("#panel_stok").loadImager('removeLoadImage');
               }
         },      
+        
     } );
 }
 
@@ -348,13 +349,14 @@ function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
             dataType: 'json',
             "data": {
                 src : services,
-                url : 'getAfterSalesDetayGridMMCSIWithServices_infoAfterSales',
+                url : 'getAfterSalesYedekParcaHedefServisli_infoAfterSales',
                 pk: $('#pk').val(),
             },
             complete: function() {
                 $("#panel_stok").loadImager('removeLoadImage');
               }
         },      
+        
     } ); 
 }
 
