@@ -83,7 +83,8 @@
                 "Number of Vehicle":"车辆数量",
                 "dealer invoices":"经销商发票",
                 "Truck Sales Status":"卡车销售状况",
-                "Sales Activities":"销售活动"
-	}
-	
+                "Sales Activities":"销售活动",
+                "Workshop sales" : "车间销售",
+                "Warranty sales" : "保修销售"
+        }
 }

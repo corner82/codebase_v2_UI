@@ -83,8 +83,8 @@
                 "Number of Vehicle":"Aantal voertuie",
                 "dealer invoices":"handelaar fakture",
                 "Truck Sales Status":"Vragmotorverkoopsstatus",
-                "Sales Activities":"Verkope aktiwiteite"
-        
+                "Sales Activities":"Verkope aktiwiteite",
+                "Workshop sales" : "Werkswinkelverkope"
 	}
 	
 }

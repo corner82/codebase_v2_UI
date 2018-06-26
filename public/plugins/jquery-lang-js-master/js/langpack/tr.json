@@ -86,7 +86,9 @@
                 "Number of Vehicle":"Araç Sayısı",
                 "dealer invoices":"bayisi faturaları",
                 "Truck Sales Status":"Kamyon Satış Durumu",
-                "Sales Activities":"Proje Aktivite Durumları"
+                "Sales Activities":"Proje Aktivite Durumları",
+                "Workshop sales" : "Atölye cirosu",
+                "Warranty sales" : "Garanti satışları"
 	}
 	
 }

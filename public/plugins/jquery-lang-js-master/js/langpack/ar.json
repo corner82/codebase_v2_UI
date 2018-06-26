@@ -83,7 +83,9 @@
                 "Number of Vehicle":"عدد المركبات",
                 "dealer invoices":"فواتير تاجر",
                 "Truck Sales Status":"حالة مبيعات الشاحنات",
-                "Sales Activities":"أنشطة المبيعات"
+                "Sales Activities":"أنشطة المبيعات",
+                "Workshop sales" : "مبيعات ورشة العمل",
+                "Warranty sales" : "Waarborgverkope"
 	}
 	
 }

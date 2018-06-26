@@ -1241,7 +1241,7 @@ $('#detay_atolye_cirosu').click(function()
         hidden_atolye_cirosu_controller = 1;
         $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_atolye_cirosu").loadImager('appendImage');
-        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Atölye cirosu'));
+        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Workshop sales'));
         
         if(serviceControler == true) {
             getAtolyeCirosuWeeklyWithServices(multiSelectedRoles);
@@ -1262,7 +1262,7 @@ $('#hidden_atolye_cirosu_month').click(function()
     {
         $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_atolye_cirosu").loadImager('appendImage');
-        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Atölye cirosu'));
+        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Workshop sales'));
         
         if(serviceControler == true) {
             getAtolyeCirosuAylikWithServices(multiSelectedRoles);
@@ -1284,7 +1284,7 @@ $('#hidden_atolye_cirosu_year').click(function()
     {
         $("#panel_hidden_atolye_cirosu").loadImager('removeLoadImage');
         $("#panel_hidden_atolye_cirosu").loadImager('appendImage');
-        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Atölye cirosu'));
+        $("#panel_hidden_atolye_cirosu_title").html(window.lang.translate('Workshop sales'));
         
         if(serviceControler == true) {
             getAtolyeCirosuYillikWithServices(multiSelectedRoles);
@@ -8144,7 +8144,7 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: 'Atölye Cirosu'
+                            text: 'Workshop sales'
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -8171,7 +8171,7 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                         },
                         tooltip: {
 
-                            pointFormat: ''+window.lang.translate('Atölye cirosu')+': <b>{point.y:,.0f} </b>'                       
+                            pointFormat: ''+window.lang.translate('Workshop sales')+': <b>{point.y:,.0f} </b>'                       
                         },
                         series: [{
                             name: 'Population',
@@ -8270,7 +8270,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Atölye Cirosu')
+                            text: window.lang.translate('Workshop sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -8305,7 +8305,7 @@ function getAtolyeCirosuWeeklyWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Atölye Cirosu')+': {point.stackTotal:,.0f}'
+                            pointFormat: '{series.name}: {point.y:,.0f}<br/>'+window.lang.translate('Workshop sales')+': {point.stackTotal:,.0f}'
                         },
                         plotOptions: {
                             column: {
@@ -8355,7 +8355,7 @@ function getAtolyeCirosuAylikWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Atölye cirosu')
+                            text: window.lang.translate('Workshop sales')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -8381,7 +8381,7 @@ function getAtolyeCirosuAylikWithoutServices() {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Atölye cirosu')+': <b>{point.y:,.0f} </b>'
+                            pointFormat: ''+window.lang.translate('Workshop sales')+': <b>{point.y:,.0f} </b>'
                         },
                         series: [{
                             name: 'Population',
@@ -8478,7 +8478,7 @@ function getAtolyeCirosuAylikWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Atölye cirosu')
+                            text: window.lang.translate('Workshop sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
@@ -8561,7 +8561,7 @@ function getAtolyeCirosuYillikWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Atölye cirosu')
+                            text: window.lang.translate('Workshop sales')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -8590,7 +8590,7 @@ function getAtolyeCirosuYillikWithoutServices() {
                             pointFormat: '{series.name}: {point.y:,.0f}<br/>'
                         },
                         series: [{
-                            name: window.lang.translate('Atölye cirosu'),
+                            name: window.lang.translate('Workshop sales'),
                             data: graphDataAll,
                             dataLabels: {
                                 enabled: true,
@@ -8682,7 +8682,7 @@ function getAtolyeCirosuYillikWithServices(multiSelectedRoles) {
                             height : 300,
                         },
                         title: {
-                            text: window.lang.translate('Atölye cirosu')
+                            text: window.lang.translate('Workshop sales')
                         },
                         xAxis: {
                             //categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']

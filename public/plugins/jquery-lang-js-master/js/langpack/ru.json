@@ -83,7 +83,9 @@
                 "Number of Vehicle":"Количество автомобилей",
                 "dealer invoices":"Счета-фактуры",
                 "Truck Sales Status":"Статус продаж грузовиков",
-                "Sales Activities":"Торговые операции"
+                "Sales Activities":"Торговые операции",
+                "Workshop sales" : "Семинар-продажа",
+                "Warranty sales" : "Гарантийные продажи"
 	}
 	
 }

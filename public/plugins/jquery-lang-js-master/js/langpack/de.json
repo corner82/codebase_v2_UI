@@ -83,8 +83,9 @@
                 "Number of Vehicle":"Anzahl der Fahrzeuge",
                 "dealer invoices":"Händler Rechnungen",
                 "Truck Sales Status":"LKW-Verkaufsstatus",
-                "Sales Activities":"Verkaufsaktivitäten"
-        
+                "Sales Activities":"Verkaufsaktivitäten",
+                "Workshop sales" : "Werkstattverkauf",
+                "Warranty sales" : "Garantieverkauf"
 	}
 	
 }
