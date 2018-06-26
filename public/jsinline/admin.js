@@ -1662,7 +1662,7 @@ $('#detay_CSI').click(function(){
         hidden_MM_CSI_controller = 1;
         $("#panel_hidden_MM_CSI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CSI").loadImager('appendImage');
-        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer Happiness'));
+        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer first'));
         $("#panel_hidden_MM_CSI").animate({height:'toggle'},1000); 
         
         if(serviceControler == true) {
@@ -1677,7 +1677,7 @@ $('#detay_CSI').click(function(){
         hidden_MM_CSI_controller = 1;
         $("#panel_hidden_MM_CSI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CSI").loadImager('appendImage');
-        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer Happiness'));
+        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer first'));
         
         if(serviceControler == true) {
             getDetayGridMMCSIWithServices(multiSelectedRoles);
@@ -1700,7 +1700,7 @@ $('#detay_CXI').click(function(){
         hidden_MM_CXI_controller = 1;
         $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CXI").loadImager('appendImage');
-        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer Happiness'));
+        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer first'));
         $("#panel_hidden_MM_CXI").animate({height:'toggle'},1000); 
         
         if(serviceControler == true) {
@@ -1715,7 +1715,7 @@ $('#detay_CXI').click(function(){
         hidden_MM_CXI_controller = 1;
         $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CXI").loadImager('appendImage');
-        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer Happiness'));
+        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer first'));
         
         if(serviceControler == true) {
             getDetayGridMMCXIWithServices(multiSelectedRoles);
@@ -1923,7 +1923,7 @@ getVerimlilikDashboard();
 getKapasiteDashboard();
 
 // etkinlik gauge dashboard data
-getEtkinlikDashboard();
+//getEtkinlikDashboard();
 
 // müşteri memnuniyeti(CSI) dashboard data 
 getMMCSIDashboard();
@@ -11269,7 +11269,7 @@ function getMMCSIYillikWithoutServices() {
                     var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CSI', {
                         title: {
-                            text: window.lang.translate('Customer Happiness')
+                            text: window.lang.translate('Customer first')
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
@@ -11388,7 +11388,7 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
                     var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CSI', {
                         title: {
-                            text: window.lang.translate('Customer Happiness')
+                            text: window.lang.translate('Customer first')
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
@@ -11551,7 +11551,7 @@ function getMMCXIYillikWithoutServices() {
                     var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CXI', {
                         title: {
-                            text: window.lang.translate('Customer Happiness')
+                            text: window.lang.translate('Customer first')
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
@@ -11676,7 +11676,7 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
                     var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CXI', {
                         title: {
-                            text: window.lang.translate('Customer Happiness')
+                            text: window.lang.translate('Customer first')
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
@@ -12553,7 +12553,7 @@ function getVerimlilikDashboard() {
                                                //right = chart.series[1].points[0],
                                                leftVal,
                                                rightVal,
-                                               inc = (Math.random() - 0.5) * 1;
+                                               inc = (Math.random() - 0.5) * 0.5;
 
                                            leftVal = left.y + inc;
                                            rightVal = leftVal + inc / 3;
@@ -12599,7 +12599,8 @@ function getVerimlilikDashboard() {
                         downtime = parseFloat(downtime)+parseFloat(d);
                     });
                     //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
-                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    //var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    var dt = parseFloat(89.2)
                     //$("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
                     $("#panel_productivity").loadImager('removeLoadImage');
                     Highcharts.chart('gauge-container-verimlilik', {
@@ -12619,7 +12620,7 @@ function getVerimlilikDashboard() {
         height: 200
     },
     title: {
-        text: window.lang.translate('Productivity')
+        text: 'CSI'
     },
     pane: [{
         startAngle: -45,
@@ -12723,7 +12724,7 @@ function getVerimlilikDashboard() {
                                                //right = chart.series[1].points[0],
                                                leftVal,
                                                rightVal,
-                                               inc = (Math.random() - 0.5) * 1;
+                                               inc = (Math.random() - 0.5) * 0.5;
 
                                            leftVal = left.y + inc;
                                            rightVal = leftVal + inc / 3;
@@ -12909,7 +12910,8 @@ function getKapasiteDashboard() {
                         downtime = parseFloat(downtime)+parseFloat(d);
                     });
                     //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
-                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    //var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    var dt = parseFloat(74)
                     //$("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
                     $("#panel_kapasite").loadImager('removeLoadImage');
                     Highcharts.chart('gauge-container-kapasite', {
@@ -12928,7 +12930,7 @@ function getKapasiteDashboard() {
         height: 200
     },
     title: {
-        text: ''+window.lang.translate('Capacity utilization')+''
+        text: 'CXI'
     },
     pane: [{
         startAngle: -45,

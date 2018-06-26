@@ -366,7 +366,7 @@
             window.lang.dynamic('de', '/plugins/jquery-lang-js-master/js/langpack/de.json');
             window.lang.dynamic('af', '/plugins/jquery-lang-js-master/js/langpack/af.json');
             window.lang.init({
-                    defaultLang: 'tr'
+                    defaultLang: 'en'
             });
             window.lang.change(self.options.langDefault);
         },
