@@ -12547,7 +12547,7 @@ function getVerimlilikDashboard() {
 },
                             // Let the music play
                             function (chart) {
-                                   setInterval(function () {
+                                   /*setInterval(function () {
                                        if (chart.series) { // the chart may be destroyed
                                            var left = chart.series[0].points[0],
                                                //right = chart.series[1].points[0],
@@ -12564,11 +12564,11 @@ function getVerimlilikDashboard() {
                                                rightVal = leftVal;
                                            }*/
 
-                                           left.update(leftVal, false);
+                                          /* left.update(leftVal, false);
                                            //right.update(rightVal, false);
                                            chart.redraw();
                                        }
-                                   }, 500);
+                                   }, 500);*/
 
                                });
             }
@@ -12996,7 +12996,7 @@ function getKapasiteDashboard() {
 },
                         // Let the music play
                         function (chart) {
-                                setInterval(function () {
+                                /*setInterval(function () {
                                     if (chart.series) { // the chart may be destroyed
                                         var left = chart.series[0].points[0],
                                             //right = chart.series[1].points[0],
@@ -13012,7 +13012,7 @@ function getKapasiteDashboard() {
                                         left.update(leftVal, false);
                                         chart.redraw();
                                     }
-                                }, 500);
+                                }, 500);*/
                             });
                 }
             },
