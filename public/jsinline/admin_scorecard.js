@@ -331,7 +331,7 @@ function getDetayGridDowntime() {
                 pk: $('#pk').val(),
             },
            complete: function() {
-                $("#panel_stoklar").loadImager('removeLoadImage');
+                $("#panel_stok").loadImager('removeLoadImage');
               }
         },      
         "columnDefs": [ {
@@ -358,15 +358,15 @@ function getDetayGridDowntimeWithServices(multiSelectedRoles) {
                 pk: $('#pk').val(),
             },
             complete: function() {
-                $("#panel_stoklar").loadImager('removeLoadImage');
+                $("#panel_stok").loadImager('removeLoadImage');
               }
-        }//,      
-        //"columnDefs": [ {
-        //"targets": 2,
-        //"render": function ( data, type, row, meta ) {
-        //    return '<a href="'+ data +'">' + data + '</a>';
-        //    }
-        //} ]
+        },      
+        "columnDefs": [ {
+        "targets": 2,
+        "render": function ( data, type, row, meta ) {
+            return '<a href="'+ data +'">' + data + '</a>';
+           }
+        } ]
     } );
 }
 

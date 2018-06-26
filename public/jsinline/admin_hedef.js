@@ -80,29 +80,24 @@ $('#yedek_parca_hedef').click(function()
         $("#panel_yedek_parca_hedef_title").html(window.lang.translate('Servis Yedek Parça Hedef'));
         // açık iş emirlerini servis ayrımı yaparak çağırıyoruz
         if(serviceControler == true) {
-            getDetayYedekParcaServisIciWithServices(multiSelectedRoles);
+            getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDetayYedekParcaServisIciWithoutServices();
-        }    
+            getAfterSalesYedekParcaHedefServissiz();
+        }   
     }else {
         hidden_block2_controller = 1;
         $("#panel_yedek_parca_hedef").loadImager('removeLoadImage');
         $("#panel_yedek_parca_hedef").loadImager('appendImage');
         $("#panel_yedek_parca_hedef_title").html(window.lang.translate('Servis Yedek Parça Hedef'));
         if(serviceControler == true) {
-            getDetayYedekParcaServisIciWithServices(multiSelectedRoles);
+            getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDetayYedekParcaServisIciWithoutServices();
+            getAfterSalesYedekParcaHedefServissiz();
         }
     }     
 });
 
 // hedef ana  block  son
-
-
-// afterSales iş emirleri  dashboard data (#container)
-getAfterSalesIsEmirleriDashboard();
-
 
     
 /**
@@ -312,10 +307,13 @@ $(function () {
 
 
 // ana block hidden fonk.
-function getDetayYedekParcaServisIciWithoutServices() {
-    $.ajax({
+function getAfterSalesYedekParcaHedefServissiz() {
+   $("#grid_hedef").dataTable().fnDestroy();
+   $('#grid_hedef').DataTable( {
+        "responsive" : true,
+        "ajax": {
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcikWithoutServices_infoAfterSales' ,
+            data: { url:'getAfterSalesYedekParcaHedefServissiz_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
@@ -330,30 +328,37 @@ function getDetayYedekParcaServisIciWithoutServices() {
             error: function (jqXHR, textStatus, errorThrown) {
                 console.error(textStatus);
             }
-        });
-};
+        }
+    } );
+}
 
-function getDetayYedekParcaServisIciWithServices(multiSelectedRoles) {
-    var services = getServicesSelectedAsUrl(multiSelectedRoles);
-    $.ajax({
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDetayIsEmriAcikWithServices_infoAfterSales' ,
-                    pk : $("#pk").val(),
-                    src : services}, 
+function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles)  {
+   var services = getServicesSelectedAsUrl(multiSelectedRoles);
+   $("#grid_hedef").dataTable().fnDestroy();
+   $('#grid_hedef').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             type: 'GET',
             dataType: 'json',
             language_id:647,
-            //data: 'rowIndex='+rowData.id,
+            "data": {
+                src : services,
+                url : 'getAfterSalesYedekParcaHedefServisli_infoAfterSales',
+                pk: $('#pk').val(),
+            },
             success: function (data, textStatus, jqXHR) {
                 if(data!=null) {
+
                     $("#panel_yedek_parca_hedef").loadImager('removeLoadImage');
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.error(textStatus);
             }
-        });
-};
+        }
+    } );
+}
 
 // ana block hidden fonk. son
 
@@ -416,37 +421,7 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
 
 // dashboard özet verileri fonk.
 // yedek parca, yag, stok  dashboard data (#container)
-function getAfterSalesIsEmirleriDashboard() {   
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardIsEmriData_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        //console.log(data.resultSet);
-        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
-            var dataSet = data.resultSet;
-            $.each(dataSet, function ($key, $value) {
-                //console.log($key+'--'+$value);
-                //console.log($value.ACIKLAMA);
-                if($value.CONTROLER == 1) {
-                    $("#panel_yedek_parca_hedef").headerSetterAfterSales($value);
-                } //else if($value.CONTROLER == 2){
-                   // $("#toplam_header_yag_container").headerSetterAfterSales($value);
-                //} else if($value.CONTROLER == 3){
-                //    $("#toplam_header_stok_container").headerSetterAfterSales($value);
-                //}
-            })
-        }
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(errorThrown);
-    }
-});
-}
+
 
 // dashboard özet verileri fonk. son
 
