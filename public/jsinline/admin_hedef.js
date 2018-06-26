@@ -48,12 +48,15 @@ $( "#test-collapse" ).on( "click", function() {
 $("#test-collapse").trigger("click");
 
 
+
+
 /**
- * yedek parça servis YTD degerleri
- * @author Ceydacan Seyrek
- * @since 19/06/2018
+ * stok  detay block 
+ * @author Mustafa Zeynel Dağlı
+ * @since 15/05/2018
  */
-$("#panel_yedek_parca_hedef").loadImager();
+$("#panel_stok").loadImager();
+
        
 Array.prototype.unique = function() {
   return this.filter(function (value, index, self) { 
@@ -61,43 +64,48 @@ Array.prototype.unique = function() {
   });
 }
 
-// hedef ana block 
-var hidden_block2_controller;
+// detay ana block 
+var hidden_block3_1_controller;
 
-// Yedek Parça Hedef Detay Click 
+// açık is emirleri detay click 
 $('#yedek_parca_hedef').click(function()
 {
     var serviceControler = false;
     var multiSelectedRoles = getServiceDropdownSelectedItems();
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
-    if($("#panel_yedek_parca_hedef").css('display') == 'none')
+    if($("#panel_stok").css('display') == 'none')
     {
-        hidden_block2_controller = 1;
-        $("#panel_yedek_parca_hedef").loadImager('removeLoadImage');
-        $("#panel_yedek_parca_hedef").loadImager('appendImage');
-        $("#panel_yedek_parca_hedef").animate({height:'toggle'},1000); 
-        $("#panel_yedek_parca_hedef_title").html(window.lang.translate('Servis Yedek Parça Hedef'));
+        hidden_block3_1_controller = 1;
+        $("#panel_stok").loadImager('removeLoadImage');
+        $("#panel_stok").loadImager('appendImage');
+        $("#panel_stok").animate({height:'toggle'},1000); 
+        $("#panel_stok_title").html(window.lang.translate('Scorecard'));
         // açık iş emirlerini servis ayrımı yaparak çağırıyoruz
         if(serviceControler == true) {
             getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
+
         } else if(serviceControler == false ){
             getAfterSalesYedekParcaHedefServissiz();
-        }   
+        }  
     }else {
-        hidden_block2_controller = 1;
-        $("#panel_yedek_parca_hedef").loadImager('removeLoadImage');
-        $("#panel_yedek_parca_hedef").loadImager('appendImage');
-        $("#panel_yedek_parca_hedef_title").html(window.lang.translate('Servis Yedek Parça Hedef'));
+        hidden_block3_1_controller = 1;
+        $("#panel_stok").loadImager('removeLoadImage');
+        $("#panel_stok").loadImager('appendImage');
+        $("#panel_stok_title").html(window.lang.translate('Scorecard'));
         if(serviceControler == true) {
             getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
+
         } else if(serviceControler == false ){
             getAfterSalesYedekParcaHedefServissiz();
         }
-    }     
+    }  
+        
 });
 
-// hedef ana  block  son
+
+
+// detay ana  block  son
 
     
 /**
@@ -306,61 +314,51 @@ $(function () {
     });
 
 
-// ana block hidden fonk.
+// ana block ve ikinci block hidden fonk.
+// 3_1. block hidden fonk.
+
 function getAfterSalesYedekParcaHedefServissiz() {
-   $("#grid_hedef").dataTable().fnDestroy();
-   $('#grid_hedef').DataTable( {
-        "responsive" : true,
-        "ajax": {
-            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesYedekParcaHedefServissiz_infoAfterSales' ,
-                    pk : $("#pk").val()}, 
-            type: 'GET',
-            dataType: 'json',
-            language_id:647,
-            //data: 'rowIndex='+rowData.id,
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-
-                    $("#panel_yedek_parca_hedef").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(textStatus);
-            }
-        }
-    } );
-}
-
-function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles)  {
-   var services = getServicesSelectedAsUrl(multiSelectedRoles);
-   $("#grid_hedef").dataTable().fnDestroy();
-   $('#grid_hedef').DataTable( {
+   $("#grid_downtime").dataTable().fnDestroy();
+   $('#grid_downtime').DataTable( {
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
             type: 'GET',
             dataType: 'json',
-            language_id:647,
             "data": {
-                src : services,
-                url : 'getAfterSalesYedekParcaHedefServisli_infoAfterSales',
+                url : 'getAfterSalesYedekParcaHedefServissiz_infoAfterSales',
+                //url : 'getAfterSalesDetayGridDowntime_infoAfterSales',
                 pk: $('#pk').val(),
             },
-            success: function (data, textStatus, jqXHR) {
-                if(data!=null) {
-
-                    $("#panel_yedek_parca_hedef").loadImager('removeLoadImage');
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error(textStatus);
-            }
-        }
+           complete: function() {
+                $("#panel_stok").loadImager('removeLoadImage');
+              }
+        },      
     } );
 }
 
-// ana block hidden fonk. son
+function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
+   var services = getServicesSelectedAsUrl(multiSelectedRoles);
+   $("#grid_downtime").dataTable().fnDestroy();
+   $('#grid_downtime').DataTable( {
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                src : services,
+                url : 'getAfterSalesDetayGridMMCSIWithServices_infoAfterSales',
+                pk: $('#pk').val(),
+            },
+            complete: function() {
+                $("#panel_stok").loadImager('removeLoadImage');
+              }
+        },      
+    } ); 
+}
+
+// ana block ve ikinci block hidden fonk. son
 
 // satış sonrası servisler ile ilgili fonk.
 function getServiceDropdownSelectedItems() {
@@ -411,8 +409,6 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
         }
     } else {
         return '';
-        
-        
     }
 }
 
@@ -420,7 +416,6 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
 
 
 // dashboard özet verileri fonk.
-// yedek parca, yag, stok  dashboard data (#container)
 
 
 // dashboard özet verileri fonk. son
