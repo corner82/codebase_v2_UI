@@ -139,7 +139,7 @@ var chart1 = new Highcharts.Chart({
             }
         },
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
 
         startOnTick: false,
@@ -151,14 +151,15 @@ var chart1 = new Highcharts.Chart({
     },
     yAxis : {
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
     },
     series: [{
         data: [34, 36, 61, 63, 3],
         type: 'area',
-        name: 'Projeler',
+        name: window.lang.translate('Projects')
     }]
+    
 });
 
 //chart 2
@@ -194,7 +195,7 @@ var chart2 = new Highcharts.Chart({
     series: [{
         data: [32, 88, 196, 320, 5],
         type: 'area',
-        name: 'Araç Sayısı',
+        name: window.lang.translate('Number of Vehicle'),
     }]
 });
 
@@ -213,7 +214,7 @@ var chart3 = new Highcharts.Chart({
             }
         },
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
 
         startOnTick: false,
@@ -225,13 +226,13 @@ var chart3 = new Highcharts.Chart({
     },
     yAxis : {
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
     },
     series: [{
         data: [1591, 1270, 2042, 1762, 59],
         type: 'area',
-        name: 'Aktiviteler',
+        name: window.lang.translate('Aktivities')
     }]
 });
 
@@ -241,7 +242,7 @@ var chart4 = new Highcharts.Chart({
         renderTo: 'container_satis_activities4',
     },
     title: {
-            text: 'Oluşturulan Proje Sayısı'
+            text: window.lang.translate('Number of Projects Created')    //'Oluşturulan Proje Sayısı'
         },
     xAxis: {
         labels: {
@@ -250,7 +251,7 @@ var chart4 = new Highcharts.Chart({
             }
         },
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
 
         startOnTick: false,
@@ -262,13 +263,13 @@ var chart4 = new Highcharts.Chart({
     },
     yAxis : {
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
     },
     series: [{
         data: [150, 138, 180, 181, 8],
         type: 'area',
-        name: 'Projeler',
+        name: window.lang.translate('Projects')
     }]
 });
 
@@ -278,7 +279,7 @@ var chart5 = new Highcharts.Chart({
         renderTo: 'container_satis_activities5',
     },
     title: {
-            text: 'Vazgeçilen Proje Sayısı'
+            text: window.lang.translate('Number of Abandoned Projects')  //'Vazgeçilen Proje Sayısı'
         },
     xAxis: {
         labels: {
@@ -287,7 +288,7 @@ var chart5 = new Highcharts.Chart({
             }
         },
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
 
         startOnTick: false,
@@ -299,13 +300,13 @@ var chart5 = new Highcharts.Chart({
     },
     yAxis : {
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
     },
     series: [{
         data: [116, 58, 57, 80, 4],
         type: 'area',
-        name: 'Projeler',
+        name: window.lang.translate('Projects')
     }]
 });
 
@@ -315,7 +316,7 @@ var chart6 = new Highcharts.Chart({
         renderTo: 'container_satis_activities6',
     },
     title: {
-            text: 'Kaybedilen Proje Sayısı'
+            text: window.lang.translate('Number of lost projects')   //'Kaybedilen Proje Sayısı'
         },
     xAxis: {
         labels: {
@@ -324,7 +325,7 @@ var chart6 = new Highcharts.Chart({
             }
         },
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
 
         startOnTick: false,
@@ -336,13 +337,13 @@ var chart6 = new Highcharts.Chart({
     },
     yAxis : {
         title: {
-                text: 'Adet'
+                text: window.lang.translate('piece')
             },
     },
     series: [{
         data: [33, 21, 32, 35, 3],
         type: 'area',
-        name: 'Projeler',
+        name: window.lang.translate('Projects')
     }]
 });
 

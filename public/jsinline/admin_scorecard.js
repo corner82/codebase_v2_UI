@@ -68,7 +68,7 @@ Array.prototype.unique = function() {
 var hidden_block3_1_controller;
 
 // açık is emirleri detay click 
-$('#yedek_parca_hedef').click(function()
+$('#detay_stok').click(function()
 {
     var serviceControler = false;
     var multiSelectedRoles = getServiceDropdownSelectedItems();
@@ -80,24 +80,24 @@ $('#yedek_parca_hedef').click(function()
         $("#panel_stok").loadImager('removeLoadImage');
         $("#panel_stok").loadImager('appendImage');
         $("#panel_stok").animate({height:'toggle'},1000); 
-        $("#panel_stok_title").html(window.lang.translate('Hedef'));
+        $("#panel_stok_title").html(window.lang.translate('Scorecard'));
         // açık iş emirlerini servis ayrımı yaparak çağırıyoruz
         if(serviceControler == true) {
-            getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
+            getDetayGridDowntimeWithServices(multiSelectedRoles);
 
         } else if(serviceControler == false ){
-            getAfterSalesYedekParcaHedefServissiz();
-        }  
+            getDetayGridDowntime();
+        }    
     }else {
         hidden_block3_1_controller = 1;
         $("#panel_stok").loadImager('removeLoadImage');
         $("#panel_stok").loadImager('appendImage');
-        $("#panel_stok_title").html(window.lang.translate('Hedef'));
+        $("#panel_stok_title").html(window.lang.translate('Scorecard'));
         if(serviceControler == true) {
-            getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
+            getDetayGridDowntimeWithServices(multiSelectedRoles);
 
         } else if(serviceControler == false ){
-            getAfterSalesYedekParcaHedefServissiz();
+            getDetayGridDowntime();
         }
     }  
         
@@ -317,7 +317,7 @@ $(function () {
 // ana block ve ikinci block hidden fonk.
 // 3_1. block hidden fonk.
 
-function getAfterSalesYedekParcaHedefServissiz() {
+function getDetayGridDowntime() {
    $("#grid_downtime").dataTable().fnDestroy();
    $('#grid_downtime').DataTable( {
         "responsive" : true,
@@ -326,7 +326,7 @@ function getAfterSalesYedekParcaHedefServissiz() {
             type: 'GET',
             dataType: 'json',
             "data": {
-                url : 'getAfterSalesYedekParcaHedefServissiz_infoAfterSales',
+                url : 'getAfterSalesYedekParcaPDFServissiz_infoAfterSales',
                 //url : 'getAfterSalesDetayGridDowntime_infoAfterSales',
                 pk: $('#pk').val(),
             },
@@ -334,11 +334,16 @@ function getAfterSalesYedekParcaHedefServissiz() {
                 $("#panel_stok").loadImager('removeLoadImage');
               }
         },      
-        
+        "columnDefs": [ {
+        "targets": 2,
+        "render": function ( data, type, row, meta ) {
+            return '<a href="'+ data +'">' + data + '</a>';
+            }
+        } ]
     } );
 }
 
-function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
+function getDetayGridDowntimeWithServices(multiSelectedRoles) {
    var services = getServicesSelectedAsUrl(multiSelectedRoles);
    $("#grid_downtime").dataTable().fnDestroy();
    $('#grid_downtime').DataTable( {
@@ -349,15 +354,20 @@ function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
             dataType: 'json',
             "data": {
                 src : services,
-                url : 'getAfterSalesYedekParcaHedefServisli_infoAfterSales',
+                url : 'getAfterSalesYedekParcaPDFServisli_infoAfterSales',
                 pk: $('#pk').val(),
             },
             complete: function() {
                 $("#panel_stok").loadImager('removeLoadImage');
               }
         },      
-        
-    } ); 
+        "columnDefs": [ {
+        "targets": 2,
+        "render": function ( data, type, row, meta ) {
+            return '<a href="'+ data +'">' + data + '</a>';
+           }
+        } ]
+    } );
 }
 
 // ana block ve ikinci block hidden fonk. son
