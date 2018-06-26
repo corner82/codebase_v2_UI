@@ -26,6 +26,7 @@
                 "stocks":"Aandele",
                 "Total":"Totale",
                 "week":"Week",
+                "month":"maand",
                 "piece":"Stuk",
                 "1K":"Duisende",
                 "Last 1 year":"Laaste 1 jaar",
@@ -69,7 +70,19 @@
                 "GOAL COMPLETIONS":"DOELSTELLINGS",
                 "MAN Vehicle Sales":"MAN Voertuigverkope",
                 "Sales (Brand Based)":"Verkope (Handelsmerk)",
-                "Reseller Bills":"Reseller Wetsontwerpe" 
+                "Dealer Invoices":"Reseller Wetsontwerpe", 
+                "Number of Projects Acquired":"Aantal Projekte Verkry",
+                "Number of Cars in Projects Earned":"Aantal karre in projekte verdien",
+                "Completed Activity Count":"Voltooide Aktiwiteit Telling",
+                "Number of Projects Created":"Aantal projekte geskep",
+                "Number of Abandoned Projects":"Aantal verlate projekte",
+                "Number of lost projects":"Aantal verlore projekte",
+                "Vendors according to the number of invoices":"Verkopers volgens die aantal fakture",
+                "Projects":"Projekte",
+                "Activities":"Aktiwiteite",
+                "Number of Vehicle":"Aantal voertuie",
+                "dealer invoices":"handelaar fakture",
+                "Truck Sales Status":"Vragmotorverkoopsstatus"
         
 	}
 	

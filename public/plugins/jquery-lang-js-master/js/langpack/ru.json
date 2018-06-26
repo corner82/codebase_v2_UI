@@ -26,6 +26,7 @@
                 "stocks":"акции",
                 "Total":"Всего",
                 "week":"неделю",
+                "month":"месяц",
                 "piece":"кусок",
                 "1K":"тысяча",
                 "Last 1 year":"В прошлом году",
@@ -69,7 +70,19 @@
                 "GOAL COMPLETIONS":"ЦЕЛИ",
                 "MAN Vehicle Sales":"Продажа автомобилей MAN",
                 "Sales (Brand Based)":"Продажи (на основе бренда)",
-                "Reseller Bills":"Реселлерские счета"       
+                "Dealer Invoices":"Реселлерские счета", 
+                "Number of Projects Acquired":"Количество приобретенных проектов",
+                "Number of Cars in Projects Earned":"Количество автомобилей в проектах, заработанных",
+                "Completed Activity Count":"Завершенный счет активности",
+                "Number of Projects Created":"Количество созданных проектов",
+                "Number of Abandoned Projects":"Количество заброшенных проектов",
+                "Number of lost projects":"Количество потерянных проектов",
+                "Vendors according to the number of invoices":"Поставщики по количеству счетов-фактур",
+                "Projects":"проектов",
+                "Activities":"мероприятия",
+                "Number of Vehicle":"Количество автомобилей",
+                "dealer invoices":"Счета-фактуры",
+                "Truck Sales Status":"Статус продаж грузовиков" 
 	}
 	
 }

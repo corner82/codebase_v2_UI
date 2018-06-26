@@ -26,6 +26,7 @@
                 "stocks":"个股",
                 "Total":"总",
                 "week":"周",
+                "month":"月",
                 "piece":"片",
                 "1K":"一千",
                 "Last 1 year":"去年",
@@ -69,7 +70,19 @@
                 "GOAL COMPLETIONS":"目标完成",
                 "MAN Vehicle Sales":"MAN车辆销售",
                 "Sales (Brand Based)":"销售（基于品牌）",
-                "Reseller Bills":"经销商账单"   
+                "Dealer Invoices":"经销商账单", 
+                "Number of Projects Acquired":"已收购项目数量",
+                "Number of Cars in Projects Earned":"获得项目中的汽车数量",
+                "Completed Activity Count":"已完成的活动计数",
+                "Number of Projects Created":"创建的项目数量",
+                "Number of Abandoned Projects":"废弃项目数量",
+                "Number of lost projects":"丢失的项目数量",
+                "Vendors according to the number of invoices":"供应商根据发票数量",
+                "Projects":"项目",
+                "Activities":"活动",
+                "Number of Vehicle":"车辆数量",
+                "dealer invoices":"经销商发票",
+                "Truck Sales Status":"卡车销售状况"  
 	}
 	
 }

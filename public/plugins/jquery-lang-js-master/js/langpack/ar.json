@@ -26,6 +26,7 @@
                 "stocks":"مخازن",
                 "Total":"مجموع",
                 "week":"أسبوع",
+                "month":"شهر",
                 "piece":"قطعة",
                 "1K":"الآلاف",
                 "Last 1 year":"العام الماضي",
@@ -69,7 +70,19 @@
                 "GOAL COMPLETIONS":"استكمال الأهداف",
                 "MAN Vehicle Sales":"مبيعات السيارات مان",
                 "Sales (Brand Based)":"المبيعات (العلامة التجارية)",
-                "Reseller Bills":"فواتير التجزئة" 
+                "Dealer Invoices":"فواتير التجزئة", 
+                "Number of Projects Acquired":"عدد المشروعات المكتسبة",
+                "Number of Cars in Projects Earned":"عدد السيارات في المشاريع المكتسبة",
+                "Completed Activity Count":"عدد النشاط المكتمل",
+                "Number of Projects Created":"عدد المشاريع التي تم إنشاؤها",
+                "Number of Abandoned Projects":"عدد المشاريع المهملة",
+                "Number of lost projects":"عدد المشاريع المفقودة",
+                "Vendors according to the number of invoices":"الباعة وفقا لعدد الفواتير",
+                "Projects":"مشاريع",
+                "Activities":"أنشطة",
+                "Number of Vehicle":"عدد المركبات",
+                "dealer invoices":"فواتير تاجر",
+                "Truck Sales Status":"حالة مبيعات الشاحنات"
 	}
 	
 }

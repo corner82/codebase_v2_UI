@@ -26,6 +26,7 @@
                 "stocks":"سهام",
                 "Total":"جمع",
                 "week":"هفته",
+                "month":"ماه",
                 "piece":"قطعه",
                 "1K":"هزاران نفر",
                 "Last 1 year":"سال گذشته",
@@ -69,7 +70,19 @@
                 "GOAL COMPLETIONS":"تکالیف اهداف",
                 "MAN Vehicle Sales":"فروش خودرو مرد",
                 "Sales (Brand Based)":"فروش (برند بر اساس)",
-                "Reseller Bills":"صورتحساب فروشندگان" 
+                "Dealer Invoices":"صورتحساب فروشندگان", 
+                "Number of Projects Acquired":"تعداد پروژه های به دست آمده",
+                "Number of Cars in Projects Earned":"تعداد ماشین ها در پروژه های به دست آمده",
+                "Completed Activity Count":"تعداد فعالیت های تکمیل شده",
+                "Number of Projects Created":"تعداد پروژه ها ایجاد شده است",
+                "Number of Abandoned Projects":"تعداد پروژه های رها شده",
+                "Number of lost projects":"تعداد پروژه های از دست رفته",
+                "Vendors according to the number of invoices":"فروشندگان بر اساس تعداد فاکتورها",
+                "Projects":"پروژه",
+                "Activities":"فعالیت ها",
+                "Number of Vehicle":"تعداد خودرو",
+                "dealer invoices":"فاکتورهای فروشندگان",
+                "Truck Sales Status":"وضعیت فروش کامیون"
 	}
 	
 }

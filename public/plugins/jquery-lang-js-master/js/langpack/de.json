@@ -26,6 +26,7 @@
                 "stocks":"Bestände",
                 "Total":"Gesamt",
                 "week":"Woche",
+                "month":"Monat",
                 "piece":"stück",
                 "1K":"Tsd",
                 "Last 1 year":"Letztes Jahr",
@@ -69,7 +70,19 @@
                 "GOAL COMPLETIONS":"ZİELABSCHLÜSSE",
                 "MAN Vehicle Sales":"MAN Fahrzeugverkauf",
                 "Sales (Brand Based)":"Verkäufe (Markenbasiert)",
-                "Reseller Bills":"Reseller Rechnungen" 
+                "Dealer Invoices":"Reseller Rechnungen", 
+                "Number of Projects Acquired":"Anzahl der erworbenen Projekte",
+                "Number of Cars in Projects Earned":"Anzahl der Autos in den verdienten Projekten",
+                "Completed Activity Count":"Abgeschlossene Aktivitätsanzahl",
+                "Number of Projects Created":"Anzahl der erstellten Projekte",
+                "Number of Abandoned Projects":"Anzahl der aufgegebenen Projekte",
+                "Number of lost projects":"Anzahl der verlorenen Projekte",
+                "Vendors according to the number of invoices":"Lieferanten nach der Anzahl der Rechnungen",
+                "Projects":"Projekte",
+                "Activities":"Aktivitäten",
+                "Number of Vehicle":"Anzahl der Fahrzeuge",
+                "dealer invoices":"Händler Rechnungen",
+                "Truck Sales Status":"LKW-Verkaufsstatus"
         
 	}
 	

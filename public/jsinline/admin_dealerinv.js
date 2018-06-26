@@ -224,7 +224,7 @@ $.ajax({
                      ' <div class="row">'+
                      '   <div class="col-md-6" >'+
                      '     <p class="text-center">'+
-                     '       <strong>'+value.NAME+' bayisi faturaları</strong>'+
+                     '       <strong>'+ value.NAME + ' ' + window.lang.translate('dealer invoices')+'</strong>'+
                      '     </p>'+
                      '     <div class="chart">'+
                      '         <div id="gauge_'+numerator+'" style="min-width: 310px;width: 100%; /*height: 400px;*/margin: 0 auto"></div>'+
@@ -339,7 +339,7 @@ $.ajax({
                         rotation: 'auto'
                     },
                     title: {
-                        text: 'adet'
+                        text: window.lang.translate('piece')
                     },
                     plotBands: [{
                         from: 0,
@@ -360,7 +360,7 @@ $.ajax({
                     name: ''+value.NAME+'',
                     data: [parseInt(value.ADET)],
                     tooltip: {
-                        valueSuffix: ' adet'
+                        valueSuffix: ' ' + window.lang.translate('piece')  //' adet'
                     }
                 }]
 
