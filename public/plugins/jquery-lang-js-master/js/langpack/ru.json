@@ -82,7 +82,8 @@
                 "Activities":"мероприятия",
                 "Number of Vehicle":"Количество автомобилей",
                 "dealer invoices":"Счета-фактуры",
-                "Truck Sales Status":"Статус продаж грузовиков" 
+                "Truck Sales Status":"Статус продаж грузовиков",
+                "Sales Activities":"Торговые операции"
 	}
 	
 }
