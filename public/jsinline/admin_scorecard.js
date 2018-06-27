@@ -355,14 +355,14 @@ function getDetayGridDowntime() {
         //            var dataSet = data.resultSet;
         //        }
         //    },
-            complete: function() {
-                $("#panel_stok").loadImager('removeLoadImage');
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.error("Hata : " + jqXHR + "-" + textStatus);
-            }
+     //       complete: function() {
+      //          $("#panel_stok").loadImager('removeLoadImage');
+      //      },
+      //      error: function (jqXHR, textStatus, errorThrown) {
+      //          console.error("Hata : " + jqXHR + "-" + textStatus);
+      //      }
  
-        },
+     //   },
 
         "columnDefs": [ {
         "targets": 2,
