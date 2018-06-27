@@ -331,30 +331,30 @@ function getDetayGridDowntime() {
                 //url : 'getAfterSalesDetayGridDowntime_infoAfterSales',
                 pk: $('#pk').val()
             }, 
-            //"dataSrc": function (json) {
-            //    return $.parseJSON(json);
-            //                     }
+            "dataSrc": function (json) {
+                return $.parseJSON(json);
+                                 }
 
-            //},
-            //success:function(data){
-            //    //server response's data is JSON
-            //    //I use jQuery's parseJSON method 
-            //    $.parseJSON(data);//it's ERROR
-            //},
-            //"columns" : [
-            //    { "data": "SERVISID", "autoWidth": true },
-            //    { "data": "SERVISAD", "autoWidth": true },
-            //    { "data": "LINKPDF", "autoWidth": true }
-            //],
+            },
+            success:function(data){
+                //server response's data is JSON
+                //I use jQuery's parseJSON method 
+                $.parseJSON(data);//it's ERROR
+            },
+            "columns" : [
+                { "data": "SERVISID", "autoWidth": true },
+                { "data": "SERVISAD", "autoWidth": true },
+                { "data": "LINKPDF", "autoWidth": true }
+            ],
                  
         
-            //success: function (data, textStatus, jqXHR) {
-            //    console.log(data.resultSet);
-            //    if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+            success: function (data, textStatus, jqXHR) {
+                console.log(data.resultSet);
+                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
             //        alert('data bulundu');
-            //        var dataSet = data.resultSet;
-            //    }
-            //},
+                    var dataSet = data.resultSet;
+                }
+            },
             complete: function() {
                 $("#panel_stok").loadImager('removeLoadImage');
             },
