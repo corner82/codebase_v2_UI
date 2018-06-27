@@ -318,7 +318,8 @@ $(function () {
 // 3_1. block hidden fonk.
 
 function getDetayGridDowntime() {
-  $("#grid_downtime").dataTable().fnDestroy();
+ 
+   $("#grid_downtime").dataTable().fnDestroy();
    $('#grid_downtime').DataTable( {
         "responsive" : true,
         "ajax": {
@@ -328,22 +329,49 @@ function getDetayGridDowntime() {
             "data": {
                 url : 'getAfterSalesYedekParcaPDFServissiz_infoAfterSales',
                 //url : 'getAfterSalesDetayGridDowntime_infoAfterSales',
-                pk: $('#pk').val(),
+                pk: $('#pk').val()
+            }, 
+            "dataSrc": function (json) {
+                return $.parseJSON(json);
+                                 }
+
             },
-           complete: function() {
-                $("#panel_stok").loadImager('removeLoadImage');
-              },
-              },
+            success:function(data){
+                //server response's data is JSON
+                //I use jQuery's parseJSON method 
+                $.parseJSON(data);//it's ERROR
+            },
+            "columns" : [
+                { "data": "SERVISID", "autoWidth": true },
+                { "data": "SERVISAD", "autoWidth": true },
+                { "data": "LINKPDF", "autoWidth": true }
+            ],
+                 
+        
+        //    success: function (data, textStatus, jqXHR) {
+         //       console.log(data.resultSet);
+        //        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+        //    //        alert('data bulundu');
+        //            var dataSet = data.resultSet;
+        //        }
+        //    },
+     //       complete: function() {
+      //          $("#panel_stok").loadImager('removeLoadImage');
+      //      },
+      //      error: function (jqXHR, textStatus, errorThrown) {
+      //          console.error("Hata : " + jqXHR + "-" + textStatus);
+      //      }
+ 
+     //   },
+
         "columnDefs": [ {
-            "targets": 2,
-            "render": function ( data, type, row, meta ) {
-                return '<a href="'+ data +'">' + data + '</a>';
-                }
+        "targets": 2,
+        "render": function ( data, type, row, meta ) {
+            return '<a href="'+ data +'">' + data + '</a>';
+            }
         } ]
     } );
 }
-
-
 
 function getDetayGridDowntimeWithServices(multiSelectedRoles) {
    var services = getServicesSelectedAsUrl(multiSelectedRoles);
