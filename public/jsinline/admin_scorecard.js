@@ -348,13 +348,13 @@ function getDetayGridDowntime() {
             ],
                  
         
-            success: function (data, textStatus, jqXHR) {
-                console.log(data.resultSet);
-                if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
-            //        alert('data bulundu');
-                    var dataSet = data.resultSet;
-                }
-            },
+        //    success: function (data, textStatus, jqXHR) {
+         //       console.log(data.resultSet);
+        //        if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
+        //    //        alert('data bulundu');
+        //            var dataSet = data.resultSet;
+        //        }
+        //    },
             complete: function() {
                 $("#panel_stok").loadImager('removeLoadImage');
             },
