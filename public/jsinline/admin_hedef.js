@@ -355,7 +355,15 @@ function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
             complete: function() {
                 $("#panel_stok").loadImager('removeLoadImage');
               }
-        },      
+        }, 
+            
+        "columnDefs": [ {
+            "targets": [3,4,5,6,7,8,9,10,11],
+            "render": function ( data, type, row, meta ) {
+                
+                return data;
+                }
+        } ]
         
     } ); 
 }
