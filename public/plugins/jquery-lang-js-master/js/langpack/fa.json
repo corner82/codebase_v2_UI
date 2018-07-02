@@ -86,7 +86,9 @@
                 "Sales Activities":"فعالیت های فروش",
                 "Workshop sales" : "فروش کارگاه",
                 "Warranty sales" : "فروش گارانتی",
-                "Direct sales" : "فروش مستقیم"
+                "Direct sales" : "فروش مستقیم",
+                "Sale":"فروش",
+                "Spare parts total sales":"کل فروش قطعات یدکی"
 	}
 	
 }

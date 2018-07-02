@@ -86,7 +86,9 @@
                 "Sales Activities":"Торговые операции",
                 "Workshop sales" : "Семинар-продажа",
                 "Warranty sales" : "Гарантийные продажи",
-                "Direct sales" : "Прямые продажи"
+                "Direct sales" : "Прямые продажи",
+                "Sale":"Продажа",
+                "Spare parts total sales":"Общий объем продаж запасных частей"
 	}
 	
 }

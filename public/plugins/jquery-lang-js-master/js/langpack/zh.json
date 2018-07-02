@@ -86,6 +86,8 @@
                 "Sales Activities":"销售活动",
                 "Workshop sales" : "车间销售",
                 "Warranty sales" : "保修销售",
-                "Direct sales" : "直接销售"
+                "Direct sales" : "直接销售",
+                "Sale":"拍卖",
+                "Spare parts total sales":"备件总销售额"
         }
 }

@@ -86,7 +86,9 @@
                 "Sales Activities":"Verkope aktiwiteite",
                 "Workshop sales" : "Werkswinkelverkope",
                 "Warranty sales" : "Garantieverkauf",
-                "Direct sales" : "Direkte verkope"
+                "Direct sales" : "Direkte verkope",
+                "Sale":"Koop",
+                "Spare parts total sales":"Onderdele totale verkope"
 	}
 	
 }

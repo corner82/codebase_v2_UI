@@ -86,7 +86,9 @@
                 "Sales Activities":"Verkaufsaktivitäten",
                 "Workshop sales" : "Werkstattverkauf",
                 "Warranty sales" : "Garantieverkauf",
-                "Direct sales" : "Direktverkauf"
+                "Direct sales" : "Direktverkauf",
+                "Sale":"Verkauf",
+                "Spare parts total sales":"Ersatzteile Gesamtumsatz"
 	}
 	
 }

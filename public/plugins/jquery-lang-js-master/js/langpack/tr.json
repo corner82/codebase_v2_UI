@@ -26,7 +26,7 @@
                 "stocks":"stoklar",
                 "Total":"Toplam",
                 "week":"hafta",
-                "month":"ay",
+                "window.lang.translate('month')":"ay",
                 "piece":"adet",
                 "1K":"bin",
                 "Last 1 year":"Son 1 yıl",
@@ -89,7 +89,9 @@
                 "Sales Activities":"Proje Aktivite Durumları",
                 "Workshop sales" : "Atölye cirosu",
                 "Warranty sales" : "Garanti satışları",
-                "Direct sales" : "Direk satış cirosu"
+                "Direct sales" : "Direk satış cirosu",
+                "Sale":"Satış",
+                "Spare parts total sales":"Yedek parça toplam satış"
 	}
 	
 }

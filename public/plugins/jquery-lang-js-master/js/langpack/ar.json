@@ -86,7 +86,9 @@
                 "Sales Activities":"أنشطة المبيعات",
                 "Workshop sales" : "مبيعات ورشة العمل",
                 "Warranty sales" : "البيع المباشر",
-                "Direct sales" : "البيع المباشر"
+                "Direct sales" : "البيع المباشر",
+                "Sale":"تخفيض السعر",
+                "Spare parts total sales":"مبيعات اجمالي قطع الغيار"
 	}
 	
 }

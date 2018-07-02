@@ -12,11 +12,13 @@ $("#langCode").jsLangMaster();
  * @author Mustafa Zeynel Dağlı
  * @since 11/05/2018
  */
+
 $("#langCode").highChartsLang({langChart:$("#langCode").val()});
 var highChartsLang = $("#langCode").highChartsLang('getHighChartsLang'); 
-    
+ 
 //bootstrap WYSIHTML5 - text editor
-$(".textarea").wysihtml5();
+//$(".textarea").wysihtml5();
+
 
 // Load the fonts
 Highcharts.createElement('link', {
@@ -31,10 +33,17 @@ Highcharts.wrap(Highcharts.Chart.prototype, 'getContainer', function (proceed) {
    this.container.style.background = 'url(http://www.highcharts.com/samples/graphics/sand.png)';
 });
 
+    
 Highcharts.theme = {
    colors: ["#91b900", "#4b96d2", "#afafaf", "#ffcd00", "#E41A52", "#303c49", "#eeaaee",
       "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
-   chart: {
+    chart: {
+        events: {
+            load: function () {
+                
+            }
+        },
+
       backgroundColor: null,
       height : 200,
       style: {
@@ -115,11 +124,14 @@ Highcharts.theme = {
 
 };
 
-// Apply the theme
-Highcharts.setOptions(Highcharts.theme);
 
+// Apply the theme
+Highcharts.setOptions(Highcharts.theme);  
+
+setTimeout(function() {
     
-// marka satışları 2016
+    //console.log("Brand Sales Units translated =>" + window.lang.translate('Brand Sales Units'));
+    // marka satışları 2016                
 Highcharts.chart('container_satis_2016', {
     chart: {
         plotBackgroundColor: null,
@@ -129,7 +141,7 @@ Highcharts.chart('container_satis_2016', {
         height : 350,
     },
     title: {
-        text: window.lang.translate('Brand Sales Units')+' - 2016'  //'Marka Satış Adetleri - 2016'
+        text: window.lang.translate('Brand Sales Units')  //+' - 2016'  //'Marka Satış Adetleri - 2016'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -148,7 +160,7 @@ Highcharts.chart('container_satis_2016', {
         }
     },
     series: [{
-        name: 'satış',
+        name: window.lang.translate('Sale'),
         colorByPoint: true,
         data: [{
             name: 'Daf',
@@ -175,11 +187,17 @@ Highcharts.chart('container_satis_2016', {
             y: 2068
         }, {
             name: 'Volvo',
-            y: 575
+                y: 575
         }, ]
     }]
 });
+     
+                   
+}, 4000);
 
+
+setTimeout(function() {
+    
 // marka satışları 2017
 Highcharts.chart('container_satis_2017', {
     chart: {
@@ -209,7 +227,7 @@ Highcharts.chart('container_satis_2017', {
         }
     },
     series: [{
-        name: 'satış',
+        name: window.lang.translate('Sale'),
         colorByPoint: true,
         data: [{
             name: 'Daf',
@@ -240,7 +258,9 @@ Highcharts.chart('container_satis_2017', {
         }, ]
     }]
 });
+}, 4000);
 
+setTimeout(function() {
 // marka satışları all
 Highcharts.chart('container_satis_all', {
     chart: {
@@ -269,7 +289,7 @@ Highcharts.chart('container_satis_all', {
     yAxis: {
         min: 0,
         title: {
-            text: 'Adet'
+            text: window.lang.translate('piece')  //'Adet'
         }
     },
     tooltip: {
@@ -296,8 +316,14 @@ Highcharts.chart('container_satis_all', {
 
     }, ]
 });
+}, 4000);
 
 // marka satışlari aylik
+
+
+setTimeout(function() {
+    
+var myMonth = window.lang.translate('month');    
 Highcharts.chart('container_satis_monthly', {
     chart: {
         type: 'column',
@@ -311,31 +337,31 @@ Highcharts.chart('container_satis_monthly', {
     },
     xAxis: {
         categories: [
-            '1.Ay',
-            '2.Ay',
-            '3.Ay',
-            '4.Ay',
-            '5.Ay',
-            '6.Ay',
-            '7.Ay',
-            '8.Ay',
-            '9.Ay',
-            '10.Ay',
-            '11.Ay',
-            '12.Ay',
+            '1.' + myMonth,
+            '2.' + myMonth,
+            '3.' + myMonth,
+            '4.' + myMonth,
+            '5.' + myMonth,
+            '6.' + myMonth,
+            '7.' + myMonth,
+            '8.' + myMonth,
+            '9.' + myMonth,
+            '10.' + myMonth,
+            '11.' + myMonth,
+            '12.' + myMonth,
         ],
         crosshair: true
     },
     yAxis: {
         min: 0,
         title: {
-            text: 'Adet'
+            text: window.lang.translate('piece') //'Adet'
         }
     },
     tooltip: {
         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} adet</b></td></tr>',
+            '<td style="padding:0"><b>{point.y:.1f} ' + window.lang.translate('piece') + '</b></td></tr>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
@@ -356,7 +382,7 @@ Highcharts.chart('container_satis_monthly', {
 
     }, ]
 });
-   
+}, 4000);   
 // afterSales  ciro, yedek parça,toplam müşteri  dashboard data (#container_toplam_ciro)
 $.ajax({
     url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
