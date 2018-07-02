@@ -342,14 +342,16 @@
             var self = this;
             if(Cookies && Cookies.length>0) {
                 if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+                    //alert('lang code bulundu1');
                     self.options.langDefault = Cookies.get('langCookie');
                 } 
              } else if($("#langCode").length>0 ) {
                  if($("#langCode").val() != null && $("#langCode").val()!= '') {
-                     alert('lang code bulundu2');
+                     //alert('lang code bulundu2');
                     self.options.langDefault = $("#langCode").val();
                 } 
              } else {
+                 //alert('lang code bulundu3');
                  self.options.langDefault = 'tr';
              }
             
@@ -368,6 +370,11 @@
             window.lang.init({
                     defaultLang: 'en'
             });
+           /* setTimeout(function() {
+                    //console.log("adet translated =>"+window.lang.translate('piece'));
+                    //alert(window.lang.translate('Brand Sales Units'));
+                    window.lang.change(self.options.langDefault);
+                }, 4000);*/
             window.lang.change(self.options.langDefault);
         },
        
@@ -665,6 +672,7 @@
             
             if(Cookies && Cookies.length>0) {
                 if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+                    alert(Cookies.get('langCookie'));
                     self.options.langCode = Cookies.get('langCookie');
                 } 
              } else if($("#langCode").length>0 ) {
