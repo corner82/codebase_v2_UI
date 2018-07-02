@@ -88,7 +88,8 @@
                 "Warranty sales" : "البيع المباشر",
                 "Direct sales" : "البيع المباشر",
                 "Sale":"تخفيض السعر",
-                "Spare parts total sales":"مبيعات اجمالي قطع الغيار"
+                "Spare parts total sales":"مبيعات اجمالي قطع الغيار",
+                "Spare parts oil sales":"مبيعات زيت قطع الغيار"
 	}
 	
 }

@@ -88,7 +88,8 @@
                 "Warranty sales" : "Гарантийные продажи",
                 "Direct sales" : "Прямые продажи",
                 "Sale":"Продажа",
-                "Spare parts total sales":"Общий объем продаж запасных частей"
+                "Spare parts total sales":"Общий объем продаж запасных частей",
+                "Spare parts oil sales":"Продажа нефти запасных частей"
 	}
 	
 }

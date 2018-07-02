@@ -91,7 +91,8 @@
                 "Warranty sales" : "Garanti satışları",
                 "Direct sales" : "Direk satış cirosu",
                 "Sale":"Satış",
-                "Spare parts total sales":"Yedek parça toplam satış"
+                "Spare parts total sales":"Yedek parça toplam satış",
+                "Spare parts oil sales":"Yedek parça yağ satış"
 	}
 	
 }

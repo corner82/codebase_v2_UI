@@ -88,6 +88,7 @@
                 "Warranty sales" : "保修销售",
                 "Direct sales" : "直接销售",
                 "Sale":"拍卖",
-                "Spare parts total sales":"备件总销售额"
+                "Spare parts total sales":"备件总销售额",
+                "Spare parts oil sales":"备件油销售"
         }
 }

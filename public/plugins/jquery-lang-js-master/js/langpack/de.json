@@ -88,7 +88,8 @@
                 "Warranty sales" : "Garantieverkauf",
                 "Direct sales" : "Direktverkauf",
                 "Sale":"Verkauf",
-                "Spare parts total sales":"Ersatzteile Gesamtumsatz"
+                "Spare parts total sales":"Ersatzteile Gesamtumsatz",
+                "Spare parts oil sales":"Ersatzteile Ölverkauf"
 	}
 	
 }
