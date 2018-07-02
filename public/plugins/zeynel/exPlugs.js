@@ -340,15 +340,16 @@
          */
         _create: function () {
             var self = this;
-            if(Cookies && Cookies.length>0) {
-                if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
-                    //alert('lang code bulundu1');
-                    self.options.langDefault = Cookies.get('langCookie');
-                } 
-             } else if($("#langCode").length>0 ) {
-                 if($("#langCode").val() != null && $("#langCode").val()!= '') {
+            if($("#langCode").length>0) {
+                if($("#langCode").val() != null && $("#langCode").val()!= '') {
                      //alert('lang code bulundu2');
                     self.options.langDefault = $("#langCode").val();
+                }
+                
+             } else if(Cookies && Cookies.length>0) {
+                  if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+                    //alert('lang code bulundu1');
+                    self.options.langDefault = Cookies.get('langCookie');
                 } 
              } else {
                  //alert('lang code bulundu3');
