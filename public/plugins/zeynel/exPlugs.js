@@ -672,6 +672,7 @@
             
             if(Cookies && Cookies.length>0) {
                 if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+                    alert(Cookies.get('langCookie'));
                     self.options.langCode = Cookies.get('langCookie');
                 } 
              } else if($("#langCode").length>0 ) {
