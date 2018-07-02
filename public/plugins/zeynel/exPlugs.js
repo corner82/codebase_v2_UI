@@ -424,14 +424,14 @@
                         downloadXLS: 'xls indir',
                         printChart: 'xls indir',
                     };
-             if(Cookies && Cookies.length>0) {
-                if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
-                    self.options.langChart = Cookies.get('langCookie');
-                } 
-             } else if($("#langCode").length>0 ) {
-                 if($("#langCode").val() != null && $("#langCode").val()!= '') {
+             if($("#langCode").length>0) {
+                if($("#langCode").val() != null && $("#langCode").val()!= '') {
                     self.options.langChart = $("#langCode").val();
-                } 
+                }
+             } else if(Cookies && Cookies.length>0) {
+                  if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+                    self.options.langChart = Cookies.get('langCookie');
+                }
              } else {
                  self.options.langChart = 'tr';
              }
@@ -672,14 +672,14 @@
             var self = this;
             
             if(Cookies && Cookies.length>0) {
-                if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
-                    alert(Cookies.get('langCookie'));
-                    self.options.langCode = Cookies.get('langCookie');
+                if($("#langCode").length>0  ) {
+                    if($("#langCode").val() != null && $("#langCode").val()!= '') {
+                        self.options.langCode = $("#langCode").val();
+                    }
                 } 
-             } else if($("#langCode").length>0 ) {
-                 if($("#langCode").val() != null && $("#langCode").val()!= '') {
-                    self.options.langCode = $("#langCode").val();
-                } 
+             } else if( Cookies.get('langCookie') != null && Cookies.get('langCookie') != '') {
+                   alert(Cookies.get('langCookie'));
+                   self.options.langCode = Cookies.get('langCookie');
              } else {
                  self.options.langCode = 'tr';
              }
