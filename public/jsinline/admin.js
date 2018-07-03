@@ -1669,8 +1669,9 @@ $('#detay_CSI').click(function(){
             getDetayGridMMCSIWithServices(multiSelectedRoles);
             getMMCSIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDetayGridMMCSI();
+            
             getMMCSIYillikWithoutServices();
+            getDetayGridMMCSI();
         } 
 
     }else {
@@ -1683,8 +1684,9 @@ $('#detay_CSI').click(function(){
             getDetayGridMMCSIWithServices(multiSelectedRoles);
             getMMCSIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDetayGridMMCSI();
+            
             getMMCSIYillikWithoutServices();
+            getDetayGridMMCSI();
         } 
     }     
 });
@@ -11297,7 +11299,7 @@ function getMMCSIYillikWithoutServices() {
                         },
                         yAxis: {
                             title: {
-                                text: 'Number of Employees'
+                                text: '%'
                             }
                         },
                         legend: {
@@ -11416,7 +11418,7 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
                         },
                         yAxis: {
                             title: {
-                                text: 'Number of Employees'
+                                text: '%'
                             }
                         },
                         legend: {
@@ -11467,7 +11469,7 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
 
 function getDetayGridMMCSI() {
    $("#grid_CSI").dataTable().fnDestroy();
-   $('#grid_CSI').DataTable( {
+   var gridCSI = $('#grid_CSI').DataTable( {
         "language": {
             "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
         },
@@ -11482,9 +11484,24 @@ function getDetayGridMMCSI() {
             },
             complete: function() {
                 //$("#panel_stoklar").loadImager('removeLoadImage');
+                var head_item = $('#grid_CSI').DataTable().columns(1).header();
+                alert($(head_item).html());
+                $(head_item).text(window.lang.translate('Services'));
+                var footer_item = $('#grid_CSI').DataTable().columns(1).footer();
+                alert($(footer_item).html());
+                $(footer_item).text(window.lang.translate('Services'));
               }
         }
     } );
+    
+    //$(gridCSI.column(1).header()).text('My title');
+    alert(gridCSI.columns(1).header());
+    console.log(gridCSI.columns(1).header());
+    var head_item = gridCSI.columns(1).header();
+    alert($(head_item).html());
+    alert($(head_item).text());
+    //$(head_item).html('new header');
+    $(head_item).text('new header');
 }
 
 function getDetayGridMMCSIWithServices(multiSelectedRoles) {
@@ -11585,7 +11602,7 @@ function getMMCXIYillikWithoutServices() {
                         },
                         yAxis: {
                             title: {
-                                text: 'Number of Employees'
+                                text: '%'
                             }
                         },
                         legend: {
@@ -11710,7 +11727,7 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
                         },
                         yAxis: {
                             title: {
-                                text: 'Number of Employees'
+                                text: '%'
                             }
                         },
                         legend: {
