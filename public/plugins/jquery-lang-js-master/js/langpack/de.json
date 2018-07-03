@@ -1,6 +1,7 @@
 {
 	"token": {
                 "Search":"Suche",
+                "Please select":"Bitte auswählen",
                 "Main navigation":"Hauptnavigation",
                 "Send":"Senden",
                 "message":"Botschaft",
@@ -84,12 +85,26 @@
                 "dealer invoices":"Händler Rechnungen",
                 "Truck Sales Status":"LKW-Verkaufsstatus",
                 "Sales Activities":"Verkaufsaktivitäten",
-                "Workshop sales" : "Werkstattverkauf",
-                "Warranty sales" : "Garantieverkauf",
-                "Direct sales" : "Direktverkauf",
+                "Workshop sales":"Werkstattverkauf",
+                "Warranty sales":"Garantieverkauf",
+                "Direct sales":"Direktverkauf",
                 "Sale":"Verkauf",
                 "Spare parts total sales":"Ersatzteile Gesamtumsatz",
-                "Spare parts oil sales":"Ersatzteile Ölverkauf"
+                "Spare parts oil sales":"Ersatzteile Ölverkauf",
+                "Actions":"Aktionen",
+                "RVP Total Truck Sales":"RVP Total Truck Sales",
+                "PUBLIC Sales Target Number":"PUBLIC Verkaufszielnummer",
+                "IKA Sales Target Number":"IKA Verkaufszielnummer",
+                "Number of Reseller Inventory for Previous Year":"Anzahl der Reseller-Inventare für das vorherige Jahr",
+                "Year-End Dealer Stock Goal Count":"Year-End Dealer Stock Goal Anzahl",
+                "Annual RETAIL Sales Target":"Jährliches RETAIL Verkaufsziel",
+                "Sales Funnel":"Verkaufs-Trichter",
+                "Scorecard":"Scorecard",
+                "Sales Activities":"Verkaufsaktivitäten",
+                "Activite":"Aktivität",
+                "Project":"Projekt",
+                "Quote":"Zitat",
+                "Project Won":"Projekt gewonnen"
 	}
 	
 }

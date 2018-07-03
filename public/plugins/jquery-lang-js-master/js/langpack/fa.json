@@ -1,6 +1,7 @@
 {
 	"token": {
                 "Search":"جستجو کردن",
+                "Please select":"لطفا انتخاب کنید",
                 "Main navigation":"ناوبری اصلی",
                 "Send":"ارسال",
                 "message":"پیام",
@@ -84,12 +85,26 @@
                 "dealer invoices":"فاکتورهای فروشندگان",
                 "Truck Sales Status":"وضعیت فروش کامیون",
                 "Sales Activities":"فعالیت های فروش",
-                "Workshop sales" : "فروش کارگاه",
-                "Warranty sales" : "فروش گارانتی",
-                "Direct sales" : "فروش مستقیم",
+                "Workshop sales":"فروش کارگاه",
+                "Warranty sales":"فروش گارانتی",
+                "Direct sales":"فروش مستقیم",
                 "Sale":"فروش",
                 "Spare parts total sales":"کل فروش قطعات یدکی",
-                "Spare parts oil sales":"فروش نفت قطعات یدکی"
+                "Spare parts oil sales":"فروش نفت قطعات یدکی",                
+                "Actions":"عملیات",
+                "RVP Total Truck Sales":"فروش رنو کل کامیون",
+                "PUBLIC Sales Target Number":"تعداد اهداف فروش عمومی",
+                "IKA Sales Target Number":"IKA فروش هدف",
+                "Number of Reseller Inventory for Previous Year":"تعداد موجودی نمایندگی فروش برای سال قبل",
+                "Year-End Dealer Stock Goal Count":"سال آخر فروشندگان تعداد سهام هدف",
+                "Annual RETAIL Sales Target":"هدف فروش سالانه RETAIL",
+                "Sales Funnel":"ورقه فروش",
+                "Scorecard":"کارت امتیازی",
+                "Sales Activities":"فعالیت های فروش",
+                "Activite":"فعالیت",
+                "Project":"پروژه",
+                "Quote":"نقل قول",
+                "Project Won":"پروژه برنده شد"
 	}
 	
 }

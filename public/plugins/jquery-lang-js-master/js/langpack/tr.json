@@ -1,6 +1,7 @@
 {
 	"token": {
                 "Search":"Ara",
+                "Please select":"Lütfen seçiniz",
                 "Main navigation":"Ana Menü",
                 "Send":"Gönder",
                 "message":"mesaj",
@@ -87,12 +88,28 @@
                 "dealer invoices":"bayisi faturaları",
                 "Truck Sales Status":"Kamyon Satış Durumu",
                 "Sales Activities":"Proje Aktivite Durumları",
-                "Workshop sales" : "Atölye cirosu",
-                "Warranty sales" : "Garanti satışları",
-                "Direct sales" : "Direk satış cirosu",
+                "Workshop sales":"Atölye cirosu",
+                "Warranty sales":"Garanti satışları",
+                "Direct sales":"Direk satış cirosu",
                 "Sale":"Satış",
                 "Spare parts total sales":"Yedek parça toplam satış",
-                "Spare parts oil sales":"Yedek parça yağ satış"
+                "Spare parts oil sales":"Yedek parça yağ satış",
+                "Actions":"Eylemler",
+                "RVP Total Truck Sales":"RVP Toplam Kamyon Satış Sayısı",
+                "PUBLIC Sales Target Number":"KAMU Satış Hedef Sayısı",
+                "IKA Sales Target Number":"IKA Satış Hedef Sayısı",
+                "Number of Reseller Inventory for Previous Year":"Bir Önceki Yılın Bayi Stok Sayısı",
+                "Year-End Dealer Stock Goal Count":"Yıl Sonu Bayi Stok Hedef Sayısı",
+                "Annual RETAIL Sales Target":"Yıllık RETAIL Satış Hedef",
+                "Sales Funnel":"Satış Funnel",
+                "Scorecard":"Scorecard",
+                "Sales Activities":"Satış Faaliyetleri",
+                "Activity":"Aktivite",
+                "Project":"Proje",
+                "Quote":"Teklif",
+                "Project Won":"Kazanılan Proje"
+                
+                
 	}
 	
 }

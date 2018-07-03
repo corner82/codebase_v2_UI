@@ -1,6 +1,7 @@
 {
 	"token": {
                 "Search":"搜索",
+                "Please select":"请选择",
                 "Main navigation":"主导航",
                 "Send":"发送",
                 "message":"信息",
@@ -84,11 +85,26 @@
                 "dealer invoices":"经销商发票",
                 "Truck Sales Status":"卡车销售状况",
                 "Sales Activities":"销售活动",
-                "Workshop sales" : "车间销售",
-                "Warranty sales" : "保修销售",
-                "Direct sales" : "直接销售",
+                "Workshop sales":"车间销售",
+                "Warranty sales":"保修销售",
+                "Direct sales":"直接销售",
                 "Sale":"拍卖",
                 "Spare parts total sales":"备件总销售额",
-                "Spare parts oil sales":"备件油销售"
+                "Spare parts oil sales":"备件油销售",
+                "Actions":"操作",
+                "RVP Total Truck Sales":"RVP卡车总销售额",
+                "PUBLIC Sales Target Number":"公共销售目标编号",
+                "IKA Sales Target Number":"IKA销售目标编号",
+                "Number of Reseller Inventory for Previous Year":"上一年的经销商库存数量",
+                "Year-End Dealer Stock Goal Count":"年终经销商股票目标数量",
+                "Annual RETAIL Sales Target":"年度零售销售目标",
+                "Sales Funnel":"销售漏斗",
+                "Scorecard":"记分卡",
+                "Sales Activities":"销售活动",
+                "Activity":"活动",
+                "Project":"项目",
+                "Quote":"引用",
+                "Project Won":"项目赢了"
+        
         }
 }
