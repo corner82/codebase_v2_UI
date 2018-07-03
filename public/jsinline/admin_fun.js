@@ -49,7 +49,7 @@ Highcharts.wrap(Highcharts.Chart.prototype, 'getContainer', function (proceed) {
 });
 
 Highcharts.theme = {
-   colors: ["#f45b5b", "#8085e9", "#8d4654", "#7798BF", "#aaeeee", "#ff0066", "#eeaaee",
+   colors: ["#91b900", "#ffcd00", "#4b96d2", "#E41A52", "#303c49", "#afafaf","#eeaaee",
       "#55BF3B", "#DF5353", "#7798BF", "#aaeeee"],
    chart: {
       backgroundColor: null,
@@ -137,14 +137,14 @@ Highcharts.setOptions(Highcharts.theme);
 
 
 
-
+setTimeout(function() {
 Highcharts.chart('container', {
     chart: {
         type: 'funnel',
         height : 400,
     },
     title: {
-        text: 'Satış Funnel'
+        text: window.lang.translate('Sales Funnel')
     },
     plotOptions: {
         series: {
@@ -164,16 +164,16 @@ Highcharts.chart('container', {
         enabled: false
     },
     series: [{
-        name: 'Satış Faaliyetleri',
+        name: window.lang.translate('Sales Activities'),
         data: [
-            ['Aktivite 30963 | 25168 83%', 30963],
-            ['Proje 2477 | 2042 82%', 2477],
-            ['Teklif 2477 | 2042 82%', 2477],
-            ['Kazanılan Proje 669 | 425 63%', 669],
+            [window.lang.translate('Activity') + ' 30963 | 25168 83%', 30963],
+            [window.lang.translate('Project') + ' 2477 | 2042 82%', 2477],
+            [window.lang.translate('Quote') + ' 2477 | 2042 82%', 2477],
+            [window.lang.translate('Project Won') + ' 669 | 425 63%', 669],
         ]
     }]
 });
-
+}, 4000);
  
 // hedefler list blok
 $.ajax({

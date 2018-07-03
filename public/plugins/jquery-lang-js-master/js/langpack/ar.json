@@ -1,6 +1,7 @@
 {
 	"token": {
                 "Search":"بحث",
+                "Please select":"يرجى الاختيار",
                 "Main navigation":"الملاحة الرئيسية",
                 "Send":"إرسال",
                 "message":"رسالة",
@@ -84,12 +85,26 @@
                 "dealer invoices":"فواتير تاجر",
                 "Truck Sales Status":"حالة مبيعات الشاحنات",
                 "Sales Activities":"أنشطة المبيعات",
-                "Workshop sales" : "مبيعات ورشة العمل",
-                "Warranty sales" : "البيع المباشر",
-                "Direct sales" : "البيع المباشر",
+                "Workshop sales":"مبيعات ورشة العمل",
+                "Warranty sales":"البيع المباشر",
+                "Direct sales":"البيع المباشر",
                 "Sale":"تخفيض السعر",
                 "Spare parts total sales":"مبيعات اجمالي قطع الغيار",
-                "Spare parts oil sales":"مبيعات زيت قطع الغيار"
+                "Spare parts oil sales":"مبيعات زيت قطع الغيار",
+                "Actions":"تطبيقات",
+                "RVP Total Truck Sales":"RVP إجمالي مبيعات الشاحنات",
+                "PUBLIC Sales Target Number":"عدد أهداف المبيعات العامة",
+                "IKA Sales Target Number":"رقم هدف مبيعات IKA",
+                "Number of Reseller Inventory for Previous Year":"عدد جرد التجزئة للسنة السابقة",
+                "Year-End Dealer Stock Goal Count":"نهاية العام المخزون تاجر عدد الأهداف",
+                "Annual RETAIL Sales Target":"هدف مبيعات التجزئة السنوي",
+                "Sales Funnel":"قمع المبيعات",
+                "Scorecard":"بطاقة الأداء",
+                "Sales Activities":"أنشطة المبيعات",
+                "Activite":"نشاط",
+                "Project":"مشروع",
+                "Quote":"اقتبس",
+                "Project Won":"المشروع فاز"
 	}
 	
 }

@@ -1,6 +1,7 @@
 {
 	"token": {
                 "Search":"Soek",
+                "Please select":"Kies asseblief",
                 "Main navigation":"Hoofnavigasie",
                 "Send":"Stuur",
                 "message":"Boodskap",
@@ -84,12 +85,26 @@
                 "dealer invoices":"handelaar fakture",
                 "Truck Sales Status":"Vragmotorverkoopsstatus",
                 "Sales Activities":"Verkope aktiwiteite",
-                "Workshop sales" : "Werkswinkelverkope",
-                "Warranty sales" : "Garantieverkauf",
-                "Direct sales" : "Direkte verkope",
+                "Workshop sales":"Werkswinkelverkope",
+                "Warranty sales":"Garantieverkauf",
+                "Direct sales":"Direkte verkope",
                 "Sale":"Koop",
                 "Spare parts total sales":"Onderdele totale verkope",
-                "Spare parts oil sales":"Onderdele olie verkope"
+                "Spare parts oil sales":"Onderdele olie verkope",
+                "Actions":"Aksies",
+                "RVP Total Truck Sales":"RVP Totale Vragmotorverkope",
+                "PUBLIC Sales Target Number":"Aantal publieke verkoopsdoelwitte",
+                "IKA Sales Target Number":"IKA Verkoop Teikennommer",
+                "Number of Reseller Inventory for Previous Year":"Aantal Reseller Inventaris vir Vorige Jaar",
+                "Year-End Dealer Stock Goal Count":"Jaar-einde Handelaar Voorraad Doel Telling",
+                "Annual RETAIL Sales Target":"Jaarlikse RETAIL verkoopsdoel",
+                "Sales Funnel":"Verkope trechter",
+                "Scorecard":"Scorecard",
+                "Sales Activities":"Satış Faaliyetleri",
+                "Activite":"Aktiwiteit",
+                "Project":"Projek",
+                "Quote":"Kwotasie",
+                "Project Won":"Projek Gewonnen"
 	}
 	
 }

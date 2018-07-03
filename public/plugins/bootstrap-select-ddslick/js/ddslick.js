@@ -225,7 +225,7 @@
             showSelectedHTML: true,
             clickOffToClose: true,
             search : false,
-            searchText : 'Ara bakalım',
+            searchText : 'Ara',
             searchTextClass : 'search-text',
             searchTemplate : '<div  class="form-group" style="margin-bottom:0px;margin-left:-4px;margin-top:10px;" >\n\
                                 <div class="col-sm-10">\n\
