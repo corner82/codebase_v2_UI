@@ -179,12 +179,17 @@ ajaxACLResources.ajaxCallWidget ({
      },
      onSuccess : function (event, data) {
          var data = $.parseJSON(data);
+         data.splice(0, 1,
+                            { text: window.lang.translate('Please select'), value: 0, selected: false, description: "" }
+                        );
+
          $('#loading-image-roles').loadImager('removeLoadImage');
          $('#dropdownRoles').ddslick({
             height : 200,
             data : data, 
             width:'98%',
             selectText: "Select your preferred social network",
+            searchText : window.lang.translate('Search'),
             //showSelectedHTML : false,
             defaultSelectedIndex: 3,
             search : true,
@@ -358,6 +363,9 @@ function getAfterSalesYedekParcaPDFServissiz() {
  
    $("#grid_scorecard").dataTable().fnDestroy();
    $('#grid_scorecard').DataTable( {
+       "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -369,15 +377,38 @@ function getAfterSalesYedekParcaPDFServissiz() {
             }, 
             complete: function() {
                 $("#panel_scorecard").loadImager('removeLoadImage');
+                setDetayGridAfterSalesYedekParcaPDFHeaderFooterLang();
+                
               }
         },      
         "columnDefs": [ {
         "targets": 2,
         "render": function ( data, type, row, meta ) {
-        return '<a href="'+ data +'">' + data + '</a>';
+        return '<a href="'+ data +'" target=_blank>' + data + '</a>';
                 }
         } ]
     } );
+}
+
+
+function setDetayGridAfterSalesYedekParcaPDFHeaderFooterLang() {
+    var head_item_0 = $('#grid_scorecard').DataTable().columns(0).header();
+    var head_item_1 = $('#grid_scorecard').DataTable().columns(1).header();
+    var head_item_2 = $('#grid_scorecard').DataTable().columns(2).header();
+    //alert($(head_item).html());
+    $(head_item_0).text(window.lang.translate('No'));
+    $(head_item_1).text(window.lang.translate('Service Name'));
+    $(head_item_2).text(window.lang.translate('PDF Link'));    
+    
+    var footer_item_0 = $('#grid_scorecard').DataTable().columns(0).footer();
+    var footer_item_1 = $('#grid_scorecard').DataTable().columns(1).footer();
+    var footer_item_2 = $('#grid_scorecard').DataTable().columns(2).footer();
+
+    //alert($(footer_item).html());
+    $(footer_item_0).text(window.lang.translate('No'));
+    $(footer_item_1).text(window.lang.translate('Service Name'));
+    $(footer_item_2).text(window.lang.translate('PDF Link'));
+
 }
 
 function getAfterSalesYedekParcaPDFServisli(multiSelectedRoles) {

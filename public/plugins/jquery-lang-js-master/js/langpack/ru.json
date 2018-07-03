@@ -29,7 +29,7 @@
                 "week":"неделю",
                 "Month":"Месяц",
                 "Year":"Год",
-                "ID":"Число",
+                "No":"Число",
                 "month":"месяц",
                 "piece":"кусок",
                 "1K":"тысяча",
@@ -112,7 +112,9 @@
                 "Quote":"котировка",
                 "Project Won":"Победитель проекта",
                 "The following Link Scorecard Information can be reached...":"Доступна следующая информация о Scorecard Link...",
-                "SCORECARD":"ПОКАЗАТЕЛЕЙ"
+                "SCORECARD":"ПОКАЗАТЕЛЕЙ",
+                "Service Name":"наименование услуги",
+                "PDF Link":"Ссылка PDF"
 	}
 	
 }

@@ -29,7 +29,7 @@
                 "week":"أسبوع",
                 "Month":"شهر",
                 "Year":"عام",
-                "ID":"رقم",        
+                "No":"رقم",        
                 "month":"شهر",
                 "piece":"قطعة",
                 "1K":"الآلاف",
@@ -112,7 +112,9 @@
                 "Quote":"اقتبس",
                 "Project Won":"المشروع فاز",
                 "The following Link Scorecard Information can be reached...":"يمكن الوصول إلى معلومات Link Scorecard التالية ...",
-                "SCORECARD":"بطاقة الأداء"
+                "SCORECARD":"بطاقة الأداء",
+                "Service Name":"اسم الخدمة",
+                "PDF Link":"PDF Link"
 	}
 	
 }
