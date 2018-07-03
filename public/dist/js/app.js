@@ -44,15 +44,15 @@ $(window).load(function() {
 
 
 // admin page menu load
-window.leftMenuWidget = $('#leftside-menu').leftMenu();
-window.leftMenuWidget.leftMenu('setBaseMenu');
+/*window.leftMenuWidget = $('#leftside-menu').leftMenu();
+window.leftMenuWidget.leftMenu('setBaseMenu');*/
 
 
 
 
 // admin page set language list (dropdown)
-$("#lang_list_container").setLangList();
-$("#lang_list_container").setLangList('fillLangList');
+/*$("#lang_list_container").setLangList();
+$("#lang_list_container").setLangList('fillLangList');*/
 
 
 /* AdminLTE
@@ -1351,6 +1351,31 @@ $(document).ready(function () {
           $("ul.treeview-menu>li").show();
         }
     }); 
+    
+    
+    /**
+    * @author Mustafa Zeynel Dağlı
+    * @since 03/07/2018
+    * @todo ios mobil cihazlarda cookie değişmediği için aşağıdaki kod bloğu 
+    * dil seçeneğinin çalışmasını engelliyordu. İos cookie problemi çözülünce 
+    * kod bloğu kullanılabilir.
+    */
+   /*if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+       alert(Cookies.get('langCookie'));
+       $("#langCode").val(Cookies.get('langCookie'));
+   }*/
+
+
+   // admin page menu load
+   window.leftMenuWidget = $('#leftside-menu').leftMenu();
+   window.leftMenuWidget.leftMenu('setBaseMenu');
+
+
+
+
+   // admin page set language list (dropdown)
+   $("#lang_list_container").setLangList();
+   $("#lang_list_container").setLangList('fillLangList');
     
 });
 
