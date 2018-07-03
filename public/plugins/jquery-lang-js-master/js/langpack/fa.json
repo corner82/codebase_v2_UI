@@ -114,7 +114,22 @@
                 "The following Link Scorecard Information can be reached...":"اطلاعات کارت امتیازی پیوند زیر می تواند ...",
                 "SCORECARD":"SCORECARD",
                 "Service Name":"نام خدمات",
-                "PDF Link":"PDF لینک"
+                "PDF Link":"PDF لینک",
+                "Service Spare Part Target":"هدف تسهیلات خدمات",
+                "TARGET":"هدف",
+                "Type":"تایپ کنید",        
+                "Jan-May 2017":"ژانویه تا مه 2017",
+                "Jan-May 2018":"ژانویه تا مه 2018",
+                "Comparison 2017-2018":"مقایسه 2017-2018",
+                "Total 2017":"مجموع 2017",
+                "3 Year Average":"3 سال متوسط",
+                "Monthly Realization Amount":"مقدار تحقق ماهانه",
+                "Amount required for 7% per month":"مبلغ مورد نیاز برای 7٪ در هر ماه",
+                "Amount required for 8% per month":"مبلغ مورد نیاز برای 8٪ در هر ماه",
+                "Amount required for 9% per month":"مقدار مورد نیاز برای 9٪ در هر ماه",
+                "Amount Remaining for 7% per annum":"مقدار باقیمانده 7٪ در سال است",
+                "Amount Remaining for 8% per annum":"مقدار باقیمانده 8٪ در سال است",
+                "Amount Remaining for 9% per annum":"مقدار باقیمانده 9٪ در سال است"
 	}
 	
 }

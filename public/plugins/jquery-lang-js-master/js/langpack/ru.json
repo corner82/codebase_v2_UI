@@ -114,7 +114,22 @@
                 "The following Link Scorecard Information can be reached...":"Доступна следующая информация о Scorecard Link...",
                 "SCORECARD":"ПОКАЗАТЕЛЕЙ",
                 "Service Name":"наименование услуги",
-                "PDF Link":"Ссылка PDF"
+                "PDF Link":"Ссылка PDF",
+                "Service Spare Part Target":"Целевая задача запасных частей",
+                "TARGET":"цель",
+                "Type":"Тип",      
+                "Jan-May 2017":"Январь-май 2017 года",
+                "Jan-May 2018":"Январь-май 2018 года",
+                "Comparison 2017-2018":"Сравнение 2017-2018 гг.",
+                "Total 2017":"Всего 2017",
+                "3 Year Average":"3-летняя средняя",
+                "Monthly Realization Amount":"Ежемесячная сумма реализации",
+                "Amount required for 7% per month":"Сумма, необходимая для 7% в месяц",
+                "Amount required for 8% per month":"Сумма, необходимая для 8% в месяц",
+                "Amount required for 9% per month":"Сумма, необходимая для 9% в месяц",
+                "Amount Remaining for 7% per annum":"Сумма, остатка на 7% годовых",
+                "Amount Remaining for 8% per annum":"Сумма, оставшаяся на 8% годовых",
+                "Amount Remaining for 9% per annum":"Сумма, оставшаяся на 9% годовых"
 	}
 	
 }

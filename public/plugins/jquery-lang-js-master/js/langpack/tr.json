@@ -117,9 +117,23 @@
                 "The following Link Scorecard Information can be reached...":"Aşağıdaki Linkten Scorecard Bilgisine Ulaşılabilir...",
                 "SCORECARD":"SCORECARD",
                 "Service Name":"Servis Adı",
-                "PDF Link":"PDF Link"
+                "PDF Link":"PDF Link",
+                "Service Spare Part Target":"Servis Yedek Parça Hedef",
+                "TARGET":"HEDEF",
+                "Type":"Tip",
+                "Jan-May 2017":"Ocak-Mayıs 2017",
+                "Jan-May 2018":"Ocak-Mayıs 2018",
+                "Comparison 2017-2018":"Karşılaştırma 2017-2018",
+                "Total 2017":"Toplam 2017",
+                "3 Year Average":"3 Yıllık Ortalama",
+                "Monthly Realization Amount":"Aylık Gerçekleşme Miktarı",
+                "Amount required for 7% per month":"Aylık %7 için Gereken Miktar",
+                "Amount required for 8% per month":"Aylık %8 için Gereken Miktar",
+                "Amount required for 9% per month":"Aylık %9 için Gereken Miktar",
+                "Amount Remaining for 7% per annum":"Yıllık %7 için Kalan Miktarı",
+                "Amount Remaining for 8% per annum":"Yıllık %8 için Kalan Miktarı",
+                "Amount Remaining for 9% per annum":"Yıllık %9 için Kalan Miktarı"
                 
-       
 	}
 	
 }

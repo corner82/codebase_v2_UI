@@ -114,7 +114,22 @@
                 "The following Link Scorecard Information can be reached...":"يمكن الوصول إلى معلومات Link Scorecard التالية ...",
                 "SCORECARD":"بطاقة الأداء",
                 "Service Name":"اسم الخدمة",
-                "PDF Link":"PDF Link"
+                "PDF Link":"PDF Link",
+                "Service Spare Part Target":"خدمة قطع غيار الهدف",
+                "TARGET":"استهداف",
+                "Type":"اكتب",        
+                "Jan-May 2017":"من يناير إلى مايو 2017",
+                "Jan-May 2018":"من يناير إلى مايو 2018",
+                "Comparison 2017-2018":"مقارنة بين عام 2017-2018",
+                "Total 2017":"المجموع 2017",
+                "3 Year Average":"متوسط 3 سنوات",
+                "Monthly Realization Amount":"مبلغ التحصيل الشهري",
+                "Amount required for 7% per month":"المبلغ المطلوب ل 7 ٪ في الشهر",
+                "Amount required for 8% per month":"المبلغ المطلوب ل 8 ٪ في الشهر",
+                "Amount required for 9% per month":"المبلغ المطلوب ل 9 ٪ في الشهر",
+                "Amount Remaining for 7% per annum":"المبلغ المتبقي عن 7٪ سنوياً",
+                "Amount Remaining for 8% per annum":"المبلغ المتبقي عن 8٪ سنوياً",
+                "Amount Remaining for 9% per annum":"المبلغ المتبقي عن 9٪ سنوياً"
 	}
 	
 }

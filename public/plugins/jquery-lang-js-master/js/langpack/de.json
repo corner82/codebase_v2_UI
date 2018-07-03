@@ -114,7 +114,22 @@
                 "The following Link Scorecard Information can be reached...":"Die folgende Link Scorecard Information kann erreicht werden...",
                 "SCORECARD":"SCORECARD",
                 "Service Name":"Dienstname",
-                "PDF Link":"PDF Link"
+                "PDF Link":"PDF Link",
+                "Service Spare Part Target":"Service Ersatzteil Ziel",
+                "TARGET":"ZIEL",
+                "Type":"Art",        
+                "Jan-May 2017":"Januar bis Mai 2017",
+                "Jan-May 2018":"Januar bis Mai 2018",
+                "Comparison 2017-2018":"Vergleich 2017-2018",
+                "Total 2017":"Gesamt 2017",
+                "3 Year Average":"3 Jahre Durchschnitt",
+                "Monthly Realization Amount":"Monatlicher Realisierungsbetrag",
+                "Amount required for 7% per month":"Betrag erforderlich für 7% pro Monat",
+                "Amount required for 8% per month":"Betrag erforderlich für 8% pro Monat",
+                "Amount required for 9% per month":"Betrag erforderlich für 9% pro Monat",
+                "Amount Remaining for 7% per annum":"Verbleibender Betrag für 7% pro Jahr",
+                "Amount Remaining for 8% per annum":"Verbleibender Betrag für 8% pro Jahr",
+                "Amount Remaining for 9% per annum":"Verbleibender Betrag für 9% pro Jahr"
 	}
 	
 }

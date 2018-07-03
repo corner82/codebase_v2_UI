@@ -114,7 +114,22 @@
                 "The following Link Scorecard Information can be reached...":"可以访问以下链接记分卡信息...",
                 "SCORECARD":"记分卡",
                 "Service Name":"服务名称",
-                "PDF Link":"PDF链接"
+                "PDF Link":"PDF链接",
+                "Service Spare Part Target":"服务备件目标",
+                "TARGET":"目标",
+                "Type":"类型",        
+                "Jan-May 2017":"2017年1月至5月",
+                "Jan-May 2018":"2018年1月至5月",
+                "Comparison 2017-2018":"比较2017-2018",
+                "Total 2017":"2017年总计",
+                "3 Year Average":"3年平均值",
+                "Monthly Realization Amount":"每月实现金额",
+                "Amount required for 7% per month":"每月需要7％的金额",
+                "Amount required for 8% per month":"每月需要8％的金额",
+                "Amount required for 9% per month":"每月需要9％的金额",
+                "Amount Remaining for 7% per annum":"剩余金额为每年7％",
+                "Amount Remaining for 8% per annum":"剩余金额为每年8％",
+                "Amount Remaining for 9% per annum":"剩余金额为每年9％"
         
         }
 }

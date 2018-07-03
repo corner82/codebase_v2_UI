@@ -196,7 +196,7 @@ ajaxACLResources.ajaxCallWidget ({
      },
 }) 
 ajaxACLResources.ajaxCallWidget('call');
-    
+   
 /*
  * Author: Abdullah A Almsaeed
  * Date: 4 Jan 2014
@@ -343,6 +343,9 @@ $(function () {
 function getAfterSalesYedekParcaHedefServissiz() {
    $("#grid_hedef").dataTable().fnDestroy();
    $('#grid_hedef').DataTable( {
+       "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -354,6 +357,7 @@ function getAfterSalesYedekParcaHedefServissiz() {
                 pk: $('#pk').val(),
             },
            complete: function() {
+                setDetayGridAfterSalesYedekParcaHedefHeaderFooterLang();
                 $("#panel_hedef").loadImager('removeLoadImage');
               }
         },      
@@ -365,6 +369,9 @@ function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
    var services = getServicesSelectedAsUrl(multiSelectedRoles);
    $("#grid_hedef").dataTable().fnDestroy();
    $('#grid_hedef').DataTable( {
+       "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -376,13 +383,83 @@ function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
                 pk: $('#pk').val(),
             },
             complete: function() {
+                setDetayGridAfterSalesYedekParcaHedefHeaderFooterLang();
                 $("#panel_hedef").loadImager('removeLoadImage');
+                
               }
         }
         
     } ); 
 }
 
+function setDetayGridAfterSalesYedekParcaHedefHeaderFooterLang() {
+    
+    var head_item_0 = $('#grid_hedef').DataTable().columns(0).header();
+    var head_item_1 = $('#grid_hedef').DataTable().columns(1).header();
+    var head_item_2 = $('#grid_hedef').DataTable().columns(2).header();
+    var head_item_3 = $('#grid_hedef').DataTable().columns(3).header();
+    var head_item_4 = $('#grid_hedef').DataTable().columns(4).header();
+    var head_item_5 = $('#grid_hedef').DataTable().columns(5).header();
+    var head_item_6 = $('#grid_hedef').DataTable().columns(6).header();
+    var head_item_7 = $('#grid_hedef').DataTable().columns(7).header();
+    var head_item_8 = $('#grid_hedef').DataTable().columns(8).header();
+    var head_item_9 = $('#grid_hedef').DataTable().columns(9).header();
+    var head_item_10 = $('#grid_hedef').DataTable().columns(10).header();
+    var head_item_11 = $('#grid_hedef').DataTable().columns(11).header();
+    var head_item_12 = $('#grid_hedef').DataTable().columns(12).header();
+    var head_item_13 = $('#grid_hedef').DataTable().columns(13).header();
+    var head_item_14 = $('#grid_hedef').DataTable().columns(14).header();    
+    
+    //alert($(head_item).html());
+    $(head_item_0).text(window.lang.translate('No'));
+    $(head_item_1).text(window.lang.translate('Service Name'));
+    $(head_item_2).text(window.lang.translate('Type'));  
+    $(head_item_3).text(window.lang.translate('Jan-May 2017'));
+    $(head_item_4).text(window.lang.translate('Jan-May 2018'));
+    $(head_item_5).text(window.lang.translate('Comparison 2017-2018'));
+    $(head_item_6).text(window.lang.translate('Total 2017'));
+    $(head_item_7).text(window.lang.translate('3 Year Average'));
+    $(head_item_8).text(window.lang.translate('Monthly Realization Amount'));  
+    $(head_item_9).text(window.lang.translate('Amount required for 7% per month'));  
+    $(head_item_10).text(window.lang.translate('Amount required for 8% per month'));  
+    $(head_item_11).text(window.lang.translate('Amount required for 9% per month'));        
+    $(head_item_12).text(window.lang.translate('Amount Remaining for 7% per annum'));        
+    $(head_item_13).text(window.lang.translate('Amount Remaining for 8% per annum'));        
+    $(head_item_14).text(window.lang.translate('Amount Remaining for 9% per annum'));        
+    
+    var footer_item_0 = $('#grid_hedef').DataTable().columns(0).footer();
+    var footer_item_1 = $('#grid_hedef').DataTable().columns(1).footer();
+    var footer_item_2 = $('#grid_hedef').DataTable().columns(2).footer();
+    var footer_item_3 = $('#grid_hedef').DataTable().columns(3).footer();
+    var footer_item_4 = $('#grid_hedef').DataTable().columns(4).footer();
+    var footer_item_5 = $('#grid_hedef').DataTable().columns(5).footer();
+    var footer_item_6 = $('#grid_hedef').DataTable().columns(6).footer();
+    var footer_item_7 = $('#grid_hedef').DataTable().columns(7).footer();
+    var footer_item_8 = $('#grid_hedef').DataTable().columns(8).footer();
+    var footer_item_9 = $('#grid_hedef').DataTable().columns(9).footer();
+    var footer_item_10 = $('#grid_hedef').DataTable().columns(10).footer();
+    var footer_item_11 = $('#grid_hedef').DataTable().columns(11).footer();
+    var footer_item_12 = $('#grid_hedef').DataTable().columns(12).footer();
+    var footer_item_13 = $('#grid_hedef').DataTable().columns(13).footer();
+    var footer_item_14 = $('#grid_hedef').DataTable().columns(14).footer();
+
+    //alert($(footer_item).html());
+    $(footer_item_0).text(window.lang.translate('No'));
+    $(footer_item_1).text(window.lang.translate('Service Name'));
+    $(footer_item_2).text(window.lang.translate('Type'));  
+    $(footer_item_3).text(window.lang.translate('Jan-May 2017'));
+    $(footer_item_4).text(window.lang.translate('Jan-May 2018'));
+    $(footer_item_5).text(window.lang.translate('Comparison 2017-2018'));
+    $(footer_item_6).text(window.lang.translate('Total 2017'));
+    $(footer_item_7).text(window.lang.translate('3 Year Average'));
+    $(footer_item_8).text(window.lang.translate('Monthly Realization Amount'));  
+    $(footer_item_9).text(window.lang.translate('Amount required for 7% per month'));  
+    $(footer_item_10).text(window.lang.translate('Amount required for 8% per month'));  
+    $(footer_item_11).text(window.lang.translate('Amount required for 9% per month'));        
+    $(footer_item_12).text(window.lang.translate('Amount Remaining for 7% per annum'));        
+    $(footer_item_13).text(window.lang.translate('Amount Remaining for 8% per annum'));        
+    $(footer_item_14).text(window.lang.translate('Amount Remaining for 9% per annum')); 
+}
 // ana block ve ikinci block hidden fonk. son
 
 // satış sonrası servisler ile ilgili fonk.

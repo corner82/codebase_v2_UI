@@ -114,7 +114,22 @@
                 "The following Link Scorecard Information can be reached...":"Die volgende skermkaartkaartinligting kan bereik word ...",
                 "SCORECARD":"TELKAART",
                 "Service Name":"Diensnaam",
-                "PDF Link":"PDF Link"
+                "PDF Link":"PDF Link",
+                "Service Spare Part Target":"Diensonderdele Deel Teiken",
+                "TARGET":"TARGET",
+                "Type":"Tipe",        
+                "Jan-May 2017":"Januarie-Mei 2017",
+                "Jan-May 2018":"Januarie-Mei 2018",
+                "Comparison 2017-2018":"Vergelyking 2017-2018",
+                "Total 2017":"Totaal 2017",
+                "3 Year Average":"3 jaar gemiddeld",
+                "Monthly Realization Amount":"Maandelikse Realisasiebedrag",
+                "Amount required for 7% per month":"Bedrag benodig vir 7% per maand",
+                "Amount required for 8% per month":"Bedrag benodig vir 8% per maand",
+                "Amount required for 9% per month":"Bedrag benodig vir 9% per maand",
+                "Amount Remaining for 7% per annum":"Bedrag oorblywend vir 7% per jaar",
+                "Amount Remaining for 8% per annum":"Bedrag oorblywend vir 8% per jaar",
+                "Amount Remaining for 9% per annum":"Bedrag oorblywend vir 9% per jaar"
 	}
 	
 }

@@ -89,24 +89,6 @@ $('#servisDashboardHesapla').click(function()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // detay ana block 
 var hidden_block3_1_controller;
 
@@ -376,8 +358,8 @@ function getAfterSalesYedekParcaPDFServissiz() {
                 pk: $('#pk').val()
             }, 
             complete: function() {
-                $("#panel_scorecard").loadImager('removeLoadImage');
                 setDetayGridAfterSalesYedekParcaPDFHeaderFooterLang();
+                $("#panel_scorecard").loadImager('removeLoadImage');
                 
               }
         },      
@@ -390,6 +372,38 @@ function getAfterSalesYedekParcaPDFServissiz() {
     } );
 }
 
+
+function getAfterSalesYedekParcaPDFServisli(multiSelectedRoles) {
+   var services = getServicesSelectedAsUrl(multiSelectedRoles);
+   $("#grid_scorecard").dataTable().fnDestroy();
+   $('#grid_scorecard').DataTable( {
+       "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
+        "responsive" : true,
+        "ajax": {
+            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            type: 'GET',
+            dataType: 'json',
+            "data": {
+                src : services,
+                url : 'getAfterSalesYedekParcaPDFServisli_infoAfterSales',
+                pk: $('#pk').val()
+            },
+            
+            complete: function() {
+                setDetayGridAfterSalesYedekParcaPDFHeaderFooterLang();
+                $("#panel_scorecard").loadImager('removeLoadImage');
+              }
+        },      
+        "columnDefs": [ {
+            "targets": 2,
+            "render": function ( data, type, row, meta ) {
+                return '<a href="'+ data +'">' + data + '</a>';
+                }
+        } ]
+    } );
+}
 
 function setDetayGridAfterSalesYedekParcaPDFHeaderFooterLang() {
     var head_item_0 = $('#grid_scorecard').DataTable().columns(0).header();
@@ -410,35 +424,6 @@ function setDetayGridAfterSalesYedekParcaPDFHeaderFooterLang() {
     $(footer_item_2).text(window.lang.translate('PDF Link'));
 
 }
-
-function getAfterSalesYedekParcaPDFServisli(multiSelectedRoles) {
-   var services = getServicesSelectedAsUrl(multiSelectedRoles);
-   $("#grid_scorecard").dataTable().fnDestroy();
-   $('#grid_scorecard').DataTable( {
-        "responsive" : true,
-        "ajax": {
-            url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            type: 'GET',
-            dataType: 'json',
-            "data": {
-                src : services,
-                url : 'getAfterSalesYedekParcaPDFServisli_infoAfterSales',
-                pk: $('#pk').val()
-            },
-            
-            complete: function() {
-                $("#panel_scorecard").loadImager('removeLoadImage');
-              }
-        },      
-        "columnDefs": [ {
-            "targets": 2,
-            "render": function ( data, type, row, meta ) {
-                return '<a href="'+ data +'">' + data + '</a>';
-                }
-        } ]
-    } );
-}
-
 // scorecard hidden fonk. son
 
 // satış sonrası servisler ile ilgili fonk.
