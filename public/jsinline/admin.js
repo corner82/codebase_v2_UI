@@ -8143,7 +8143,7 @@ function getAtolyeCirosuWeeklyWithoutServices() {
                             height : 300,
                         },
                         title: {
-                            text: 'Workshop sales'
+                            text: window.lang.translate('Workshop sales')
                         },
                         subtitle: {
                             //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
@@ -11743,6 +11743,9 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
 function getDetayGridMMCXI() {
    $("#grid_CXI").dataTable().fnDestroy();
    $('#grid_CXI').DataTable( {
+       "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
