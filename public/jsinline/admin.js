@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+
+/*if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+    alert('lang code bulundu1');
+    $("#langCode").val(Cookies.get('langCookie'));
+}*/
+
 /**
  * jquery lang master created dynamically
  * @author Mustafa Zeynel Dağlı
@@ -11484,24 +11490,45 @@ function getDetayGridMMCSI() {
             },
             complete: function() {
                 //$("#panel_stoklar").loadImager('removeLoadImage');
-                var head_item = $('#grid_CSI').DataTable().columns(1).header();
-                alert($(head_item).html());
-                $(head_item).text(window.lang.translate('Services'));
+                //var head_item = $('#grid_CSI').DataTable().columns(1).header();
+                //alert($(head_item).html());
+                /*$(head_item).text(window.lang.translate('Services'));
                 var footer_item = $('#grid_CSI').DataTable().columns(1).footer();
-                alert($(footer_item).html());
-                $(footer_item).text(window.lang.translate('Services'));
+                //alert($(footer_item).html());
+                //$(footer_item).text(window.lang.translate('Services'));*/
+                setDetayGridCSIHeaderFooterLang();
+                
               }
         }
     } );
+}
+
+function setDetayGridCSIHeaderFooterLang() {
+    var head_item_0 = $('#grid_CSI').DataTable().columns(0).header();
+    var head_item_1 = $('#grid_CSI').DataTable().columns(1).header();
+    var head_item_2 = $('#grid_CSI').DataTable().columns(2).header();
+    var head_item_3 = $('#grid_CSI').DataTable().columns(3).header();
+    var head_item_4 = $('#grid_CSI').DataTable().columns(4).header();
+    //alert($(head_item).html());
+    $(head_item_0).text(window.lang.translate('No'));
+    $(head_item_1).text(window.lang.translate('Services'));
+    $(head_item_2).text(window.lang.translate('Month'));
+    $(head_item_3).text(window.lang.translate('Year'));
+    $(head_item_4).text(window.lang.translate('Customer first'));
     
-    //$(gridCSI.column(1).header()).text('My title');
-    alert(gridCSI.columns(1).header());
-    console.log(gridCSI.columns(1).header());
-    var head_item = gridCSI.columns(1).header();
-    alert($(head_item).html());
-    alert($(head_item).text());
-    //$(head_item).html('new header');
-    $(head_item).text('new header');
+    
+    var footer_item_0 = $('#grid_CSI').DataTable().columns(0).footer();
+    var footer_item_1 = $('#grid_CSI').DataTable().columns(1).footer();
+    var footer_item_2 = $('#grid_CSI').DataTable().columns(2).footer();
+    var footer_item_3 = $('#grid_CSI').DataTable().columns(3).footer();
+    var footer_item_4 = $('#grid_CSI').DataTable().columns(4).footer();
+    
+    //alert($(footer_item).html());
+    $(footer_item_0).text(window.lang.translate('No'));
+    $(footer_item_1).text(window.lang.translate('Services'));
+    $(footer_item_2).text(window.lang.translate('Month'));
+    $(footer_item_3).text(window.lang.translate('Year'));
+    $(footer_item_4).text(window.lang.translate('Customer first'));
 }
 
 function getDetayGridMMCSIWithServices(multiSelectedRoles) {

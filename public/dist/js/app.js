@@ -30,9 +30,18 @@ $(window).load(function() {
         $(".se-pre-con").fadeOut("slow");;
 });
 
+if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+    alert(Cookies.get('langCookie'));
+    $("#langCode").val(Cookies.get('langCookie'));
+}
+
+
 // admin page menu load
 window.leftMenuWidget = $('#leftside-menu').leftMenu();
 window.leftMenuWidget.leftMenu('setBaseMenu');
+
+
+
 
 // admin page set language list (dropdown)
 $("#lang_list_container").setLangList();

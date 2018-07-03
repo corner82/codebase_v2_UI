@@ -350,7 +350,7 @@
                   if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
                     //alert('lang code bulundu1');
                     self.options.langDefault = Cookies.get('langCookie');
-                } 
+                   } 
              } else {
                  //alert('lang code bulundu3');
                  self.options.langDefault = 'tr';
@@ -376,6 +376,7 @@
                     //alert(window.lang.translate('Brand Sales Units'));
                     window.lang.change(self.options.langDefault);
                 }, 4000);*/
+            alert(self.options.langDefault);
             window.lang.change(self.options.langDefault);
         },
        
