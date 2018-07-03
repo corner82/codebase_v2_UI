@@ -44,15 +44,15 @@ $(window).load(function() {
 
 
 // admin page menu load
-/*window.leftMenuWidget = $('#leftside-menu').leftMenu();
-window.leftMenuWidget.leftMenu('setBaseMenu');*/
+window.leftMenuWidget = $('#leftside-menu').leftMenu();
+window.leftMenuWidget.leftMenu('setBaseMenu');
 
 
 
 
 // admin page set language list (dropdown)
-/*$("#lang_list_container").setLangList();
-$("#lang_list_container").setLangList('fillLangList');*/
+$("#lang_list_container").setLangList();
+$("#lang_list_container").setLangList('fillLangList');
 
 
 /* AdminLTE
@@ -1396,12 +1396,12 @@ $(window).load(function() {
 
 
    // admin page menu load
-   window.leftMenuWidget = $('#leftside-menu').leftMenu();
-   window.leftMenuWidget.leftMenu('setBaseMenu');
+   /*window.leftMenuWidget = $('#leftside-menu').leftMenu();
+   window.leftMenuWidget.leftMenu('setBaseMenu');*/
 
 
    // admin page set language list (dropdown)
-   $("#lang_list_container").setLangList();
-   $("#lang_list_container").setLangList('fillLangList');
+   /*$("#lang_list_container").setLangList();
+   $("#lang_list_container").setLangList('fillLangList');*/
 });
 
