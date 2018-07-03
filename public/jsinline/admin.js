@@ -1969,6 +1969,7 @@ ajaxACLResources.ajaxCallWidget ({
             data : data, 
             width:'98%',
             selectText: "Select your preferred social network",
+            searchText : window.lang.translate('Search'),
             //showSelectedHTML : false,
             defaultSelectedIndex: 3,
             search : true,
@@ -5967,6 +5968,9 @@ function getAcilanKapananIsEmriYillikWithServices(multiSelectedRoles) {
 function getDetayGridStoklar() {
    $("#example").dataTable().fnDestroy();
    $('#example').DataTable( {
+       "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -6826,6 +6830,9 @@ function getDowntimeYillikWithServices(multiSelectedRoles) {
 function getDetayGridDowntime() {
    $("#grid_downtime").dataTable().fnDestroy();
    $('#grid_downtime').DataTable( {
+        "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -6846,6 +6853,9 @@ function getDetayGridDowntimeWithServices(multiSelectedRoles) {
    var services = getServicesSelectedAsUrl(multiSelectedRoles);
    $("#grid_downtime").dataTable().fnDestroy();
    $('#grid_downtime').DataTable( {
+        "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -11455,6 +11465,9 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
 function getDetayGridMMCSI() {
    $("#grid_CSI").dataTable().fnDestroy();
    $('#grid_CSI').DataTable( {
+        "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -11475,6 +11488,9 @@ function getDetayGridMMCSIWithServices(multiSelectedRoles) {
    var services = getServicesSelectedAsUrl(multiSelectedRoles);
    $("#grid_CSI").dataTable().fnDestroy();
    $('#grid_CSI').DataTable( {
+        "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -11766,6 +11782,9 @@ function getDetayGridMMCXIWithServices(multiSelectedRoles) {
    var services = getServicesSelectedAsUrl(multiSelectedRoles);
    $("#grid_CXI").dataTable().fnDestroy();
    $('#grid_CXI').DataTable( {
+       "language": {
+            "url": "/plugins/jquery-datatable/lang/"+$("#langCode").val()+".json"
+        },
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
