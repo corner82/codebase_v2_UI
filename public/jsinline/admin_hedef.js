@@ -48,14 +48,12 @@ $( "#test-collapse" ).on( "click", function() {
 $("#test-collapse").trigger("click");
 
 
-
-
 /**
- * stok  detay block 
- * @author Mustafa Zeynel Dağlı
- * @since 15/05/2018
+ * Hedef detay block 
+ * @author Ceydacan Seyrek- Gul Ozdemir
+ * @since 25/06/2018
  */
-$("#panel_stok").loadImager();
+$("#panel_hedef").loadImager();
 
        
 Array.prototype.unique = function() {
@@ -64,23 +62,52 @@ Array.prototype.unique = function() {
   });
 }
 
+
+
+// servis seçimlerine göre dashboard hesplamalarını yapan event
+$('#servisDashboardHesapla').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
+        } 
+    //else if(serviceControler == false ){
+      //  getAfterSalesYedekParcaPDFServissiz();
+       // }    
+
+     else if(serviceControler == false ){
+        dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+        dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  'Lütfen servis seçiniz...');
+    }
+   
+});
+
+
 // detay ana block 
 var hidden_block3_1_controller;
 
-// açık is emirleri detay click 
+// hedef detay click 
 $('#yedek_parca_hedef').click(function()
 {
     var serviceControler = false;
     var multiSelectedRoles = getServiceDropdownSelectedItems();
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
-    if($("#panel_stok").css('display') == 'none')
+    if($("#panel_hedef").css('display') == 'none')
     {
         hidden_block3_1_controller = 1;
-        $("#panel_stok").loadImager('removeLoadImage');
-        $("#panel_stok").loadImager('appendImage');
-        $("#panel_stok").animate({height:'toggle'},1000); 
-        $("#panel_stok_title").html(window.lang.translate('Hedef'));
+        $("#panel_hedef").loadImager('removeLoadImage');
+        $("#panel_hedef").loadImager('appendImage');
+        $("#panel_hedef").animate({height:'toggle'},1000); 
+        $("#panel_hedef_title").html(window.lang.translate('Hedef'));
         // açık iş emirlerini servis ayrımı yaparak çağırıyoruz
         if(serviceControler == true) {
             getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
@@ -90,9 +117,9 @@ $('#yedek_parca_hedef').click(function()
         }  
     }else {
         hidden_block3_1_controller = 1;
-        $("#panel_stok").loadImager('removeLoadImage');
-        $("#panel_stok").loadImager('appendImage');
-        $("#panel_stok_title").html(window.lang.translate('Hedef'));
+        $("#panel_hedef").loadImager('removeLoadImage');
+        $("#panel_hedef").loadImager('appendImage');
+        $("#panel_hedef_title").html(window.lang.translate('Hedef'));
         if(serviceControler == true) {
             getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
 
@@ -103,11 +130,8 @@ $('#yedek_parca_hedef').click(function()
         
 });
 
-
-
 // detay ana  block  son
-
-    
+   
 /**
  * loading image for roles dropdown
  * @author Mustafa Zeynel Dağlı
@@ -116,7 +140,6 @@ $('#yedek_parca_hedef').click(function()
 $("#loading-image-roles").loadImager();
 $("#loading-image-roles").loadImager('appendImage');    
     
-
 /**
  * Services dropdown prepared
  * @type @call;$@call;ajaxCallWidget
@@ -318,8 +341,8 @@ $(function () {
 // 3_1. block hidden fonk.
 
 function getAfterSalesYedekParcaHedefServissiz() {
-   $("#grid_downtime").dataTable().fnDestroy();
-   $('#grid_downtime').DataTable( {
+   $("#grid_hedef").dataTable().fnDestroy();
+   $('#grid_hedef').DataTable( {
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -331,7 +354,7 @@ function getAfterSalesYedekParcaHedefServissiz() {
                 pk: $('#pk').val(),
             },
            complete: function() {
-                $("#panel_stok").loadImager('removeLoadImage');
+                $("#panel_hedef").loadImager('removeLoadImage');
               }
         },      
         
@@ -340,8 +363,8 @@ function getAfterSalesYedekParcaHedefServissiz() {
 
 function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
    var services = getServicesSelectedAsUrl(multiSelectedRoles);
-   $("#grid_downtime").dataTable().fnDestroy();
-   $('#grid_downtime').DataTable( {
+   $("#grid_hedef").dataTable().fnDestroy();
+   $('#grid_hedef').DataTable( {
         "responsive" : true,
         "ajax": {
             url : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
@@ -353,7 +376,7 @@ function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
                 pk: $('#pk').val(),
             },
             complete: function() {
-                $("#panel_stok").loadImager('removeLoadImage');
+                $("#panel_hedef").loadImager('removeLoadImage');
               }
         }
         
@@ -416,12 +439,4 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
 
 // satış sonrası servisler ile ilgili fonk.
 
-
-// dashboard özet verileri fonk.
-
-
-// dashboard özet verileri fonk. son
-
-
-    
 });
