@@ -27,7 +27,10 @@
                 "stocks":"stoklar",
                 "Total":"Toplam",
                 "week":"hafta",
-                "window.lang.translate('month')":"ay",
+                "Month":"Ay",
+                "Year":"Yıl",
+                "ID":"No",
+                "month":"ay",
                 "piece":"adet",
                 "1K":"bin",
                 "Last 1 year":"Son 1 yıl",
@@ -107,9 +110,11 @@
                 "Activity":"Aktivite",
                 "Project":"Proje",
                 "Quote":"Teklif",
-                "Project Won":"Kazanılan Proje"
-                
-                
+                "Project Won":"Kazanılan Proje",
+                "The following Link Scorecard Information can be reached...":"Aşağıdaki Linkten Scorecard Bilgisine Ulaşılabilir...",
+                "SCORECARD":"SCORECARD"
+        
+       
 	}
 	
 }

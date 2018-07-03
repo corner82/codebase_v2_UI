@@ -27,6 +27,9 @@
                 "stocks":"مخازن",
                 "Total":"مجموع",
                 "week":"أسبوع",
+                "Month":"شهر",
+                "Year":"عام",
+                "ID":"رقم",        
                 "month":"شهر",
                 "piece":"قطعة",
                 "1K":"الآلاف",
@@ -104,7 +107,9 @@
                 "Activite":"نشاط",
                 "Project":"مشروع",
                 "Quote":"اقتبس",
-                "Project Won":"المشروع فاز"
+                "Project Won":"المشروع فاز",
+                "The following Link Scorecard Information can be reached...":"يمكن الوصول إلى معلومات Link Scorecard التالية ...",
+                "SCORECARD":"بطاقة الأداء"
 	}
 	
 }

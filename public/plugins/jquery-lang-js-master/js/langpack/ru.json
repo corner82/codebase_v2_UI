@@ -27,6 +27,9 @@
                 "stocks":"акции",
                 "Total":"Всего",
                 "week":"неделю",
+                "Month":"Месяц",
+                "Year":"Год",
+                "ID":"Число",
                 "month":"месяц",
                 "piece":"кусок",
                 "1K":"тысяча",
@@ -104,7 +107,9 @@
                 "Activite":"Мероприятия",
                 "Project":"проект",
                 "Quote":"котировка",
-                "Project Won":"Победитель проекта"
+                "Project Won":"Победитель проекта",
+                "The following Link Scorecard Information can be reached...":"Доступна следующая информация о Scorecard Link...",
+                "SCORECARD":"ПОКАЗАТЕЛЕЙ"
 	}
 	
 }

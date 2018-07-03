@@ -27,6 +27,9 @@
                 "stocks":"Aandele",
                 "Total":"Totale",
                 "week":"Week",
+                "Month":"Maand",
+                "Year":"Jaar",
+                "ID":"Aantal",       
                 "month":"maand",
                 "piece":"Stuk",
                 "1K":"Duisende",
@@ -104,7 +107,9 @@
                 "Activite":"Aktiwiteit",
                 "Project":"Projek",
                 "Quote":"Kwotasie",
-                "Project Won":"Projek Gewonnen"
+                "Project Won":"Projek Gewonnen",
+                "The following Link Scorecard Information can be reached...":"Die volgende skermkaartkaartinligting kan bereik word ...",
+                "SCORECARD":"TELKAART"
 	}
 	
 }

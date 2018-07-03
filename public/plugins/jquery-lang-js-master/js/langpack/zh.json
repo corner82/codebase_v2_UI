@@ -26,8 +26,11 @@
                 "MTBTR sales":"MTBTR 销售",
                 "stocks":"个股",
                 "Total":"总",
-                "week":"周",
-                "month":"月",
+                "week":"周",                
+                "Month":"月",
+                "Year":"年",
+                "ID":"数",
+                "month":"ay",
                 "piece":"片",
                 "1K":"一千",
                 "Last 1 year":"去年",
@@ -104,7 +107,9 @@
                 "Activity":"活动",
                 "Project":"项目",
                 "Quote":"引用",
-                "Project Won":"项目赢了"
+                "Project Won":"项目赢了",
+                "The following Link Scorecard Information can be reached...":"可以访问以下链接记分卡信息...",
+                "SCORECARD":"记分卡"
         
         }
 }

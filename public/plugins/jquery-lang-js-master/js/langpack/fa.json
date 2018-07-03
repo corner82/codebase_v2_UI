@@ -27,6 +27,9 @@
                 "stocks":"سهام",
                 "Total":"جمع",
                 "week":"هفته",
+                "Month":"ماه",
+                "Year":"سال",
+                "ID":"عدد",        
                 "month":"ماه",
                 "piece":"قطعه",
                 "1K":"هزاران نفر",
@@ -104,7 +107,9 @@
                 "Activite":"فعالیت",
                 "Project":"پروژه",
                 "Quote":"نقل قول",
-                "Project Won":"پروژه برنده شد"
+                "Project Won":"پروژه برنده شد",
+                "The following Link Scorecard Information can be reached...":"اطلاعات کارت امتیازی پیوند زیر می تواند ...",
+                "SCORECARD":"SCORECARD"
 	}
 	
 }
