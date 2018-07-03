@@ -29,7 +29,7 @@
                 "week":"Week",
                 "Month":"Maand",
                 "Year":"Jaar",
-                "ID":"Aantal",       
+                "No":"Aantal",       
                 "month":"maand",
                 "piece":"Stuk",
                 "1K":"Duisende",
@@ -112,7 +112,9 @@
                 "Quote":"Kwotasie",
                 "Project Won":"Projek Gewonnen",
                 "The following Link Scorecard Information can be reached...":"Die volgende skermkaartkaartinligting kan bereik word ...",
-                "SCORECARD":"TELKAART"
+                "SCORECARD":"TELKAART",
+                "Service Name":"Diensnaam",
+                "PDF Link":"PDF Link"
 	}
 	
 }

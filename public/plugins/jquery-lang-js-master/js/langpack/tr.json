@@ -29,7 +29,7 @@
                 "week":"hafta",
                 "Month":"Ay",
                 "Year":"Yıl",
-                "ID":"No",
+                "No":"No",
                 "month":"ay",
                 "piece":"adet",
                 "1K":"bin",
@@ -115,8 +115,10 @@
                 "Quote":"Teklif",
                 "Project Won":"Kazanılan Proje",
                 "The following Link Scorecard Information can be reached...":"Aşağıdaki Linkten Scorecard Bilgisine Ulaşılabilir...",
-                "SCORECARD":"SCORECARD"
-        
+                "SCORECARD":"SCORECARD",
+                "Service Name":"Servis Adı",
+                "PDF Link":"PDF Link"
+                
        
 	}
 	

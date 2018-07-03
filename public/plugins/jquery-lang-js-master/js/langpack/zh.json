@@ -29,7 +29,7 @@
                 "week":"周",                
                 "Month":"月",
                 "Year":"年",
-                "ID":"数",
+                "No":"数",
                 "month":"ay",
                 "piece":"片",
                 "1K":"一千",
@@ -112,7 +112,9 @@
                 "Quote":"引用",
                 "Project Won":"项目赢了",
                 "The following Link Scorecard Information can be reached...":"可以访问以下链接记分卡信息...",
-                "SCORECARD":"记分卡"
+                "SCORECARD":"记分卡",
+                "Service Name":"服务名称",
+                "PDF Link":"PDF链接"
         
         }
 }

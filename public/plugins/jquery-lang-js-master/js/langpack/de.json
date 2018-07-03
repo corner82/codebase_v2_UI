@@ -29,7 +29,7 @@
                 "week":"Woche",
                 "Month":"Monat",
                 "Year":"Jahr",
-                "ID":"Nummer",       
+                "No":"Nummer",       
                 "month":"monat",
                 "piece":"stück",
                 "1K":"Tsd",
@@ -112,7 +112,9 @@
                 "Quote":"Zitat",
                 "Project Won":"Projekt gewonnen",
                 "The following Link Scorecard Information can be reached...":"Die folgende Link Scorecard Information kann erreicht werden...",
-                "SCORECARD":"SCORECARD"
+                "SCORECARD":"SCORECARD",
+                "Service Name":"Dienstname",
+                "PDF Link":"PDF Link"
 	}
 	
 }
