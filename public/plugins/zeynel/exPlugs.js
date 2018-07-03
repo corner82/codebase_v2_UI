@@ -360,7 +360,7 @@
             window.lang = new Lang();
 
             //lang.dynamic('tr', '../plugins/jquery-lang-js-master/js/langpack/tr.json');
-            /*window.lang.dynamic('th', '/plugins/jquery-lang-js-master/js/langpack/th.json');
+            window.lang.dynamic('th', '/plugins/jquery-lang-js-master/js/langpack/th.json');
             window.lang.dynamic('tr', '/plugins/jquery-lang-js-master/js/langpack/tr.json');
             window.lang.dynamic('ar', '/plugins/jquery-lang-js-master/js/langpack/ar.json');
             window.lang.dynamic('zh', '/plugins/jquery-lang-js-master/js/langpack/zh.json');
@@ -370,23 +370,12 @@
             window.lang.dynamic('af', '/plugins/jquery-lang-js-master/js/langpack/af.json');
             window.lang.init({
                     defaultLang: 'en'
-            });*/
-            setTimeout(function() {
+            });
+           /* setTimeout(function() {
                     //console.log("adet translated =>"+window.lang.translate('piece'));
                     //alert(window.lang.translate('Brand Sales Units'));
-                    //window.lang.change(self.options.langDefault);
-                    window.lang.dynamic('th', '/plugins/jquery-lang-js-master/js/langpack/th.json');
-                    window.lang.dynamic('tr', '/plugins/jquery-lang-js-master/js/langpack/tr.json');
-                    window.lang.dynamic('ar', '/plugins/jquery-lang-js-master/js/langpack/ar.json');
-                    window.lang.dynamic('zh', '/plugins/jquery-lang-js-master/js/langpack/zh.json');
-                    window.lang.dynamic('fa', '/plugins/jquery-lang-js-master/js/langpack/fa.json');
-                    window.lang.dynamic('ru', '/plugins/jquery-lang-js-master/js/langpack/ru.json');
-                    window.lang.dynamic('de', '/plugins/jquery-lang-js-master/js/langpack/de.json');
-                    window.lang.dynamic('af', '/plugins/jquery-lang-js-master/js/langpack/af.json');
-                    window.lang.init({
-                            defaultLang: 'en'
-                    });
-                }, 2000);
+                    window.lang.change(self.options.langDefault);
+                }, 4000);*/
             window.lang.change(self.options.langDefault);
         },
        
