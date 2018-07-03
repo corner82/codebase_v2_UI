@@ -48,8 +48,6 @@ window.leftMenuWidget = $('#leftside-menu').leftMenu();
 window.leftMenuWidget.leftMenu('setBaseMenu');
 
 
-
-
 // admin page set language list (dropdown)
 $("#lang_list_container").setLangList();
 $("#lang_list_container").setLangList('fillLangList');
@@ -1380,7 +1378,7 @@ $(document).ready(function () {
 
 $(window).load(function() {
  // executes when complete page is fully loaded, including all frames, objects and images
- alert("window is loaded");
+ //alert("window is loaded");
  
  /**
     * @author Mustafa Zeynel Dağlı

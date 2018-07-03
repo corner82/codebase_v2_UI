@@ -350,7 +350,7 @@
                   if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
                     //alert('lang code bulundu1');
                     self.options.langDefault = Cookies.get('langCookie');
-                   } 
+                } 
              } else {
                  //alert('lang code bulundu3');
                  self.options.langDefault = 'tr';
@@ -376,7 +376,6 @@
                     //alert(window.lang.translate('Brand Sales Units'));
                     window.lang.change(self.options.langDefault);
                 }, 4000);*/
-            alert(self.options.langDefault);
             window.lang.change(self.options.langDefault);
         },
        
@@ -672,17 +671,15 @@
              */
             var self = this;
             
-            /*if(Cookies && Cookies.length>0) {
-                
-             }*/
-            
-            if($("#langCode").length>0  ) {
-                if($("#langCode").val() != null && $("#langCode").val()!= '') {
-                    self.options.langCode = $("#langCode").val();
-                }
-            } else if( Cookies.get('langCookie') != null && Cookies.get('langCookie') != '') {
-                //alert(Cookies.get('langCookie'));
-                self.options.langCode = Cookies.get('langCookie');
+            if(Cookies && Cookies.length>0) {
+                if($("#langCode").length>0  ) {
+                    if($("#langCode").val() != null && $("#langCode").val()!= '') {
+                        self.options.langCode = $("#langCode").val();
+                    }
+                } 
+             } else if( Cookies.get('langCookie') != null && Cookies.get('langCookie') != '') {
+                   //alert(Cookies.get('langCookie'));
+                   self.options.langCode = Cookies.get('langCookie');
              } else {
                  self.options.langCode = 'tr';
              }
