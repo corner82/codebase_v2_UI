@@ -1360,6 +1360,35 @@ $(document).ready(function () {
     * dil seçeneğinin çalışmasını engelliyordu. İos cookie problemi çözülünce 
     * kod bloğu kullanılabilir.
     */
+  /* if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+       alert(Cookies.get('langCookie'));
+       $("#langCode").val(Cookies.get('langCookie'));
+   }*/
+
+
+   // admin page menu load
+   /*window.leftMenuWidget = $('#leftside-menu').leftMenu();
+   window.leftMenuWidget.leftMenu('setBaseMenu');*/
+
+
+   // admin page set language list (dropdown)
+   /*$("#lang_list_container").setLangList();
+   $("#lang_list_container").setLangList('fillLangList');*/
+    
+});
+
+
+$(window).load(function() {
+ // executes when complete page is fully loaded, including all frames, objects and images
+ alert("window is loaded");
+ 
+ /**
+    * @author Mustafa Zeynel Dağlı
+    * @since 03/07/2018
+    * @todo ios mobil cihazlarda cookie değişmediği için aşağıdaki kod bloğu 
+    * dil seçeneğinin çalışmasını engelliyordu. İos cookie problemi çözülünce 
+    * kod bloğu kullanılabilir.
+    */
    if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
        alert(Cookies.get('langCookie'));
        $("#langCode").val(Cookies.get('langCookie'));
@@ -1371,11 +1400,8 @@ $(document).ready(function () {
    window.leftMenuWidget.leftMenu('setBaseMenu');
 
 
-
-
    // admin page set language list (dropdown)
    $("#lang_list_container").setLangList();
    $("#lang_list_container").setLangList('fillLangList');
-    
 });
 
