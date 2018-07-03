@@ -342,7 +342,7 @@
             var self = this;
             if($("#langCode").length>0) {
                 if($("#langCode").val() != null && $("#langCode").val()!= '') {
-                     alert('lang code bulundu2');
+                     //alert('lang code bulundu2');
                     self.options.langDefault = $("#langCode").val();
                 }
                 
