@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
- if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+ /*if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
        alert('document ready -> '+Cookies.get('langCookie'));
        $("#langCode").val(Cookies.get('langCookie'));
-   }
+   }*/
    
    
    

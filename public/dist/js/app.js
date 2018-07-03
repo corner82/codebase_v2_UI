@@ -1389,10 +1389,10 @@ $(window).load(function() {
     * dil seçeneğinin çalışmasını engelliyordu. İos cookie problemi çözülünce 
     * kod bloğu kullanılabilir.
     */
-   if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+   /*if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
        alert('window loaded ->'+Cookies.get('langCookie'));
        $("#langCode").val(Cookies.get('langCookie'));
-   }
+   }*/
 
 
    // admin page menu load
