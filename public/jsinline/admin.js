@@ -1963,6 +1963,9 @@ ajaxACLResources.ajaxCallWidget ({
      },
      onSuccess : function (event, data) {
          var data = $.parseJSON(data);
+         data.splice(0, 1,
+                            { text: window.lang.translate('Please select'), value: 0, selected: false, description: "" }
+                        );
          $('#loading-image-roles').loadImager('removeLoadImage');
          $('#dropdownRoles').ddslick({
             height : 200,
