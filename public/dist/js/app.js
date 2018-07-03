@@ -30,10 +30,17 @@ $(window).load(function() {
         $(".se-pre-con").fadeOut("slow");;
 });
 
-if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+/**
+ * @author Mustafa Zeynel Dağlı
+ * @since 03/07/2018
+ * @todo ios mobil cihazlarda cookie değişmediği için aşağıdaki kod bloğu 
+ * dil seçeneğinin çalışmasını engelliyordu. İos cookie problemi çözülünce 
+ * kod bloğu kullanılabilir.
+ */
+/*if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
     alert(Cookies.get('langCookie'));
     $("#langCode").val(Cookies.get('langCookie'));
-}
+}*/
 
 
 // admin page menu load

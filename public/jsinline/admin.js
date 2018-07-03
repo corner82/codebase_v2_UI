@@ -1,11 +1,6 @@
 $(document).ready(function () {
 
 
-/*if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
-    alert('lang code bulundu1');
-    $("#langCode").val(Cookies.get('langCookie'));
-}*/
-
 /**
  * jquery lang master created dynamically
  * @author Mustafa Zeynel Dağlı
