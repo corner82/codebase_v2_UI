@@ -158,7 +158,8 @@
                 "DEALERS ANNUAL INVOICE":"وكلاء الفاتورة السنوية",
                 "DELIVERY MONTH":"شهر التسليم",
                 "DELIVERY YEAR":"سنة التسليم",
-                "ORDER BACKLOG":"النظام"
+                "ORDER BACKLOG":"النظام",
+                "Ratio compared to the previous day":"نسبة مقارنة باليوم السابق"
    
 	}
 	

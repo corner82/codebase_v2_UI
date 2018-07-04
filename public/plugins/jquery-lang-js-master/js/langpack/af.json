@@ -158,7 +158,8 @@
                 "DEALERS ANNUAL INVOICE":"HANDELAARS JAARLIKSE FAKSIE",
                 "DELIVERY MONTH":"AFLEWINGSMONDIE",
                 "DELIVERY YEAR":"LEWERINGSJAAR",
-                "ORDER BACKLOG":"BESTEL TERUG"        
+                "ORDER BACKLOG":"BESTEL TERUG"  ,
+                "Ratio compared to the previous day":"Verhouding vergeleke met die vorige dag"
        
 	}
 	

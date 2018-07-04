@@ -161,7 +161,8 @@
                 "DEALERS ANNUAL INVOICE":"BAYİLER YILLIK FATURA",
                 "DELIVERY MONTH":"TESLİM AY",
                 "DELIVERY YEAR":"TESLİM YIL",
-                "ORDER BACKLOG":"SİPARİŞ BEKLEME LİSTESİ"
+                "ORDER BACKLOG":"SİPARİŞ BEKLEME LİSTESİ",
+                "Ratio compared to the previous day":"Bir önceki güne göre oran"
         
 	}
 	

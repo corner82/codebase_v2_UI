@@ -119,9 +119,10 @@ Highcharts.theme = {
 
 };
 
+
 // Apply the theme
 Highcharts.setOptions(Highcharts.theme);
-
+setTimeout(function() {
 var xCategories = ['1','2','3','4','5'];
 
 //chart 1
@@ -232,7 +233,7 @@ var chart3 = new Highcharts.Chart({
     series: [{
         data: [1591, 1270, 2042, 1762, 59],
         type: 'area',
-        name: window.lang.translate('Aktivities')
+        name: window.lang.translate('Activities')
     }]
 });
 
@@ -346,7 +347,7 @@ var chart6 = new Highcharts.Chart({
         name: window.lang.translate('Projects')
     }]
 });
-
+}, 4000);
 // afterSales  ciro, yedek parça,toplam müşteri  dashboard data (#container_toplam_ciro)
 $.ajax({
     url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
