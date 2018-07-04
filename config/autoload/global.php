@@ -108,7 +108,9 @@ return array(
         'Admin',
         'Sanalfabrika',
         'Managerdirector',
-        'Backofficeaftersales', 
+        'Backofficeaftersales',
+        //'Dealerowner', 
+        'Dealerdirector', 
     ),
     'ActionsTobeAuthenticated' => array(
         'Sanalfabrika' => array(
@@ -127,4 +129,134 @@ return array(
         ),
 
     ),
+    
+    /*'ACL_pages' => array(
+        'ziyaretçi' => array(
+                         'action' => array('sanalfabrika' => array ('index',
+                                                                    'registration',
+                                                                    'login',
+                                                                    'userprofile',
+                                                                    'userprofilepersonal',
+                                                                    'userprofileusers',
+                                                                    'userprofileprojects',
+                                                                    'userprofilecomments',
+                                                                    'userprofilehistory',
+                                                                    'userprofilesettings',
+                                                                    'companyprofile',
+                                                                    'companyperformancemetersprofile',
+                                                                    'companyproductsprofile',
+                                                                    'companycommentsprofile',
+                                                                    'companymembersprofile',
+                                                                    'companyhistoryprofile',
+                                                                    'companyprojectsprofile', 
+                                                                    'companyprofilesettings',
+                                                                    'companymtprofile',
+                                                                    'clientspage',
+                                                                    'sfmachines',
+                                                                    'cprofileset',
+                                                                    'cpgeneralset',
+                                                                    'cpaddressset',
+                                                                    'cpprodset',
+                                                                    'cpmp',
+                                                                    'cpmemberset',
+                                                                    'cpreference', 
+                                                                    'cmt',
+                                                                    'projreg',
+                                                                    'uprofset',
+                                                                    'projpool',
+                                                                    'signupconfirmation'
+                                                                    ),
+                                     'login' => array('index'),)
+                   ),
+        'consultant' => array(
+                         'parent' => 'ziyaretçi',
+                         'action' => array(
+                                     'admin' => array('index'),
+                                     'login' => array('index','logout'),
+                                     'sanalfabrika' => array ('index',
+                                                              'registration',
+                                                              'login',
+                                                              'cmt',
+                                                              'prodsercat',
+                                                              'cprofileset',
+                                                              'cpgeneralset',
+                                                              'cpaddressset',
+                                                              'cpprodset',
+                                                              'cpmp',
+                                                              'cpmemberset',
+                                                              'cpreference',
+                                                              'projreg',
+                                                              'uprofset',
+                                                              'projpool',
+                                                              'signupconfirmation'
+                                                              )),
+                   ),
+        'supervisor' => array(
+                         'parent' => 'consultant',
+                         
+                   ),
+        'admin' => array(
+                         'parent' => 'supervisor',
+                         'action' => array('admin' => array ('index',
+                                                            'menu',
+                                                            'machctg',
+                                                            'machprop',
+                                                            'mach',
+                                                            'unt',
+                                                            'prodtypes',
+                                                            'machattr',
+                                                            'uniquemachprop',
+                                                            'machpropdef',
+                                                            'aclresources',
+                                                            'aclroles',
+                                                            'aclprivileges',
+                                                            'aclroleprivilege',
+                                                            'aclprivilegeservices',         
+                                                            'menutypes',
+                                                            'modules',
+                                                            'actions',
+                                                            'actionmenus',
+                                                            'services',
+                                                            'servicegroups',
+                                                            'assigndef',
+                                                            'assignrole',
+                                                            'operationdef',
+                                                            'consultants',
+                                                            'assigncons',
+                                                            'actionprivilegeservice',
+                                                            'actionprivilege'),
+                                           )
+                   ),
+        
+        'new user' => array(
+                         'parent' => 'ziyaretçi',
+                         'action' => array('sanalfabrika' => array ('cmt' , 
+                                                                    'prodsercat',
+                                                                    'cprofileset',
+                                                                    'cpgeneralset',
+                                                                    'cpaddressset',
+                                                                    'cpprodset',
+                                                                    'cpmp',
+                                                                    'cpmemberset',
+                                                                    'cpreference',
+                                                                    'projreg',
+                                                                    'uprofset',
+                                                                    'projpool'
+                                                                    ))
+                   ),
+        
+        'firm user' => array(
+                         'parent' => 'new user',
+                         //'action' => array('sanalfabrika' => array ('index'))
+                   ),
+        'company apprentice' => array(
+                         'parent' => 'new user',
+                         //'action' => array('sanalfabrika' => array ('index'))
+                   ),
+        'firma sahibi' => array(
+                         //'parent' => 'firm user',
+                         'action' => array('dealerowner' => array ('index'))
+                   ),    
+        
+    )*/
 ); 

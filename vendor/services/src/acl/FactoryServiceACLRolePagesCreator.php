@@ -43,6 +43,7 @@ class FactoryServiceACLRolePagesCreator  implements FactoryInterface{
         if(isset($config['ACL_pages'])) {
             
             if(!empty($config['ACL_pages'])) {
+                print_r('--acl pages bulundu--');
                 $aclArr = $config['ACL_pages'];
                 foreach ($aclArr as $key => $value) {
                     $parent = null;

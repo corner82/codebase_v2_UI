@@ -14,7 +14,7 @@ class FactoryServiceAuthenticatedRedirectAfterSalesBackOffice  implements Factor
         $route = $event ->getRouteMatch()
                         ->getMatchedRouteName();
         $url = $event->getRouter()
-                     ->assemble(array('action' => 'index'), 
+                     ->assemble(array('action' => 'index', 'lang' => 'tr'), 
                                          array('name' => 'backofficeaftersales'));
         $response = $event->getResponse();  
         $response->setHeaders( $response->getHeaders ()

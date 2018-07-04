@@ -8,7 +8,7 @@
 
  class ManagerdirectorController extends AbstractActionController
  {
-     public function indexmdAction()
+     public function indexAction()
      {
          $this->layout('layout/indexmd');
          $langCode = $this->getServiceLocator()

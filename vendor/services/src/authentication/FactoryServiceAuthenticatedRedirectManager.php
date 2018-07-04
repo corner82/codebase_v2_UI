@@ -10,14 +10,18 @@ class FactoryServiceAuthenticatedRedirectManager  implements FactoryInterface{
     public function createService(ServiceLocatorInterface $serviceLocator) {
 
         $roleResult = $serviceLocator->get('serviceAclRoleFinder');
-        //print_r('--FactoryServiceAuthenticatedRedirectManager-->');
-        //print_r($roleResult);
+        print_r('--FactoryServiceAuthenticatedRedirectManager-->');
+        print_r($roleResult);
+
         if(isset($roleResult['found'])) {
             $role = strtolower(trim($roleResult['resultSet'][0]['name']));
             //remove all whitespace from user role
             $role = preg_replace('/\s+/', '', $role);
-            //print_r('--user role trimmed-->'.$role);
+            print_r('--user role trimmed-->'.$role);
+            print_r($role);
+            //exit();
             switch ($role) {
+                
                 case 'admin':
                     $serviceLocator->get('serviceAuthenticatedRedirectAdmin');
                     break;
@@ -30,11 +34,16 @@ class FactoryServiceAuthenticatedRedirectManager  implements FactoryInterface{
                 case 'urge':
                     $serviceLocator->get('serviceAuthenticatedRedirectCluster');
                     break;
-                case 'firmakullanıcıısı':
+                case 'firmakullanıcisi':
                     $serviceLocator->get('serviceAuthenticatedRedirectUser');
                     break;
-                case 'firmasahibi':
-                    $serviceLocator->get('serviceAuthenticatedRedirectUser');
+                case 'bayisahibi':
+                    print_r($role);
+                    //exit();
+                    $serviceLocator->get('serviceAuthenticatedRedirectDealerOwner');
+                    break;
+                case 'managerdirector':
+                    $serviceLocator->get('serviceAuthenticatedRedirectDealerDirector');
                     break;
                 case 'firmaçırak':
                     $serviceLocator->get('serviceAuthenticatedRedirectUser');

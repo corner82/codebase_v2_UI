@@ -187,6 +187,10 @@ namespace Admin;
         $acl = $e->getApplication()
                  ->getServiceManager()
                  ->get('serviceAclPrivilegeCreator');
+        /*$acl = $e->getApplication()
+                 ->getServiceManager()
+                 ->get('serviceAclRolePagesCreator');*/
+        
         $sessionManager = $e->getApplication()
                             ->getServiceManager()
                             ->get('SessionManagerDefault');
@@ -204,15 +208,19 @@ namespace Admin;
             $moduleNamespace = strtolower(trim($moduleNamespace));
             $route = $e ->getRouteMatch()
                                 ->getMatchedRouteName();
-            //print_r('--route-->'.$route);
-            //print_r('--role-->'.$role);
-            //print_r($acl);
-            //print_r($acl->isAllowed($role, 'SayfaErişim', $moduleNamespace.'-'.$controlerName));
+            /*print_r('--route-->'.$route);
+            print_r('--role-->'.$role);
+            print_r($acl);*/
+            //exit();
+            //print_r('--acl result-->'.$acl->isAllowed($role, 'SayfaErişim', $moduleNamespace.'-'.$controlerName));
+            //print_r('--acl result-->'.$acl->isAllowed($role, 'ACL_pages', $moduleNamespace.'-'.$controlerName));
+            //exit();
+            //
             if ( !$acl->isAllowed($role, 'SayfaErişim', $moduleNamespace.'-'.$controlerName)){
                 //print_r('--acl not allowed--');
                 
                 $error = $e->getError();
-                print_r('--error-->'.$error.'--');
+                //print_r('--error-->'.$error.'--');
                 //print_r('--status code-->'.$response->getStatusCode().'--');
                 /**
                  * controler name (not-found) kontrolü koyuldu, bu kontrol olmadan 
@@ -268,7 +276,7 @@ namespace Admin;
         //print_r($moduleNamespace);
 
         if ( !$acl->isAllowed(strtolower(trim($roleResult['name'])), $moduleNamespace, $controlerName)){
-            print_r('--acl not allowed--');
+            //print_r('--acl not allowed--');
             $route = $e ->getRouteMatch()
                             ->getMatchedRouteName();
             if($route !== 'error') {   

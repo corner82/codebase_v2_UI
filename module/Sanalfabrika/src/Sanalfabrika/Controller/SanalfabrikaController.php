@@ -175,7 +175,7 @@ class SanalfabrikaController extends AbstractActionController {
                         $event->stopPropagation();
                         exit();
                     }
-                    //print_r($publicKey);
+                    //print_r('--public key-->'.$publicKey);
                     $this->getServiceLocator()->setService('identity', $result->getIdentity());
                     //print_r($this->getServiceLocator()->get('identity'));
                     $userID = null;
@@ -218,7 +218,7 @@ class SanalfabrikaController extends AbstractActionController {
                      * @since 17/03/2016
                      */
                     //$this->getServiceLocator()->get('serviceLoginLogRabbitMQ');
-
+                    
                     /**
                      * redirecting after success
                      */

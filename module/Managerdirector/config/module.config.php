@@ -26,7 +26,7 @@ return array(
                     ),
                     'defaults' => array(
                         'controller' => 'Managerdirector\Controller\Managerdirector',
-                        'action' => 'indexmd',
+                        'action' => 'index',
                     ),
                 ),
             ),

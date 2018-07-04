@@ -15,6 +15,8 @@ return array(
         'Error',
         'Managerdirector',
         'Backofficeaftersales',
+        'Dealerdirector',
+        'Dealerowner',
     ),
     
     // These are various options for the listeners attached to the ModuleManager
@@ -95,6 +97,11 @@ return array(
             'serviceAuthenticatedRedirectAdmin' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectAdmin',
             'serviceAuthenticatedRedirectUser' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectUser',
             'serviceAuthenticatedRedirectBackOfficeAfterSales' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectAfterSalesBackOffice',
+            
+            'serviceAuthenticatedRedirectDealerDirector' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectDealerDirector',
+            'serviceAuthenticatedRedirectDealerOwner' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectDealerOwner',
+            'serviceAuthenticatedRedirectManagerDirector' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectManagerDirector',
+            
             'serviceAuthenticatedRedirectManager' => 'Custom\Services\Authentication\FactoryServiceAuthenticatedRedirectManager',
             'serviceTranslator' => 'Custom\Services\MultiLanguage\FactoryServiceTranslator', 
             'textBaseFilter' => 'Custom\Services\Services\Filter\TextBaseFilter',

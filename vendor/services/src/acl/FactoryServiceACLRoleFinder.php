@@ -29,6 +29,7 @@ class FactoryServiceACLRoleFinder  implements FactoryInterface{
         //print_r('--auth storage-->'.$authStorage.'--');
         if(isset($authStorage['username'])) {
             $userName = $authStorage['username'];
+            print_r('userNmae-->'.$userName.'--');
             try {
                 $pdo->beginTransaction();
                 $statement = $pdo->prepare(" 
