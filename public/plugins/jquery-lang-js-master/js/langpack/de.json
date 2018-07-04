@@ -146,7 +146,20 @@
                 "No Equ":"Keine Equ",
                 "Sub-ind. No Equ":"Sub-Ind.K.Equ",
                 "Out of service / sold directly":"Außer Betrieb / direkt verkauft",
-                "Stock Total":"Gesamtbestand"
+                "Stock Total":"Gesamtbestand",
+                "LONGSTAYER > 180":"LONGSTAYER > 180",
+                "MTB-TR STOCK":"MTB-TR VORRAT",
+                "DEALER STOCK":"Händlerbestand",  
+                "MTB-TR INVOICE":"MTB-TR RECHNUNG",
+                "BRANCHES INVOICE":"BRANCHEN-RECHNUNG",        
+                "DEALERS INVOICE":"HÄNDLER-RECHNUNG",
+                "MTB-TR ANNUAL INVOICE":"MTB-TR JÄHRLICHE RECHNUNG",
+                "BRANCHES ANNUAL INVOICE":"BRANCHEN JÄHRLICHE RECHNUNG",
+                "DEALERS ANNUAL INVOICE":"HÄNDLER JÄHRLICHE RECHNUNG",
+                "DELIVERY MONTH":"Liefermonat",
+                "DELIVERY YEAR":"LIEFERJAHR",
+                "ORDER BACKLOG":"Auftragsbestätigung"  
+        
 	}
 	
 }

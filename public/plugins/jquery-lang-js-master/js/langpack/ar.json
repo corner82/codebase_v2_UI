@@ -146,8 +146,20 @@
                 "No Equ":"لا يساوي",
                 "Sub-ind. No Equ":"الصناعة الفرعية / غية",
                 "Out of service / sold directly":"خارج الخدمة / تباع مباشرة",
-                "Stock Total":"المجموع"        
-        
+                "Stock Total":"المجموع",
+                "LONGSTAYER > 180":"لونست ستاي> 180",
+                "MTB-TR STOCK":"MTB-TR مخزون",
+                "DEALER STOCK":"وكيل التاجر",  
+                "MTB-TR INVOICE":"MTB-TR فاتورة",
+                "BRANCHES INVOICE":"فروع الفاتورة",        
+                "DEALERS INVOICE":"وكلاء التاجر",
+                "MTB-TR ANNUAL INVOICE":"MTB-TR السنوي فاتورة",
+                "BRANCHES ANNUAL INVOICE":"فروع الفاتورة السنوية",
+                "DEALERS ANNUAL INVOICE":"وكلاء الفاتورة السنوية",
+                "DELIVERY MONTH":"شهر التسليم",
+                "DELIVERY YEAR":"سنة التسليم",
+                "ORDER BACKLOG":"النظام"
+   
 	}
 	
 }

@@ -146,8 +146,20 @@
                 "No Equ":"Nee Equ",
                 "Sub-ind. No Equ":"Sub-ind./NeeEqu",
                 "Out of service / sold directly":"Uit diens / verkoop direk",
-                "Stock Total":"Voorraad Totaal"
-
+                "Stock Total":"Voorraad Totaal",
+                "LONGSTAYER > 180":"LANGSTE DAGER> 180",
+                "MTB-TR STOCK":"MTB-TR VOORRAAD",
+                "DEALER STOCK":"DEALER VOORRAAD",  
+                "MTB-TR INVOICE":"MTB-TR FAKTURE",
+                "BRANCHES INVOICE":"TAKKE FAKSIE",        
+                "DEALERS INVOICE":"DEALERS FAKSIE",
+                "MTB-TR ANNUAL INVOICE":"MTB-TR JAARLIKSE FAKSIE",
+                "BRANCHES ANNUAL INVOICE":"TAK JAARLIKSE FAKSIE",
+                "DEALERS ANNUAL INVOICE":"HANDELAARS JAARLIKSE FAKSIE",
+                "DELIVERY MONTH":"AFLEWINGSMONDIE",
+                "DELIVERY YEAR":"LEWERINGSJAAR",
+                "ORDER BACKLOG":"BESTEL TERUG"        
+       
 	}
 	
 }

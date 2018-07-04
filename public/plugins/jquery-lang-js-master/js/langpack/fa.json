@@ -146,7 +146,20 @@
                 "No Equ":"هیچ برابر نیست",
                 "Sub-ind. No Equ":"صنایع زیر / برابر",
                 "Out of service / sold directly":"خارج از خدمت / به طور مستقیم به فروش می رسد",
-                "Stock Total":"مجموع سهام"
+                "Stock Total":"مجموع سهام",
+                "LONGSTAYER > 180":"LONGSTAYER > 180",
+                "MTB-TR STOCK":"MTB-TR موجودی",
+                "DEALER STOCK":"دارنده سهام",  
+                "MTB-TR INVOICE":"MTB-TR حساب",
+                "BRANCHES INVOICE":"فاکتورهای حسابداری",        
+                "DEALERS INVOICE":"جوایز نمایندگی",
+                "MTB-TR ANNUAL INVOICE":"صورتحساب سالانه MTB-TR",
+                "BRANCHES ANNUAL INVOICE":"شعبه سالانه فاکتور",
+                "DEALERS ANNUAL INVOICE":"جوایز سالانه نمایندگان",
+                "DELIVERY MONTH":"ماه تحویل",
+                "DELIVERY YEAR":"سال تحویل",
+                "ORDER BACKLOG":"لیست سفارش"
+  
 	}
 	
 }

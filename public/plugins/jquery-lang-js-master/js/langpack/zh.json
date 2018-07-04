@@ -146,8 +146,19 @@
                 "No Equ":"没有",
                 "Sub-ind. No Equ":"子行业/不等",
                 "Out of service / sold directly":"停止服务/直接销售",
-                "Stock Total":"股票总计"
+                "Stock Total":"股票总计",
+                "LONGSTAYER > 180":"LONGSTAYER > 180",
+                "MTB-TR STOCK":"MTB-TR股票",
+                "DEALER STOCK":"经销商股票",  
+                "MTB-TR INVOICE":"MTB-TR发票",
+                "BRANCHES INVOICE":"分支机构发票",        
+                "DEALERS INVOICE":"经销商发票",
+                "MTB-TR ANNUAL INVOICE":"MTB-TR年度发票",
+                "BRANCHES ANNUAL INVOICE":"分支机构年度发票",
+                "DEALERS ANNUAL INVOICE":"经销商年度发票",
+                "DELIVERY MONTH":"交货月",
+                "DELIVERY YEAR":"交付年份",
+                "ORDER BACKLOG":"积压订单"    
 
-        
         }
 }

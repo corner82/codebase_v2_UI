@@ -149,8 +149,20 @@
                 "No Equ":"My",
                 "Sub-ind. No Equ":"Y.San.My",
                 "Out of service / sold directly":"Servis dışına / direk satılan",
-                "Stock Total":"Stok Toplam"
-    
+                "Stock Total":"Stok Toplam",
+                "LONGSTAYER > 180":"LONGSTAYER > 180",
+                "MTB-TR STOCK":"MTB-TR STOK",
+                "DEALER STOCK":"BAYİ STOK",  
+                "MTB-TR INVOICE":"MTB-TR FATURA",
+                "BRANCHES INVOICE":"ŞUBELER FATURA",        
+                "DEALERS INVOICE":"BAYİLER FATURA",
+                "MTB-TR ANNUAL INVOICE":"MTB-TR YILLIK FATURA",
+                "BRANCHES ANNUAL INVOICE":"ŞUBELER YILLIK FATURA",
+                "DEALERS ANNUAL INVOICE":"BAYİLER YILLIK FATURA",
+                "DELIVERY MONTH":"TESLİM AY",
+                "DELIVERY YEAR":"TESLİM YIL",
+                "ORDER BACKLOG":"SİPARİŞ BEKLEME LİSTESİ"
+        
 	}
 	
 }
