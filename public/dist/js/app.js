@@ -44,8 +44,8 @@ $(window).load(function() {
 
 
 // admin page menu load
-window.leftMenuWidget = $('#leftside-menu').leftMenu();
-window.leftMenuWidget.leftMenu('setBaseMenu');
+/*window.leftMenuWidget = $('#leftside-menu').leftMenu();
+window.leftMenuWidget.leftMenu('setBaseMenu');*/
 
 
 // admin page set language list (dropdown)
@@ -1380,6 +1380,9 @@ $(window).load(function() {
  // executes when complete page is fully loaded, including all frames, objects and images
  //alert("window is loaded");
  
+ 
+ 
+ 
  /**
     * @author Mustafa Zeynel Dağlı
     * @since 03/07/2018
@@ -1394,12 +1397,20 @@ $(window).load(function() {
 
 
    // admin page menu load
-   /*window.leftMenuWidget = $('#leftside-menu').leftMenu();
-   window.leftMenuWidget.leftMenu('setBaseMenu');*/
+   window.leftMenuWidget = $('#leftside-menu').leftMenu();
+   window.leftMenuWidget.leftMenu('setBaseMenu');
 
 
    // admin page set language list (dropdown)
    /*$("#lang_list_container").setLangList();
    $("#lang_list_container").setLangList('fillLangList');*/
+    
+    /**
+    * jquery lang master created dynamically
+    * @author Mustafa Zeynel Dağlı
+    * @since 15/05/2018
+    */
+   $("#langCode").jsLangMaster();
+    
 });
 

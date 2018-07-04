@@ -647,7 +647,7 @@
          */
         options: {
             basePath: '/',
-            baseLanguage: 'en',
+            baseLanguage: 'tr',
             requestUriTranslated: '/',
             langCode: 'tr',
             useLangMaster: 'true',
@@ -672,13 +672,14 @@
              */
             var self = this;
             
-            if(Cookies && Cookies.length>0) {
+            //if(Cookies && Cookies.length>0) {
                 if($("#langCode").length>0  ) {
                     if($("#langCode").val() != null && $("#langCode").val()!= '') {
                         self.options.langCode = $("#langCode").val();
                     }
                 } 
-             } else if( Cookies.get('langCookie') != null && Cookies.get('langCookie') != '') {
+             //} 
+             else if( Cookies.get('langCookie') != null && Cookies.get('langCookie') != '') {
                    //alert(Cookies.get('langCookie'));
                    self.options.langCode = Cookies.get('langCookie');
              } else {
@@ -2177,14 +2178,16 @@
             if(self.options.lang == null) {self.options.lang = $('#langCode').val();}
             //alert(self.options.lang );
                 
-            if(Cookies && Cookies.length>0) {
-                   if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
-                       self.options.lang = Cookies.get('langCookie');
-                   } 
-                } else if($("#langCode").length>0 ) {
-                    if($("#langCode").val() != null && $("#langCode").val()!= '') {
+            //if(Cookies && Cookies.length>0) {
+                   if($("#langCode").length>0  ) {
+                       if($("#langCode").val() != null && $("#langCode").val()!= '') {
                        self.options.lang = $("#langCode").val();
                    } 
+                       
+                   } 
+                //} 
+                else if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
+                    self.options.lang = Cookies.get('langCookie');
                 } else {
                     self.options.lang = 'tr';
                 }
