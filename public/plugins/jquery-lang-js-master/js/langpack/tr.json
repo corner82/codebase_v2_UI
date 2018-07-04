@@ -132,8 +132,25 @@
                 "Amount required for 9% per month":"Aylık %9 için Gereken Miktar",
                 "Amount Remaining for 7% per annum":"Yıllık %7 için Kalan Miktarı",
                 "Amount Remaining for 8% per annum":"Yıllık %8 için Kalan Miktarı",
-                "Amount Remaining for 9% per annum":"Yıllık %9 için Kalan Miktarı"
-                
+                "Amount Remaining for 9% per annum":"Yıllık %9 için Kalan Miktarı",
+                "Service used in repair":"Servis içinde onarıma kullanılan",
+                "Directly sold out of service":"Servis dışına direk satılan",
+                "Eligible Track":"Uygun Parça",
+                "Spare Part":"Yedek Parça",
+                "Side Industry Part":"Y.San.P.",
+                "Paid":"Ücretli",
+                "Guarantee":"Garanti",
+                "Low compared to the previous day ...":"Bir önceki güne göre düşük...",
+                "According to the previous day ...":"Bir önceki güne göre çok...",
+                "OEM":"OEM",  
+                "OES":"OES",
+                "ESD":"ESD",
+                "Sub-industry":"YS",
+                "No Eq.":"My",
+                "Sub-industry No Eq.":"Y.San.My",
+                "Out of service / sold directly":"Servis dışına / direk satılan",
+                "Stock Total":"Stok Toplam"
+    
 	}
 	
 }
