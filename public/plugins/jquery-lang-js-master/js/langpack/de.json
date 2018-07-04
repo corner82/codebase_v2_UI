@@ -129,7 +129,24 @@
                 "Amount required for 9% per month":"Betrag erforderlich für 9% pro Monat",
                 "Amount Remaining for 7% per annum":"Verbleibender Betrag für 7% pro Jahr",
                 "Amount Remaining for 8% per annum":"Verbleibender Betrag für 8% pro Jahr",
-                "Amount Remaining for 9% per annum":"Verbleibender Betrag für 9% pro Jahr"
+                "Amount Remaining for 9% per annum":"Verbleibender Betrag für 9% pro Jahr",
+                "Service used in repair":"Service in der Reparatur verwendet",
+                "Directly sold out of service":"Direkt außer Betrieb verkauft",
+                "Eligible Track":"Zugelassener Track",
+                "Spare Part":"Ersatzteil",
+                "Side Industry Part":"Seit.Teil der Ind.",
+                "Paid":"Bezahlt",
+                "Guarantee":"Garantie",
+                "Low compared to the previous day ...":"Niedrig im Vergleich zum Vortag ...",
+                "According to the previous day ...":"Laut dem Vortag ...",
+                "OEM":"OEM",  
+                "OES":"OES",
+                "ESD":"ESD",
+                "Sub-industry":"Sub-Industrie",
+                "No Equ":"Keine Equ",
+                "Sub-ind. No Equ":"Sub-Ind.K.Equ",
+                "Out of service / sold directly":"Außer Betrieb / direkt verkauft",
+                "Stock Total":"Gesamtbestand"
 	}
 	
 }

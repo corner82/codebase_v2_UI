@@ -129,7 +129,24 @@
                 "Amount required for 9% per month":"مقدار مورد نیاز برای 9٪ در هر ماه",
                 "Amount Remaining for 7% per annum":"مقدار باقیمانده 7٪ در سال است",
                 "Amount Remaining for 8% per annum":"مقدار باقیمانده 8٪ در سال است",
-                "Amount Remaining for 9% per annum":"مقدار باقیمانده 9٪ در سال است"
+                "Amount Remaining for 9% per annum":"مقدار باقیمانده 9٪ در سال است",
+                "Service used in repair":"خدمات مورد استفاده در تعمیر",
+                "Directly sold out of service":"به طور مستقیم از سرویس خارج می شود",
+                "Eligible Track":"آهنگ مورد نظر",
+                "Spare Part":"قطعات یدکی",
+                "Side Industry Part":"بخش صنایع جانبی",
+                "Paid":"پرداخت",
+                "Guarantee":"ضمانت",
+                "Low compared to the previous day ...":"کم در مقایسه با روز قبل ...",
+                "According to the previous day ...":"با توجه به روز قبل ...",
+                "OEM":"OEM",  
+                "OES":"OES",
+                "ESD":"ESD",
+                "Sub-industry":"زیر و صنعت",
+                "No Equ":"هیچ برابر نیست",
+                "Sub-ind. No Equ":"صنایع زیر / برابر",
+                "Out of service / sold directly":"خارج از خدمت / به طور مستقیم به فروش می رسد",
+                "Stock Total":"مجموع سهام"
 	}
 	
 }

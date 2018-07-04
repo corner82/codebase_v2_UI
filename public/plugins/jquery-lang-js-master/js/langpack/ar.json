@@ -129,7 +129,25 @@
                 "Amount required for 9% per month":"المبلغ المطلوب ل 9 ٪ في الشهر",
                 "Amount Remaining for 7% per annum":"المبلغ المتبقي عن 7٪ سنوياً",
                 "Amount Remaining for 8% per annum":"المبلغ المتبقي عن 8٪ سنوياً",
-                "Amount Remaining for 9% per annum":"المبلغ المتبقي عن 9٪ سنوياً"
+                "Amount Remaining for 9% per annum":"المبلغ المتبقي عن 9٪ سنوياً",
+                "Service used in repair":"الخدمة المستخدمة في الإصلاح",
+                "Directly sold out of service":"بيعت مباشرة من الخدمة",
+                "Eligible Track":"المسار المؤهل",
+                "Spare Part":"قطع غيار",
+                "Side Industry Part":"جزء الصناعة الجانبية",
+                "Paid":"دفع",
+                "Guarantee":"ضمان",
+                "Low compared to the previous day ...":"منخفض مقارنة باليوم السابق ...",
+                "According to the previous day ...":"وفقا لليوم السابق ...",
+                "OEM":"OEM",  
+                "OES":"OES",
+                "ESD":"ESD",
+                "Sub-industry":"صناعة الفرعية",
+                "No Equ":"لا يساوي",
+                "Sub-ind. No Equ":"الصناعة الفرعية / غية",
+                "Out of service / sold directly":"خارج الخدمة / تباع مباشرة",
+                "Stock Total":"المجموع"        
+        
 	}
 	
 }

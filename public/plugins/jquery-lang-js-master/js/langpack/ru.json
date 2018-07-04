@@ -129,7 +129,24 @@
                 "Amount required for 9% per month":"Сумма, необходимая для 9% в месяц",
                 "Amount Remaining for 7% per annum":"Сумма, остатка на 7% годовых",
                 "Amount Remaining for 8% per annum":"Сумма, оставшаяся на 8% годовых",
-                "Amount Remaining for 9% per annum":"Сумма, оставшаяся на 9% годовых"
+                "Amount Remaining for 9% per annum":"Сумма, оставшаяся на 9% годовых",
+                "Service used in repair":"Сервис, используемый в ремонте",
+                "Directly sold out of service":"Непосредственно продано из эксплуатации",
+                "Eligible Track":"Подходящий трек",
+                "Spare Part":"Запасная часть",
+                "Side Industry Part":"Боковая промышленная часть",
+                "Paid":"оплаченный",
+                "Guarantee":"гарантия",
+                "Low compared to the previous day ...":"Низкий по сравнению с предыдущим днем ...",
+                "According to the previous day ...":"По данным предыдущего дня ...",
+                "OEM":"OEM",  
+                "OES":"OES",
+                "ESD":"ESD",
+                "Sub-industry":"Подотрасль",
+                "No Equ":"Нет равных",
+                "Sub-ind. No Equ":"Под / Нет равных",
+                "Out of service / sold directly":"Не работает / продается напрямую",
+                "Stock Total":"Общий итог"
 	}
 	
 }
