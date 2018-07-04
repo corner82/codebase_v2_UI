@@ -129,7 +129,25 @@
                 "Amount required for 9% per month":"Bedrag benodig vir 9% per maand",
                 "Amount Remaining for 7% per annum":"Bedrag oorblywend vir 7% per jaar",
                 "Amount Remaining for 8% per annum":"Bedrag oorblywend vir 8% per jaar",
-                "Amount Remaining for 9% per annum":"Bedrag oorblywend vir 9% per jaar"
+                "Amount Remaining for 9% per annum":"Bedrag oorblywend vir 9% per jaar",
+                "Service used in repair":"Diens wat herstel word",
+                "Directly sold out of service":"Direk uit diens verkoop",
+                "Eligible Track":"Toelaatbare Snit",
+                "Spare Part":"Spaardeel",
+                "Side Industry Part":"Kant produksie Deel",
+                "Paid":"Betaal",
+                "Guarantee":"Waarborg",
+                "Low compared to the previous day ...":"Lae vergeleke met die vorige dag ...",
+                "According to the previous day ...":"Volgens die vorige dag ...",
+                "OEM":"OEM",  
+                "OES":"OES",
+                "ESD":"ESD",
+                "Sub-industry":"Sub-industrie",
+                "No Equ":"Nee Equ",
+                "Sub-ind. No Equ":"Sub-ind./NeeEqu",
+                "Out of service / sold directly":"Uit diens / verkoop direk",
+                "Stock Total":"Voorraad Totaal"
+
 	}
 	
 }

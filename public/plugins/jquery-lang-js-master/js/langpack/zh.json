@@ -129,7 +129,25 @@
                 "Amount required for 9% per month":"每月需要9％的金额",
                 "Amount Remaining for 7% per annum":"剩余金额为每年7％",
                 "Amount Remaining for 8% per annum":"剩余金额为每年8％",
-                "Amount Remaining for 9% per annum":"剩余金额为每年9％"
+                "Amount Remaining for 9% per annum":"剩余金额为每年9％",
+                "Service used in repair":"用于维修的服务",
+                "Directly sold out of service":"直接售罄停止服务",
+                "Eligible Track":"符合条件的赛道",
+                "Spare Part":"零部件",
+                "Side Industry Part":"边工业部分.",
+                "Paid":"付费",
+                "Guarantee":"保证",
+                "Low compared to the previous day ...":"与前一天相比较低...",
+                "According to the previous day ...":"根据前一天...",
+                "OEM":"OEM",  
+                "OES":"OES",
+                "ESD":"ESD",
+                "Sub-industry":"分行业",
+                "No Equ":"没有",
+                "Sub-ind. No Equ":"子行业/不等",
+                "Out of service / sold directly":"停止服务/直接销售",
+                "Stock Total":"股票总计"
+
         
         }
 }

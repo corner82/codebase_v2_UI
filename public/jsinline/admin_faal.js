@@ -99,7 +99,7 @@ $('#detay_yedek_parca').click(function()
         $("#panel_yedek_parca_servis_ici").loadImager('removeLoadImage');
         $("#panel_yedek_parca_servis_ici").loadImager('appendImage');
         $("#panel_yedek_parca_servis_ici").animate({height:'toggle'},1000); 
-        $("#panel_yedek_parca_servis_ici_title").html(window.lang.translate('Servis içinde onarıma kullanılan'));
+        $("#panel_yedek_parca_servis_ici_title").html(window.lang.translate('Service used in repair'));
         // açık iş emirlerini servis ayrımı yaparak çağırıyoruz
         if(serviceControler == true) {
             getDetayYedekParcaServisIciWithServices(multiSelectedRoles);
@@ -110,7 +110,7 @@ $('#detay_yedek_parca').click(function()
         hidden_block2_controller = 1;
         $("#panel_yedek_parca_servis_ici").loadImager('removeLoadImage');
         $("#panel_yedek_parca_servis_ici").loadImager('appendImage');
-        $("#panel_yedek_parca_servis_ici_title").html(window.lang.translate('Servis içinde onarıma kullanılan'));
+        $("#panel_yedek_parca_servis_ici_title").html(window.lang.translate('Service used in repair'));
         if(serviceControler == true) {
             getDetayYedekParcaServisIciWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
@@ -124,7 +124,7 @@ $('#detay_yedek_parca').click(function()
         $("#panel_yedek_parca_servis_disi").loadImager('removeLoadImage');
         $("#panel_yedek_parca_servis_disi").loadImager('appendImage');
         $("#panel_yedek_parca_servis_disi").animate({height:'toggle'},1000); 
-        $("#panel_yedek_parca_servis_disi_title").html(window.lang.translate('Servis dışına/direk satılan'));
+        $("#panel_yedek_parca_servis_disi_title").html(window.lang.translate('Out of service / sold directly'));
         // açık iş emirlerini servis ayrımı yaparak çağırıyoruz
         if(serviceControler == true) {
             getDetayYedekParcaServisDisiWithServices(multiSelectedRoles);
@@ -135,7 +135,7 @@ $('#detay_yedek_parca').click(function()
         hidden_block2_controller = 1;
         $("#panel_yedek_parca_servis_disi").loadImager('removeLoadImage');
         $("#panel_yedek_parca_servis_disi").loadImager('appendImage');
-        $("#panel_yedek_parca_servis_disi_title").html(window.lang.translate('Servis dışına/direk satılan'));
+        $("#panel_yedek_parca_servis_disi_title").html(window.lang.translate('Out of service / sold directly'));
         if(serviceControler == true) {
             getDetayYedekParcaServisDisiWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
