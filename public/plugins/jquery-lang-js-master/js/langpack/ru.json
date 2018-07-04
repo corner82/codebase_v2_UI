@@ -158,8 +158,8 @@
                 "DEALERS ANNUAL INVOICE":"ДЕНЬГИ ЕЖЕГОДНЫЙ СЧЕТ",
                 "DELIVERY MONTH":"ДОСТАВКА МЕСЯЦА",
                 "DELIVERY YEAR":"ГОД ДОСТАВКИ",
-                "ORDER BACKLOG":"портфель заказов"        
-
+                "ORDER BACKLOG":"портфель заказов",       
+                "Ratio compared to the previous day":"Соотношение по сравнению с предыдущим днем"
     	}
 	
 }

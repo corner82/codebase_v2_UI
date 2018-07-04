@@ -259,12 +259,17 @@ ajaxACLResources.ajaxCallWidget ({
      },
      onSuccess : function (event, data) {
          var data = $.parseJSON(data);
+         data.splice(0, 1,
+                            { text: window.lang.translate('Please select'), value: 0, selected: false, description: "" }
+                    );
+    
          $('#loading-image-roles').loadImager('removeLoadImage');
          $('#dropdownRoles').ddslick({
             height : 200,
             data : data, 
             width:'98%',
             selectText: "Select your preferred social network",
+            searchText:window.lang.translate("Search"), 
             //showSelectedHTML : false,
             defaultSelectedIndex: 3,
             search : true,

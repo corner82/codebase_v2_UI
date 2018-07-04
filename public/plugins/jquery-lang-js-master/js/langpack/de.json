@@ -158,7 +158,8 @@
                 "DEALERS ANNUAL INVOICE":"HÄNDLER JÄHRLICHE RECHNUNG",
                 "DELIVERY MONTH":"Liefermonat",
                 "DELIVERY YEAR":"LIEFERJAHR",
-                "ORDER BACKLOG":"Auftragsbestätigung"  
+                "ORDER BACKLOG":"Auftragsbestätigung",
+                "Ratio compared to the previous day":"Ratio im Vergleich zum Vortag"
         
 	}
 	

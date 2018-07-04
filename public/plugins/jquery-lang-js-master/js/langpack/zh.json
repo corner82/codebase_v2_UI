@@ -158,7 +158,8 @@
                 "DEALERS ANNUAL INVOICE":"经销商年度发票",
                 "DELIVERY MONTH":"交货月",
                 "DELIVERY YEAR":"交付年份",
-                "ORDER BACKLOG":"积压订单"    
+                "ORDER BACKLOG":"积压订单",
+                "Ratio compared to the previous day":"比率与前一天相比"
 
         }
 }
