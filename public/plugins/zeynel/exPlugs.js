@@ -376,6 +376,7 @@
                     //alert(window.lang.translate('Brand Sales Units'));
                     window.lang.change(self.options.langDefault);
                 }, 4000);*/
+            alert(self.options.langDefault);
             window.lang.change(self.options.langDefault);
         },
        
@@ -758,13 +759,13 @@
                     if(self.options.langCode == value.language_main_code) {
                         $('#'+self.options.activeLangDisplayId+'').html(value.language);
                         html+= '<li class="active">'+
-                                    '<a style="display:block;color:#000000;" onclick="window.location.href= \''+requestUriTranslatedLocal+'\';">'+
+                                    '<a style="display:block;color:#000000;" onclick="window.lang.change(\''+value.language_main_code+'\');window.location.href= \''+requestUriTranslatedLocal+'\';">'+
                                         '<span class="logo-mini">'+value.language_main_code+'</span><span>&nbsp;&nbsp;&nbsp;'+value.language+'</span>'+
                                 '</a>'+
                                 '</li>';
                     } else {
                         html+='<li >'+
-                                    '<a style="display:block;color:#000000;" onclick="window.location.href= \''+requestUriTranslatedLocal+'\';">'+
+                                    '<a style="display:block;color:#000000;" onclick="window.lang.change(\''+value.language_main_code+'\');window.location.href= \''+requestUriTranslatedLocal+'\';">'+
                                         '<span class="logo-mini">'+value.language_main_code+'</span><span>&nbsp;&nbsp;&nbsp;'+value.language+'</span>'+
                                     '</a>'+
                                 '</li>';
@@ -802,13 +803,13 @@
                     if(self.options.langCode == value.language_main_code) {
                         $('#'+self.options.activeLangDisplayId+'').html(value.language);
                         html+= '<li class="active">'+
-                                    '<a style="display:block;color:#000000;" onclick="window.location.href= \''+value.language_main_code+requestUriTranslatedLocal+'\';">'+
+                                    '<a style="display:block;color:#000000;" onclick="window.lang.change(\''+value.language_main_code+'\');window.location.href= \''+value.language_main_code+requestUriTranslatedLocal+'\';">'+
                                         '<span class="logo-mini">'+value.language_main_code+'</span><span>&nbsp;&nbsp;&nbsp;'+value.language+'</span>'+
                                 '</a>'+
                                 '</li>';
                     } else {
                         html+='<li >'+
-                                    '<a  style="display:block;color:#000000;" onclick="window.location.href= \''+value.language_main_code+requestUriTranslatedLocal+'\';">'+
+                                    '<a  style="display:block;color:#000000;" onclick="window.lang.change(\''+value.language_main_code+'\');window.location.href= \''+value.language_main_code+requestUriTranslatedLocal+'\';">'+
                                         '<span class="logo-mini">'+value.language_main_code+'</span><span>&nbsp;&nbsp;&nbsp;'+value.language+'</span>'+
                                     '</a>'+
                                 '</li>';
