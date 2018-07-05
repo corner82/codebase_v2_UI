@@ -376,7 +376,7 @@
                     //alert(window.lang.translate('Brand Sales Units'));
                     window.lang.change(self.options.langDefault);
                 }, 4000);*/
-            alert(self.options.langDefault);
+            //alert(self.options.langDefault);
             window.lang.change(self.options.langDefault);
         },
        
