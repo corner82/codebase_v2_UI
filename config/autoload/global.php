@@ -109,8 +109,8 @@ return array(
         'Sanalfabrika',
         'Managerdirector',
         'Backofficeaftersales',
-        //'Dealerowner', 
-        'Dealerdirector', 
+        'Dealerowner', 
+        //'Dealerdirector', 
     ),
     'ActionsTobeAuthenticated' => array(
         'Sanalfabrika' => array(
