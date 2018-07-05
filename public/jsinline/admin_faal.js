@@ -83,6 +83,40 @@ Array.prototype.unique = function() {
   });
 }
 
+
+
+// servis seçimlerine göre dashboard hesplamalarını yapan event
+$('#servisDashboardHesapla').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        $("#toplam_header_yedek_parca_container").find('div:first h3:first-child').html('');
+        $("#toplam_header_yedek_parca_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+        $("#toplam_header_yag_container").find('div:first h3:first-child').html('');
+        $("#toplam_header_yag_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+        $("#toplam_header_stok_container").find('div:first h3:first-child').html('');
+        $("#toplam_header_stok_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+        getAfterSalesFaalYedekParcaDashboard();
+        getAfterSalesFaalYagDashboard();
+        getAfterSalesFaalStokDashboard();
+        } 
+     else if(serviceControler == false ){
+        dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+        dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  'Lütfen servis seçiniz...');
+    }
+   
+});
+
+
+
 // detay ana block 
 var hidden_block2_controller;
 
@@ -793,82 +827,177 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
 // dashboard özet verileri fonk.
 // yedek parca,  dashboard data (#container)
 function getAfterSalesFaalYedekParcaDashboard() {   
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardFaalYedekParca_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        var dataSet = data;
-        var yedekparca;
-        $.each(dataSet, function (key, value) {
-            console.log(value);
-            yedekparca =  value.YEDEKPARCATOPLAMI
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == false) {
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalYedekParca_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                var dataSet = data;
+                var yedekparca;
+                $.each(dataSet, function (key, value) {
+                    console.log(value);
+                    yedekparca =  value.YEDEKPARCATOPLAMI
+                });
+                $("#toplam_header_yedek_parca_container").headerSetterAfterSalesYedekParcaDashboard(yedekparca);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
         });
-        $("#toplam_header_yedek_parca_container").headerSetterAfterSalesYedekParcaDashboard(yedekparca);
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(textStatus);
+
+    }else if(serviceControler == true ){
+         var services = getServicesSelectedAsUrl(multiSelectedRoles);
+          $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalYedekParca_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            var dataSet = data;
+                var yedekparca;
+                $.each(dataSet, function (key, value) {
+                    console.log(value);
+                    yedekparca =  value.YEDEKPARCATOPLAMI
+                });
+                $("#toplam_header_yedek_parca_container").headerSetterAfterSalesYedekParcaDashboard(yedekparca);
+            },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+            }
+        });
     }
-});
 }
 
 // yag  dashboard data (#container)
 function getAfterSalesFaalYagDashboard() {   
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardFaalYagToplam_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-            var dataSet = data;
-            var yag;
-            $.each(dataSet, function (key, value) {
-                yag =  value.YAGTOPLAM
-            });
-            $("#toplam_header_yag_container").headerSetterAfterSalesYedekParcaDashboard(yag);
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(textStatus);
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+     if(serviceControler == false) {
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalYagToplam_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                    var dataSet = data;
+                    var yag;
+                    $.each(dataSet, function (key, value) {
+                        yag =  value.YAGTOPLAM
+                    });
+                    $("#toplam_header_yag_container").headerSetterAfterSalesYedekParcaDashboard(yag);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+
+    }else if(serviceControler == true ){
+         var services = getServicesSelectedAsUrl(multiSelectedRoles);
+         $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalYagToplam_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+           var dataSet = data;
+                    var yag;
+                    $.each(dataSet, function (key, value) {
+                        yag =  value.YAGTOPLAM
+                    });
+                    $("#toplam_header_yag_container").headerSetterAfterSalesYedekParcaDashboard(yag);
+            },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+            }
+        });
     }
-});
 }
 
 // stok  dashboard data (#container)
 function getAfterSalesFaalStokDashboard() {   
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardFaalStokToplam_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        //console.log(data.resultSet);
-       
-        var dataSet = data;
-        var stok;
-        $.each(dataSet, function (key, value) {
-            console.log(value);
-            stok =  value.STOK_TOPLAM
-            //d = d.replace(",", ".");
-            //console.log(d);
-            //downtime+= parseInt(d);
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == false) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardFaalStokToplam_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+
+            var dataSet = data;
+            var stok;
+            $.each(dataSet, function (key, value) {
+                console.log(value);
+                stok =  value.STOK_TOPLAM
+                //d = d.replace(",", ".");
+                //console.log(d);
+                //downtime+= parseInt(d);
+            });
+            $("#toplam_header_stok_container").headerSetterAfterSalesYedekParcaDashboard(stok);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+            }
         });
-        $("#toplam_header_stok_container").headerSetterAfterSalesYedekParcaDashboard(stok);
-        
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(textStatus);
+    } else if(serviceControler == true ){
+         var services = getServicesSelectedAsUrl(multiSelectedRoles);
+         $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalStokToplam_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            var dataSet = data;
+            var stok;
+            $.each(dataSet, function (key, value) {
+                console.log(value);
+                stok =  value.STOK_TOPLAM
+                //d = d.replace(",", ".");
+                //console.log(d);
+                //downtime+= parseInt(d);
+            });
+            $("#toplam_header_stok_container").headerSetterAfterSalesYedekParcaDashboard(stok);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+            }
+        });
     }
-});
 }
 
 // dashboard özet verileri fonk. son
