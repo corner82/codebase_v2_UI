@@ -1,0 +1,160 @@
+2018-07-05T07:01:24+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /tr/admin
+2018-07-05T07:01:25+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T07:01:45+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /tr/admin
+2018-07-05T07:01:45+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T07:01:52+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /
+2018-07-05T07:01:52+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T07:02:06+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /
+2018-07-05T07:02:06+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T07:03:13+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /
+2018-07-05T07:03:13+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T07:05:29+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /
+2018-07-05T07:05:29+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T07:06:54+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /
+2018-07-05T07:06:54+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T07:07:05+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /
+2018-07-05T07:07:05+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T07:07:08+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /
+2018-07-05T07:07:08+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T07:11:18+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /
+2018-07-05T07:11:18+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php at line : 195
+    with type error : E_ERROR : Uncaught exception 'Zend\ModuleManager\Exception\RuntimeException' with message 'Module (Dealerowner) could not be initialized.' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php:195
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(169): Zend\ModuleManager\ModuleManager->loadModuleByName(Object(Zend\ModuleManager\ModuleEvent))
+#1 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-modulemanager\src\ModuleManager.php(96): Zend\ModuleManager\ModuleManager->loadModule('Dealerowner')
+#2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
