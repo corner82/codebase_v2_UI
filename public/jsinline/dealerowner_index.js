@@ -12,7 +12,7 @@ $(document).ready(function () {
  * @author Mustafa Zeynel Dağlı
  * @since 15/05/2018
  */
-$("#langCode").jsLangMaster();
+//$("#langCode").jsLangMaster();
 
 var sm  = $(window).successMessage();
 var dm  = $(window).dangerMessage();
@@ -1906,7 +1906,7 @@ $("#loading-image-roles").loadImager('appendImage');
  */
 var ajaxACLResources = $('#loading-image-roles').ajaxCallWidget({
     proxy : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'fillServicesDdlist_infoAfterSales' ,
+    data: { url:'pkfillServicesDdlist_infoDealerOwner' ,
             pk : $("#pk").val() 
           },
     async : false
