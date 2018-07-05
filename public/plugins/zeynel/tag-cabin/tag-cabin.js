@@ -310,8 +310,10 @@
         addTags: function (data, infoArrayManual) { 
             var self = this;
             var infoArrayManual = infoArrayManual;
+            //console.log('parsejson öncesi');
             var dataArr = $.parseJSON(data);
             var infoArray = {};
+            //console.log(dataArr);
             //console.warn(self.options.tagBox);
             $.each(dataArr, function (key, row) {
                 //console.warn(row);
@@ -346,7 +348,7 @@
             var self = this;
             var tag = tag;
             var icons = '';
-            
+            //alert('dd');
             var tagCustom = '';
             if(typeof infoArray!= "undefined") {
                 $.each(infoArray, function(key, item) {
@@ -355,7 +357,7 @@
                 })
             } else if (typeof infoArrayManual != "undefined") { //#2
                 $.each(infoArrayManual, function (key, item) {
-                    //console.error(key+'--'+item);
+                    console.error(key+'--'+item);
                     tagCustom += ' ' + key + '="' + item + '" ';
                 })
             }

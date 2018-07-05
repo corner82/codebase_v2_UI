@@ -12,7 +12,7 @@ $(document).ready(function () {
  * @author Mustafa Zeynel Dağlı
  * @since 15/05/2018
  */
-//$("#langCode").jsLangMaster();
+$("#langCode").jsLangMaster();
 
 var sm  = $(window).successMessage();
 var dm  = $(window).dangerMessage();
@@ -197,6 +197,10 @@ $("#panel_hidden_garanti_cirosu").loadImager();
  * @since 19/06/2018
  */
 $("#panel_hidden_direk_satis_cirosu").loadImager();
+
+
+
+
 
 /**
  * Sand-Signika theme for Highcharts JS
@@ -1887,6 +1891,105 @@ $('#detay_acilan_bayi_stoklari').click(function()
 });
 // detay bloc 5 son
 
+/**
+ * loading image for roles dropdown
+ * @author Mustafa Zeynel Dağlı
+ * @since 11/08/2016
+ */
+$("#loading-image-roles").loadImager();
+$("#loading-image-roles").loadImager('appendImage');   
+
+/**
+ * Services dropdown prepared
+ * @type @call;$@call;ajaxCallWidget
+ * @since 30/05/2018
+ */
+var ajaxACLResources = $('#loading-image-roles').ajaxCallWidget({
+    proxy : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'fillServicesDdlist_infoAfterSales' ,
+            pk : $("#pk").val() 
+          },
+    async : false
+   })
+ajaxACLResources.ajaxCallWidget ({
+     onError : function (event, textStatus,errorThrown) {
+         dm.dangerMessage({
+            onShown : function() {
+                $('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+         dm.dangerMessage('show', 'servis Bulunamamıştır...',
+                                  'Servis  bulunamamıştır...');
+     },
+     onSuccess : function (event, data) {
+         var data2 = data;
+         var data = $.parseJSON(data);
+         /*data.splice(0, 1,
+                            { text: window.lang.translate('Please select'), value: 0, selected: false, description: "" }
+                        );*/
+         $('#loading-image-roles').loadImager('removeLoadImage');
+         $('#dropdownRoles').ddslick({
+            height : 200,
+            data : data, 
+            width:'98%',
+            selectText: "Select your preferred social network",
+            //searchText : window.lang.translate('Search'),
+            
+            //showSelectedHTML : false,
+            defaultSelectedIndex: 3,
+            search : true,
+            multiSelect : true,
+            tagBox : 'tag-container',
+            //multiSelectTagID : 'deneme',
+            //imagePosition:"right",
+            onSelected: function(selectedData){
+                if(selectedData.selectedData.value>0) {
+                    /*$('#tt_tree_menu').tree({
+                        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php?url=pkFillForAdminTree_leftnavigation&pk=' + $("#pk").val()+ '&role_id='+selectedData.selectedData.value+'&language_code='+$("#langCode").val(),
+                    });*/
+                }
+            }   
+        });  
+        
+        
+        var tagBuilderDealers = $('#test-cabin').tagCabin({
+        tagCopy: false,
+        tagDeletable: true,
+        tagDeletableAll: false,
+        tagBox: $('.tag-container').find('ul'),
+        //dataMapper: {attributes : Array('role_id', 'resource_id', 'privilege_id')}
+        dataMapper: Array('role_id', 'resource_id', 'privilege_id')
+
+        });
+        
+        tagBuilderDealers.tagCabin({
+            onTagRemoved: function (event, data) {
+                var self = $(this);
+                var elementData = data.element;
+                elementData.remove();
+                //window.deleteSoruKonu(elementData);
+            }
+        
+        });
+        var testArr = ['text', 'value'];
+         tagBuilderDealers.tagCabin('addTags', data2, testArr );
+        
+        
+     },
+     onErrorDataNull : function (event, data) {
+         dm.dangerMessage({
+            onShown : function() {
+                $('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+         dm.dangerMessage('show', 'Rol Bulunamamıştır...',
+                                  'Rol  bulunamamıştır...');
+     },
+}) 
+ajaxACLResources.ajaxCallWidget('call');
+
+
+
 //$('#todolistbox').loadImager();
 var filler = $('#todolistbox').todolistFiller();
 
@@ -1940,75 +2043,10 @@ getMMCSIDashboard();
 // müşteri memnuniyeti(CXI) dashboard data 
 getMMCXIDashboard();
     
-/**
- * loading image for roles dropdown
- * @author Mustafa Zeynel Dağlı
- * @since 11/08/2016
- */
-$("#loading-image-roles").loadImager();
-$("#loading-image-roles").loadImager('appendImage');    
+ 
     
 
-/**
- * Services dropdown prepared
- * @type @call;$@call;ajaxCallWidget
- * @since 30/05/2018
- */
-var ajaxACLResources = $('#loading-image-roles').ajaxCallWidget({
-    proxy : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'fillServicesDdlist_infoAfterSales' ,
-                    pk : $("#pk").val() 
-            }
-   })
-ajaxACLResources.ajaxCallWidget ({
-     onError : function (event, textStatus,errorThrown) {
-         dm.dangerMessage({
-            onShown : function() {
-                $('#loading-image-roles').loadImager('removeLoadImage'); 
-            }
-         });
-         dm.dangerMessage('show', 'servis Bulunamamıştır...',
-                                  'Servis  bulunamamıştır...');
-     },
-     onSuccess : function (event, data) {
-         var data = $.parseJSON(data);
-         data.splice(0, 1,
-                            { text: window.lang.translate('Please select'), value: 0, selected: false, description: "" }
-                        );
-         $('#loading-image-roles').loadImager('removeLoadImage');
-         $('#dropdownRoles').ddslick({
-            height : 200,
-            data : data, 
-            width:'98%',
-            selectText: "Select your preferred social network",
-            searchText : window.lang.translate('Search'),
-            //showSelectedHTML : false,
-            defaultSelectedIndex: 3,
-            search : true,
-            multiSelect : true,
-            tagBox : 'tag-container',
-            //multiSelectTagID : 'deneme',
-            //imagePosition:"right",
-            onSelected: function(selectedData){
-                if(selectedData.selectedData.value>0) {
-                    /*$('#tt_tree_menu').tree({
-                        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php?url=pkFillForAdminTree_leftnavigation&pk=' + $("#pk").val()+ '&role_id='+selectedData.selectedData.value+'&language_code='+$("#langCode").val(),
-                    });*/
-                }
-            }   
-        });   
-     },
-     onErrorDataNull : function (event, data) {
-         dm.dangerMessage({
-            onShown : function() {
-                $('#loading-image-roles').loadImager('removeLoadImage'); 
-            }
-         });
-         dm.dangerMessage('show', 'Rol Bulunamamıştır...',
-                                  'Rol  bulunamamıştır...');
-     },
-}) 
-ajaxACLResources.ajaxCallWidget('call');
+
     
 /*
  * Author: Abdullah A Almsaeed
@@ -11853,6 +11891,11 @@ function getDetayGridMMCXIWithServices(multiSelectedRoles) {
 
 // satış sonrası servisler ile ilgili fonk.
 function getServiceDropdownSelectedItems() {
+    
+    var test = $('#test-cabin').tagCabin('getAllTagsValues', 'data-value')
+    console.log(test);
+    
+    
     var serviceControler = false;
     if($('#dropdownRoles').length) {
         var ddDataRoles = $('#dropdownRoles').data('ddslick');
@@ -11863,7 +11906,9 @@ function getServiceDropdownSelectedItems() {
         }
         
     }
-     return multiSelectedRoles;                                                           
+    console.log(multiSelectedRoles);
+     //return multiSelectedRoles;    
+     return test;
 }
 
 function getServiceSelectedItemsControl(multiSelectedRoles) {

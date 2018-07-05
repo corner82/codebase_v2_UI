@@ -1997,6 +1997,14 @@ ajaxACLResources.ajaxCallWidget ({
                 }
             }   
         });   
+        
+        /*
+        $('#test-cabin').tagCabin('addTagManuallyDataAttr', 1,
+                {//gs_id : data.lastInsertId,
+                    subject_id: 3,
+                }
+            )*/
+        
      },
      onErrorDataNull : function (event, data) {
          dm.dangerMessage({
