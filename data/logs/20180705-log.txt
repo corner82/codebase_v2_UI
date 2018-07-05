@@ -158,3 +158,57 @@ Stack trace:
 #2 [internal function]: Zend\ModuleManager\ModuleManager->onLoadModules(Object(Zend\ModuleManager\ModuleEvent))
 #3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\ModuleManager\ModuleEvent))
 #4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners( in /favicon.ico
+2018-07-05T08:25:14+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php at line : 106
+    with type error : E_ERROR : Uncaught exception 'Zend\Permissions\Acl\Exception\InvalidArgumentException' with message 'Role 'manager director' not found' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php:106
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Acl.php(722): Zend\Permissions\Acl\Role\Registry->get('manager directo...')
+#1 C:\xampp\htdocs\miya_performans\module\Admin\Module.php(219): Zend\Permissions\Acl\Acl->isAllowed('manager directo...', 'SayfaEri\xC5\x9Fim', 'dealerdirector-...')
+#2 [internal function]: Admin\Module->pageAccessControler(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdoc in /tr/dd/
+2018-07-05T08:25:19+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php at line : 106
+    with type error : E_ERROR : Uncaught exception 'Zend\Permissions\Acl\Exception\InvalidArgumentException' with message 'Role 'manager director' not found' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php:106
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Acl.php(722): Zend\Permissions\Acl\Role\Registry->get('manager directo...')
+#1 C:\xampp\htdocs\miya_performans\module\Admin\Module.php(219): Zend\Permissions\Acl\Acl->isAllowed('manager directo...', 'SayfaEri\xC5\x9Fim', 'error-error404')
+#2 [internal function]: Admin\Module->pageAccessControler(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\mi in /man/error/error404
+2018-07-05T08:25:22+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php at line : 106
+    with type error : E_ERROR : Uncaught exception 'Zend\Permissions\Acl\Exception\InvalidArgumentException' with message 'Role 'manager director' not found' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php:106
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Acl.php(722): Zend\Permissions\Acl\Role\Registry->get('manager directo...')
+#1 C:\xampp\htdocs\miya_performans\module\Admin\Module.php(219): Zend\Permissions\Acl\Acl->isAllowed('manager directo...', 'SayfaEri\xC5\x9Fim', 'error-error404')
+#2 [internal function]: Admin\Module->pageAccessControler(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\mi in /man/error/error404
+2018-07-05T08:25:28+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php at line : 106
+    with type error : E_ERROR : Uncaught exception 'Zend\Permissions\Acl\Exception\InvalidArgumentException' with message 'Role 'manager director' not found' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php:106
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Acl.php(722): Zend\Permissions\Acl\Role\Registry->get('manager directo...')
+#1 C:\xampp\htdocs\miya_performans\module\Admin\Module.php(219): Zend\Permissions\Acl\Acl->isAllowed('manager directo...', 'SayfaEri\xC5\x9Fim', 'dealerdirector-...')
+#2 [internal function]: Admin\Module->pageAccessControler(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdoc in /tr/dd/
+2018-07-05T08:25:31+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php at line : 106
+    with type error : E_ERROR : Uncaught exception 'Zend\Permissions\Acl\Exception\InvalidArgumentException' with message 'Role 'manager director' not found' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php:106
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Acl.php(722): Zend\Permissions\Acl\Role\Registry->get('manager directo...')
+#1 C:\xampp\htdocs\miya_performans\module\Admin\Module.php(219): Zend\Permissions\Acl\Acl->isAllowed('manager directo...', 'SayfaEri\xC5\x9Fim', 'error-error404')
+#2 [internal function]: Admin\Module->pageAccessControler(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\mi in /man/error/error404
+2018-07-05T08:25:33+02:00 CRIT (2):  Error PHP in file : C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php at line : 106
+    with type error : E_ERROR : Uncaught exception 'Zend\Permissions\Acl\Exception\InvalidArgumentException' with message 'Role 'manager director' not found' in C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Role\Registry.php:106
+Stack trace:
+#0 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-permissions-acl\src\Acl.php(722): Zend\Permissions\Acl\Role\Registry->get('manager directo...')
+#1 C:\xampp\htdocs\miya_performans\module\Admin\Module.php(219): Zend\Permissions\Acl\Acl->isAllowed('manager directo...', 'SayfaEri\xC5\x9Fim', 'error-error404')
+#2 [internal function]: Admin\Module->pageAccessControler(Object(Zend\Mvc\MvcEvent))
+#3 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(444): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#4 C:\xampp\htdocs\miya_performans\vendor\zendframework\zend-eventmanager\src\EventManager.php(205): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#5 C:\xampp\htdocs\mi in /man/error/error404
