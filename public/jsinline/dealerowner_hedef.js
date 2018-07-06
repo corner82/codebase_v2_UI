@@ -166,7 +166,7 @@ ajaxACLResources.ajaxCallWidget ({
          
          
          
-         var tagBuilderDealers = $('#test-cabin').tagCabin({
+        var tagBuilderDealers = $('#test-cabin').tagCabin({
         tagCopy: false,
         tagDeletable: true,
         tagDeletableAll: false,

@@ -5,7 +5,7 @@ $(document).ready(function () {
  * @author Mustafa Zeynel Dağlı
  * @since 15/05/2018
  */
-//$("#langCode").jsLangMaster();
+$("#langCode").jsLangMaster();
 
 var sm  = $(window).successMessage();
 var dm  = $(window).dangerMessage();
@@ -82,6 +82,41 @@ Array.prototype.unique = function() {
     return self.indexOf(value) === index;
   });
 }
+
+
+
+// servis seçimlerine göre dashboard hesplamalarını yapan event
+$('#servisDashboardHesapla').click(function()
+{
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        console.log(multiSelectedRoles);
+        $("#toplam_header_yedek_parca_container").find('div:first h3:first-child').html('');
+        $("#toplam_header_yedek_parca_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+        $("#toplam_header_yag_container").find('div:first h3:first-child').html('');
+        $("#toplam_header_yag_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+        $("#toplam_header_stok_container").find('div:first h3:first-child').html('');
+        $("#toplam_header_stok_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+        getAfterSalesFaalYedekParcaDashboard();
+        getAfterSalesFaalYagDashboard();
+        getAfterSalesFaalStokDashboard();
+        } 
+     else if(serviceControler == false ){
+        dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+        dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  'Lütfen servis seçiniz...');
+    }
+   
+});
+
+
 
 // detay ana block 
 var hidden_block2_controller;
@@ -213,19 +248,6 @@ $('#detay_stok').click(function()
 
 
 // detay ana  block  son
-
-
-// yedek parca dashboard data (#container)
-getAfterSalesFaalYedekParcaDashboard();
-
-// yağ dashboard data (#container)
-getAfterSalesFaalYagDashboard();
-
-// stok dashboard data (#container)
-getAfterSalesFaalStokDashboard();
-
-
-
     
 /**
  * loading image for roles dropdown
@@ -243,9 +265,10 @@ $("#loading-image-roles").loadImager('appendImage');
  */
 var ajaxACLResources = $('#loading-image-roles').ajaxCallWidget({
     proxy : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'fillServicesDdlist_infoAfterSales' ,
-                    pk : $("#pk").val() 
-            }
+    data: { url:'pkfillServicesDdlist_infoDealerOwner' ,
+            pk : $("#pk").val() 
+          },
+    async : false
    })
 ajaxACLResources.ajaxCallWidget ({
      onError : function (event, textStatus,errorThrown) {
@@ -258,30 +281,73 @@ ajaxACLResources.ajaxCallWidget ({
                                   'Servis  bulunamamıştır...');
      },
      onSuccess : function (event, data) {
+         var data2 = data;
          var data = $.parseJSON(data);
-         data.splice(0, 1,
+         
+         
+         
+        var tagBuilderDealers = $('#test-cabin').tagCabin({
+        tagCopy: false,
+        tagDeletable: true,
+        tagDeletableAll: false,
+        tagBox: $('.tag-container').find('ul'),
+        //dataMapper: {attributes : Array('role_id', 'resource_id', 'privilege_id')}
+        dataMapper: Array('role_id', 'resource_id', 'privilege_id')
+
+        });
+        
+        tagBuilderDealers.tagCabin({
+            onTagRemoved: function (event, data) {
+                var self = $(this);
+                var elementData = data.element;
+                elementData.remove();
+                //window.deleteSoruKonu(elementData);
+            }
+        
+        });
+        var testArr = ['text', 'value'];
+        tagBuilderDealers.tagCabin('addTags', data2, testArr );
+        /*data.splice(0, 1,
                             { text: window.lang.translate('Please select'), value: 0, selected: false, description: "" }
-                    );
-    
-         $('#loading-image-roles').loadImager('removeLoadImage');
-         $('#dropdownRoles').ddslick({
+                        );*/
+        var controller = false;
+        $('#loading-image-roles').loadImager('removeLoadImage');
+        $('#dropdownRoles').ddslick({
             height : 200,
             data : data, 
             width:'98%',
             selectText: "Select your preferred social network",
-            searchText:window.lang.translate("Search"), 
+            //searchText : window.lang.translate('Search'),
+            searchText : '',
             //showSelectedHTML : false,
             defaultSelectedIndex: 3,
             search : true,
-            multiSelect : true,
-            tagBox : 'tag-container',
+            //multiSelect : true,
+            multiSelect : false,
+            //tagBox : 'tag-container',
             //multiSelectTagID : 'deneme',
             //imagePosition:"right",
+            
             onSelected: function(selectedData){
                 if(selectedData.selectedData.value>0) {
-                    /*$('#tt_tree_menu').tree({
-                        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php?url=pkFillForAdminTree_leftnavigation&pk=' + $("#pk").val()+ '&role_id='+selectedData.selectedData.value+'&language_code='+$("#langCode").val(),
-                    });*/
+                    if(controller == true) {
+                        //console.log(selectedData.selectedData.text);
+                        var data = '[{"text":"'+selectedData.selectedData.text+'","value":'+selectedData.selectedData.value+'}]';
+                        //console.log(data);
+                        var testArr = ['text', 'value'];
+                        var tagValues = $('#test-cabin').tagCabin('getAllTagsValues', 'data-value');
+                        console.log(tagValues);
+                        if(tagValues.length > 0) {
+                            if(jQuery.inArray(selectedData.selectedData.value, tagValues)<0) {
+                                $('#test-cabin').tagCabin('addTags', data, testArr);
+                            } else {
+                                //alert('tag bulunmuştur');
+                            }
+                        } else if(tagValues.length == 0) {
+                            $('#test-cabin').tagCabin('addTags', data, testArr);
+                        }
+                    }
+                    controller = true;
                 }
             }   
         });   
@@ -292,11 +358,21 @@ ajaxACLResources.ajaxCallWidget ({
                 $('#loading-image-roles').loadImager('removeLoadImage'); 
             }
          });
-         dm.dangerMessage('show', 'Rol Bulunamamıştır...',
-                                  'Rol  bulunamamıştır...');
+         dm.dangerMessage('show', 'Bayi Bulunamamıştır...',
+                                  'Bayi  bulunamamıştır...');
      },
 }) 
 ajaxACLResources.ajaxCallWidget('call');
+
+
+// yedek parca dashboard data (#container)
+getAfterSalesFaalYedekParcaDashboard();
+
+// yağ dashboard data (#container)
+getAfterSalesFaalYagDashboard();
+
+// stok dashboard data (#container)
+getAfterSalesFaalStokDashboard();
     
 /*
  * Author: Abdullah A Almsaeed
@@ -737,7 +813,10 @@ function getStokWithServices(multiSelectedRoles) {
 
 // satış sonrası servisler ile ilgili fonk.
 function getServiceDropdownSelectedItems() {
-    var serviceControler = false;
+    
+    var dealers = $('#test-cabin').tagCabin('getAllTagsValues', 'data-value')
+    //console.log(test);
+    /*var serviceControler = false;
     if($('#dropdownRoles').length) {
         var ddDataRoles = $('#dropdownRoles').data('ddslick');
         if(ddDataRoles != null) {
@@ -747,7 +826,9 @@ function getServiceDropdownSelectedItems() {
         }
         
     }
-     return multiSelectedRoles;                                                           
+    console.log(multiSelectedRoles);*/
+     //return multiSelectedRoles;    
+     return dealers;
 }
 
 function getServiceSelectedItemsControl(multiSelectedRoles) {
@@ -767,6 +848,7 @@ function getServiceSelectedItemsControl(multiSelectedRoles) {
     }
     
 }
+
 
 function getServicesSelectedAsUrl(multiSelectedServices) {
     if(multiSelectedServices.length) {
@@ -790,85 +872,181 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
 // satış sonrası servisler ile ilgili fonk.
 
 
-// dashboard özet verileri fonk.
+// dashboard özet verileri fonk.fvvvv
 // yedek parca,  dashboard data (#container)
 function getAfterSalesFaalYedekParcaDashboard() {   
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardFaalYedekParca_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        var dataSet = data;
-        var yedekparca;
-        $.each(dataSet, function (key, value) {
-            console.log(value);
-            yedekparca =  value.YEDEKPARCATOPLAMI
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == false) {
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalYedekParca_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                var dataSet = data;
+                var yedekparca;
+                $.each(dataSet, function (key, value) {
+                    console.log(value);
+                    yedekparca =  value.YEDEKPARCATOPLAMI
+                });
+                $("#toplam_header_yedek_parca_container").headerSetterAfterSalesYedekParcaDashboard(yedekparca);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
         });
-        $("#toplam_header_yedek_parca_container").headerSetterAfterSalesYedekParcaDashboard(yedekparca);
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(textStatus);
+
+    }else if(serviceControler == true ){
+         var services = getServicesSelectedAsUrl(multiSelectedRoles);
+          $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalYedekParca_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            var dataSet = data;
+                var yedekparca;
+                $.each(dataSet, function (key, value) {
+                    console.log(value);
+                    yedekparca =  value.YEDEKPARCATOPLAMI
+                });
+                $("#toplam_header_yedek_parca_container").headerSetterAfterSalesYedekParcaDashboard(yedekparca);
+            },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+            }
+        });
     }
-});
 }
 
 // yag  dashboard data (#container)
 function getAfterSalesFaalYagDashboard() {   
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardFaalYagToplam_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-            var dataSet = data;
-            var yag;
-            $.each(dataSet, function (key, value) {
-                yag =  value.YAGTOPLAM
-            });
-            $("#toplam_header_yag_container").headerSetterAfterSalesYedekParcaDashboard(yag);
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(textStatus);
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+     if(serviceControler == false) {
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalYagToplam_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                    var dataSet = data;
+                    var yag;
+                    $.each(dataSet, function (key, value) {
+                        yag =  value.YAGTOPLAM
+                    });
+                    $("#toplam_header_yag_container").headerSetterAfterSalesYedekParcaDashboard(yag);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(textStatus);
+            }
+        });
+
+    }else if(serviceControler == true ){
+         var services = getServicesSelectedAsUrl(multiSelectedRoles);
+         $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalYagToplam_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+           var dataSet = data;
+                    var yag;
+                    $.each(dataSet, function (key, value) {
+                        yag =  value.YAGTOPLAM
+                    });
+                    $("#toplam_header_yag_container").headerSetterAfterSalesYedekParcaDashboard(yag);
+            },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+            }
+        });
     }
-});
 }
 
 // stok  dashboard data (#container)
 function getAfterSalesFaalStokDashboard() {   
-$.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardFaalStokToplam_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        //console.log(data.resultSet);
-       
-        var dataSet = data;
-        var stok;
-        $.each(dataSet, function (key, value) {
-            console.log(value);
-            stok =  value.STOK_TOPLAM
-            //d = d.replace(",", ".");
-            //console.log(d);
-            //downtime+= parseInt(d);
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == false) {
+        $.ajax({
+        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+        data: { url:'getAfterSalesDashboardFaalStokToplam_infoAfterSales' ,
+                pk : $("#pk").val()}, 
+        type: 'GET',
+        dataType: 'json',
+        language_id:647,
+        //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+
+            var dataSet = data;
+            var stok;
+            $.each(dataSet, function (key, value) {
+                console.log(value);
+                stok =  value.STOK_TOPLAM
+                //d = d.replace(",", ".");
+                //console.log(d);
+                //downtime+= parseInt(d);
+            });
+            $("#toplam_header_stok_container").headerSetterAfterSalesYedekParcaDashboard(stok);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+            }
         });
-        $("#toplam_header_stok_container").headerSetterAfterSalesYedekParcaDashboard(stok);
-        
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(textStatus);
+    } else if(serviceControler == true ){
+         var services = getServicesSelectedAsUrl(multiSelectedRoles);
+         $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardFaalStokToplam_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+        success: function (data, textStatus, jqXHR) {
+            //console.log(data.resultSet);
+            var dataSet = data;
+            var stok;
+            $.each(dataSet, function (key, value) {
+                console.log(value);
+                stok =  value.STOK_TOPLAM
+                //d = d.replace(",", ".");
+                //console.log(d);
+                //downtime+= parseInt(d);
+            });
+            $("#toplam_header_stok_container").headerSetterAfterSalesYedekParcaDashboard(stok);
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.error(textStatus);
+            }
+        });
     }
-});
 }
 
 // dashboard özet verileri fonk. son
