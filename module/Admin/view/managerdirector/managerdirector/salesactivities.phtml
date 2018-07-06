@@ -1,0 +1,280 @@
+<input id="requestUriRegulated" type="hidden"  value="<?php echo $this->requestUriRegulated; ?>"></input>
+<input id="langCode" type="hidden"  value="<?php echo $this->langCode; ?>"></input>
+<input id="pk" type="hidden"  value="<?php echo $this->publicKey; ?>"></input>
+<input id="controller" type="hidden"  value="<?php echo $this->layout()->controller; ?>"></input>
+<input id="module" type="hidden"  value="<?php echo $this->layout()->module; ?>"></input>
+
+<div class="wrapper">
+
+    <!-- admin header -->
+    <?php echo $this->partial('partials/adminheaderpartial.phtml'); ?>
+    <!-- admin header son-->
+    
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" >
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <?php echo $this->partial('partials/adminasideuserpanelpartial.phtml'); ?>
+            
+            <!-- search form -->
+            <?php echo $this->partial('partials/adminasidesearchformpartial.phtml'); ?>
+            <!-- /.search form -->
+            
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <?php echo $this->partial('partials/adminmenupartial.phtml'); ?>
+
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1> <span lang="en">Sales Activities</span>
+                <?php //echo $this->translate('Imalat Control Panel') ?>
+                <small></small>
+            </h1>
+            <!-- admin breadcrumb panel -->
+            <?php echo $this->partial('partials/adminbreadcrumbpartial.phtml'); ?>
+            <!-- admin breadcrumb panel son-->
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            
+
+            
+            
+            <!-- aftersales dashboard data karsılaştırma blok-->
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="info-box bg-man-yellow">
+                        <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
+                        <div class="info-box-content" id="toplam_ciro_1_container">
+                            <h3 style="margin-top: 12px;">
+                                <div class="overlay" >
+                                    <i class="fa fa-refresh fa-spin" ></i>
+                                </div>
+                            </h3>
+                          <span class="info-box-text"></span>
+                          <span class="info-box-number"></span>
+                          <div class="progress" id="toplam_musteri_container_progress_bar">
+                            <div class="progress-bar" style="width: 100%"></div>
+                          </div>
+                          <span class="progress-description" lang="en">Ratio compared to the previous day</span>
+                        </div><!-- /.info-box-content -->
+                    </div>
+                </div><!-- /.col -->
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    
+                    <div class="info-box bg-man-blue">
+                <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
+                <div class="info-box-content" id="toplam_ciro_2_container">
+                    <h3 style="margin-top: 12px;">
+                        <div class="overlay" >
+                            <i class="fa fa-refresh fa-spin" ></i>
+                        </div>
+                    </h3>
+                  <span class="info-box-text"></span>
+                  <span class="info-box-number"></span>
+                  <div class="progress" id="toplam_ciro_container_progress_bar">
+                    <div class="progress-bar" style="width: 100%"></div>
+                  </div>
+                  <span class="progress-description" lang="en">Ratio compared to the previous day</span>
+                </div><!-- /.info-box-content -->
+              </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                </div><!-- /.col -->
+                
+            </div>
+            <!-- aftersales dashboard data karsılaştırma blok son-->
+            
+            <!--Satış aktiviteleri block 1-->
+            <div class="row">
+                <!--<section class="col-lg-7 connectedSortable">-->
+                <div class="col-md-6">
+                  <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><span lang="en">Number of Projects Acquired</span></h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="chart">
+                              <div id="container_satis_activities1" style="min-width: 250px;width: 100%;  margin: 0 auto"></div>
+                          </div>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+                <div class="col-md-6">
+                  <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><span lang="en">Number of Cars in Projects Earned</span></h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="chart">
+                              <div id="container_satis_activities2" style="min-width: 250px;width: 100%;  margin: 0 auto"></div>
+                          </div>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+            <!--</section>  -->
+            </div>
+            <!--Satış aktiviteleri block 1son-->
+            
+             <!--Satış aktiviteleri block 2-->
+            <div class="row">
+                <!--<section class="col-lg-7 connectedSortable">-->
+                <div class="col-md-6">
+                  <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><span lang="en">Completed Activity Count</span></h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="chart">
+                              <div id="container_satis_activities3" style="min-width: 250px;width: 100%;  margin: 0 auto"></div>
+                          </div>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+             
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+                <div class="col-md-6">
+                  <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><span lang="en">Number of Projects Created</span></h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="chart">
+                              <div id="container_satis_activities4" style="min-width: 250px;width: 100%;  margin: 0 auto"></div>
+                          </div>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+            <!--</section>  -->
+            </div>
+            <!--Satış aktiviteleri block 2 son-->
+            
+            <!--Satış aktiviteleri block 3-->
+            <div class="row">
+                <!--<section class="col-lg-7 connectedSortable">-->
+                <div class="col-md-6">
+                  <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><span lang="en">Number of Abandoned Projects</span></h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="chart">
+                              <div id="container_satis_activities5" style="min-width: 250px;width: 100%;  margin: 0 auto"></div>
+                          </div>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+             
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+                <div class="col-md-6">
+                  <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"><span lang="en">Number of lost projects</en></h3>
+                      <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                      </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body" style="display: block;">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="chart">
+                              <div id="container_satis_activities6" style="min-width: 250px;width: 100%;  margin: 0 auto"></div>
+                          </div>
+                        </div><!-- /.col -->
+                      </div><!-- /.row -->
+                    </div><!-- ./box-body -->
+                    <div class="box-footer" style="display: block;">
+                      
+                    </div><!-- /.box-footer -->
+                  </div><!-- /.box -->
+                </div>
+            <!--</section>  -->
+            </div>
+            <!--Satış aktiviteleri block 3 son-->
+
+            <!-- Main row -->
+            <div class="row">
+            
+                <section class="col-lg-12 ">
+                    
+                    
+                </section><!-- /. col -->
+                
+            </div><!-- /.row (main row) -->
+
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+    <!-- footer --> 
+    <?php echo $this->partial('partials/adminfooterpartial.phtml'); ?>
+    <!-- footerson--> 
+
+    <!-- Control Sidebar --> 
+    <?php /*echo $this->partial('partials/admincontrolasidepartial.phtml');*/ ?>
+    <!-- Control Sidebar son--> 
+</div><!-- ./wrapper -->
+
+    <!-- sayfa içine yazılan js'ler ekleniyor-->
+    <script src="<?php echo $this->basePath('jsinline/managerdirector_salesactivities.js') ?>" type="text/javascript"></script>
