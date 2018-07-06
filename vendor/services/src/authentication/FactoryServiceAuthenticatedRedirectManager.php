@@ -17,8 +17,8 @@ class FactoryServiceAuthenticatedRedirectManager  implements FactoryInterface{
             $role = strtolower(trim($roleResult['resultSet'][0]['name']));
             //remove all whitespace from user role
             $role = preg_replace('/\s+/', '', $role);
-            print_r('--user role trimmed-->'.$role);
-            print_r($role);
+            //print_r('--user role trimmed-->'.$role);
+            //print_r($role);
             //exit();
             switch ($role) {
                 
