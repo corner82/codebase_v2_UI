@@ -12426,20 +12426,20 @@ function getDownTimeDashboard() {
             //console.log(data.resultSet);
             if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                 var dataSet = data.resultSet;
-                var downtime;
+                var downtime = 0;
                 var counter = 0;
                 $.each(dataSet, function (key, value) {
                     counter ++;
                     var d =  value.DOWNTIME
-                        //d = d.replace(",", ".");
+                        d = d.replace(",", ".");
                         //console.log(d);
                         //console.log(downtime);
                         downtime = parseFloat(downtime)+parseFloat(d);
                 });
                 var dt = parseFloat((parseFloat(downtime)/counter)).toFixed(2);
-                console.log(downtime);
-                console.log(dt);
-                $("#toplam_header_downtime_container").headerSetterAfterSalesStocks(dt);
+                //console.log(downtime);
+                //console.log(dt);
+                $("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -12468,7 +12468,7 @@ function getDownTimeDashboard() {
                         downtime = parseFloat(downtime)+parseFloat(d);
                     });
                     //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
-                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2);
                     $("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
                 }
             },
