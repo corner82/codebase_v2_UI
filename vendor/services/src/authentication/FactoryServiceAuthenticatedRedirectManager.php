@@ -46,7 +46,7 @@ class FactoryServiceAuthenticatedRedirectManager  implements FactoryInterface{
                     $serviceLocator->get('serviceAuthenticatedRedirectDealerDirector');
                     break;
                 case 'managerdirector':
-                    $serviceLocator->get('serviceAuthenticatedRedirectDealerDirector');
+                    $serviceLocator->get('serviceAuthenticatedRedirectManagerDirector');
                     break;
                 case 'firmaçırak':
                     $serviceLocator->get('serviceAuthenticatedRedirectUser');
