@@ -438,7 +438,7 @@ $('#servisDashboardHesapla').click(function()
             }
          });
         dm.dangerMessage('show', 'Servis bulunamamıştır...',
-                                  'Lütfen servis seçiniz...');
+                                  window.lang.translate('piece'));
     }
    
 });
@@ -464,7 +464,14 @@ $('#detay_acilan_alis_faturalari').click(function()
         if(serviceControler == true) {
             getAlisFaturalariWithServicesWeekly(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAlisFaturalariWithoutServicesWeekly();
+            //getAlisFaturalariWithoutServicesWeekly();
+            dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+            dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  window.lang.translate('piece'));
         }
         
           
@@ -478,7 +485,14 @@ $('#detay_acilan_alis_faturalari').click(function()
             console.log(multiSelectedRoles);
             getAlisFaturalariWithServicesWeekly(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAlisFaturalariWithoutServicesWeekly();
+            //getAlisFaturalariWithoutServicesWeekly();
+            dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+            dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  window.lang.translate('piece'));
         }
     }
          
@@ -502,7 +516,14 @@ $('#detay_acilan_isemri_faturalari').click(function()
         if(serviceControler == true) {
             getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getIsEmriFaturalariWeeklyWithoutServices();
+            //getIsEmriFaturalariWeeklyWithoutServices();
+            dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+            dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  window.lang.translate('piece'));
         } 
     }else {
         hidden_block1_controller = 2;
@@ -513,7 +534,14 @@ $('#detay_acilan_isemri_faturalari').click(function()
         if(serviceControler == true) {
             getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getIsEmriFaturalariWeeklyWithoutServices();
+            //getIsEmriFaturalariWeeklyWithoutServices();
+            dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+            dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  window.lang.translate('piece'));
         }
     }
          
