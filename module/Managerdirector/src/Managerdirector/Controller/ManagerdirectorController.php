@@ -10,7 +10,7 @@
  {
      public function indexAction()
      {
-         $this->layout('layout/indexmd');
+         $this->layout('layout/admin');
          $langCode = $this->getServiceLocator()
                             ->get('serviceTranslator');
         $requestUriRegulated = $this->getServiceLocator()
