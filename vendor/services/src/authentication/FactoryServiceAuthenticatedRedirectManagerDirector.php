@@ -5,7 +5,7 @@ namespace Custom\Services\Authentication;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class FactoryServiceAuthenticatedRedirectAfterSalesBackOffice  implements FactoryInterface{
+class FactoryServiceAuthenticatedRedirectManagerDirector  implements FactoryInterface{
 
     public function createService(ServiceLocatorInterface $serviceLocator) {
         //print_r('--FactoryServiceAuthenticatedRedirectAfterSalesBackOffice-->');

@@ -42,6 +42,7 @@
             'backofficeaftersales/backofficeaftersales/index' => __DIR__ . '/../view/backofficeaftersales/backofficeaftersales/index.phtml',
             'dealerowner/dealerowner/index' => __DIR__ . '/../view/dealerowner/dealerowner/index.phtml',
             'dealerdirector/dealerdirector/index' => __DIR__ . '/../view/dealerdirector/dealerdirector/index.phtml',
+            'managerdirector/managerdirector/index' => __DIR__ . '/../view/managerdirector/managerdirector/index.phtml',
             'sanalfabrika/sanalfabrika/index' => __DIR__ . '/../view/sanalfabrika/sanalfabrika/index.phtml',
             //'error/error/error404'               => __DIR__ . '/../view/error/error/error404.phtml',
             'error/error/index'             => __DIR__ . '/../view/error/error/index.phtml',
