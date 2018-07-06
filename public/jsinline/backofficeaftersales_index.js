@@ -426,7 +426,8 @@ $('#servisDashboardHesapla').click(function()
         // müşteri memnuniyeti(CXI) dashboard data 
         getMMCXIDashboard();
         
-        
+        getSonIsEmirleriDashboard();
+                
     } else if(serviceControler == false ){
         dm.dangerMessage({
             onShown : function() {
@@ -11908,33 +11909,69 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
 // dashboard özet verileri fonk.
 // Son iş emirleri dashboard
 function getSonIsEmirleriDashboard() {
-    $.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardIsEmriLastDataMusteri_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        if(data!=null) {
-            $("#todolistboxServisMusteri").loadImager('removeLoadImage');
-           var fillerTest2 = $('#servisMusteriFillerUL').listFiller();
-            fillerTest2.listFiller('option', 'data', data['resultSet']);
-            fillerTest2.listFiller('fill'); 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardIsEmriLastDataMusteriWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    $("#todolistboxServisMusteri").loadImager('removeLoadImage');
+                   var fillerTest2 = $('#servisMusteriFillerUL').listFiller();
+                    fillerTest2.listFiller('option', 'data', data['resultSet']);
+                    fillerTest2.listFiller('fill'); 
 
 
-            $("#todolistboxServis").loadImager('removeLoadImage');
-            var fillerTest2 = $('#servisFillerUL').listFiller();
-            fillerTest2.listFiller('option', 'data', data['resultSet']);
-            fillerTest2.listFiller('fill2');
-        }  
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(errorThrown);
+                    $("#todolistboxServis").loadImager('removeLoadImage');
+                    var fillerTest2 = $('#servisFillerUL').listFiller();
+                    fillerTest2.listFiller('option', 'data', data['resultSet']);
+                    fillerTest2.listFiller('fill2');
+                }  
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(errorThrown);
+            }
+
+        });
+    } else if(serviceControler == false) { 
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardIsEmriLastDataMusteri_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    $("#todolistboxServisMusteri").loadImager('removeLoadImage');
+                   var fillerTest2 = $('#servisMusteriFillerUL').listFiller();
+                    fillerTest2.listFiller('option', 'data', data['resultSet']);
+                    fillerTest2.listFiller('fill'); 
+
+
+                    $("#todolistboxServis").loadImager('removeLoadImage');
+                    var fillerTest2 = $('#servisFillerUL').listFiller();
+                    fillerTest2.listFiller('option', 'data', data['resultSet']);
+                    fillerTest2.listFiller('fill2');
+                }  
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(errorThrown);
+            }
+
+        });
     }
-
-});
 }
 
 // Araç girişleri dashboard
