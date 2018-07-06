@@ -5,7 +5,7 @@ $(document).ready(function () {
  * @author Mustafa Zeynel Dağlı
  * @since 15/05/2018
  */
-$("#langCode").jsLangMaster();
+//$("#langCode").jsLangMaster();
 
 /**
  * high charts settings created dynamically

@@ -5,7 +5,7 @@ $(document).ready(function () {
  * @author Mustafa Zeynel Dağlı
  * @since 15/05/2018
  */
-$("#langCode").jsLangMaster();
+//$("#langCode").jsLangMaster();
 
 var sm  = $(window).successMessage();
 var dm  = $(window).dangerMessage();
@@ -312,7 +312,7 @@ ajaxACLResources.ajaxCallWidget ({
                         );*/
         var controller = false;
         $('#loading-image-roles').loadImager('removeLoadImage');
-        $('#dropdownRoles').ddslick({
+        /*$('#dropdownRoles').ddslick({
             height : 200,
             data : data, 
             width:'98%',
@@ -350,7 +350,7 @@ ajaxACLResources.ajaxCallWidget ({
                     controller = true;
                 }
             }   
-        });   
+        }); */  
      },
      onErrorDataNull : function (event, data) {
          dm.dangerMessage({

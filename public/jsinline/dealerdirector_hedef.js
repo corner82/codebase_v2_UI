@@ -192,7 +192,7 @@ ajaxACLResources.ajaxCallWidget ({
                         );*/
         var controller = false;
         $('#loading-image-roles').loadImager('removeLoadImage');
-        $('#dropdownRoles').ddslick({
+        /*$('#dropdownRoles').ddslick({
             height : 200,
             data : data, 
             width:'98%',
@@ -230,7 +230,7 @@ ajaxACLResources.ajaxCallWidget ({
                     controller = true;
                 }
             }   
-        });   
+        }); */  
      },
      onErrorDataNull : function (event, data) {
          dm.dangerMessage({
