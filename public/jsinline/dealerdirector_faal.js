@@ -288,7 +288,7 @@ ajaxACLResources.ajaxCallWidget ({
          
         var tagBuilderDealers = $('#test-cabin').tagCabin({
         tagCopy: false,
-        tagDeletable: true,
+        tagDeletable: false,
         tagDeletableAll: false,
         tagBox: $('.tag-container').find('ul'),
         //dataMapper: {attributes : Array('role_id', 'resource_id', 'privilege_id')}
