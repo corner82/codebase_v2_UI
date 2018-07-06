@@ -107,7 +107,7 @@ return array(
     'ControlorsTobeAuthenticated' => array(
         'Admin',
         'Sanalfabrika',
-        //'Managerdirector',
+        'Managerdirector',
         'Backofficeaftersales',
         'Dealerowner', 
         'Dealerdirector', 
