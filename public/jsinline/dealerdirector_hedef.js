@@ -5,7 +5,7 @@ $(document).ready(function () {
  * @author Mustafa Zeynel Dağlı
  * @since 15/05/2018
  */
-$("#langCode").jsLangMaster();
+//$("#langCode").jsLangMaster();
 
 var sm  = $(window).successMessage();
 var dm  = $(window).dangerMessage();
@@ -72,20 +72,18 @@ $('#servisDashboardHesapla').click(function()
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
     
     if(serviceControler == true) {
+        console.log(multiSelectedRoles);
         getAfterSalesYedekParcaHedefServisli(multiSelectedRoles);
         } 
-    //else if(serviceControler == false ){
-      //  getAfterSalesYedekParcaPDFServissiz();
-       // }    
+    else if(serviceControler == false ){
 
-     else if(serviceControler == false ){
-        dm.dangerMessage({
-            onShown : function() {
-                //$('#loading-image-roles').loadImager('removeLoadImage'); 
-            }
-         });
-        dm.dangerMessage('show', 'Servis bulunamamıştır...',
-                                  'Lütfen servis seçiniz...');
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
     }
    
 });
@@ -147,9 +145,10 @@ $("#loading-image-roles").loadImager('appendImage');
  */
 var ajaxACLResources = $('#loading-image-roles').ajaxCallWidget({
     proxy : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'fillServicesDdlist_infoAfterSales' ,
-                    pk : $("#pk").val() 
-            }
+    data: { url:'pkfillServicesDdlist_infoDealerOwner' ,
+            pk : $("#pk").val() 
+          },
+    async : false
    })
 ajaxACLResources.ajaxCallWidget ({
      onError : function (event, textStatus,errorThrown) {
@@ -162,29 +161,73 @@ ajaxACLResources.ajaxCallWidget ({
                                   'Servis  bulunamamıştır...');
      },
      onSuccess : function (event, data) {
+         var data2 = data;
          var data = $.parseJSON(data);
-         data.splice(0, 1,
+         
+         
+         
+        var tagBuilderDealers = $('#test-cabin').tagCabin({
+        tagCopy: false,
+        tagDeletable: true,
+        tagDeletableAll: false,
+        tagBox: $('.tag-container').find('ul'),
+        //dataMapper: {attributes : Array('role_id', 'resource_id', 'privilege_id')}
+        dataMapper: Array('role_id', 'resource_id', 'privilege_id')
+
+        });
+        
+        tagBuilderDealers.tagCabin({
+            onTagRemoved: function (event, data) {
+                var self = $(this);
+                var elementData = data.element;
+                elementData.remove();
+                //window.deleteSoruKonu(elementData);
+            }
+        
+        });
+        var testArr = ['text', 'value'];
+        tagBuilderDealers.tagCabin('addTags', data2, testArr );
+        /*data.splice(0, 1,
                             { text: window.lang.translate('Please select'), value: 0, selected: false, description: "" }
-                    );
-         $('#loading-image-roles').loadImager('removeLoadImage');
-         $('#dropdownRoles').ddslick({
+                        );*/
+        var controller = false;
+        $('#loading-image-roles').loadImager('removeLoadImage');
+        $('#dropdownRoles').ddslick({
             height : 200,
             data : data, 
             width:'98%',
             selectText: "Select your preferred social network",
-            searchText : window.lang.translate('Search'),
+            //searchText : window.lang.translate('Search'),
+            searchText : '',
             //showSelectedHTML : false,
             defaultSelectedIndex: 3,
             search : true,
-            multiSelect : true,
-            tagBox : 'tag-container',
+            //multiSelect : true,
+            multiSelect : false,
+            //tagBox : 'tag-container',
             //multiSelectTagID : 'deneme',
             //imagePosition:"right",
+            
             onSelected: function(selectedData){
                 if(selectedData.selectedData.value>0) {
-                    /*$('#tt_tree_menu').tree({
-                        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php?url=pkFillForAdminTree_leftnavigation&pk=' + $("#pk").val()+ '&role_id='+selectedData.selectedData.value+'&language_code='+$("#langCode").val(),
-                    });*/
+                    if(controller == true) {
+                        //console.log(selectedData.selectedData.text);
+                        var data = '[{"text":"'+selectedData.selectedData.text+'","value":'+selectedData.selectedData.value+'}]';
+                        //console.log(data);
+                        var testArr = ['text', 'value'];
+                        var tagValues = $('#test-cabin').tagCabin('getAllTagsValues', 'data-value');
+                        console.log(tagValues);
+                        if(tagValues.length > 0) {
+                            if(jQuery.inArray(selectedData.selectedData.value, tagValues)<0) {
+                                $('#test-cabin').tagCabin('addTags', data, testArr);
+                            } else {
+                                //alert('tag bulunmuştur');
+                            }
+                        } else if(tagValues.length == 0) {
+                            $('#test-cabin').tagCabin('addTags', data, testArr);
+                        }
+                    }
+                    controller = true;
                 }
             }   
         });   
@@ -195,8 +238,8 @@ ajaxACLResources.ajaxCallWidget ({
                 $('#loading-image-roles').loadImager('removeLoadImage'); 
             }
          });
-         dm.dangerMessage('show', 'Rol Bulunamamıştır...',
-                                  'Rol  bulunamamıştır...');
+         dm.dangerMessage('show', 'Bayi Bulunamamıştır...',
+                                  'Bayi  bulunamamıştır...');
      },
 }) 
 ajaxACLResources.ajaxCallWidget('call');
@@ -370,7 +413,9 @@ function getAfterSalesYedekParcaHedefServissiz() {
 }
 
 function getAfterSalesYedekParcaHedefServisli(multiSelectedRoles) {
+   console.log(multiSelectedRoles);     
    var services = getServicesSelectedAsUrl(multiSelectedRoles);
+   console.log(services);
    $("#grid_hedef").dataTable().fnDestroy();
    $('#grid_hedef').DataTable( {
        "language": {
@@ -468,7 +513,10 @@ function setDetayGridAfterSalesYedekParcaHedefHeaderFooterLang() {
 
 // satış sonrası servisler ile ilgili fonk.
 function getServiceDropdownSelectedItems() {
-    var serviceControler = false;
+    
+    var dealers = $('#test-cabin').tagCabin('getAllTagsValues', 'data-value')
+    //console.log(test);
+    /*var serviceControler = false;
     if($('#dropdownRoles').length) {
         var ddDataRoles = $('#dropdownRoles').data('ddslick');
         if(ddDataRoles != null) {
@@ -478,7 +526,9 @@ function getServiceDropdownSelectedItems() {
         }
         
     }
-     return multiSelectedRoles;                                                           
+    console.log(multiSelectedRoles);*/
+     //return multiSelectedRoles;    
+     return dealers;
 }
 
 function getServiceSelectedItemsControl(multiSelectedRoles) {

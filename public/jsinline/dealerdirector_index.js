@@ -198,6 +198,10 @@ $("#panel_hidden_garanti_cirosu").loadImager();
  */
 $("#panel_hidden_direk_satis_cirosu").loadImager();
 
+
+
+
+
 /**
  * Sand-Signika theme for Highcharts JS
  * @author Torstein Honsi
@@ -426,6 +430,8 @@ $('#servisDashboardHesapla').click(function()
         // müşteri memnuniyeti(CXI) dashboard data 
         getMMCXIDashboard();
         
+        getSonIsEmirleriDashboard();
+        
         
     } else if(serviceControler == false ){
         dm.dangerMessage({
@@ -434,7 +440,7 @@ $('#servisDashboardHesapla').click(function()
             }
          });
         dm.dangerMessage('show', 'Servis bulunamamıştır...',
-                                  'Lütfen servis seçiniz...');
+                                  window.lang.translate('piece'));
     }
    
 });
@@ -460,7 +466,14 @@ $('#detay_acilan_alis_faturalari').click(function()
         if(serviceControler == true) {
             getAlisFaturalariWithServicesWeekly(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAlisFaturalariWithoutServicesWeekly();
+            //getAlisFaturalariWithoutServicesWeekly();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
         
           
@@ -474,7 +487,14 @@ $('#detay_acilan_alis_faturalari').click(function()
             console.log(multiSelectedRoles);
             getAlisFaturalariWithServicesWeekly(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAlisFaturalariWithoutServicesWeekly();
+            //getAlisFaturalariWithoutServicesWeekly();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
          
@@ -498,7 +518,14 @@ $('#detay_acilan_isemri_faturalari').click(function()
         if(serviceControler == true) {
             getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getIsEmriFaturalariWeeklyWithoutServices();
+            //getIsEmriFaturalariWeeklyWithoutServices();
+            dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+            dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  window.lang.translate('piece'));
         } 
     }else {
         hidden_block1_controller = 2;
@@ -509,7 +536,14 @@ $('#detay_acilan_isemri_faturalari').click(function()
         if(serviceControler == true) {
             getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getIsEmriFaturalariWeeklyWithoutServices();
+            //getIsEmriFaturalariWeeklyWithoutServices();
+            dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
          
@@ -532,7 +566,14 @@ $('#detay_acilan_satis_faturalari').click(function()
         if(serviceControler == true) {
             getSatışFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getSatışFaturalariWeeklyWithoutServices();
+            //getSatışFaturalariWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
           
     }else {
@@ -544,7 +585,14 @@ $('#detay_acilan_satis_faturalari').click(function()
         if(serviceControler == true) {
             getSatışFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getSatışFaturalariWeeklyWithoutServices();
+            //getSatışFaturalariWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
          
@@ -568,7 +616,14 @@ $('#detay_acilan_icmal_faturalari').click(function()
         if(serviceControler == true) {
             getIcmalFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getSatışFaturalariWeeklyWithoutServices();
+            //getSatışFaturalariWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }else {
         hidden_block1_controller = 4;
@@ -578,7 +633,14 @@ $('#detay_acilan_icmal_faturalari').click(function()
         if(serviceControler == true) {
             getIcmalFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getSatışFaturalariWeeklyWithoutServices();
+            //getSatışFaturalariWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
          
@@ -600,7 +662,14 @@ $('#hidden_block1_month').click(function()
         if(serviceControler == true) {
             getAlisFaturalariAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAlisFaturalariAylikWithoutServices();
+            //getAlisFaturalariAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }
     // is emri fauraları için
@@ -616,7 +685,14 @@ $('#hidden_block1_month').click(function()
         if(serviceControler == true) {
             getIsEmriFaturalariAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getIsEmriFaturalariAylikWithoutServices();
+            //getIsEmriFaturalariAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
     // satış fauraları için
@@ -632,7 +708,14 @@ $('#hidden_block1_month').click(function()
         if(serviceControler == true) {
             getSatisFaturalariAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getSatisFaturalariAylikWithoutServices();
+            //getSatisFaturalariAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
     // icmal fauraları için
@@ -648,7 +731,14 @@ $('#hidden_block1_month').click(function()
         if(serviceControler == true) {
             getIcmalFaturalariAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getIcmalFaturalariAylikWithoutServices();
+            //getIcmalFaturalariAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
          
@@ -670,7 +760,14 @@ $('#hidden_block1_year').click(function()
         if(serviceControler == true) {
             getAlisFaturalariYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAlisFaturalariYillikWithoutServices();
+            //getAlisFaturalariYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
     // is emri fauraları için
@@ -680,9 +777,16 @@ $('#hidden_block1_year').click(function()
         $("#panel_hidden1_title").html(window.lang.translate('Business order invoices'));
         
         if(serviceControler == true) {
-                getIsEmriFaturalariYillikWithServices(multiSelectedRoles);
+            getIsEmriFaturalariYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getIsEmriFaturalariYillikWithoutServices();
+            //getIsEmriFaturalariYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
     // satış fauraları için
@@ -694,7 +798,14 @@ $('#hidden_block1_year').click(function()
         if(serviceControler == true) {
                 getSatisFaturalariYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getSatisFaturalariYillikWithoutServices();
+            //getSatisFaturalariYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
     // icmal fauraları için
@@ -706,7 +817,14 @@ $('#hidden_block1_year').click(function()
         if(serviceControler == true) {
             getIcmalFaturalariYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getIcmalFaturalariYillikWithoutServices();
+            //getIcmalFaturalariYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
          
@@ -734,9 +852,16 @@ $('#detay_acik_is_emirleri').click(function()
         if(serviceControler == true) {
             getAcikIsEmirleriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcikIsEmirleriWeeklyWithoutServices();
+            //getAcikIsEmirleriWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } else {
-            getAcikIsEmirleriWeeklyWithoutServices
+            //getAcikIsEmirleriWeeklyWithoutServices
         }
         
           
@@ -748,7 +873,14 @@ $('#detay_acik_is_emirleri').click(function()
         if(serviceControler == true) {
             getAcikIsEmirleriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcikIsEmirleriWeeklyWithoutServices();
+            //getAcikIsEmirleriWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
          
@@ -771,7 +903,14 @@ $('#detay_acilan_is_emirleri').click(function()
         if(serviceControler == true) {
             getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcilanKapananIsEmriWeeklyWithoutServices();
+            //getAcilanKapananIsEmriWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }else {
         hidden_block2_controller = 2;
@@ -781,7 +920,14 @@ $('#detay_acilan_is_emirleri').click(function()
         if(serviceControler == true) {
             getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcilanKapananIsEmriWeeklyWithoutServices();
+            //getAcilanKapananIsEmriWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }
          
@@ -803,7 +949,14 @@ $('#detay_kapanan_is_emirleri').click(function()
         if(serviceControler == true) {
             getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcilanKapananIsEmriWeeklyWithoutServices();
+            //getAcilanKapananIsEmriWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
           
     }else {
@@ -814,7 +967,14 @@ $('#detay_kapanan_is_emirleri').click(function()
         if(serviceControler == true) {
             getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcilanKapananIsEmriWeeklyWithoutServices();
+            //getAcilanKapananIsEmriWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }     
 });
@@ -838,7 +998,14 @@ $('#detay_stoklar').click(function()
         if(serviceControler == true) {
             getDetayGridStoklarWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDetayGridStoklar();
+            //getDetayGridStoklar();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }     
     }else {
         hidden_panel_stoklar_controller = 1;
@@ -848,7 +1015,14 @@ $('#detay_stoklar').click(function()
         if(serviceControler == true) {
             getDetayGridStoklarWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDetayGridStoklar();
+            //getDetayGridStoklar();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }     
 });
@@ -867,7 +1041,14 @@ $('#hidden_block2_month').click(function()
         if(serviceControler == true) {
             getAcikIsEmirleriAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcikIsEmirleriAylikWithoutServices();
+            //getAcikIsEmirleriAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
         
     }
@@ -879,7 +1060,14 @@ $('#hidden_block2_month').click(function()
         if(serviceControler == true) {
             getAcilanKapananIsEmrAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcilanKapananIsEmrAylikWithoutServices();
+            //getAcilanKapananIsEmrAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
                     
     }else if(hidden_block2_controller == 3) {
@@ -889,7 +1077,14 @@ $('#hidden_block2_month').click(function()
         if(serviceControler == true) {
             getAcilanKapananIsEmrAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcilanKapananIsEmrAylikWithoutServices();
+            //getAcilanKapananIsEmrAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }   
 });
@@ -907,7 +1102,14 @@ $('#hidden_block2_year').click(function()
         if(serviceControler == true) {
             getAcikIsEmirleriYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcikIsEmirleriYillikWithoutServices();
+            //getAcikIsEmirleriYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
         
     }
@@ -919,7 +1121,14 @@ $('#hidden_block2_year').click(function()
         if(serviceControler == true) {
             getAcilanKapananIsEmriYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcilanKapananIsEmriYillikWithoutServices();
+            //getAcilanKapananIsEmriYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
           
     }else if(hidden_block2_controller == 3) {
@@ -929,7 +1138,14 @@ $('#hidden_block2_year').click(function()
        if(serviceControler == true) {
             getAcilanKapananIsEmriYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAcilanKapananIsEmriYillikWithoutServices();
+            //getAcilanKapananIsEmriYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }
          
@@ -956,7 +1172,14 @@ $('#detay_arac_girisleri').click(function()
         if(serviceControler == true) {
             getAracGirisleriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAracGirisleriWeeklyWithoutServices();
+            //getAracGirisleriWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
 
     }else {
@@ -968,7 +1191,14 @@ $('#detay_arac_girisleri').click(function()
         if(serviceControler == true) {
             getAracGirisleriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAracGirisleriWeeklyWithoutServices();
+            //getAracGirisleriWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }
          
@@ -990,7 +1220,14 @@ $('#hidden_block3_month').click(function()
         if(serviceControler == true) {
             getAracGirisleriAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAracGirisleriAylikWithoutServices();
+            //getAracGirisleriAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }  
 });
@@ -1041,8 +1278,15 @@ $('#detay_downtime').click(function()
             getDowntimeYillikWithServices(multiSelectedRoles);
             
         } else if(serviceControler == false ){
-            getDowntimeYillikWithoutServices();
-            getDetayGridDowntime();
+            //getDowntimeYillikWithoutServices();
+            //getDetayGridDowntime();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
 
     }else {
@@ -1055,8 +1299,15 @@ $('#detay_downtime').click(function()
             getDetayGridDowntimeWithServices(multiSelectedRoles);
             getDowntimeYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-             getDowntimeYillikWithoutServices();
-             getDetayGridDowntime();
+            //getDowntimeYillikWithoutServices();
+            //getDetayGridDowntime();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }     
 });
@@ -1083,7 +1334,14 @@ $('#detay_yedekparca_toplam_satis').click(function()
         if(serviceControler == true) {
             getYedekParcaTSWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYedekParcaTSWeeklyWithoutServices();
+            //getYedekParcaTSWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }else {
         hidden_yedekparca_toplam_satis_controller = 1;
@@ -1094,7 +1352,14 @@ $('#detay_yedekparca_toplam_satis').click(function()
         if(serviceControler == true) {
             getYedekParcaTSWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYedekParcaTSWeeklyWithoutServices();
+            //getYedekParcaTSWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }   
 });
@@ -1115,7 +1380,14 @@ $('#hidden_yedek_parca_toplam_satis_month').click(function()
         if(serviceControler == true) {
             getYedekParcaTSAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYedekParcaTSAylikWithoutServices();
+            //getYedekParcaTSAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }  
 });
@@ -1137,7 +1409,14 @@ $('#hidden_yedek_parca_toplam_satis_year').click(function()
         if(serviceControler == true) {
             getYedekParcaTSYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYedekParcaTSYillikWithoutServices();
+            //getYedekParcaTSYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }   
 });
@@ -1163,7 +1442,14 @@ $('#detay_yedekparca_yag_satis').click(function()
         if(serviceControler == true) {
             getYedekParcaYSWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYedekParcaYSWeeklyWithoutServices();
+            //getYedekParcaYSWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }else {
         hidden_yedekparca_yag_satis_controller = 1;
@@ -1174,7 +1460,14 @@ $('#detay_yedekparca_yag_satis').click(function()
         if(serviceControler == true) {
             getYedekParcaYSWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYedekParcaYSWeeklyWithoutServices();
+            //getYedekParcaYSWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }   
 });
@@ -1195,7 +1488,14 @@ $('#hidden_yedek_parca_yag_satis_month').click(function()
         if(serviceControler == true) {
             getYedekParcaYSAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYedekParcaYSAylikWithoutServices();
+            //getYedekParcaYSAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }  
 });
@@ -1216,7 +1516,14 @@ $('#hidden_yedek_parca_yag_satis_year').click(function()
         if(serviceControler == true) {
             getYedekParcaYSYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getYedekParcaYSYillikWithoutServices();
+            //getYedekParcaYSYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }   
 });
@@ -1242,7 +1549,14 @@ $('#detay_atolye_cirosu').click(function()
         if(serviceControler == true) {
             getAtolyeCirosuWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAtolyeCirosuWeeklyWithoutServices();
+            //getAtolyeCirosuWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }else {
         hidden_atolye_cirosu_controller = 1;
@@ -1253,7 +1567,14 @@ $('#detay_atolye_cirosu').click(function()
         if(serviceControler == true) {
             getAtolyeCirosuWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAtolyeCirosuWeeklyWithoutServices();
+            //getAtolyeCirosuWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }   
 });
@@ -1274,7 +1595,14 @@ $('#hidden_atolye_cirosu_month').click(function()
         if(serviceControler == true) {
             getAtolyeCirosuAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAtolyeCirosuAylikWithoutServices();
+            //getAtolyeCirosuAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }  
 });
@@ -1296,7 +1624,14 @@ $('#hidden_atolye_cirosu_year').click(function()
         if(serviceControler == true) {
             getAtolyeCirosuYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getAtolyeCirosuYillikWithoutServices();
+            //getAtolyeCirosuYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }   
 });
@@ -1325,7 +1660,14 @@ $('#detay_garanti_cirosu').click(function()
         if(serviceControler == true) {
             getGarantiCirosuWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getGarantiCirosuWeeklyWithoutServices();
+            //getGarantiCirosuWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }else {
         hidden_garanti_cirosu_controller = 1;
@@ -1336,7 +1678,14 @@ $('#detay_garanti_cirosu').click(function()
         if(serviceControler == true) {
             getGarantiCirosuWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getGarantiCirosuWeeklyWithoutServices();
+            //getGarantiCirosuWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }   
 });
@@ -1357,7 +1706,14 @@ $('#hidden_garanti_cirosu_month').click(function()
         if(serviceControler == true) {
             getGarantiCirosuAylikWithServices(multiSelectedRoles)
         } else if(serviceControler == false ){
-            getGarantiCirosuAylikWithoutServices();
+            //getGarantiCirosuAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }  
 });
@@ -1378,7 +1734,14 @@ $('#hidden_garanti_cirosu_year').click(function()
         if(serviceControler == true) {
             getGarantiCirosuYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getGarantiCirosuYillikWithoutServices();
+            //getGarantiCirosuYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }   
 });
@@ -1405,7 +1768,14 @@ $('#detay_direk_satis_cirosu').click(function()
         if(serviceControler == true) {
             getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDirekSatisCirosuWeeklyWithoutServices();
+            //getDirekSatisCirosuWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }else {
         hidden_direk_satis_cirosu_controller = 1;
@@ -1416,7 +1786,14 @@ $('#detay_direk_satis_cirosu').click(function()
         if(serviceControler == true) {
             getDirekSatisCirosuWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDirekSatisCirosuWeeklyWithoutServices();
+            //getDirekSatisCirosuWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }   
 });
@@ -1437,7 +1814,14 @@ $('#hidden_direk_satis_cirosu_month').click(function()
         if(serviceControler == true) {
             getDirekSatisCirosuAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDirekSatisCirosuAylikWithoutServices();
+            //getDirekSatisCirosuAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }  
     }  
 });
@@ -1458,7 +1842,14 @@ $('#hidden_direk_satis_cirosu_year').click(function()
         if(serviceControler == true) {
             getDirekSatisCirosuYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDirekSatisCirosuYillikWithoutServices();
+            //getDirekSatisCirosuYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }   
 });
@@ -1486,7 +1877,14 @@ $('#panel_productivity_detail').click(function()
         if(serviceControler == true) {
             getVerimlilikYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getVerimlilikYillikWithoutServices();
+            //getVerimlilikYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }else {
         hidden_block_verimlilik_blok_controller = 1;
@@ -1497,7 +1895,14 @@ $('#panel_productivity_detail').click(function()
         if(serviceControler == true) {
             getVerimlilikYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getVerimlilikYillikWithoutServices();
+            //getVerimlilikYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
         
     }
@@ -1556,7 +1961,14 @@ $('#panel_etkinlik_detail').click(function()
         if(serviceControler == true) {
             getEtkinlikYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getEtkinlikYillikWithoutServices();
+            //getEtkinlikYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }else {
         hidden_block_verimlilik_blok_controller = 1;
@@ -1567,7 +1979,14 @@ $('#panel_etkinlik_detail').click(function()
         if(serviceControler == true) {
             getEtkinlikYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getEtkinlikYillikWithoutServices();
+            //getEtkinlikYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
         
     }
@@ -1596,7 +2015,14 @@ $('#detay_acilan_ciro').click(function()
         if(serviceControler == true) {
             getCiroWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getCiroWeeklyWithoutServices();
+            //getCiroWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
           
     }else {
@@ -1608,7 +2034,14 @@ $('#detay_acilan_ciro').click(function()
         if(serviceControler == true) {
             getCiroWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getCiroAylikWithoutServices();
+            //getCiroAylikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }     
 });
@@ -1629,7 +2062,14 @@ $('#hidden_block4_month').click(function()
        if(serviceControler == true) {
             getCiroAylikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getCiroWeeklyWithoutServices();
+            //getCiroWeeklyWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
           
     }  
@@ -1649,7 +2089,7 @@ $('#hidden_block4_year').click(function()
        if(serviceControler == true) {
             getCiroYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getCiroYillikWithoutServices();
+            //getCiroYillikWithoutServices();
         }  
     }
 });
@@ -1677,8 +2117,15 @@ $('#detay_CSI').click(function(){
             getMMCSIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
             
-            getMMCSIYillikWithoutServices();
-            getDetayGridMMCSI();
+            //getMMCSIYillikWithoutServices();
+            //getDetayGridMMCSI();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
 
     }else {
@@ -1692,8 +2139,15 @@ $('#detay_CSI').click(function(){
             getMMCSIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
             
-            getMMCSIYillikWithoutServices();
-            getDetayGridMMCSI();
+            //getMMCSIYillikWithoutServices();
+            //getDetayGridMMCSI();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
     }     
 });
@@ -1716,8 +2170,15 @@ $('#detay_CXI').click(function(){
             getDetayGridMMCXIWithServices(multiSelectedRoles);
             getMMCXIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDetayGridMMCXI();
-            getMMCXIYillikWithoutServices();
+            //getDetayGridMMCXI();
+            //getMMCXIYillikWithoutServices();
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         } 
 
     }else {
@@ -1730,8 +2191,15 @@ $('#detay_CXI').click(function(){
             getDetayGridMMCXIWithServices(multiSelectedRoles);
             getMMCXIYillikWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getDetayGridMMCXI();
-            getMMCXIYillikWithoutServices();
+            /*getDetayGridMMCXI();
+            getMMCXIYillikWithoutServices();*/
+            dm.dangerMessage({
+                onShown : function() {
+                    //$('#loading-image-roles').loadImager('removeLoadImage'); 
+                }
+            });
+            dm.dangerMessage('show', window.lang.translate('Please select service'),
+                                  window.lang.translate('Please select service'));
         }
     }     
 });
@@ -1887,6 +2355,122 @@ $('#detay_acilan_bayi_stoklari').click(function()
 });
 // detay bloc 5 son
 
+/**
+ * loading image for roles dropdown
+ * @author Mustafa Zeynel Dağlı
+ * @since 11/08/2016
+ */
+$("#loading-image-roles").loadImager();
+$("#loading-image-roles").loadImager('appendImage');   
+
+/**
+ * Services dropdown prepared
+ * @type @call;$@call;ajaxCallWidget
+ * @since 30/05/2018
+ */
+var ajaxACLResources = $('#loading-image-roles').ajaxCallWidget({
+    proxy : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+    data: { url:'pkfillServicesDdlist_infoDealerOwner' ,
+            pk : $("#pk").val() 
+          },
+    async : false
+   })
+ajaxACLResources.ajaxCallWidget ({
+     onError : function (event, textStatus,errorThrown) {
+         dm.dangerMessage({
+            onShown : function() {
+                $('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+         dm.dangerMessage('show', 'servis Bulunamamıştır...',
+                                  'Servis  bulunamamıştır...');
+     },
+     onSuccess : function (event, data) {
+         var data2 = data;
+         var data = $.parseJSON(data);
+         
+         
+         
+         var tagBuilderDealers = $('#test-cabin').tagCabin({
+        tagCopy: false,
+        tagDeletable: true,
+        tagDeletableAll: false,
+        tagBox: $('.tag-container').find('ul'),
+        //dataMapper: {attributes : Array('role_id', 'resource_id', 'privilege_id')}
+        dataMapper: Array('role_id', 'resource_id', 'privilege_id')
+
+        });
+        
+        tagBuilderDealers.tagCabin({
+            onTagRemoved: function (event, data) {
+                var self = $(this);
+                var elementData = data.element;
+                elementData.remove();
+                //window.deleteSoruKonu(elementData);
+            }
+        
+        });
+        var testArr = ['text', 'value'];
+        tagBuilderDealers.tagCabin('addTags', data2, testArr );
+        /*data.splice(0, 1,
+                            { text: window.lang.translate('Please select'), value: 0, selected: false, description: "" }
+                        );*/
+        var controller = false;
+        $('#loading-image-roles').loadImager('removeLoadImage');
+        $('#dropdownRoles').ddslick({
+            height : 200,
+            data : data, 
+            width:'98%',
+            selectText: "Select your preferred social network",
+            //searchText : window.lang.translate('Search'),
+            searchText : '',
+            //showSelectedHTML : false,
+            defaultSelectedIndex: 3,
+            search : true,
+            //multiSelect : true,
+            multiSelect : false,
+            //tagBox : 'tag-container',
+            //multiSelectTagID : 'deneme',
+            //imagePosition:"right",
+            
+            onSelected: function(selectedData){
+                if(selectedData.selectedData.value>0) {
+                    if(controller == true) {
+                        //console.log(selectedData.selectedData.text);
+                        var data = '[{"text":"'+selectedData.selectedData.text+'","value":'+selectedData.selectedData.value+'}]';
+                        //console.log(data);
+                        var testArr = ['text', 'value'];
+                        var tagValues = $('#test-cabin').tagCabin('getAllTagsValues', 'data-value');
+                        console.log(tagValues);
+                        if(tagValues.length > 0) {
+                            if(jQuery.inArray(selectedData.selectedData.value, tagValues)<0) {
+                                $('#test-cabin').tagCabin('addTags', data, testArr);
+                            } else {
+                                //alert('tag bulunmuştur');
+                            }
+                        } else if(tagValues.length == 0) {
+                            $('#test-cabin').tagCabin('addTags', data, testArr);
+                        }
+                    }
+                    controller = true;
+                }
+            }   
+        });   
+     },
+     onErrorDataNull : function (event, data) {
+         dm.dangerMessage({
+            onShown : function() {
+                $('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+         dm.dangerMessage('show', 'Bayi Bulunamamıştır...',
+                                  'Bayi  bulunamamıştır...');
+     },
+}) 
+ajaxACLResources.ajaxCallWidget('call');
+
+
+
 //$('#todolistbox').loadImager();
 var filler = $('#todolistbox').todolistFiller();
 
@@ -1921,9 +2505,9 @@ getYedekParcaToplamSatisDashboard();
 getYedekParcaYagSatisDashboard();
 
 // yedek parca yag satış dashboard data
-    getAtolyeCirosuDashboard();
-    getGarantiCirosuDashboard();
-    getDirekSatisCirosuDashboard();
+getAtolyeCirosuDashboard();
+getGarantiCirosuDashboard();
+getDirekSatisCirosuDashboard();
 
 // verimlilik gauge dashboard data
 getVerimlilikDashboard();
@@ -1940,75 +2524,10 @@ getMMCSIDashboard();
 // müşteri memnuniyeti(CXI) dashboard data 
 getMMCXIDashboard();
     
-/**
- * loading image for roles dropdown
- * @author Mustafa Zeynel Dağlı
- * @since 11/08/2016
- */
-$("#loading-image-roles").loadImager();
-$("#loading-image-roles").loadImager('appendImage');    
+ 
     
 
-/**
- * Services dropdown prepared
- * @type @call;$@call;ajaxCallWidget
- * @since 30/05/2018
- */
-var ajaxACLResources = $('#loading-image-roles').ajaxCallWidget({
-    proxy : 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'fillServicesDdlist_infoAfterSales' ,
-                    pk : $("#pk").val() 
-            }
-   })
-ajaxACLResources.ajaxCallWidget ({
-     onError : function (event, textStatus,errorThrown) {
-         dm.dangerMessage({
-            onShown : function() {
-                $('#loading-image-roles').loadImager('removeLoadImage'); 
-            }
-         });
-         dm.dangerMessage('show', 'servis Bulunamamıştır...',
-                                  'Servis  bulunamamıştır...');
-     },
-     onSuccess : function (event, data) {
-         var data = $.parseJSON(data);
-         data.splice(0, 1,
-                            { text: window.lang.translate('Please select'), value: 0, selected: false, description: "" }
-                        );
-         $('#loading-image-roles').loadImager('removeLoadImage');
-         $('#dropdownRoles').ddslick({
-            height : 200,
-            data : data, 
-            width:'98%',
-            selectText: "Select your preferred social network",
-            searchText : window.lang.translate('Search'),
-            //showSelectedHTML : false,
-            defaultSelectedIndex: 3,
-            search : true,
-            multiSelect : true,
-            tagBox : 'tag-container',
-            //multiSelectTagID : 'deneme',
-            //imagePosition:"right",
-            onSelected: function(selectedData){
-                if(selectedData.selectedData.value>0) {
-                    /*$('#tt_tree_menu').tree({
-                        url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php?url=pkFillForAdminTree_leftnavigation&pk=' + $("#pk").val()+ '&role_id='+selectedData.selectedData.value+'&language_code='+$("#langCode").val(),
-                    });*/
-                }
-            }   
-        });   
-     },
-     onErrorDataNull : function (event, data) {
-         dm.dangerMessage({
-            onShown : function() {
-                $('#loading-image-roles').loadImager('removeLoadImage'); 
-            }
-         });
-         dm.dangerMessage('show', 'Rol Bulunamamıştır...',
-                                  'Rol  bulunamamıştır...');
-     },
-}) 
-ajaxACLResources.ajaxCallWidget('call');
+
     
 /*
  * Author: Abdullah A Almsaeed
@@ -11853,7 +12372,10 @@ function getDetayGridMMCXIWithServices(multiSelectedRoles) {
 
 // satış sonrası servisler ile ilgili fonk.
 function getServiceDropdownSelectedItems() {
-    var serviceControler = false;
+    
+    var dealers = $('#test-cabin').tagCabin('getAllTagsValues', 'data-value')
+    //console.log(test);
+    /*var serviceControler = false;
     if($('#dropdownRoles').length) {
         var ddDataRoles = $('#dropdownRoles').data('ddslick');
         if(ddDataRoles != null) {
@@ -11863,7 +12385,9 @@ function getServiceDropdownSelectedItems() {
         }
         
     }
-     return multiSelectedRoles;                                                           
+    console.log(multiSelectedRoles);*/
+     //return multiSelectedRoles;    
+     return dealers;
 }
 
 function getServiceSelectedItemsControl(multiSelectedRoles) {
@@ -11908,33 +12432,69 @@ function getServicesSelectedAsUrl(multiSelectedServices) {
 // dashboard özet verileri fonk.
 // Son iş emirleri dashboard
 function getSonIsEmirleriDashboard() {
-    $.ajax({
-    url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-    data: { url:'getAfterSalesDashboardIsEmriLastDataMusteri_infoAfterSales' ,
-            pk : $("#pk").val()}, 
-    type: 'GET',
-    dataType: 'json',
-    language_id:647,
-    //data: 'rowIndex='+rowData.id,
-    success: function (data, textStatus, jqXHR) {
-        if(data!=null) {
-            $("#todolistboxServisMusteri").loadImager('removeLoadImage');
-           var fillerTest2 = $('#servisMusteriFillerUL').listFiller();
-            fillerTest2.listFiller('option', 'data', data['resultSet']);
-            fillerTest2.listFiller('fill'); 
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        var services = getServicesSelectedAsUrl(multiSelectedRoles);
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardIsEmriLastDataMusteriWithServices_infoAfterSales' ,
+                    pk : $("#pk").val(),
+                    src : services}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    $("#todolistboxServisMusteri").loadImager('removeLoadImage');
+                   var fillerTest2 = $('#servisMusteriFillerUL').listFiller();
+                    fillerTest2.listFiller('option', 'data', data['resultSet']);
+                    fillerTest2.listFiller('fill'); 
 
 
-            $("#todolistboxServis").loadImager('removeLoadImage');
-            var fillerTest2 = $('#servisFillerUL').listFiller();
-            fillerTest2.listFiller('option', 'data', data['resultSet']);
-            fillerTest2.listFiller('fill2');
-        }  
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-        console.error(errorThrown);
+                    $("#todolistboxServis").loadImager('removeLoadImage');
+                    var fillerTest2 = $('#servisFillerUL').listFiller();
+                    fillerTest2.listFiller('option', 'data', data['resultSet']);
+                    fillerTest2.listFiller('fill2');
+                }  
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(errorThrown);
+            }
+
+        });
+    } else if(serviceControler == false) { 
+        $.ajax({
+            url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
+            data: { url:'getAfterSalesDashboardIsEmriLastDataMusteri_infoAfterSales' ,
+                    pk : $("#pk").val()}, 
+            type: 'GET',
+            dataType: 'json',
+            language_id:647,
+            //data: 'rowIndex='+rowData.id,
+            success: function (data, textStatus, jqXHR) {
+                if(data!=null) {
+                    $("#todolistboxServisMusteri").loadImager('removeLoadImage');
+                   var fillerTest2 = $('#servisMusteriFillerUL').listFiller();
+                    fillerTest2.listFiller('option', 'data', data['resultSet']);
+                    fillerTest2.listFiller('fill'); 
+
+
+                    $("#todolistboxServis").loadImager('removeLoadImage');
+                    var fillerTest2 = $('#servisFillerUL').listFiller();
+                    fillerTest2.listFiller('option', 'data', data['resultSet']);
+                    fillerTest2.listFiller('fill2');
+                }  
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.error(errorThrown);
+            }
+
+        });
     }
-
-});
 }
 
 // Araç girişleri dashboard
@@ -12398,6 +12958,7 @@ function getStoklarDashboard() {
 }
 
 // downtime dashboard data
+// downtime dashboard data
 function getDownTimeDashboard() { 
     var serviceControler = false;
     var multiSelectedRoles = getServiceDropdownSelectedItems();
@@ -12418,20 +12979,20 @@ function getDownTimeDashboard() {
             //console.log(data.resultSet);
             if(data.found == true && data.errorInfo[0]=='00000' && data.errorInfo[0] != null) {
                 var dataSet = data.resultSet;
-                var downtime;
+                var downtime = 0;
                 var counter = 0;
                 $.each(dataSet, function (key, value) {
                     counter ++;
                     var d =  value.DOWNTIME
-                        //d = d.replace(",", ".");
+                        d = d.replace(",", ".");
                         //console.log(d);
                         //console.log(downtime);
                         downtime = parseFloat(downtime)+parseFloat(d);
                 });
                 var dt = parseFloat((parseFloat(downtime)/counter)).toFixed(2);
-                console.log(downtime);
-                console.log(dt);
-                $("#toplam_header_downtime_container").headerSetterAfterSalesStocks(dt);
+                //console.log(downtime);
+                //console.log(dt);
+                $("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
             }
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -12460,7 +13021,7 @@ function getDownTimeDashboard() {
                         downtime = parseFloat(downtime)+parseFloat(d);
                     });
                     //console.log(parseFloat((parseFloat(downtime)/13)).toFixed(2));
-                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2)
+                    var dt = parseFloat((parseFloat(downtime)/13)).toFixed(2);
                     $("#toplam_header_downtime_container").headerSetterAfterSalesDowntime(dt);
                 }
             },
