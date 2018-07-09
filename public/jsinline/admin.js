@@ -316,10 +316,63 @@ Array.prototype.unique = function() {
   });
 }
 
-
+function panel_slideUp() { 
+    //Açık olan hidden paneller kapatılıyor.
+    
+    if($("#panel_hidden1").css('display') != 'none')
+    {
+        $("#panel_hidden1").slideUp();
+    }
+    if($("#panel").css('display') != 'none')
+    {
+        $("#panel").slideUp();
+    }
+    if($("#panel_stoklar").css('display') != 'none')
+    {
+        $("#panel_stoklar").slideUp();
+    }
+    if($("#panel_hidden3").css('display') != 'none')
+    {
+        $("#panel_hidden3").slideUp();
+    }
+    if($("#panel_hidden3_1").css('display') != 'none')
+    {
+        $("#panel_hidden3_1").slideUp();
+    }
+    if($("#panel_hidden_yedek_parca_toplam_satis").css('display') != 'none')
+    {
+        $("#panel_hidden_yedek_parca_toplam_satis").slideUp();
+    }
+    if($("#panel_hidden_yedek_parca_yag_satis").css('display') != 'none')
+    {
+        $("#panel_hidden_yedek_parca_yag_satis").slideUp();
+    }
+    if($("#panel_hidden_atolye_cirosu").css('display') != 'none')
+    {
+        $("#panel_hidden_atolye_cirosu").slideUp();
+    }
+    if($("#panel_hidden_garanti_cirosu").css('display') != 'none')
+    {
+        $("#panel_hidden_garanti_cirosu").slideUp();
+    }
+    if($("#panel_hidden_direk_satis_cirosu").css('display') != 'none')
+    {
+        $("#panel_hidden_direk_satis_cirosu").slideUp();
+    }
+    if($("#panel_hidden_MM_CSI").css('display') != 'none')
+    {
+        $("#panel_hidden_MM_CSI").slideUp();
+    }
+    if($("#panel_hidden_MM_CXI").css('display') != 'none')
+    {
+        $("#panel_hidden_MM_CXI").slideUp();
+    }
+}
 // servis seçimlerine göre dashboard hesplamalarını yapan event
 $('#servisDashboardHesapla').click(function()
 {
+    //Açık olan hidden paneller kapatılıyor.
+    panel_slideUp();
     var serviceControler = false;
     var multiSelectedRoles = getServiceDropdownSelectedItems();
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);

@@ -1321,8 +1321,6 @@ function _init() {
 
     });
 
-
-
 }(jQuery));
 
 
