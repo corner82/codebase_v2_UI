@@ -1,3 +1,4 @@
+<input id="langCode" type="hidden"  value="<?php echo $this->langCode; ?>"></input>
 <?php // partial.phtml 
     /*if ($user = $this->identity()) {
          echo 'Logged in as ' . $this->escapeHtml($user->getUsername());
@@ -31,7 +32,7 @@
                             <span class="label label-success">0</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">0 <?php echo $this->translate('New Messages') ?></li>
+                            <li class="header">0 <span lang="en">New Messages</span> <?php //echo $this->translate('New Messages') ?></li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
@@ -98,7 +99,10 @@
                                     </li>-->
                                 </ul>
                             </li>
-                            <li class="footer"><a href="#"><?php echo $this->translate('Show all messages') ?></a></li>
+                            <li class="footer">
+                                <span lang="en">Show all messages</span>
+                                <!--<a href="#"><span lang="en">Show all messages</span><?php //echo $this->translate('Show all messages') ?></a>-->
+                            </li>
                         </ul>
                     </li>
                     <!-- Notifications: style can be found in dropdown.less -->
@@ -108,7 +112,7 @@
                             <span class="label label-warning">0</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">0 <?php echo $this->translate('Notifications') ?></li>
+                            <li class="header">0 <span lang="en">Notifications</span><?php //echo $this->translate('Notifications') ?></li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
@@ -140,7 +144,10 @@
                                     </li>-->
                                 </ul>
                             </li>
-                            <li class="footer"><a href="#"><?php echo $this->translate('Show all notifications') ?></a></li>
+                            <li class="footer">
+                                <span lang="en">Show all notifications</span>
+                                <!--<a href="#"><span lang="en">Show all notifications</span><?php //echo $this->translate('Show all notifications') ?></a>-->
+                            </li>
                         </ul>
                     </li>
                     <!-- Tasks: style can be found in dropdown.less -->
@@ -150,7 +157,7 @@
                             <span class="label label-danger">0</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header">0 <?php echo $this->translate('Works To Do') ?></li>
+                            <li class="header">0 <span lang="en">Works To Do</span><?php //echo $this->translate('Works To Do') ?></li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
                                 <ul class="menu">
@@ -212,7 +219,7 @@
                                 </ul>
                             </li>
                             <li class="footer">
-                                <a href="#"><?php echo $this->translate('Show all tasks') ?></a>
+                                <span lang="en">Show all tasks</span><!--<a href="#"><span lang="en">Show all tasks</span><?php //echo $this->translate('Show all tasks') ?></a>-->
                             </li>
                         </ul>
                     </li>
@@ -234,24 +241,26 @@
                                 </p>
                             </li>
                             <!-- Menu Body -->
+                            <!--
                             <li class="user-body">
                                 <div class="col-xs-4 text-center">
-                                    <a href="#"><?php echo $this->translate('Collaborating Companies') ?></a>
+                                    <a href="#"><?php //echo $this->translate('Collaborating Companies') ?></a>
                                 </div>
                                 <div class="col-xs-4 text-center">
-                                    <a href="#"><?php echo $this->translate('Friends') ?></a>
+                                    <a href="#"><?php //echo $this->translate('Friends') ?></a>
                                 </div>
                                 <div class="col-xs-4 text-center">
-                                    <a href="#"><?php echo $this->translate('Followers') ?></a>
+                                    <a href="#"><?php //echo $this->translate('Followers') ?></a>
                                 </div>
                             </li>
+                            -->
                             <!-- Menu Footer-->
                             <li class="user-footer">
-                                <div class="pull-left">   
-                                    <a href="#" class="btn btn-default btn-flat"><?php echo $this->translate('Profile') ?></a>
-                                </div>
+                                <!--<div class="pull-left">   
+                                    <a href="#" class="btn btn-default btn-flat"><span lang="en">Profile</span><?php //echo $this->translate('Profile') ?></a>
+                                </div>-->
                                 <div class="pull-right">
-                                    <a href="<?php echo $this->url('login', array('action' => 'logout')); ?> " class="btn btn-default btn-flat"><?php echo $this->translate('Log out') ?></a>
+                                    <a href="<?php echo $this->url('login', array('action' => 'logout')); ?> " class="btn btn-default btn-flat"><span lang="en">Log out</span><?php //echo $this->translate('Log out') ?></a>
                                 </div>
                             </li>
                         </ul>

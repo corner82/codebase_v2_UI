@@ -160,7 +160,20 @@
                 "DELIVERY MONTH":"交货月",
                 "DELIVERY YEAR":"交付年份",
                 "ORDER BACKLOG":"积压订单",
-                "Ratio compared to the previous day":"比率与前一天相比"
+                "Ratio compared to the previous day":"比率与前一天相比",
+                "New Messages":"新消息",
+                "Version":"版",
+                "All rights reserved.":"版权所有。",
+                "Profile":"轮廓",
+                "Log out":"登出",
+                "Login":"登录",
+                "Logged in":"登录",
+                "Active":"活性",
+                "Show all messages":"显示所有消息",
+                "Notifications":"通知",
+                "Show all notifications":"显示所有通知",
+                "Works To Do":"要做的事",
+                "Show all tasks":"显示所有任务"
 
         }
 }

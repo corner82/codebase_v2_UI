@@ -160,7 +160,20 @@
                 "DELIVERY MONTH":"AFLEWINGSMONDIE",
                 "DELIVERY YEAR":"LEWERINGSJAAR",
                 "ORDER BACKLOG":"BESTEL TERUG"  ,
-                "Ratio compared to the previous day":"Verhouding vergeleke met die vorige dag"
+                "Ratio compared to the previous day":"Verhouding vergeleke met die vorige dag",
+                "New Messages":"Nuwe boodskappe",
+                "Version":"Weergawe",
+                "All rights reserved.":"Alle regte voorbehou.",
+                "Profile":"Profil",
+                "Log out":"Teken uit",
+                "Login":"Teken aan",
+                "Logged in":"Aangemeld",
+                "Active":"aktiewe",
+                "Show all messages":"Wys alle boodskappe",
+                "Notifications":"Kennisgewings",
+                "Show all notifications":"Wys alle kennisgewings",
+                "Works To Do":"Werke om te doen",
+                "Show all tasks":"Wys alle take"
        
 	}
 	

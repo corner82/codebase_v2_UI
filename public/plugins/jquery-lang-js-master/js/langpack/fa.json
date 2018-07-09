@@ -160,7 +160,20 @@
                 "DELIVERY MONTH":"ماه تحویل",
                 "DELIVERY YEAR":"سال تحویل",
                 "ORDER BACKLOG":"لیست سفارش",
-                "Ratio compared to the previous day":"نسبت به روز قبل مقایسه شده است"
+                "Ratio compared to the previous day":"نسبت به روز قبل مقایسه شده است",
+                "New Messages":"پیام جدید",
+                "Version":"نسخه",
+                "All rights reserved.":"همه حقوق محفوظ است",
+                "Profile":"مشخصات",
+                "Log out":"خروج",
+                "Login":"ورود",
+                "Logged in":"وارد شده",
+                "Active":"فعال",
+                "Show all messages":"نمایش همه پیام ها",
+                "Notifications":"اطلاعیه",
+                "Show all notifications":"نمایش همه اعلانها",
+                "Works To Do":"کارهای انجام شده",
+                "Show all tasks":"نمایش تمام وظایف"
   
 	}
 	
