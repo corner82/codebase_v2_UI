@@ -3487,7 +3487,7 @@ function getSatışFaturalariWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3518,7 +3518,7 @@ function getSatışFaturalariWeeklyWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3601,7 +3601,7 @@ function getSatışFaturalariWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3641,7 +3641,7 @@ function getSatışFaturalariWeeklyWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3698,7 +3698,7 @@ function getSatisFaturalariAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3729,7 +3729,7 @@ function getSatisFaturalariAylikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3806,7 +3806,7 @@ function getSatisFaturalariAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3854,7 +3854,7 @@ function getSatisFaturalariAylikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3909,7 +3909,7 @@ function getSatisFaturalariYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3940,7 +3940,7 @@ function getSatisFaturalariYillikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4017,7 +4017,7 @@ function getSatisFaturalariYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -4058,7 +4058,7 @@ function getSatisFaturalariYillikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
