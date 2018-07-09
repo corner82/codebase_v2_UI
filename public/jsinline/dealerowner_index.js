@@ -2715,7 +2715,7 @@ function getAlisFaturalariWithoutServicesWeekly() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -2809,9 +2809,9 @@ function getAlisFaturalariWithServicesWeekly(multiSelectedRoles) {
                         }
                         counter++;
                     });
-                    console.log(series);
+                    //console.log(series);
                     categ.unique();
-                    console.log(categ);
+                    //console.log(categ);
                     
                     //chart1.destroy();
                     var chart1 = Highcharts.chart('container_hidden_block1', {
@@ -2830,7 +2830,7 @@ function getAlisFaturalariWithServicesWeekly(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -2878,7 +2878,7 @@ function getAlisFaturalariWithServicesWeekly(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -2936,7 +2936,7 @@ function getAlisFaturalariAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -2966,7 +2966,7 @@ function getAlisFaturalariAylikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3051,7 +3051,7 @@ function getAlisFaturalariAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3101,7 +3101,7 @@ function getAlisFaturalariAylikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3156,7 +3156,7 @@ function getAlisFaturalariYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3186,7 +3186,7 @@ function getAlisFaturalariYillikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3266,7 +3266,7 @@ function getAlisFaturalariYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3314,7 +3314,7 @@ function getAlisFaturalariYillikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
