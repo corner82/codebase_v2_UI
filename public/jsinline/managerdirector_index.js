@@ -12563,7 +12563,8 @@ function getVerimlilikDashboard() {
         height: 200
     },
     title: {
-        text: window.lang.translate('Productivity')
+        //text: window.lang.translate('Productivity')
+        text: 'CSI'
     },
     pane: [{
         startAngle: -45,
@@ -12913,7 +12914,8 @@ function getKapasiteDashboard() {
         height: 200
     },
     title: {
-        text: ''+window.lang.translate('Capacity utilization')+''
+        //text: ''+window.lang.translate('Capacity utilization')+''
+        text: 'CXI'
     },
     pane: [{
         startAngle: -45,
