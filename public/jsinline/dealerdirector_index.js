@@ -13522,7 +13522,8 @@ function getKapasiteDashboard() {
     } else if(serviceControler == false ){
         $.ajax({
             url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-            data: { url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+            data: { //url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                     url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
                     pk : $("#pk").val()}, 
             type: 'GET',
             dataType: 'json',
