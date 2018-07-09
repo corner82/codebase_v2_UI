@@ -2114,7 +2114,7 @@ $('#detay_CSI').click(function(){
         hidden_MM_CSI_controller = 1;
         $("#panel_hidden_MM_CSI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CSI").loadImager('appendImage');
-        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer first'));
+        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer first')+ ' (CSI) ');
         $("#panel_hidden_MM_CSI").animate({height:'toggle'},1000); 
         
         if(serviceControler == true) {
@@ -2137,7 +2137,7 @@ $('#detay_CSI').click(function(){
         hidden_MM_CSI_controller = 1;
         $("#panel_hidden_MM_CSI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CSI").loadImager('appendImage');
-        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer first'));
+        $("#panel_hidden_MM_CSI_title").html(window.lang.translate('Customer first')+ ' (CSI) ');
         
         if(serviceControler == true) {
             getDetayGridMMCSIWithServices(multiSelectedRoles);
@@ -2168,7 +2168,7 @@ $('#detay_CXI').click(function(){
         hidden_MM_CXI_controller = 1;
         $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CXI").loadImager('appendImage');
-        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer first'));
+        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer first') + ' (CXI)');
         $("#panel_hidden_MM_CXI").animate({height:'toggle'},1000); 
         
         if(serviceControler == true) {
@@ -2190,7 +2190,7 @@ $('#detay_CXI').click(function(){
         hidden_MM_CXI_controller = 1;
         $("#panel_hidden_MM_CXI").loadImager('removeLoadImage');
         $("#panel_hidden_MM_CXI").loadImager('appendImage');
-        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer first'));
+        $("#panel_hidden_MM_CXI_title").html(window.lang.translate('Customer first') + ' (CXI)');
         
         if(serviceControler == true) {
             getDetayGridMMCXIWithServices(multiSelectedRoles);
@@ -11815,7 +11815,7 @@ function getMMCSIYillikWithoutServices() {
                     var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CSI', {
                         title: {
-                            text: window.lang.translate('Customer first')
+                            text: window.lang.translate('Customer first') + ' (CSI)'
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
@@ -11934,7 +11934,7 @@ function getMMCSIYillikWithServices(multiSelectedRoles) {
                     var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CSI', {
                         title: {
-                            text: window.lang.translate('Customer first')
+                            text: window.lang.translate('Customer first') + ' (CSI)'
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
@@ -12139,7 +12139,7 @@ function getMMCXIYillikWithoutServices() {
                     var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CXI', {
                         title: {
-                            text: window.lang.translate('Customer first')
+                            text: window.lang.translate('Customer first') + ' (CXI)'
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
@@ -12264,7 +12264,7 @@ function getMMCXIYillikWithServices(multiSelectedRoles) {
                     var year = (d.getFullYear())-1;
                     Highcharts.chart('container_hidden_MM_CXI', {
                         title: {
-                            text: window.lang.translate('Customer first')
+                            text: window.lang.translate('Customer first') + ' (CXI)'
                         },
                         subtitle: {
                             //text: 'Source: thesolarfoundation.com'
