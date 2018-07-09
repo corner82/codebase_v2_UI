@@ -746,7 +746,7 @@ $('#detay_acik_is_emirleri').click(function()
         hidden_block2_controller = 1;
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
-        $("#panel_title").html(window.lang.translate('Brief invoices'));
+        $("#panel_title").html(window.lang.translate('Open Orders'));
         if(serviceControler == true) {
             getAcikIsEmirleriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
@@ -769,6 +769,7 @@ $('#detay_acilan_is_emirleri').click(function()
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
         $("#panel").animate({height:'toggle'},1000); 
+        $("#panel_title").html(window.lang.translate('Opened Orders'));
         
         if(serviceControler == true) {
             getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
@@ -779,6 +780,7 @@ $('#detay_acilan_is_emirleri').click(function()
         hidden_block2_controller = 2;
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
+        $("#panel_title").html(window.lang.translate('Opened Orders'));
         
         if(serviceControler == true) {
             getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
@@ -801,7 +803,8 @@ $('#detay_kapanan_is_emirleri').click(function()
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
         $("#panel").animate({height:'toggle'},1000); 
-        
+        $("#panel_title").html(window.lang.translate('Closed Orders'));
+         
         if(serviceControler == true) {
             getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
@@ -812,7 +815,8 @@ $('#detay_kapanan_is_emirleri').click(function()
         hidden_block2_controller = 3;
         $("#panel").loadImager('removeLoadImage');
         $("#panel").loadImager('appendImage');
-        
+        $("#panel_title").html(window.lang.translate('Closed Orders'));
+         
         if(serviceControler == true) {
             getAcilanKapananIsEmriWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
