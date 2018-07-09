@@ -160,7 +160,20 @@
                 "DELIVERY MONTH":"ДОСТАВКА МЕСЯЦА",
                 "DELIVERY YEAR":"ГОД ДОСТАВКИ",
                 "ORDER BACKLOG":"портфель заказов",       
-                "Ratio compared to the previous day":"Соотношение по сравнению с предыдущим днем"
+                "Ratio compared to the previous day":"Соотношение по сравнению с предыдущим днем",
+                "New Messages":"Новые сообщения",
+                "Version":"Версия",
+                "All rights reserved.":"Все права защищены.",
+                "Profile":"Профиль",
+                "Log out":"Выйти",
+                "Login":"Авторизоваться",
+                "Logged in":"Записан",
+                "Active":"активный",
+                "Show all messages":"Показать все сообщения",
+                "Notifications":"Уведомления",
+                "Show all notifications":"Показать все уведомления",
+                "Works To Do":"Работы",
+                "Show all tasks":"Показать все задачи"
     	}
 	
 }

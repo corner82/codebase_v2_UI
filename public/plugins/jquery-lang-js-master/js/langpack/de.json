@@ -160,7 +160,20 @@
                 "DELIVERY MONTH":"Liefermonat",
                 "DELIVERY YEAR":"LIEFERJAHR",
                 "ORDER BACKLOG":"Auftragsbestätigung",
-                "Ratio compared to the previous day":"Ratio im Vergleich zum Vortag"
+                "Ratio compared to the previous day":"Ratio im Vergleich zum Vortag",
+                "New Messages":"Neue Nachrichten",
+                "Version":"Ausführung",
+                "All rights reserved.":"Alle Rechte vorbehalten.",
+                "Profile":"Profil",
+                "Log out":"Ausloggen",
+                "Login":"Anmeldung",
+                "Logged in":"Eingeloggt",
+                "Active":"Aktiv",
+                "Show all messages":"Zeige alle Nachrichten",
+                "Notifications":"Benachrichtigungen",
+                "Show all notifications":"Alle Benachrichtigungen anzeigen",
+                "Works To Do":"Funktioniert zu tun",
+                "Show all tasks":"Zeige alle Aufgaben"
         
 	}
 	

@@ -163,8 +163,21 @@
                 "DELIVERY MONTH":"TESLİM AY",
                 "DELIVERY YEAR":"TESLİM YIL",
                 "ORDER BACKLOG":"SİPARİŞ BEKLEME LİSTESİ",
-                "Ratio compared to the previous day":"Bir önceki güne göre oran"
-        
+                "Ratio compared to the previous day":"Bir önceki güne göre oran",
+                "New Messages":"Yeni Mesaj",
+                "Version":"Versiyon",
+                "All rights reserved.":"Tüm hakları saklıdır.",
+                "Profile":"Profil",
+                "Log out":"Çıkış",
+                "Login":"Giriş",
+                "Logged in":"Giriş yaptı",
+                "Active":"Aktif",
+                "Show all messages":"Tüm mesajları göster",
+                "Notifications":"Bildirimler",
+                "Show all notifications":"Tüm bildirimleri göster",
+                "Works To Do":"Yapılacak İşler",
+                "Show all tasks":"Tüm görevleri göster"
+
 	}
 	
 }

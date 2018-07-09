@@ -160,7 +160,20 @@
                 "DELIVERY MONTH":"شهر التسليم",
                 "DELIVERY YEAR":"سنة التسليم",
                 "ORDER BACKLOG":"النظام",
-                "Ratio compared to the previous day":"نسبة مقارنة باليوم السابق"
+                "Ratio compared to the previous day":"نسبة مقارنة باليوم السابق",
+                "New Messages":"رسائل جديدة",
+                "Version":"الإصدار",
+                "All rights reserved.":"كل الحقوق محفوظة.",
+                "Profile":"الملف الشخصي",
+                "Log out":"الخروج",
+                "Login":"تسجيل الدخول",
+                "Logged in":"تم تسجيل الدخول",
+                "Active":"نشيط",
+                "Show all messages":"عرض كل الرسائل",
+                "Notifications":"إخطارات",
+                "Show all notifications":"عرض جميع الإشعارات",
+                "Works To Do":"يعمل للقيام به",
+                "Show all tasks":"عرض جميع المهام"
    
 	}
 	
