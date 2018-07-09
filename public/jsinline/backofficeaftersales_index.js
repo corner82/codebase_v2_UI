@@ -2197,7 +2197,7 @@ function getAlisFaturalariWithoutServicesWeekly() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -2227,7 +2227,7 @@ function getAlisFaturalariWithoutServicesWeekly() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -2291,9 +2291,9 @@ function getAlisFaturalariWithServicesWeekly(multiSelectedRoles) {
                         }
                         counter++;
                     });
-                    console.log(series);
+                    //console.log(series);
                     categ.unique();
-                    console.log(categ);
+                    //console.log(categ);
                     
                     //chart1.destroy();
                     var chart1 = Highcharts.chart('container_hidden_block1', {
@@ -2312,7 +2312,7 @@ function getAlisFaturalariWithServicesWeekly(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -2360,7 +2360,7 @@ function getAlisFaturalariWithServicesWeekly(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -2418,7 +2418,7 @@ function getAlisFaturalariAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -2448,7 +2448,7 @@ function getAlisFaturalariAylikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -2533,7 +2533,7 @@ function getAlisFaturalariAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -2583,7 +2583,7 @@ function getAlisFaturalariAylikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -2638,7 +2638,7 @@ function getAlisFaturalariYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -2668,7 +2668,7 @@ function getAlisFaturalariYillikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -2748,7 +2748,7 @@ function getAlisFaturalariYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -2796,7 +2796,7 @@ function getAlisFaturalariYillikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -2845,7 +2845,7 @@ function getIsEmriFaturalariWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -2876,7 +2876,7 @@ function getIsEmriFaturalariWeeklyWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -2940,9 +2940,9 @@ function getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles) {
                         }
                         counter++;
                     });
-                    console.log(series);
+                    //console.log(series);
                     categ.unique();
-                    console.log(categ);
+                    //console.log(categ);
                     
                     var chart1 = Highcharts.chart('container_hidden_block1', {
                         chart: {
@@ -2960,7 +2960,7 @@ function getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3007,7 +3007,7 @@ function getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3064,7 +3064,7 @@ function getIsEmriFaturalariAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3094,7 +3094,7 @@ function getIsEmriFaturalariAylikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3172,7 +3172,7 @@ function getIsEmriFaturalariAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3220,7 +3220,7 @@ function getIsEmriFaturalariAylikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3275,7 +3275,7 @@ function getIsEmriFaturalariYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3305,7 +3305,7 @@ function getIsEmriFaturalariYillikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3383,7 +3383,7 @@ function getIsEmriFaturalariYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3431,7 +3431,7 @@ function getIsEmriFaturalariYillikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3480,7 +3480,7 @@ function getSatışFaturalariWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3511,7 +3511,7 @@ function getSatışFaturalariWeeklyWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3594,7 +3594,7 @@ function getSatışFaturalariWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3634,7 +3634,7 @@ function getSatışFaturalariWeeklyWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3691,7 +3691,7 @@ function getSatisFaturalariAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3722,7 +3722,7 @@ function getSatisFaturalariAylikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3799,7 +3799,7 @@ function getSatisFaturalariAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3847,7 +3847,7 @@ function getSatisFaturalariAylikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3902,7 +3902,7 @@ function getSatisFaturalariYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3933,7 +3933,7 @@ function getSatisFaturalariYillikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4010,7 +4010,7 @@ function getSatisFaturalariYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -4051,7 +4051,7 @@ function getSatisFaturalariYillikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4100,7 +4100,7 @@ function getIcmalFaturalariWeeklyWithoutServices(){
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -4131,7 +4131,7 @@ function getIcmalFaturalariWeeklyWithoutServices(){
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4214,7 +4214,7 @@ function getIcmalFaturalariWeeklyWithServices(multiSelectedRoles){
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -4254,7 +4254,7 @@ function getIcmalFaturalariWeeklyWithServices(multiSelectedRoles){
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4311,7 +4311,7 @@ function getIcmalFaturalariAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -4342,7 +4342,7 @@ function getIcmalFaturalariAylikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4419,7 +4419,7 @@ function getIcmalFaturalariAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -4466,7 +4466,7 @@ function getIcmalFaturalariAylikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4521,7 +4521,7 @@ function getIcmalFaturalariYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -4552,7 +4552,7 @@ function getIcmalFaturalariYillikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4628,7 +4628,7 @@ function getIcmalFaturalariYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -4669,7 +4669,7 @@ function getIcmalFaturalariYillikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4722,7 +4722,7 @@ function getAcikIsEmirleriWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -4752,7 +4752,7 @@ function getAcikIsEmirleriWeeklyWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 };
@@ -12869,8 +12869,9 @@ function getKapasiteDashboard() {
     if(serviceControler == true) {
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
-                pk : $("#pk").val()}, 
+        data: { //url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
+                url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
+                pk : $("#pk").val()},
         type: 'GET',
         dataType: 'json',
         language_id:647,
