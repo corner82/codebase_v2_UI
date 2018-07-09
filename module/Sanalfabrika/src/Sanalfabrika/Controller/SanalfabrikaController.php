@@ -82,7 +82,7 @@ class SanalfabrikaController extends AbstractActionController {
         
         $this->authenticate(null, $view);
         if($this->ifLoggedinRedirect() == false){
-            echo "authenticate false";
+            //echo "authenticate false";
         };
         
         if($_POST) {
