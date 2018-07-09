@@ -85,11 +85,20 @@ class SanalfabrikaController extends AbstractActionController {
             echo "authenticate false";
         };
         
-        $view = new ViewModel(array(
+        if($_POST) {
+            $view = new ViewModel(array(
+                'requestUriRegulated' => $requestUriRegulated,
+                'langCode' => $langCode,
+                'loginErrorMessage' => 'Hatalı kullanıcı adı ve/veya şifre girdiniz!',
+            ));
+        } else if($_GET) {
+            $view = new ViewModel(array(
             'requestUriRegulated' => $requestUriRegulated,
             'langCode' => $langCode,
-            'loginErrorMessage' => 'Hatalı kullanıcı adı ve/veya şifre girdiniz!',
-        ));
+            //'loginErrorMessage' => 'Hatalı kullanıcı adı ve/veya şifre girdiniz!',
+            ));
+        }
+        
         return $view;
     }
 
