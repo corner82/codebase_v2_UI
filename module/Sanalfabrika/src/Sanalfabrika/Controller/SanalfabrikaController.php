@@ -74,12 +74,22 @@ class SanalfabrikaController extends AbstractActionController {
         // Do this inside your Controller before you return your ViewModel
         $this->layout()->setVariable('test', $langCode);
 
+        
         $view = new ViewModel(array(
             'requestUriRegulated' => $requestUriRegulated,
             'langCode' => $langCode,
         ));
+        
         $this->authenticate(null, $view);
-        $this->ifLoggedinRedirect();
+        if($this->ifLoggedinRedirect() == false){
+            echo "authenticate false";
+        };
+        
+        $view = new ViewModel(array(
+            'requestUriRegulated' => $requestUriRegulated,
+            'langCode' => $langCode,
+            'loginErrorMessage' => 'Hatalı kullanıcı adı ve/veya şifre girdiniz!',
+        ));
         return $view;
     }
 
@@ -121,6 +131,8 @@ class SanalfabrikaController extends AbstractActionController {
         $authManager = $this->getServiceLocator()->get('authenticationManagerDefault');
         if (!$authManager->getStorage()->isEmpty()) {
             $this->getServiceLocator()->get('serviceAuthenticatedRedirectManager');
+        } else {
+            return false;
         }
     }
 

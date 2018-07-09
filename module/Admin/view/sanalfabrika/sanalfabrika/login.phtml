@@ -94,10 +94,17 @@
                 </div>
                 <div class="input-group margin-bottom-20">
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                    <input type="password" id="sifre" name="sifre" class="form-control validate[required,minSize[8],maxSize[20]]" data-prompt-position="bottomLeft" placeholder="Şifre">
+                    <input type="password" id="sifre" name="sifre" class="form-control validate[required,minSize[8],maxSize[50]]" data-prompt-position="bottomLeft" placeholder="Şifre">
                 </div>
                 <hr>
-
+                
+                <div class="checkbox">
+                    <label>
+                        
+                        <p style ='margin-left: 37px;color: #e41a52;font-weight: bold;'><?php echo $this->loginErrorMessage;?></p>
+                    </label>            
+                </div>
+                
                 <!--<div class="checkbox">
                     <label>
                         <input type="checkbox"> 
