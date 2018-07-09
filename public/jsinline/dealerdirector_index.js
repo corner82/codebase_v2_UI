@@ -616,7 +616,7 @@ $('#detay_acilan_icmal_faturalari').click(function()
         if(serviceControler == true) {
             getIcmalFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            //getSatışFaturalariWeeklyWithoutServices();
+            //getIcmalFaturalariWeeklyWithoutServices();
             dm.dangerMessage({
                 onShown : function() {
                     //$('#loading-image-roles').loadImager('removeLoadImage'); 
@@ -633,7 +633,7 @@ $('#detay_acilan_icmal_faturalari').click(function()
         if(serviceControler == true) {
             getIcmalFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            //getSatışFaturalariWeeklyWithoutServices();
+            //getIcmalFaturalariWeeklyWithoutServices();
             dm.dangerMessage({
                 onShown : function() {
                     //$('#loading-image-roles').loadImager('removeLoadImage'); 
