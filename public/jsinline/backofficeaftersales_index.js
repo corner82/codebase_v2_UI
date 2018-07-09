@@ -7,6 +7,7 @@ $(document).ready(function () {
    
    
    
+   
 /**
  * jquery lang master created dynamically
  * @author Mustafa Zeynel Dağlı
