@@ -12565,7 +12565,8 @@ function getVerimlilikDashboard() {
         height: 200
     },
     title: {
-        text: window.lang.translate('Productivity')
+        //text: window.lang.translate('Productivity')
+        text : 'CSI'
     },
     pane: [{
         startAngle: -45,
@@ -12878,7 +12879,8 @@ function getKapasiteDashboard() {
     if(serviceControler == true) {
         $.ajax({
         url: 'https://proxy.codebase_v2.com/SlimProxyBoot.php',
-        data: { url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
+        data: { //url:'getAfterSalesDashboardDowntimeWithServices_infoAfterSales' ,
+                url:'getAfterSalesDashboardDowntime_infoAfterSales' ,
                 pk : $("#pk").val()}, 
         type: 'GET',
         dataType: 'json',
@@ -12914,7 +12916,8 @@ function getKapasiteDashboard() {
         height: 200
     },
     title: {
-        text: ''+window.lang.translate('Capacity utilization')+''
+        //text: ''+window.lang.translate('Capacity utilization')+''
+        text: 'CXI'
     },
     pane: [{
         startAngle: -45,
