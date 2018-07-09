@@ -570,7 +570,7 @@ $('#detay_acilan_icmal_faturalari').click(function()
         if(serviceControler == true) {
             getIcmalFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getSatışFaturalariWeeklyWithoutServices();
+            getIcmalFaturalariWeeklyWithoutServices();
         } 
     }else {
         hidden_block1_controller = 4;
@@ -580,7 +580,7 @@ $('#detay_acilan_icmal_faturalari').click(function()
         if(serviceControler == true) {
             getIcmalFaturalariWeeklyWithServices(multiSelectedRoles);
         } else if(serviceControler == false ){
-            getSatışFaturalariWeeklyWithoutServices();
+            getIcmalFaturalariWeeklyWithoutServices();
         }
     }
          
