@@ -3363,7 +3363,7 @@ function getIsEmriFaturalariWeeklyWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3458,9 +3458,9 @@ function getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles) {
                         }
                         counter++;
                     });
-                    console.log(series);
+                    //console.log(series);
                     categ.unique();
-                    console.log(categ);
+                    //console.log(categ);
                     
                     var chart1 = Highcharts.chart('container_hidden_block1', {
                         chart: {
@@ -3478,7 +3478,7 @@ function getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3525,7 +3525,7 @@ function getIsEmriFaturalariWeeklyWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3582,7 +3582,7 @@ function getIsEmriFaturalariAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3612,7 +3612,7 @@ function getIsEmriFaturalariAylikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3690,7 +3690,7 @@ function getIsEmriFaturalariAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3738,7 +3738,7 @@ function getIsEmriFaturalariAylikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3793,7 +3793,7 @@ function getIsEmriFaturalariYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
@@ -3823,7 +3823,7 @@ function getIsEmriFaturalariYillikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -3901,7 +3901,7 @@ function getIsEmriFaturalariYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -3949,7 +3949,7 @@ function getIsEmriFaturalariYillikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
