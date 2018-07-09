@@ -4,8 +4,7 @@ $(document).ready(function () {
        alert('document ready -> '+Cookies.get('langCookie'));
        $("#langCode").val(Cookies.get('langCookie'));
    }*/
-   
-   
+    
    
    
 /**
