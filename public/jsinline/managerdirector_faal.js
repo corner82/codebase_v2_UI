@@ -84,10 +84,31 @@ Array.prototype.unique = function() {
 }
 
 
-
+function panel_slideUp() { 
+    //Açık olan hidden paneller kapatılıyor.
+    
+    if($("#panel_yedek_parca_servis_ici").css('display') != 'none')
+    {
+        $("#panel_yedek_parca_servis_ici").slideUp();
+    }
+    if($("#panel_yedek_parca_servis_disi").css('display') != 'none')
+    {
+        $("#panel_yedek_parca_servis_disi").slideUp();
+    }
+    if($("#panel_yag").css('display') != 'none')
+    {
+        $("#panel_yag").slideUp();
+    }
+    if($("#panel_stok").css('display') != 'none')
+    {
+        $("#panel_stok").slideUp();
+    }
+}
 // servis seçimlerine göre dashboard hesplamalarını yapan event
 $('#servisDashboardHesapla').click(function()
 {
+    panel_slideUp()
+    
     var serviceControler = false;
     var multiSelectedRoles = getServiceDropdownSelectedItems();
     serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);

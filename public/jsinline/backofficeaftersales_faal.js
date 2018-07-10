@@ -83,6 +83,60 @@ Array.prototype.unique = function() {
   });
 }
 
+function panel_slideUp() { 
+    //Açık olan hidden paneller kapatılıyor.
+    
+    if($("#panel_yedek_parca_servis_ici").css('display') != 'none')
+    {
+        $("#panel_yedek_parca_servis_ici").slideUp();
+    }
+    if($("#panel_yedek_parca_servis_disi").css('display') != 'none')
+    {
+        $("#panel_yedek_parca_servis_disi").slideUp();
+    }
+    if($("#panel_yag").css('display') != 'none')
+    {
+        $("#panel_yag").slideUp();
+    }
+    if($("#panel_stok").css('display') != 'none')
+    {
+        $("#panel_stok").slideUp();
+    }
+}
+
+// servis seçimlerine göre dashboard hesplamalarını yapan event
+$('#servisDashboardHesapla').click(function()
+{
+    panel_slideUp()
+    
+    var serviceControler = false;
+    var multiSelectedRoles = getServiceDropdownSelectedItems();
+    serviceControler = getServiceSelectedItemsControl(multiSelectedRoles);
+    
+    if(serviceControler == true) {
+        console.log(multiSelectedRoles);
+        $("#toplam_header_yedek_parca_container").find('div:first h3:first-child').html('');
+        $("#toplam_header_yedek_parca_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+        $("#toplam_header_yag_container").find('div:first h3:first-child').html('');
+        $("#toplam_header_yag_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+        $("#toplam_header_stok_container").find('div:first h3:first-child').html('');
+        $("#toplam_header_stok_container").find('div:first').prepend(' <h3 class="man-header-red"><div class="overlay" ><i class="fa fa-refresh fa-spin" ></i></div></h3>');
+        getAfterSalesFaalYedekParcaDashboard();
+        getAfterSalesFaalYagDashboard();
+        getAfterSalesFaalStokDashboard();
+        } 
+     else if(serviceControler == false ){
+        dm.dangerMessage({
+            onShown : function() {
+                //$('#loading-image-roles').loadImager('removeLoadImage'); 
+            }
+         });
+        dm.dangerMessage('show', 'Servis bulunamamıştır...',
+                                  'Lütfen servis seçiniz...');
+    }
+   
+});
+
 // detay ana block 
 var hidden_block2_controller;
 
