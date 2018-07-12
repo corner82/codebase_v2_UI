@@ -4138,7 +4138,10 @@ function getIcmalFaturalariWeeklyWithoutServices(){
                     $.each(data.resultSet, function(key, value) {
                         var graphData = [];
                         graphData.push(value.TARIH);
-                        graphData.push(parseInt(value.FATURATUTAR));
+                        /*var d = value.FATURATUTAR;
+                        d = d.replace(/,/g, ".");*/
+                        graphData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
+                        //graphData.push(parseInt(d));
                         graphDataAll.push(graphData);
                     });
                     //console.log(graphDataAll);
@@ -4167,14 +4170,14 @@ function getIcmalFaturalariWeeklyWithoutServices(){
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y:,.0f} </b>'
+                            pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y:,.2f} </b>'
                         },
                         series: [{
                             //name: 'Population',
@@ -4184,7 +4187,7 @@ function getIcmalFaturalariWeeklyWithoutServices(){
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.2f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -4198,7 +4201,7 @@ function getIcmalFaturalariWeeklyWithoutServices(){
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4240,14 +4243,19 @@ function getIcmalFaturalariWeeklyWithServices(multiSelectedRoles){
                             //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                           /* var d = value.FATURATUTAR;
+                            d = d.replace(/,/g, ".");*/
+                            
+                            serviceData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 7 == 0 && counter!=0){
                             /*console.log('mod bulundu-->'+counter);
                              console.log('value.SERVISID-->'+value.SERVISID);
                              console.log('value.OGUN_KAPATILMAYAN_EMIRLER-->'+value.OGUN_KAPATILMAYAN_EMIRLER);*/
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            /*var d = value.FATURATUTAR;
+                            d = d.replace(/,/g, ".");*/
+                            serviceData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -4257,7 +4265,9 @@ function getIcmalFaturalariWeeklyWithServices(multiSelectedRoles){
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            /*var d = value.FATURATUTAR;
+                            d = d.replace(/,/g, ".");*/
+                            serviceData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
                         }
                         counter++;
                     });
@@ -4281,7 +4291,7 @@ function getIcmalFaturalariWeeklyWithServices(multiSelectedRoles){
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -4304,7 +4314,7 @@ function getIcmalFaturalariWeeklyWithServices(multiSelectedRoles){
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: ''+window.lang.translate('Brief invoices')+'  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
+                            pointFormat: ''+window.lang.translate('Brief invoices')+'  {series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
                         },
                         plotOptions: {
                             column: {
@@ -4321,7 +4331,7 @@ function getIcmalFaturalariWeeklyWithServices(multiSelectedRoles){
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4345,9 +4355,11 @@ function getIcmalFaturalariAylikWithoutServices() {
                         if(arr.length == 3) {
                             var tutar = null;
                             tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseInt(tutar));
+                            //graphData.push(parseInt(tutar));
+                            graphData.push(parseFloat(setFormatFloat(tutar)));
                         } else{
-                            graphData.push(parseInt(value.FATURATUTAR));
+                            //graphData.push(parseInt(value.FATURATUTAR));
+                            graphData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
                         }
                         graphDataAll.push(graphData);
 
@@ -4378,14 +4390,14 @@ function getIcmalFaturalariAylikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y:,.0f} </b>'
+                            pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y:,.2f} </b>'
                         },
                         series: [{
                             //name: 'Population',
@@ -4395,7 +4407,7 @@ function getIcmalFaturalariAylikWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.2f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -4409,7 +4421,7 @@ function getIcmalFaturalariAylikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4448,11 +4460,13 @@ function getIcmalFaturalariAylikWithServices(multiSelectedRoles) {
                             //console.log('servis id null');
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            serviceData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
+                            //serviceData.push(parseInt(value.FATURATUTAR));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 4 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            serviceData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
+                            //serviceData.push(parseInt(value.FATURATUTAR));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -4462,7 +4476,8 @@ function getIcmalFaturalariAylikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            serviceData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
+                            //serviceData.push(parseInt(value.FATURATUTAR));
                         }
                         counter++;
                     });
@@ -4486,7 +4501,7 @@ function getIcmalFaturalariAylikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('piece')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -4509,7 +4524,7 @@ function getIcmalFaturalariAylikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '{series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.0f} '
+                            pointFormat: '{series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+' {point.stackTotal:,.2f} '
                         },
                         plotOptions: {
                             column: {
@@ -4533,7 +4548,7 @@ function getIcmalFaturalariAylikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4557,9 +4572,10 @@ function getIcmalFaturalariYillikWithoutServices() {
                         if(arr.length == 3) {
                             var tutar = null;
                             tutar = arr[0]+arr[1]+','+arr[2];
-                            graphData.push(parseInt(tutar));
+                            graphData.push(parseFloat(setFormatFloat(tutar)));
                         } else{
-                            graphData.push(parseInt(value.FATURATUTAR));
+                            //graphData.push(parseInt(value.FATURATUTAR));
+                            graphData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
                         }
                         graphDataAll.push(graphData);
                     });
@@ -4588,14 +4604,14 @@ function getIcmalFaturalariYillikWithoutServices() {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             }
                         },
                         legend: {
                             enabled: false
                         },
                         tooltip: {
-                            pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y:,.0f} </b>'
+                            pointFormat: ''+window.lang.translate('Brief invoices')+': <b>{point.y:,.2f} </b>'
                         },
                         series: [{
                             //name: 'Population',
@@ -4605,7 +4621,7 @@ function getIcmalFaturalariYillikWithoutServices() {
                                 rotation: -90,
                                 color: '#FFFFFF',
                                 align: 'right',
-                                format: '{point.y}', // one decimal
+                                format: '{point.y:,.2f}', // one decimal
                                 y: 10, // 10 pixels down from the top
                                 style: {
                                     fontSize: '13px',
@@ -4619,7 +4635,7 @@ function getIcmalFaturalariYillikWithoutServices() {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
@@ -4655,15 +4671,17 @@ function getIcmalFaturalariYillikWithServices(multiSelectedRoles) {
                         }
                         
                         if(counter == 1) {
-                            console.log('servis id null');
+                            //console.log('servis id null');
                             //instance = new servisMiktar(value.SERVISID);
                             instance = new servisMiktar();
                             instance.name = value.SERVISAD;
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            serviceData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
+                            //serviceData.push(parseInt(value.FATURATUTAR));
                             serviceID = value.SERVISAD;
                         }
                          else if(counter % 13 == 0 && counter!=0){
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                             serviceData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
+                            //serviceData.push(parseInt(value.FATURATUTAR));
                             instance.data = serviceData;
                             series.push(instance);
                             serviceData = [];
@@ -4672,7 +4690,8 @@ function getIcmalFaturalariYillikWithServices(multiSelectedRoles) {
                             serviceIdControler = true;
                             serviceID = value.SERVISAD;
                         } else {
-                            serviceData.push(parseInt(value.FATURATUTAR));
+                            serviceData.push(parseFloat(setFormatFloat(value.FATURATUTAR)));
+                            //serviceData.push(parseInt(value.FATURATUTAR));
                         }
                         counter++;
                     });
@@ -4695,7 +4714,7 @@ function getIcmalFaturalariYillikWithServices(multiSelectedRoles) {
                         yAxis: {
                             min: 0,
                             title: {
-                                text: window.lang.translate('1K')
+                                text: 'YTL'
                             },
                             stackLabels: {
                                 enabled: true,
@@ -4718,7 +4737,7 @@ function getIcmalFaturalariYillikWithServices(multiSelectedRoles) {
                         },
                         tooltip: {
                             headerFormat: '<b>{point.x}</b><br/>',
-                            pointFormat: '  {series.name}: {point.y:,.0f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.0f} '
+                            pointFormat: '  {series.name}: {point.y:,.2f}<br/> <br/> : '+window.lang.translate('Total')+'  {point.stackTotal:,.2f} '
                         },
                         plotOptions: {
                             column: {
@@ -4736,7 +4755,7 @@ function getIcmalFaturalariYillikWithServices(multiSelectedRoles) {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                console.error(jqXHR);
+                console.error(textStatus);
             }
         });
 }
