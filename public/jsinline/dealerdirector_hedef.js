@@ -463,8 +463,8 @@ function setDetayGridAfterSalesYedekParcaHedefHeaderFooterLang() {
     $(head_item_0).text(window.lang.translate('No'));
     $(head_item_1).text(window.lang.translate('Service Name'));
     $(head_item_2).text(window.lang.translate('Type'));  
-    $(head_item_3).text(window.lang.translate('Jan-May 2017'));
-    $(head_item_4).text(window.lang.translate('Jan-May 2018'));
+    $(head_item_3).text(window.lang.translate('Jan-Jun 2017'));
+    $(head_item_4).text(window.lang.translate('Jan-Jun 2018'));
     $(head_item_5).text(window.lang.translate('Comparison 2017-2018'));
     $(head_item_6).text(window.lang.translate('Total 2017'));
     $(head_item_7).text(window.lang.translate('3 Year Average'));
@@ -496,8 +496,8 @@ function setDetayGridAfterSalesYedekParcaHedefHeaderFooterLang() {
     $(footer_item_0).text(window.lang.translate('No'));
     $(footer_item_1).text(window.lang.translate('Service Name'));
     $(footer_item_2).text(window.lang.translate('Type'));  
-    $(footer_item_3).text(window.lang.translate('Jan-May 2017'));
-    $(footer_item_4).text(window.lang.translate('Jan-May 2018'));
+    $(footer_item_3).text(window.lang.translate('Jan-Jun 2017'));
+    $(footer_item_4).text(window.lang.translate('Jan-Jun 2018'));
     $(footer_item_5).text(window.lang.translate('Comparison 2017-2018'));
     $(footer_item_6).text(window.lang.translate('Total 2017'));
     $(footer_item_7).text(window.lang.translate('3 Year Average'));
