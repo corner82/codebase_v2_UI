@@ -1821,6 +1821,10 @@
             type : 'GET',
             dataType : 'json',
             async : true,
+            outbounds:function(e) {
+                alert('outbounds example ajax call widget');
+                alert(window.lang.translate('piece'));
+            }
         },
         /**
          * private constructor method for jquery widget
@@ -1852,6 +1856,7 @@
                     if(data.length!==0) {
                         if(data.found) {
                             self._trigger('onSuccess', event, jsonString);
+                            self._trigger('outbounds');
                         } else if(data.errorInfo == 23505) {
                             self._trigger('onError23505', event, jsonString);
                         } else if(data.errorInfo == 23503) {
@@ -1864,10 +1869,12 @@
                         
                     } else {
                         self._trigger('onErrorDataNull');
+                        
                     }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-                    self._trigger('onError', event, textStatus, errorThrown);  
+                    self._trigger('onError', event, textStatus, errorThrown); 
+                    self._trigger('outbounds');
                 }
             });
         },
@@ -1889,6 +1896,8 @@
             lang : null,
             breadcrumbObj : null,
             //pageUrl : null,
+            /*outbounds:function(e) {
+            alert('outbounds example');}*/
         },
         /**
          * private constructor method for jquery widget
@@ -2211,6 +2220,7 @@
                      dm.dangerMessage('resetOnShown');
                      dm.dangerMessage('show', 'Menü Ögesi Bulunamamıştır...',
                                               'Menü ögesi  bulunamamıştır...');
+                    //self._trigger("outbounds");
                  },
                  onSuccess : function (event, data) {
                      

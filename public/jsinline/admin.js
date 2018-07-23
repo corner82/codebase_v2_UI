@@ -1,12 +1,19 @@
 
-$(document).ready(function () {
+$(window).load(function() {
+/*alert('window load');
+  alert(window.lang.translate('piece'));*/  
+    
+});
 
+
+$(document).ready(function () {
+//alert('document ready');
  /*if(Cookies.get('langCookie') != null && Cookies.get('langCookie') != '' ) {
        alert('document ready -> '+Cookies.get('langCookie'));
        $("#langCode").val(Cookies.get('langCookie'));
    }*/
    
-   
+ //alert(window.lang.translate('piece'));  
    
 /**
  * jquery lang master created dynamically

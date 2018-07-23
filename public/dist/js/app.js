@@ -1378,9 +1378,6 @@ $(window).load(function() {
  // executes when complete page is fully loaded, including all frames, objects and images
  //alert("window is loaded");
  
- 
- 
- 
  /**
     * @author Mustafa Zeynel Dağlı
     * @since 03/07/2018
