@@ -1856,7 +1856,7 @@
                     if(data.length!==0) {
                         if(data.found) {
                             self._trigger('onSuccess', event, jsonString);
-                            self._trigger('outbounds');
+                            //self._trigger('outbounds');
                         } else if(data.errorInfo == 23505) {
                             self._trigger('onError23505', event, jsonString);
                         } else if(data.errorInfo == 23503) {
