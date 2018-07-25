@@ -1874,7 +1874,7 @@
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     self._trigger('onError', event, textStatus, errorThrown); 
-                    self._trigger('outbounds');
+                    //self._trigger('outbounds');
                 }
             });
         },
@@ -2358,7 +2358,7 @@
     });
     
     /**
-     * left menu widget for admin pages
+     * breadcrumb widget for admin pages
      * @author Mustafa Zeynel Dağlı
      * @since 18/05/2018
      */
